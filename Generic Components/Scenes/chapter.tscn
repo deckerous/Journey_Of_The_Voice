@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://cp4p4iaomvynx"]
+
+[ext_resource type="Script" path="res://Generic Components/Scripts/chapter.gd" id="1_o0kkc"]
+
+[node name="Chapter" type="Node"]
+script = ExtResource("1_o0kkc")

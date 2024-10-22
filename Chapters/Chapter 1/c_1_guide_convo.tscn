@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://c1u7usj8dgwwe"]
+
+[ext_resource type="PackedScene" uid="uid://cee0f16o8788r" path="res://Generic Components/Scenes/conversation.tscn" id="1_atbyn"]
+[ext_resource type="PackedScene" uid="uid://c0u1fdrgiinbp" path="res://Characters/guide.tscn" id="2_cgtjj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p6cxs"]
+size = Vector2(162, 156)
+
+[node name="C1GuideConvo" instance=ExtResource("1_atbyn")]
+
+[node name="CollisionShape2D" parent="Character/ClickRegion" index="0"]
+shape = SubResource("RectangleShape2D_p6cxs")
+
+[node name="Guide" parent="Character" index="1" instance=ExtResource("2_cgtjj")]
+z_index = 2
+
+[node name="ColorRect" parent="Background" index="0"]
+visible = true
+color = Color(0.571002, 0.36182, 0.249341, 1)
+
+[editable path="Character/Guide"]

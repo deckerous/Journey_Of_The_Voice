@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://3kgo3ypehagf"]
+
+[ext_resource type="Script" path="res://Generic Components/Scripts/area.gd" id="1_44oh5"]
+
+[node name="Area" type="Node2D"]
+script = ExtResource("1_44oh5")
+
+[node name="Conversations" type="Node2D" parent="."]
+
+[node name="Interactables" type="Node2D" parent="."]

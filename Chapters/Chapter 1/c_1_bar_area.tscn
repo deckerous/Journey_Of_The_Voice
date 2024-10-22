@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://r4he0blyv1bh"]
+
+[ext_resource type="PackedScene" uid="uid://3kgo3ypehagf" path="res://Generic Components/Scenes/area.tscn" id="1_ken8t"]
+[ext_resource type="PackedScene" uid="uid://c1u7usj8dgwwe" path="res://Chapters/Chapter 1/c_1_guide_convo.tscn" id="2_jye1t"]
+
+[node name="C1BarArea" instance=ExtResource("1_ken8t")]
+
+[node name="C1GuideConvo" parent="Conversations" index="0" instance=ExtResource("2_jye1t")]
+position = Vector2(835, 332)
+
+[node name="Background" parent="Conversations/C1GuideConvo" index="1"]
+visible = false
+
+[editable path="Conversations/C1GuideConvo"]
+[editable path="Conversations/C1GuideConvo/Character/Guide"]
