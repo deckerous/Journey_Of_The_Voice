@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cpp2n27xhy763"]
 
 [ext_resource type="Theme" uid="uid://v3tjxnq7o5ny" path="res://Themes/MenuFont.tres" id="1_3bxdf"]
-[ext_resource type="AudioStream" uid="uid://4h1ubwyy34h7" path="res://Audio/BeepTheme.mp3" id="2_be06l"]
+[ext_resource type="AudioStream" uid="uid://c47xo5eukseqt" path="res://Audio/BeepTheme.mp3" id="2_be06l"]
 
 [sub_resource type="GDScript" id="GDScript_8jfi3"]
 script/source = "extends Button
