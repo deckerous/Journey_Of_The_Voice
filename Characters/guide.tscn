@@ -1,21 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c0u1fdrgiinbp"]
+[gd_scene load_steps=3 format=3 uid="uid://c0u1fdrgiinbp"]
 
 [ext_resource type="PackedScene" uid="uid://cfcuodb5inj3o" path="res://Generic Components/Scenes/character.tscn" id="1_wcxgl"]
-[ext_resource type="Texture2D" uid="uid://cj6q5fi78e1wg" path="res://icon.svg" id="2_bjven"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_n83mu"]
-size = Vector2(174, 182)
+[ext_resource type="Texture2D" uid="uid://bvsr7o8u3cpmy" path="res://icon.svg" id="2_bjven"]
 
 [node name="Guide" instance=ExtResource("1_wcxgl")]
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_bjven")
-
-[node name="CollisionShape2D" parent="Area2D" index="0"]
-shape = SubResource("RectangleShape2D_n83mu")
-
-[node name="SpeechBox" parent="." index="2"]
-offset_left = -368.0
-offset_top = -40.0
-offset_right = -168.0
-offset_bottom = 40.0
