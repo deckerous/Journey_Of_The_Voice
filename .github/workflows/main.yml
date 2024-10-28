@@ -8,10 +8,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-
-      - name: Import Headless
-        run: |
-          godot --headless --import
-
+        
       - name: Docker test
         uses: ceceppa/godot-gut-ci@main
+        with:
+          godot_version: 4.3
+          gut_params: -gdir=res://tests/unit
