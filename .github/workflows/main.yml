@@ -1,16 +1,26 @@
-name: "godot gut test"
+name: "godot-ci export"
 on: push
 
+env:
+  GODOT_VERSION: 4.3
+  EXPORT_NAME: test-project
+  PROJECT_PATH: project/
+
 jobs:
-  execute-gut:
-    name: Run GUT tests
+  run-tests:
+    name: Run unit tests
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
-        
-      - name: Docker test
+        uses: actions/checkout@v3
+
+      - name: Run headless import
+        run: |
+          cd $PROJECT_PATH
+          godot --headless --import
+
+      - name: GUT Tests
         uses: ceceppa/godot-gut-ci@main
         with:
           godot_version: 4.3
-          gut_params: -gdir=res://tests/unit
+          gut_params: -gdir=res://test/unit
