@@ -9,5 +9,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+      - name: Import Headless
+        run: |
+          godot --headless --import
+
       - name: Docker test
         uses: ceceppa/godot-gut-ci@main
