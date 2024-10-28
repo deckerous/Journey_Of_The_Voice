@@ -20,7 +20,7 @@ jobs:
           godot --headless --import
 
       - name: GUT Tests
-        uses: ceceppa/godot-gut-ci@main
+        uses: ./
         with:
           godot_version: 4.3
           gut_params: -gdir=res://test/unit
