@@ -14,11 +14,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Run headless import
-        run: |
-          cd $PROJECT_PATH
-          godot --headless --import
-
       - name: GUT Tests
         uses: ./
         with:
