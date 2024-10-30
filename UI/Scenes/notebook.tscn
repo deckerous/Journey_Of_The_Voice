@@ -28,6 +28,7 @@ alignment = 1
 [node name="Notebook" type="CenterContainer" parent="NotebookImgCont"]
 layout_mode = 2
 size_flags_vertical = 3
+theme = ExtResource("2_fwp36")
 
 [node name="Sprite2D" type="Sprite2D" parent="NotebookImgCont/Notebook"]
 position = Vector2(114, 0)
@@ -35,7 +36,6 @@ texture = ExtResource("1_kjn6p")
 centered = false
 
 [node name="Page1" type="Control" parent="NotebookImgCont/Notebook"]
-visible = false
 layout_mode = 2
 
 [node name="LeftPageCont" type="VBoxContainer" parent="NotebookImgCont/Notebook/Page1"]
@@ -60,7 +60,6 @@ alignment = 1
 clip_contents = false
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "Band Name?!"
 fit_content = true
 scroll_active = false
@@ -75,7 +74,6 @@ size_flags_stretch_ratio = 0.0
 clip_contents = false
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "MEMBERS
 "
 fit_content = true
@@ -91,7 +89,6 @@ size_flags_stretch_ratio = 0.0
 clip_contents = false
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "Me: Vocals
 I need to come up with a name for the band!
 "
@@ -110,7 +107,6 @@ size_flags_stretch_ratio = 0.0
 clip_contents = false
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "Josh: Drums
 A former taiko drummer, now he has a girlfriend in another state. He swears.
 "
@@ -130,7 +126,6 @@ size_flags_stretch_ratio = 0.0
 clip_contents = false
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "Benito: Bleeps and Bloops
 Benny, Benny, Benny and the Jets!
 "
@@ -155,13 +150,13 @@ clip_contents = false
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "I FREAK OUT WHEN I TALK TO PEOPLE
 "
 fit_content = true
 autowrap_mode = 2
 
 [node name="Page2" type="Control" parent="NotebookImgCont/Notebook"]
+visible = false
 layout_mode = 2
 
 [node name="LeftPageCont" type="VBoxContainer" parent="NotebookImgCont/Notebook/Page2"]
@@ -186,7 +181,6 @@ alignment = 1
 clip_contents = false
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "SETTINGS!"
 fit_content = true
 scroll_active = false
@@ -202,7 +196,6 @@ clip_contents = false
 layout_mode = 2
 size_flags_horizontal = 2
 size_flags_stretch_ratio = 0.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "Audio Volume:"
 fit_content = true
 scroll_active = false
@@ -234,7 +227,6 @@ size_flags_stretch_ratio = 0.0
 clip_contents = false
 layout_mode = 2
 size_flags_horizontal = 3
-theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "Ultra-Violence Mode:
 "
 fit_content = true
@@ -261,7 +253,6 @@ clip_contents = false
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "My song
 "
 fit_content = true
@@ -272,7 +263,6 @@ clip_contents = false
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "At first I was afraid,
 I was petrified...
 Kept thinking I could never live

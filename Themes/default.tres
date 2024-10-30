@@ -4,3 +4,4 @@
 
 [resource]
 default_font = ExtResource("1_rtyxf")
+/colors/black = Color(0, 0, 0, 1)

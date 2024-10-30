@@ -16,7 +16,7 @@ func _ready() -> void:
 	h_slider_vol.value = vol
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	match pg:
 		1:
 			page_1.visible = true
@@ -38,5 +38,5 @@ func _on_button_l_pressed():
 	pg -= 1
 	
 
-func _on_h_slider_vol_drag_ended(value_changed: bool) -> void:
+func _on_h_slider_vol_drag_ended(_value_changed: bool) -> void:
 	vol = h_slider_vol.value
