@@ -1,0 +1,8 @@
+{
+  "name_save_dialog": {
+	"Start": {
+	  "character": "[i]Guide[/i]",
+	  "text": "[tornado radius=10.0 freq=1.0 connected=1]Huh. Can't say it's what I'd have picked for you. But if that's your name, that's your name.[/tornado]"
+	}
+  }
+}

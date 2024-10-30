@@ -1,8 +1,14 @@
 extends Control
 
-@onready var name_line_edit: LineEdit = $VBoxContainer/NameLineEdit
-@onready var confirm_button: Button = $VBoxContainer/ConfirmButton
+# Add a .json file that the script uses to access a character name and the dialogue
+@export_file("*json") var scene_text_file: String
+
+@onready var name_line_edit = $VBoxContainer2/VBoxContainer/NameLineEdit
+@onready var confirm_button = $VBoxContainer2/VBoxContainer/ConfirmButton
 @onready var load_name_label: Label = $LoadNameLabel
+
+@onready var character_name_rich_text_label = $VBoxContainer2/VBoxContainer2/CharacterNameRichTextLabel
+@onready var dialogue_rich_text_label = $VBoxContainer2/VBoxContainer2/HBoxContainer/DialogueRichTextLabel
 
 const SAVE_PATH = "user://game_stats.cfg"
 const TEST_SAVE_PATH = "res://game_stats.cfg"
@@ -21,6 +27,7 @@ func confirm_pressed() -> void:
 		name_line_edit.editable = false
 		create_save(name_line_edit.text)
 		load_save()
+		load_dialogue()
 
 func valid_name(save_name: String) -> bool:
 	if save_name.length() < 1:
@@ -44,3 +51,18 @@ func load_save():
 		# Error handling
 		return 
 	load_name_label.text = "Saved name: " + saved_name
+
+func load_text():
+	if FileAccess.file_exists(scene_text_file):
+		var file = FileAccess.open(scene_text_file, FileAccess.READ)
+		var test_json_conv = JSON.new()
+		test_json_conv.parse(file.get_as_text())
+		return test_json_conv.get_data()
+
+func load_dialogue():
+	var text = load_text()
+	var dictionary: Dictionary = text
+	# Access the character name
+	character_name_rich_text_label.text = ((dictionary["name_save_dialog"])["Start"])["character"]
+	# Access the dialogue text
+	dialogue_rich_text_label.text = ((dictionary["name_save_dialog"])["Start"])["text"]
