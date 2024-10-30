@@ -6,6 +6,7 @@ extends Node2D
 @onready var h_slider_vol: HSlider = $NotebookImgCont/Notebook/Page2/LeftPageCont/HSlider_vol
 @onready var check_box_violence: CheckBox = $NotebookImgCont/Notebook/Page2/LeftPageCont/CheckBox_violence
 @onready var vol_level: RichTextLabel = $NotebookImgCont/Notebook/Page2/LeftPageCont/HBoxContainer2/VolLevel
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
 
 var pg = 1;
@@ -40,3 +41,4 @@ func _on_button_l_pressed():
 
 func _on_h_slider_vol_drag_ended(_value_changed: bool) -> void:
 	vol = h_slider_vol.value
+	audio_stream_player.volume_db = linear_to_db(vol/100)

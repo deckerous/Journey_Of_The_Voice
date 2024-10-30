@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://cpxo23gojvngq"]
+[gd_scene load_steps=7 format=3 uid="uid://cpxo23gojvngq"]
 
 [ext_resource type="Texture2D" uid="uid://bwf1onkxv8ga2" path="res://Images/UI/notebook_open.png" id="1_kjn6p"]
 [ext_resource type="Script" path="res://UI/Scenes/notebook.gd" id="1_pjd0k"]
 [ext_resource type="Theme" uid="uid://v3tjxnq7o5ny" path="res://Themes/notebook_text.tres" id="2_fwp36"]
 [ext_resource type="Texture2D" uid="uid://cb8wh6ye0pgk3" path="res://Images/UI/arrow_r.png" id="4_65gpl"]
 [ext_resource type="Texture2D" uid="uid://bepst3xq1hg31" path="res://Images/UI/arrow_l.png" id="5_xcnod"]
+[ext_resource type="AudioStream" uid="uid://ey3cm0cdi5p7" path="res://Audio/doesitloopright.mp3" id="6_jwger"]
 
 [node name="Main Menu" type="Node2D"]
 script = ExtResource("1_pjd0k")
@@ -36,6 +37,7 @@ texture = ExtResource("1_kjn6p")
 centered = false
 
 [node name="Page1" type="Control" parent="NotebookImgCont/Notebook"]
+visible = false
 layout_mode = 2
 
 [node name="LeftPageCont" type="VBoxContainer" parent="NotebookImgCont/Notebook/Page1"]
@@ -156,7 +158,6 @@ fit_content = true
 autowrap_mode = 2
 
 [node name="Page2" type="Control" parent="NotebookImgCont/Notebook"]
-visible = false
 layout_mode = 2
 
 [node name="LeftPageCont" type="VBoxContainer" parent="NotebookImgCont/Notebook/Page2"]
@@ -217,6 +218,10 @@ drag_and_drop_selection_enabled = false
 
 [node name="HSlider_vol" type="HSlider" parent="NotebookImgCont/Notebook/Page2/LeftPageCont"]
 layout_mode = 2
+focus_neighbor_left = NodePath("../../../../../ButtonL")
+focus_neighbor_top = NodePath("../../../../../ButtonL")
+focus_next = NodePath("../CheckBox_violence")
+focus_previous = NodePath("../../../../../ButtonL")
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="NotebookImgCont/Notebook/Page2/LeftPageCont"]
 layout_mode = 2
@@ -237,6 +242,10 @@ drag_and_drop_selection_enabled = false
 
 [node name="CheckBox_violence" type="CheckBox" parent="NotebookImgCont/Notebook/Page2/LeftPageCont"]
 layout_mode = 2
+size_flags_horizontal = 0
+focus_neighbor_left = NodePath("../HSlider_vol")
+focus_neighbor_top = NodePath("../HSlider_vol")
+focus_previous = NodePath("../HSlider_vol")
 
 [node name="RightPageCont" type="VBoxContainer" parent="NotebookImgCont/Notebook/Page2"]
 layout_mode = 2
@@ -253,7 +262,8 @@ clip_contents = false
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.0
-text = "My song
+theme_override_font_sizes/normal_font_size = 30
+text = "My song:
 "
 fit_content = true
 autowrap_mode = 2
@@ -291,6 +301,11 @@ offset_top = 232.0
 offset_right = 139.0
 offset_bottom = 284.0
 texture_normal = ExtResource("5_xcnod")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_jwger")
+autoplay = true
+parameters/looping = true
 
 [connection signal="drag_ended" from="NotebookImgCont/Notebook/Page2/LeftPageCont/HSlider_vol" to="." method="_on_h_slider_vol_drag_ended"]
 [connection signal="pressed" from="ButtonR" to="." method="_on_button_r_pressed"]
