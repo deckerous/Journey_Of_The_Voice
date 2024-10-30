@@ -1,0 +1,307 @@
+[gd_scene load_steps=6 format=3 uid="uid://cpxo23gojvngq"]
+
+[ext_resource type="Texture2D" uid="uid://bwf1onkxv8ga2" path="res://Images/UI/notebook_open.png" id="1_kjn6p"]
+[ext_resource type="Script" path="res://UI/Scenes/notebook.gd" id="1_pjd0k"]
+[ext_resource type="Theme" uid="uid://v3tjxnq7o5ny" path="res://Themes/notebook_text.tres" id="2_fwp36"]
+[ext_resource type="Texture2D" uid="uid://cb8wh6ye0pgk3" path="res://Images/UI/arrow_r.png" id="4_65gpl"]
+[ext_resource type="Texture2D" uid="uid://bepst3xq1hg31" path="res://Images/UI/arrow_l.png" id="5_xcnod"]
+
+[node name="Main Menu" type="Node2D"]
+script = ExtResource("1_pjd0k")
+
+[node name="NotebookImgCont" type="VBoxContainer" parent="."]
+layout_direction = 2
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 1152.0
+offset_bottom = 648.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_fwp36")
+alignment = 1
+
+[node name="Notebook" type="CenterContainer" parent="NotebookImgCont"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Sprite2D" type="Sprite2D" parent="NotebookImgCont/Notebook"]
+position = Vector2(114, 0)
+texture = ExtResource("1_kjn6p")
+centered = false
+
+[node name="Page1" type="Control" parent="NotebookImgCont/Notebook"]
+visible = false
+layout_mode = 2
+
+[node name="LeftPageCont" type="VBoxContainer" parent="NotebookImgCont/Notebook/Page1"]
+clip_contents = true
+layout_mode = 2
+offset_left = -360.0
+offset_top = -339.0
+offset_right = 7.0
+offset_bottom = 222.0
+rotation = 0.1309
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Header" type="HBoxContainer" parent="NotebookImgCont/Notebook/Page1/LeftPageCont"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="NotebookImgCont/Notebook/Page1/LeftPageCont/Header"]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Band Name?!"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="NotebookImgCont/Notebook/Page1/LeftPageCont"]
+layout_mode = 2
+size_flags_vertical = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="NotebookImgCont/Notebook/Page1/LeftPageCont/HBoxContainer2"]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "MEMBERS
+"
+fit_content = true
+scroll_active = false
+autowrap_mode = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="NotebookImgCont/Notebook/Page1/LeftPageCont"]
+layout_mode = 2
+size_flags_vertical = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="NotebookImgCont/Notebook/Page1/LeftPageCont/HBoxContainer3"]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Me: Vocals
+I need to come up with a name for the band!
+"
+fit_content = true
+scroll_active = false
+autowrap_mode = 2
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="NotebookImgCont/Notebook/Page1/LeftPageCont"]
+layout_mode = 2
+size_flags_vertical = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="NotebookImgCont/Notebook/Page1/LeftPageCont/HBoxContainer4"]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Josh: Drums
+A former taiko drummer, now he has a girlfriend in another state. He swears.
+"
+fit_content = true
+scroll_active = false
+autowrap_mode = 2
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="NotebookImgCont/Notebook/Page1/LeftPageCont"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="NotebookImgCont/Notebook/Page1/LeftPageCont/HBoxContainer5"]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Benito: Bleeps and Bloops
+Benny, Benny, Benny and the Jets!
+"
+fit_content = true
+scroll_active = false
+autowrap_mode = 2
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="RightPageCont" type="VBoxContainer" parent="NotebookImgCont/Notebook/Page1"]
+layout_mode = 2
+offset_left = 89.0
+offset_top = -263.0
+offset_right = 439.0
+offset_bottom = 296.0
+rotation = 0.1309
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="NotebookImgCont/Notebook/Page1/RightPageCont"]
+clip_contents = false
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "I FREAK OUT WHEN I TALK TO PEOPLE
+"
+fit_content = true
+autowrap_mode = 2
+
+[node name="Page2" type="Control" parent="NotebookImgCont/Notebook"]
+layout_mode = 2
+
+[node name="LeftPageCont" type="VBoxContainer" parent="NotebookImgCont/Notebook/Page2"]
+clip_contents = true
+layout_mode = 2
+offset_left = -360.0
+offset_top = -339.0
+offset_right = 7.0
+offset_bottom = 222.0
+rotation = 0.1309
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Header" type="HBoxContainer" parent="NotebookImgCont/Notebook/Page2/LeftPageCont"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="NotebookImgCont/Notebook/Page2/LeftPageCont/Header"]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "SETTINGS!"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="NotebookImgCont/Notebook/Page2/LeftPageCont"]
+layout_mode = 2
+size_flags_vertical = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="NotebookImgCont/Notebook/Page2/LeftPageCont/HBoxContainer2"]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_stretch_ratio = 0.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Audio Volume:"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="VolLevel" type="RichTextLabel" parent="NotebookImgCont/Notebook/Page2/LeftPageCont/HBoxContainer2"]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_stretch_ratio = 0.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "
+"
+fit_content = true
+scroll_active = false
+autowrap_mode = 2
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="HSlider_vol" type="HSlider" parent="NotebookImgCont/Notebook/Page2/LeftPageCont"]
+layout_mode = 2
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="NotebookImgCont/Notebook/Page2/LeftPageCont"]
+layout_mode = 2
+size_flags_vertical = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="NotebookImgCont/Notebook/Page2/LeftPageCont/HBoxContainer4"]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Ultra-Violence Mode:
+"
+fit_content = true
+scroll_active = false
+autowrap_mode = 2
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="CheckBox_violence" type="CheckBox" parent="NotebookImgCont/Notebook/Page2/LeftPageCont"]
+layout_mode = 2
+
+[node name="RightPageCont" type="VBoxContainer" parent="NotebookImgCont/Notebook/Page2"]
+layout_mode = 2
+offset_left = 89.0
+offset_top = -263.0
+offset_right = 439.0
+offset_bottom = 296.0
+rotation = 0.1309
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="NotebookImgCont/Notebook/Page2/RightPageCont"]
+clip_contents = false
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "My song
+"
+fit_content = true
+autowrap_mode = 2
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="NotebookImgCont/Notebook/Page2/RightPageCont"]
+clip_contents = false
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "At first I was afraid,
+I was petrified...
+Kept thinking I could never live
+without you by  my  side.
+
+But then I spent so many nights
+just thinking how you did me wrong,
+I grew strong.
+I learned how to get along!
+
+But now you're back...
+"
+fit_content = true
+autowrap_mode = 2
+
+[node name="ButtonR" type="TextureButton" parent="."]
+offset_left = 1016.0
+offset_top = 384.0
+offset_right = 1131.0
+offset_bottom = 436.0
+texture_normal = ExtResource("4_65gpl")
+
+[node name="ButtonL" type="TextureButton" parent="."]
+offset_left = 24.0
+offset_top = 232.0
+offset_right = 139.0
+offset_bottom = 284.0
+texture_normal = ExtResource("5_xcnod")
+
+[connection signal="drag_ended" from="NotebookImgCont/Notebook/Page2/LeftPageCont/HSlider_vol" to="." method="_on_h_slider_vol_drag_ended"]
+[connection signal="pressed" from="ButtonR" to="." method="_on_button_r_pressed"]
+[connection signal="pressed" from="ButtonL" to="." method="_on_button_l_pressed"]
