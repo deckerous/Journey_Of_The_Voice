@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://cpxo23gojvngq"]
+[gd_scene load_steps=8 format=3 uid="uid://cpxo23gojvngq"]
 
-[ext_resource type="Texture2D" uid="uid://bwf1onkxv8ga2" path="res://Images/UI/notebook_open.png" id="1_kjn6p"]
+[ext_resource type="Texture2D" uid="uid://djsa077rfuih8" path="res://Images/UI/notebook_open.png" id="1_kjn6p"]
 [ext_resource type="Script" path="res://UI/Scenes/notebook.gd" id="1_pjd0k"]
 [ext_resource type="Theme" uid="uid://v3tjxnq7o5ny" path="res://Themes/notebook_text.tres" id="2_fwp36"]
-[ext_resource type="Texture2D" uid="uid://cb8wh6ye0pgk3" path="res://Images/UI/arrow_r.png" id="4_65gpl"]
-[ext_resource type="Texture2D" uid="uid://bepst3xq1hg31" path="res://Images/UI/arrow_l.png" id="5_xcnod"]
-[ext_resource type="AudioStream" uid="uid://ey3cm0cdi5p7" path="res://Audio/doesitloopright.mp3" id="6_jwger"]
+[ext_resource type="Texture2D" uid="uid://cwjefg75kd7o1" path="res://Images/UI/arrow_r.png" id="4_65gpl"]
+[ext_resource type="Texture2D" uid="uid://b7wr4xpsc6f0m" path="res://Images/UI/arrow_l.png" id="5_xcnod"]
+[ext_resource type="AudioStream" uid="uid://ccj5l2v2yawym" path="res://Audio/doesitloopright.mp3" id="6_jwger"]
+[ext_resource type="AudioStream" uid="uid://dh5g7w7v04oc7" path="res://Audio/page_turn.wav" id="7_nvbb6"]
 
 [node name="Main Menu" type="Node2D"]
 script = ExtResource("1_pjd0k")
@@ -197,12 +198,13 @@ clip_contents = false
 layout_mode = 2
 size_flags_horizontal = 2
 size_flags_stretch_ratio = 0.0
-text = "Audio Volume:"
+text = "Music Volume:"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
 
-[node name="VolLevel" type="RichTextLabel" parent="NotebookImgCont/Notebook/Page2/LeftPageCont/HBoxContainer2"]
+[node name="VolLevelMus" type="RichTextLabel" parent="NotebookImgCont/Notebook/Page2/LeftPageCont/HBoxContainer2"]
+unique_name_in_owner = true
 clip_contents = false
 layout_mode = 2
 size_flags_horizontal = 2
@@ -216,7 +218,46 @@ autowrap_mode = 2
 deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 
-[node name="HSlider_vol" type="HSlider" parent="NotebookImgCont/Notebook/Page2/LeftPageCont"]
+[node name="HSlider_vol_mus" type="HSlider" parent="NotebookImgCont/Notebook/Page2/LeftPageCont"]
+unique_name_in_owner = true
+layout_mode = 2
+focus_neighbor_left = NodePath("../../../../../ButtonL")
+focus_neighbor_top = NodePath("../../../../../ButtonL")
+focus_next = NodePath("../CheckBox_violence")
+focus_previous = NodePath("../../../../../ButtonL")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="NotebookImgCont/Notebook/Page2/LeftPageCont"]
+layout_mode = 2
+size_flags_vertical = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="NotebookImgCont/Notebook/Page2/LeftPageCont/HBoxContainer3"]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_stretch_ratio = 0.0
+text = "SFX Volume:"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="VolLevelSFX" type="RichTextLabel" parent="NotebookImgCont/Notebook/Page2/LeftPageCont/HBoxContainer3"]
+unique_name_in_owner = true
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_stretch_ratio = 0.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "
+"
+fit_content = true
+scroll_active = false
+autowrap_mode = 2
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="HSlider_vol_sfx" type="HSlider" parent="NotebookImgCont/Notebook/Page2/LeftPageCont"]
+unique_name_in_owner = true
 layout_mode = 2
 focus_neighbor_left = NodePath("../../../../../ButtonL")
 focus_neighbor_top = NodePath("../../../../../ButtonL")
@@ -243,9 +284,9 @@ drag_and_drop_selection_enabled = false
 [node name="CheckBox_violence" type="CheckBox" parent="NotebookImgCont/Notebook/Page2/LeftPageCont"]
 layout_mode = 2
 size_flags_horizontal = 0
-focus_neighbor_left = NodePath("../HSlider_vol")
-focus_neighbor_top = NodePath("../HSlider_vol")
-focus_previous = NodePath("../HSlider_vol")
+focus_neighbor_left = NodePath("../HSlider_vol_mus")
+focus_neighbor_top = NodePath("../HSlider_vol_mus")
+focus_previous = NodePath("../HSlider_vol_mus")
 
 [node name="RightPageCont" type="VBoxContainer" parent="NotebookImgCont/Notebook/Page2"]
 layout_mode = 2
@@ -302,11 +343,20 @@ offset_right = 139.0
 offset_bottom = 284.0
 texture_normal = ExtResource("5_xcnod")
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+[node name="BGMPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("6_jwger")
 autoplay = true
+bus = &"Music"
 parameters/looping = true
 
-[connection signal="drag_ended" from="NotebookImgCont/Notebook/Page2/LeftPageCont/HSlider_vol" to="." method="_on_h_slider_vol_drag_ended"]
+[node name="PageTurnPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_nvbb6")
+pitch_scale = 2.04
+bus = &"SFX"
+
+[connection signal="drag_ended" from="NotebookImgCont/Notebook/Page2/LeftPageCont/HSlider_vol_mus" to="." method="_on_h_slider_vol_mus_drag_ended"]
+[connection signal="drag_ended" from="NotebookImgCont/Notebook/Page2/LeftPageCont/HSlider_vol_mus" to="." method="_on_h_slider_vol_drag_ended"]
+[connection signal="drag_ended" from="NotebookImgCont/Notebook/Page2/LeftPageCont/HSlider_vol_sfx" to="." method="_on_h_slider_vol_sfx_drag_ended"]
+[connection signal="drag_ended" from="NotebookImgCont/Notebook/Page2/LeftPageCont/HSlider_vol_sfx" to="." method="_on_h_slider_vol_drag_ended"]
 [connection signal="pressed" from="ButtonR" to="." method="_on_button_r_pressed"]
 [connection signal="pressed" from="ButtonL" to="." method="_on_button_l_pressed"]
