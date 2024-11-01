@@ -1,0 +1,28 @@
+{
+	"dialogue": [
+		{
+		"id": "Start",
+		"character": "Guy D.",
+		"text": "Hey there, trying to implement the dialogue using .json files?"
+		},
+		{
+		"text": "Good luck. But it shouldn't be too [wave amp=50.0 fequency=100.0]difficult[/wave]. There are only a few simple steps to set it up."
+		},
+		{
+		"text": "1. Populate .json file with dialogue and functions using that fancy export plugin."
+		},
+		{
+		"text": "2. Ensure whatever node is reading the file has access to it and can read the data in it."
+		},
+		{
+		"text": "3. Send the dialogue to be displayed in a label."
+		},
+		{
+		"text": "4. Update the dialogue with click input."
+		},
+		{
+		"text": "5. You're as good as done baby!",
+		"function": "end_dialogue"
+		}
+	]
+}

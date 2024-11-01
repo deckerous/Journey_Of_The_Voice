@@ -3,13 +3,13 @@
 [ext_resource type="PackedScene" uid="uid://cee0f16o8788r" path="res://Generic Components/Scenes/conversation.tscn" id="1_atbyn"]
 [ext_resource type="PackedScene" uid="uid://c0u1fdrgiinbp" path="res://Characters/guide.tscn" id="2_cgtjj"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_p6cxs"]
-size = Vector2(162, 156)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ts12m"]
+size = Vector2(180, 166)
 
 [node name="C1GuideConvo" instance=ExtResource("1_atbyn")]
 
-[node name="CollisionShape2D" parent="Character/ClickRegion" index="0"]
-shape = SubResource("RectangleShape2D_p6cxs")
+[node name="CharacterCollisionShape2D" parent="Character/CharacterClickArea" index="0"]
+shape = SubResource("RectangleShape2D_ts12m")
 
 [node name="Guide" parent="Character" index="1" instance=ExtResource("2_cgtjj")]
 z_index = 2

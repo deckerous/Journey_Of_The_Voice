@@ -1,6 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cee0f16o8788r"]
+[gd_scene load_steps=7 format=3 uid="uid://cee0f16o8788r"]
 
 [ext_resource type="Script" path="res://Generic Components/Scripts/conversation.gd" id="1_i3n2i"]
+[ext_resource type="Texture2D" uid="uid://bkdpm6yak24pj" path="res://UI/Assets/back_button.png" id="2_ffb15"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uw144"]
+size = Vector2(1152, 64.8)
 
 [sub_resource type="Gradient" id="Gradient_7xqp5"]
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
@@ -11,19 +15,29 @@ height = 192
 fill_to = Vector2(0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_bvkm6"]
-font_size = 24
+font_size = 32
 shadow_color = Color(1, 1, 1, 0.262745)
 shadow_offset = Vector2(2, 2)
 
 [node name="Conversation" type="Node2D"]
 script = ExtResource("1_i3n2i")
+dialogue_file = "res://Generic Components/Dialogue/practice.json"
 
 [node name="Character" type="Node2D" parent="."]
 
-[node name="ClickRegion" type="Area2D" parent="Character"]
+[node name="CharacterClickArea" type="Area2D" parent="Character"]
 monitorable = false
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Character/ClickRegion"]
+[node name="CharacterCollisionShape2D" type="CollisionShape2D" parent="Character/CharacterClickArea"]
+
+[node name="DialogueClickArea" type="Area2D" parent="."]
+position = Vector2(16, 552)
+monitorable = false
+
+[node name="DialogueCollisionShape2D" type="CollisionShape2D" parent="DialogueClickArea"]
+position = Vector2(560, -228)
+scale = Vector2(1, 10)
+shape = SubResource("RectangleShape2D_uw144")
 
 [node name="Background" type="CanvasLayer" parent="."]
 layer = -1
@@ -63,17 +77,7 @@ grow_vertical = 0
 size_flags_vertical = 10
 texture = SubResource("GradientTexture2D_5yje8")
 
-[node name="NameLabel" type="Label" parent="Background/Dialogue/Control"]
-custom_minimum_size = Vector2(128, 64)
-layout_mode = 1
-offset_right = 77.0
-offset_bottom = 23.0
-text = "Name"
-label_settings = SubResource("LabelSettings_bvkm6")
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="CenterContainer" type="CenterContainer" parent="Background/Dialogue/Control"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Background/Dialogue/Control"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -81,16 +85,37 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Background/Dialogue/Control"]
-layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-grow_horizontal = 2
-grow_vertical = 2
+[node name="NameLabel" type="Label" parent="Background/Dialogue/Control/VBoxContainer"]
+custom_minimum_size = Vector2(128, 64)
+layout_mode = 2
+size_flags_horizontal = 0
+text = "Name"
+label_settings = SubResource("LabelSettings_bvkm6")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Background/Dialogue/Control/VBoxContainer"]
+layout_mode = 2
+
+[node name="MarginLeft" type="Control" parent="Background/Dialogue/Control/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+
+[node name="DialogueLabel" type="RichTextLabel" parent="Background/Dialogue/Control/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent iaculis consectetur lectus, et vulputate eros gravida vel. Suspendisse vitae auctor turpis, ut convallis justo."
 fit_content = true
 
-[connection signal="input_event" from="Character/ClickRegion" to="." method="on_click"]
+[node name="MarginRight" type="Control" parent="Background/Dialogue/Control/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(64, 0)
+layout_mode = 2
+
+[node name="LeaveDialogueButton" type="TextureButton" parent="Background"]
+texture_filter = 1
+offset_right = 16.0
+offset_bottom = 16.0
+scale = Vector2(4, 4)
+texture_normal = ExtResource("2_ffb15")
