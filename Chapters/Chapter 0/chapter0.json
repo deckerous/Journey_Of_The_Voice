@@ -1,0 +1,31 @@
+[
+  [
+    {
+      "id": "Start",
+      "text": "*Ring*   *Ring*   Looks like my friend Guide is calling me!"
+    },
+    {
+      "character": "Guide",
+      "text": "We are hosting open mic nights for the record lable scout Boss. I know that it is your dream to form a band and share your art with the world, so I signed you up!"
+    },
+    {
+      "character": "You",
+      "text": "WHAT?! I can’t do that! You know that I will just freeze up and choke…"
+    },
+    {
+      "character": "Guide",
+      "text": "Relax, I know that you struggle with social anxiety. There are a few folks that have been performing the last few weeks that you may be able to learn from."
+    },
+    {
+      "character": "You",
+      "text": "…I don’t really have a choice do I?"
+    },
+    {
+      "character": "Guide",
+      "text": "Nope. Come to the bar tomorrow, there is someone you have to meet…"
+    },
+    {
+      "function": "end_dialogue"
+    }
+  ]
+]
