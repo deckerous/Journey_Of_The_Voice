@@ -14,8 +14,16 @@ shape = SubResource("RectangleShape2D_ts12m")
 [node name="Guide" parent="Character" index="1" instance=ExtResource("2_cgtjj")]
 z_index = 2
 
+[node name="DialogueClickArea" parent="." index="1"]
+visible = true
+
 [node name="ColorRect" parent="Background" index="0"]
 visible = true
 color = Color(0.571002, 0.36182, 0.249341, 1)
+
+[node name="DialogueChoices" parent="Background/Dialogue/Control" index="2"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_right = 0.5
 
 [editable path="Character/Guide"]

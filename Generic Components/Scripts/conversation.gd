@@ -8,8 +8,13 @@ extends Node2D
 @onready var character_click_area: Area2D = $Character/CharacterClickArea
 @onready var character_collision_shape_2d: CollisionShape2D = $Character/CharacterClickArea/CharacterCollisionShape2D
 @onready var background: CanvasLayer = $Background
-@onready var name_label: Label = $Background/Dialogue/Control/VBoxContainer/NameLabel
-@onready var dialogue_label: RichTextLabel = $Background/Dialogue/Control/VBoxContainer/HBoxContainer/DialogueLabel
+
+@onready var character_dialogue: VBoxContainer = $Background/Dialogue/Control/CharacterDialogue
+@onready var name_label: Label = $Background/Dialogue/Control/CharacterDialogue/NameLabel
+@onready var dialogue_label: RichTextLabel = $Background/Dialogue/Control/CharacterDialogue/HBoxContainer/DialogueLabel
+
+@onready var dialogue_choices: VBoxContainer = $Background/Dialogue/Control/DialogueChoices
+
 @onready var dialogue_click_area: Area2D = $DialogueClickArea
 @onready var dialogue_collision_shape_2d: CollisionShape2D = $DialogueClickArea/DialogueCollisionShape2D
 @onready var leave_dialogue_button: TextureButton = $Background/LeaveDialogueButton
@@ -21,6 +26,8 @@ extends Node2D
 @onready var in_dialogue = false
 @onready var ended_dialogue = false
 @onready var dialogue_index = 1
+
+@onready var dialogue_choice_button = preload("res://UI/Scenes/dialogue_choice_button.tscn")
 
 # Holds dialogue text and other attributes accessed via keys
 var dialogue_dictionary
@@ -39,13 +46,13 @@ func _ready():
 	# When loaded in to the chapter, hide the background and collision for continuing dialogue 
 	background.visible = false
 	dialogue_collision_shape_2d.disabled = true
+	dialogue_choices.visible = false
 
 func _process(delta: float) -> void:
 	if dialogue_label.visible_ratio == 1.0:
 		start_displaying = false
 	if start_displaying:
 		dialogue_label.visible_characters += 1
-		print(dialogue_label.visible_characters)
 
 # For when outside of conversation and you want to intiate the conversation
 # by clicking on the character
@@ -83,16 +90,53 @@ func load_dialogue():
 		display_characters()
 
 func handle_dialogue():
-	if dialogue_dictionary["dialogue"][dialogue_index].has("function") and dialogue_dictionary["dialogue"][dialogue_index]["function"] == "end_dialogue":
-		end_dialogue()
+	character_dialogue.visible = true
+	dialogue_choices.visible = false
+	
+	# Run any functions that the text has
+	if dialogue_dictionary["dialogue"][dialogue_index].has("function"):
+		if dialogue_dictionary["dialogue"][dialogue_index]["function"] == "end_dialogue":
+			end_dialogue()
+		if dialogue_dictionary["dialogue"][dialogue_index]["function"] == "branch_dialogue":
+			
+			# Provide error message and end dialogue if there aren't options labeled for the dialogue branch
+			if !dialogue_dictionary["dialogue"][dialogue_index].has("options"):
+				dialogue_label.text = "No options? Make sure the .json file has an options string array field that corresponds to a dialogue id."
+				end_dialogue()
+			# Continue to dialogue branching
+			branch_dialogue(dialogue_dictionary["dialogue"][dialogue_index]["options"])
 	else:
 		dialogue_label.text = dialogue_dictionary["dialogue"][dialogue_index]["text"]
+		print(dialogue_dictionary["dialogue"][dialogue_index]["text"])
 		display_characters()
 		dialogue_index += 1
 
 func end_dialogue():
 	ended_dialogue = true
 	dialogue_collision_shape_2d.disabled = true
+
+func branch_dialogue(options: Array):
+	# instantiate the number of buttons to the number of options the text option has, 
+	# and have them return an id based on the text
+	character_dialogue.visible = false
+	dialogue_choices.visible = true
+	dialogue_collision_shape_2d.disabled = true
+	
+	for option in options:
+		var choice = dialogue_choice_button.instantiate()
+		choice.text = option
+		choice.pressed.connect(change_dialogue_index.bind(option))
+		dialogue_choices.add_child(choice)
+
+func change_dialogue_index(option: String):
+	for i in range(len(dialogue_dictionary["dialogue"])):
+		if dialogue_dictionary["dialogue"][i].has("id") and dialogue_dictionary["dialogue"][i]["id"] == option:
+			dialogue_index = i
+			for child in dialogue_choices.get_children():
+				child.queue_free()
+			dialogue_collision_shape_2d.disabled = false
+			handle_dialogue()
+			return
 
 func display_characters():
 	dialogue_label.visible_characters = 0

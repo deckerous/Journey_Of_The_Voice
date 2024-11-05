@@ -31,6 +31,7 @@ monitorable = false
 [node name="CharacterCollisionShape2D" type="CollisionShape2D" parent="Character/CharacterClickArea"]
 
 [node name="DialogueClickArea" type="Area2D" parent="."]
+visible = false
 position = Vector2(16, 552)
 monitorable = false
 
@@ -77,7 +78,7 @@ grow_vertical = 0
 size_flags_vertical = 10
 texture = SubResource("GradientTexture2D_5yje8")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Background/Dialogue/Control"]
+[node name="CharacterDialogue" type="VBoxContainer" parent="Background/Dialogue/Control"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -85,7 +86,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="NameLabel" type="Label" parent="Background/Dialogue/Control/VBoxContainer"]
+[node name="NameLabel" type="Label" parent="Background/Dialogue/Control/CharacterDialogue"]
 custom_minimum_size = Vector2(128, 64)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -94,14 +95,14 @@ label_settings = SubResource("LabelSettings_bvkm6")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Background/Dialogue/Control/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Background/Dialogue/Control/CharacterDialogue"]
 layout_mode = 2
 
-[node name="MarginLeft" type="Control" parent="Background/Dialogue/Control/VBoxContainer/HBoxContainer"]
+[node name="MarginLeft" type="Control" parent="Background/Dialogue/Control/CharacterDialogue/HBoxContainer"]
 custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
 
-[node name="DialogueLabel" type="RichTextLabel" parent="Background/Dialogue/Control/VBoxContainer/HBoxContainer"]
+[node name="DialogueLabel" type="RichTextLabel" parent="Background/Dialogue/Control/CharacterDialogue/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/normal_font_size = 30
@@ -109,9 +110,22 @@ bbcode_enabled = true
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent iaculis consectetur lectus, et vulputate eros gravida vel. Suspendisse vitae auctor turpis, ut convallis justo."
 fit_content = true
 
-[node name="MarginRight" type="Control" parent="Background/Dialogue/Control/VBoxContainer/HBoxContainer"]
+[node name="MarginRight" type="Control" parent="Background/Dialogue/Control/CharacterDialogue/HBoxContainer"]
 custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
+
+[node name="DialogueChoices" type="VBoxContainer" parent="Background/Dialogue/Control"]
+visible = false
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -34.0
+offset_bottom = 34.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
 
 [node name="LeaveDialogueButton" type="TextureButton" parent="Background"]
 texture_filter = 1
