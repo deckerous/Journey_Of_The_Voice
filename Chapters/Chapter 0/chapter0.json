@@ -22,7 +22,11 @@
     },
     {
       "character": "Guide",
-      "text": "Nope. Come to the bar tomorrow, there is someone you have to meet…"
+      "text": "Nope. Come to the bar, there is someone you have to meet… *click*" 
+    },
+    {
+      "character":"You",
+      "text": "Time to stop at Caffeine Central Coffee and get a quad-shot, 5-pump caramel redeye and chase my dream! Or fail miserably, embarrass myself and (Guide), never use my voice again, and live the rest of my life as a rock…."
     },
     {
       "function": "end_dialogue"
