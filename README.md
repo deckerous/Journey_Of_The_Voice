@@ -1,4 +1,9 @@
 # Journey_Of_The_Voice
+
+**User Manual:**
+- Located in the itch.io page and in-game.
+- https://wearethem.itch.io/journey-of-the-voice
+
  **Source Code Access:**
  - No special resources excluded from the repo, just clone repo onto your machine.
 
