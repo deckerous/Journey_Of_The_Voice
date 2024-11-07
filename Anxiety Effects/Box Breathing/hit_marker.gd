@@ -3,10 +3,12 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	# Hide until button down
 	visible = false
 	$"../Button".buttonDown.connect(_on_buttonDown)
 	$"../Button".buttonReleased.connect(_on_buttonRelease)
 
+# Uses two arcs to create a hollow circle instead of a sprite for maximum pixels
 func _draw() -> void:
 	var point1 = Vector2(0, -14)
 	var point2 = Vector2(0, 14)
@@ -18,11 +20,13 @@ func _draw() -> void:
 	draw_arc(Vector2(0, 0), 28, angle1, angle2, 100, Color.AQUA, 4)
 	draw_arc(Vector2(0, 0), 28, angle1, angle2 - TAU, 100, Color.AQUA, 4)
 	
+# When button held down, start animation & make self visible
 func _on_buttonDown() -> void:
 	$"../RichTextLabel".text = "breathing intensifies"
 	visible = true
 	$"./AnimationPlayer".queue("scale_down")
 	
+# When button released, check for success state & make self insivible
 func _on_buttonRelease() -> void:
 	if abs(scale.x - 1.0) < 0.3:
 		# success state
@@ -30,5 +34,5 @@ func _on_buttonRelease() -> void:
 	else:
 		# failure state
 		$"../RichTextLabel".text = "Failure"
-	$"./AnimationPlayer".stop()
-	$"./AnimationPlayer".queue("RESET")
+	$"./AnimationPlayer".play("disappear")
+	
