@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://t48egpi5x8r1"]
+
+[ext_resource type="Script" path="res://UI/Scripts/dialogue_choice_button.gd" id="1_plua4"]
+
+[node name="DialogueChoiceButton" type="Button"]
+custom_minimum_size = Vector2(128, 40)
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_font_sizes/font_size = 20
+text = "meow"
+script = ExtResource("1_plua4")
