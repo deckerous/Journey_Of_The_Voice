@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cpp2n27xhy763"]
 
 [ext_resource type="Theme" uid="uid://v3tjxnq7o5ny" path="res://Themes/notebook_text.tres" id="1_3bxdf"]
-[ext_resource type="AudioStream" uid="uid://4h1ubwyy34h7" path="res://Audio/BeepTheme.mp3" id="2_be06l"]
+[ext_resource type="AudioStream" uid="uid://c8v0ajonr7uwj" path="res://Audio/songs/beep/beep-theme.wav" id="2_aowep"]
 
 [sub_resource type="GDScript" id="GDScript_8jfi3"]
 script/source = "extends Button
@@ -100,7 +100,6 @@ flat = true
 script = SubResource("GDScript_8jfi3")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_be06l")
+stream = ExtResource("2_aowep")
 autoplay = true
 attenuation = 1e-05
-parameters/looping = true

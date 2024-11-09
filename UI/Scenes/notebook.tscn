@@ -1,5 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://cpxo23gojvngq"]
 
+
 [ext_resource type="Texture2D" uid="uid://cf1emtyuklpxp" path="res://Images/UI/notebook_open.png" id="1_kjn6p"]
 [ext_resource type="Script" path="res://UI/Scenes/notebook.gd" id="1_pjd0k"]
 [ext_resource type="Theme" uid="uid://v3tjxnq7o5ny" path="res://Themes/notebook_text.tres" id="2_fwp36"]
@@ -303,9 +304,8 @@ offset_bottom = 284.0
 texture_normal = ExtResource("5_xcnod")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_jwger")
+stream = ExtResource("6_u0iqe")
 autoplay = true
-parameters/looping = true
 
 [connection signal="drag_ended" from="NotebookImgCont/Notebook/Page2/LeftPageCont/HSlider_vol" to="." method="_on_h_slider_vol_drag_ended"]
 [connection signal="pressed" from="ButtonR" to="." method="_on_button_r_pressed"]
