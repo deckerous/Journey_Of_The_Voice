@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="JourneyOfTheVoice"
-run/main_scene="res://Anxiety Effects/Box Breathing/box_breathing.tscn"
+run/main_scene="res://Chapters/Chapter 1/c_1_guide_convo.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 

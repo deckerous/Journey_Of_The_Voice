@@ -1,0 +1,59 @@
+{
+	"dialogue": [
+		{
+			"id": "Start",
+			"character": "Guy D.",
+			"text": "Hey there, trying to implement the dialogue using .json files?"
+		},
+		{
+			"text": "Good luck. But it shouldn't be too [wave amp=50.0 fequency=100.0]difficult[/wave]. There are only a few simple steps to set it up."
+		},
+		{
+			"text": "1. Populate .json file with dialogue and functions using that fancy export plugin."
+		},
+		{
+			"text": "2. Ensure whatever node is reading the file has access to it and can read the data in it."
+		},
+		{
+			"text": "3. Send the dialogue to be displayed in a label."
+		},
+		{
+			"text": "4. Update the dialogue with click input."
+		},
+		{
+			"text": "5. You're as good as done baby!",
+		},
+		{
+			"text": "Are you picking up what I'm putting down so far?",
+			"function": "branch_dialogue",
+			"options": [
+				"Yes",
+				"No"
+			]
+		},
+		{
+			"id": "Yes",
+			"text": "That's what I'm talking about!",
+		},
+		{
+			"text": "Lets have a [wave amp=50.0 fequency=100.0]celebration[/wave].",
+		},
+		{
+			"character": "You",
+			"text": "[wave amp=50.0 fequency=100.0]Yipeeeeeeeeeeeeeeeeee[wave]"
+		},
+		{
+			"function": "end_dialogue"
+		},
+		{
+			"id": "No",
+			"text": "Oof, ok let me go over this again.",
+		},
+		{
+			"text": "Don't worry about getting it all right when you first hear about how to do it.",
+		},
+		{
+			"function": "end_dialogue"
+		}
+	]
+}

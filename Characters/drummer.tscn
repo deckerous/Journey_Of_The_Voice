@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://pie5vurh8eoo"]
+
+[ext_resource type="PackedScene" uid="uid://cfcuodb5inj3o" path="res://Generic Components/Scenes/character.tscn" id="1_00oqr"]
+[ext_resource type="Texture2D" uid="uid://d1wbobfmpetck" path="res://icon.svg" id="2_n3xnl"]
+
+[node name="Drummer" instance=ExtResource("1_00oqr")]
+
+[node name="Sprite2D" parent="." index="0"]
+modulate = Color(1, 0.494118, 1, 1)
+texture = ExtResource("2_n3xnl")
