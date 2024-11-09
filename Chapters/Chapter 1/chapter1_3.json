@@ -1,0 +1,39 @@
+[
+  [
+    {
+      "id": "start"
+    },
+    {
+      "character": "Guide",
+      "text": "Hey, are you alright? You totally shut down during your conversation"
+    },
+    {
+      "character": "You",
+      "text": "I know…I’m so stupid, I should just go…this was a terrible idea, I made you look like a fool…I’m so sorry."
+    },
+    {
+      "character": "Guide",
+      "text": "Whoa, whoa, whoa, it’s okay! Didn’t you hear what Boss had to say? They can make your dreams come true!"
+    },
+    {
+      "character": "You",
+      "text": "…I just don’t know what to do. I always freeze up when I try to talk to anyone…How am I even going to sing!…Wait…Did I say that I already have a band?"
+    },
+    {
+      "character": "Guide",
+      "text": "Yeah, you kind of did…."
+    },
+    {
+      "character": "You",
+      "text": "I'm cooked..."
+    },
+    {
+      "character": "Guide",
+      "text": "Let’s just focus on one thing at a time…firstly, no more crazy caffeinated, overly sweetened coffee. Try this instead… *Gives Player Herbal Tea*",
+      "function": "aquire_help"
+    },
+    {
+      "function": "end_dialogue"
+    }
+  ]
+]
