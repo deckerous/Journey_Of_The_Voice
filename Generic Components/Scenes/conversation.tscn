@@ -1,7 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://cee0f16o8788r"]
+[gd_scene load_steps=9 format=3 uid="uid://cee0f16o8788r"]
 
 [ext_resource type="Script" path="res://Generic Components/Scripts/conversation.gd" id="1_i3n2i"]
+[ext_resource type="Script" path="res://Generic Components/Scripts/conversation_characters.gd" id="2_bcwbx"]
 [ext_resource type="Texture2D" uid="uid://bkdpm6yak24pj" path="res://UI/Assets/back_button.png" id="2_ffb15"]
+[ext_resource type="Script" path="res://Generic Components/Scenes/conversation_ui.gd" id="3_k11cb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uw144"]
 size = Vector2(1152, 64.8)
@@ -23,12 +25,21 @@ shadow_offset = Vector2(2, 2)
 script = ExtResource("1_i3n2i")
 dialogue_file = "res://Generic Components/Dialogue/practice.json"
 
-[node name="Character" type="Node2D" parent="."]
+[node name="ConversationCharacters" type="Node2D" parent="."]
+script = ExtResource("2_bcwbx")
 
-[node name="CharacterClickArea" type="Area2D" parent="Character"]
+[node name="StartingCharacter" type="Node2D" parent="ConversationCharacters"]
+
+[node name="CharacterClickArea" type="Area2D" parent="ConversationCharacters/StartingCharacter"]
 monitorable = false
 
-[node name="CharacterCollisionShape2D" type="CollisionShape2D" parent="Character/CharacterClickArea"]
+[node name="CharacterCollisionShape2D" type="CollisionShape2D" parent="ConversationCharacters/StartingCharacter/CharacterClickArea"]
+
+[node name="StartingCharacterAnimationPlayer" type="AnimationPlayer" parent="ConversationCharacters/StartingCharacter"]
+
+[node name="OtherCharacter" type="Node2D" parent="ConversationCharacters"]
+
+[node name="OtherCharacterAnimationPlayer" type="AnimationPlayer" parent="ConversationCharacters/OtherCharacter"]
 
 [node name="DialogueClickArea" type="Area2D" parent="."]
 visible = false
@@ -40,10 +51,11 @@ position = Vector2(560, -228)
 scale = Vector2(1, 10)
 shape = SubResource("RectangleShape2D_uw144")
 
-[node name="Background" type="CanvasLayer" parent="."]
+[node name="ConversationUI" type="CanvasLayer" parent="."]
 layer = -1
+script = ExtResource("3_k11cb")
 
-[node name="ColorRect" type="ColorRect" parent="Background"]
+[node name="ColorRect" type="ColorRect" parent="ConversationUI"]
 visible = false
 anchors_preset = 15
 anchor_right = 1.0
@@ -52,7 +64,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Dialogue" type="VBoxContainer" parent="Background"]
+[node name="Dialogue" type="VBoxContainer" parent="ConversationUI"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -61,12 +73,12 @@ grow_vertical = 2
 size_flags_vertical = 8
 alignment = 2
 
-[node name="Control" type="Control" parent="Background/Dialogue"]
+[node name="Control" type="Control" parent="ConversationUI/Dialogue"]
 custom_minimum_size = Vector2(0, 192)
 layout_mode = 2
 size_flags_vertical = 10
 
-[node name="Gradient" type="TextureRect" parent="Background/Dialogue/Control"]
+[node name="Gradient" type="TextureRect" parent="ConversationUI/Dialogue/Control"]
 layout_mode = 1
 anchors_preset = 12
 anchor_top = 1.0
@@ -78,7 +90,7 @@ grow_vertical = 0
 size_flags_vertical = 10
 texture = SubResource("GradientTexture2D_5yje8")
 
-[node name="CharacterDialogue" type="VBoxContainer" parent="Background/Dialogue/Control"]
+[node name="CharacterDialogue" type="VBoxContainer" parent="ConversationUI/Dialogue/Control"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -86,7 +98,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="NameLabel" type="Label" parent="Background/Dialogue/Control/CharacterDialogue"]
+[node name="NameLabel" type="Label" parent="ConversationUI/Dialogue/Control/CharacterDialogue"]
 custom_minimum_size = Vector2(128, 64)
 layout_mode = 2
 size_flags_horizontal = 0
@@ -95,14 +107,14 @@ label_settings = SubResource("LabelSettings_bvkm6")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Background/Dialogue/Control/CharacterDialogue"]
+[node name="HBoxContainer" type="HBoxContainer" parent="ConversationUI/Dialogue/Control/CharacterDialogue"]
 layout_mode = 2
 
-[node name="MarginLeft" type="Control" parent="Background/Dialogue/Control/CharacterDialogue/HBoxContainer"]
+[node name="MarginLeft" type="Control" parent="ConversationUI/Dialogue/Control/CharacterDialogue/HBoxContainer"]
 custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
 
-[node name="DialogueLabel" type="RichTextLabel" parent="Background/Dialogue/Control/CharacterDialogue/HBoxContainer"]
+[node name="DialogueLabel" type="RichTextLabel" parent="ConversationUI/Dialogue/Control/CharacterDialogue/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_font_sizes/normal_font_size = 30
@@ -110,11 +122,11 @@ bbcode_enabled = true
 text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent iaculis consectetur lectus, et vulputate eros gravida vel. Suspendisse vitae auctor turpis, ut convallis justo."
 fit_content = true
 
-[node name="MarginRight" type="Control" parent="Background/Dialogue/Control/CharacterDialogue/HBoxContainer"]
+[node name="MarginRight" type="Control" parent="ConversationUI/Dialogue/Control/CharacterDialogue/HBoxContainer"]
 custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
 
-[node name="DialogueChoices" type="VBoxContainer" parent="Background/Dialogue/Control"]
+[node name="DialogueChoices" type="VBoxContainer" parent="ConversationUI/Dialogue/Control"]
 visible = false
 layout_mode = 1
 anchors_preset = 14
@@ -127,7 +139,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 16
 
-[node name="LeaveDialogueButton" type="TextureButton" parent="Background"]
+[node name="LeaveDialogueButton" type="TextureButton" parent="ConversationUI"]
 texture_filter = 1
 offset_right = 16.0
 offset_bottom = 16.0

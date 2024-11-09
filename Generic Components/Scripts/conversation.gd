@@ -1,29 +1,30 @@
 class_name Conversation
 extends Node2D
 
+const SAVE_PATH = "user://game_stats.cfg"
+const TEST_SAVE_PATH = "res://game_stats.cfg"
+var save_path = TEST_SAVE_PATH
+
+# .json file that the dialogue for the conversation will be read from
 @export_file("*json") var dialogue_file: String
+# Determines whether
 @export var wants_to_talk: bool = true
+# Controls if the starting character is alone when staring the convo,
+# when turned false the other character in the convo appears
+@export var starting_character_alone: bool = true
+# Determines whether the starting character is on the right or left side of the screen
+@export var starting_convo_character_right: bool = true
 
-@onready var character: Node2D = $Character
-@onready var character_click_area: Area2D = $Character/CharacterClickArea
-@onready var character_collision_shape_2d: CollisionShape2D = $Character/CharacterClickArea/CharacterCollisionShape2D
-@onready var background: CanvasLayer = $Background
+# Reference to parent node for handling character positioning and animation
+@onready var conversation_characters: Node2D = $ConversationCharacters
+@onready var character_collision_shape_2d: CollisionShape2D = $ConversationCharacters/StartingCharacter/CharacterClickArea/CharacterCollisionShape2D
 
-@onready var character_dialogue: VBoxContainer = $Background/Dialogue/Control/CharacterDialogue
-@onready var name_label: Label = $Background/Dialogue/Control/CharacterDialogue/NameLabel
-@onready var dialogue_label: RichTextLabel = $Background/Dialogue/Control/CharacterDialogue/HBoxContainer/DialogueLabel
-
-@onready var dialogue_choices: VBoxContainer = $Background/Dialogue/Control/DialogueChoices
+# Dialogue UI node references
+@onready var conversation_ui: CanvasLayer = $ConversationUI
 
 @onready var dialogue_click_area: Area2D = $DialogueClickArea
 @onready var dialogue_collision_shape_2d: CollisionShape2D = $DialogueClickArea/DialogueCollisionShape2D
-@onready var leave_dialogue_button: TextureButton = $Background/LeaveDialogueButton
 
-@onready var screen_width = get_viewport_rect().size.x
-@onready var screen_height = get_viewport_rect().size.y
-@onready var position_within_area: Vector2 = character.global_position
-@onready var clicked = false
-@onready var in_dialogue = false
 @onready var ended_dialogue = false
 @onready var dialogue_index = 1
 
@@ -31,52 +32,28 @@ extends Node2D
 
 # Holds dialogue text and other attributes accessed via keys
 var dialogue_dictionary
-
+# controls dialogue appearing character by character
 var start_displaying = false
 
 func _ready():
-	# Connect the signals sent out on click input
-	character_click_area.input_event.connect(on_character_click)
+	# Connect signal for handling dialogue with click
 	dialogue_click_area.input_event.connect(on_dialogue_click)
 	
-	# Disable collision when character does not want to talk
-	if !wants_to_talk:
-		character_collision_shape_2d.disabled = true
+	# Show dialogue_ui when starting conversation
+	conversation_characters.started_conversation.connect(conversation_ui.show)
+	conversation_characters.started_conversation.connect(load_dialogue)
 	
-	# When loaded in to the chapter, hide the background and collision for continuing dialogue 
-	background.visible = false
+	conversation_ui.disable_dialogue_input.connect(disable_dialogue_click_collision)
+	conversation_ui.enable_dialogue_input.connect(enable_dialogue_click_collision)
+	
+	# When loaded in to the chapter disable collision for continuing dialogue 
 	dialogue_collision_shape_2d.disabled = true
-	dialogue_choices.visible = false
-
-func _process(delta: float) -> void:
-	if dialogue_label.visible_ratio == 1.0:
-		start_displaying = false
-	if start_displaying:
-		dialogue_label.visible_characters += 1
-
-# For when outside of conversation and you want to intiate the conversation
-# by clicking on the character
-func on_character_click(viewport: Node, event: InputEvent, shape_idx: int):
-	if event is InputEventMouseButton:
-		if !in_dialogue:
-			if event.is_action_pressed("click"):
-				in_dialogue = true
-				if !clicked:
-					character.global_position = Vector2(screen_width / 2, screen_height / 2)
-					clicked = true
-					background.visible = true
-					load_dialogue()
-					dialogue_collision_shape_2d.disabled = false
-				else:
-					character.global_position = position_within_area
-					clicked = false
-					background.visible = false
 
 # For advancing dialogue when in a conversation
 func on_dialogue_click(viewport: Node, event: InputEvent, shape_idx: int):
 	if event is InputEventMouseButton:
 		if event.is_action_pressed("click"):
-			handle_dialogue()
+			conversation_ui.handle_dialogue()
 
 # Initialize dialogue dictionary with provided .json file
 func load_dialogue():
@@ -85,59 +62,18 @@ func load_dialogue():
 		var test_json_conv = JSON.new()
 		test_json_conv.parse(file.get_as_text())
 		dialogue_dictionary = test_json_conv.get_data()
-		name_label.text = dialogue_dictionary["dialogue"][0]["character"]
-		dialogue_label.text = dialogue_dictionary["dialogue"][0]["text"]
-		display_characters()
-
-func handle_dialogue():
-	character_dialogue.visible = true
-	dialogue_choices.visible = false
-	
-	# Run any functions that the text has
-	if dialogue_dictionary["dialogue"][dialogue_index].has("function"):
-		if dialogue_dictionary["dialogue"][dialogue_index]["function"] == "end_dialogue":
-			end_dialogue()
-		if dialogue_dictionary["dialogue"][dialogue_index]["function"] == "branch_dialogue":
-			
-			# Provide error message and end dialogue if there aren't options labeled for the dialogue branch
-			if !dialogue_dictionary["dialogue"][dialogue_index].has("options"):
-				dialogue_label.text = "No options? Make sure the .json file has an options string array field that corresponds to a dialogue id."
-				end_dialogue()
-			# Continue to dialogue branching
-			branch_dialogue(dialogue_dictionary["dialogue"][dialogue_index]["options"])
-	else:
-		dialogue_label.text = dialogue_dictionary["dialogue"][dialogue_index]["text"]
-		print(dialogue_dictionary["dialogue"][dialogue_index]["text"])
-		display_characters()
-		dialogue_index += 1
+		conversation_ui.start_dialogue()
+		dialogue_collision_shape_2d.disabled = false
 
 func end_dialogue():
 	ended_dialogue = true
+	disable_dialogue_click_collision()
+
+func toggle_dialogue_click_collision():
+	dialogue_collision_shape_2d.disabled = !dialogue_collision_shape_2d.disabled
+
+func enable_dialogue_click_collision():
+	dialogue_collision_shape_2d.disabled = false
+
+func disable_dialogue_click_collision():
 	dialogue_collision_shape_2d.disabled = true
-
-func branch_dialogue(options: Array):
-	# instantiate the number of buttons to the number of options the text option has, 
-	# and have them return an id based on the text
-	character_dialogue.visible = false
-	dialogue_choices.visible = true
-	dialogue_collision_shape_2d.disabled = true
-	
-	for option in options:
-		var choice = dialogue_choice_button.instantiate()
-		choice.text = option
-		choice.pressed.connect(change_dialogue_index.bind(option))
-		dialogue_choices.add_child(choice)
-
-func change_dialogue_index(option: String):
-	for i in range(len(dialogue_dictionary["dialogue"])):
-		if dialogue_dictionary["dialogue"][i].has("id") and dialogue_dictionary["dialogue"][i]["id"] == option:
-			dialogue_index = i
-			for child in dialogue_choices.get_children():
-				child.queue_free()
-			dialogue_collision_shape_2d.disabled = false
-			handle_dialogue()
-			return
-
-func display_characters():
-	dialogue_label.visible_characters = 0
-	start_displaying = true

@@ -9,7 +9,6 @@
 			"text": "Good luck. But it shouldn't be too [wave amp=50.0 fequency=100.0]difficult[/wave]. There are only a few simple steps to set it up."
 		},
 		{
-			"id": "Restart",
 			"text": "1. Populate .json file with dialogue and functions using that fancy export plugin."
 		},
 		{
@@ -38,6 +37,10 @@
 		},
 		{
 			"text": "Lets have a [wave amp=50.0 fequency=100.0]celebration[/wave].",
+		},
+		{
+			"character": "You",
+			"text": "[wave amp=50.0 fequency=100.0]Yipeeeeeeeeeeeeeeeeee[wave]"
 		},
 		{
 			"function": "end_dialogue"
