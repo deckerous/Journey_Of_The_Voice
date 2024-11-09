@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://dod7hve0bw2ia"]
+
+[ext_resource type="Script" path="res://Generic Components/Scenes/main_menu_button.gd" id="1_py6mp"]
+[ext_resource type="AudioStream" uid="uid://cbg3whxtej08s" path="res://Audio/sound-effects/shick-sound.wav" id="2_8aw20"]
+[ext_resource type="AudioStream" uid="uid://drfs3ohq8b5pp" path="res://Audio/sound-effects/shika-sha-sound.wav" id="3_5r0h1"]
+
+[node name="MainMenuButton" type="Node2D"]
+script = ExtResource("1_py6mp")
+
+[node name="HoverSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_8aw20")
+
+[node name="PressedSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_5r0h1")
