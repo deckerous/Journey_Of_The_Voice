@@ -1,0 +1,51 @@
+[
+  [
+    {
+      "id": "Start",
+      "text": "You enter into the bar nervously, scanning the room for Guide. The bar is bustling, and the energy of Open Mic night is contagious, if not overwhelming."
+    },
+    {
+      "character": "You",
+      "text": "*This isn't good, look at all these people...I don't belong here. I mean look at that guy with the wooden daggers and irezumi tattoos, if I slip up around him its curtains for me! *"
+    },
+    {
+      "character": "Guide",
+      "text": "Hey! Over here! There’s someone I’ve been wanting you to meet."
+    },
+    {
+      "character": "You",
+      "text": "*...here we go again...*"
+    },
+    {
+      "character": "Guide",
+      "text": "You are looking a lot less...twitchy today."
+    },
+    {
+      "character": "You",
+      "text": "Yeah, that herbal tea you gave me is keeping my heartbeat from being defening."
+    },
+    {
+      "character": "You",
+      "text": "This is quite the crowd today...you realize that you have some...shady looking individuals here today right? I mean, tell me the guy with the wood daggers isn't here for blood!"
+    },
+    {
+      "character": "Guide",
+      "text": "Wood daggers? What are you...OH! You mean the drummer with the sick dragon tattoo? That's Drummer-San! Don't worry, this guy is super chill. He's been through a lot, but you might even learn a thing or two from him!"
+    },
+    {
+      "character": "You",
+      "text": "You are making it sound like thats who you wanted me to meet...."
+    },
+    {
+      "character": "Guide",
+      "text": "Well aren't you observant."
+    },
+    {
+      "character": "Guide",
+      "text": "Oi, Drummer-San! This is my friend I was telling you about. You know, the one trying to start a band!"
+    },
+    {
+      "function": "end_dialogue"
+    }
+  ]
+]
