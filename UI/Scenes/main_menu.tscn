@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cpp2n27xhy763"]
+[gd_scene load_steps=5 format=3 uid="uid://cpp2n27xhy763"]
 
 [ext_resource type="Theme" uid="uid://v3tjxnq7o5ny" path="res://Themes/notebook_text.tres" id="1_3bxdf"]
 [ext_resource type="AudioStream" uid="uid://c8v0ajonr7uwj" path="res://Audio/songs/beep/beep-theme.wav" id="2_aowep"]
+[ext_resource type="PackedScene" uid="uid://buulbpdh08bqu" path="res://UI/Scenes/start_button.tscn" id="2_iqoyb"]
 
 [sub_resource type="GDScript" id="GDScript_8jfi3"]
 script/source = "extends Button
@@ -64,14 +65,9 @@ size_flags_stretch_ratio = 2.04
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Button - Start" type="Button" parent="VBoxContainer/VBoxContainer/CenterContainer - Start"]
+[node name="StartButton" parent="VBoxContainer/VBoxContainer/CenterContainer - Start" instance=ExtResource("2_iqoyb")]
 layout_mode = 2
-theme = ExtResource("1_3bxdf")
-theme_override_colors/font_hover_color = Color(0.186654, 0.556213, 0.409357, 1)
-text = "Start
-"
-flat = true
-script = SubResource("GDScript_8jfi3")
+text = "Start"
 
 [node name="CenterContainer - Load" type="CenterContainer" parent="VBoxContainer/VBoxContainer"]
 layout_mode = 2
