@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2tbsk520xw56"]
+
+[ext_resource type="PackedScene" uid="uid://hsxry7hy2u46" path="res://UI/Scenes/main_menu_button.tscn" id="1_q68ns"]
+
+[node name="SettingsButton" instance=ExtResource("1_q68ns")]

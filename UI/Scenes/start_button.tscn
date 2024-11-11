@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://buulbpdh08bqu"]
+
+[ext_resource type="PackedScene" uid="uid://hsxry7hy2u46" path="res://UI/Scenes/main_menu_button.tscn" id="1_yy6kj"]
+[ext_resource type="PackedScene" uid="uid://cee0f16o8788r" path="res://Generic Components/Scenes/conversation.tscn" id="3_xos2l"]
+
+[node name="StartButton" instance=ExtResource("1_yy6kj")]
+scene = ExtResource("3_xos2l")

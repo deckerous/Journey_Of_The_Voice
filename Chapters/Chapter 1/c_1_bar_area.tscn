@@ -8,8 +8,4 @@
 [node name="C1GuideConvo" parent="Conversations" index="0" instance=ExtResource("2_jye1t")]
 position = Vector2(835, 332)
 
-[node name="Background" parent="Conversations/C1GuideConvo" index="1"]
-visible = false
-
 [editable path="Conversations/C1GuideConvo"]
-[editable path="Conversations/C1GuideConvo/Character/Guide"]
