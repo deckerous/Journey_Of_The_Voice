@@ -1,21 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://cpp2n27xhy763"]
+[gd_scene load_steps=9 format=3 uid="uid://cpp2n27xhy763"]
 
 [ext_resource type="Theme" uid="uid://v3tjxnq7o5ny" path="res://Themes/notebook_text.tres" id="1_3bxdf"]
 [ext_resource type="AudioStream" uid="uid://c8v0ajonr7uwj" path="res://Audio/songs/beep/beep-theme.wav" id="2_aowep"]
-
-[sub_resource type="GDScript" id="GDScript_8jfi3"]
-script/source = "extends Button
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-"
+[ext_resource type="PackedScene" uid="uid://buulbpdh08bqu" path="res://UI/Scenes/start_button.tscn" id="2_iqoyb"]
+[ext_resource type="Script" path="res://UI/Scenes/v_box_container.gd" id="2_q0xt6"]
+[ext_resource type="PackedScene" uid="uid://w6k5cj8hiag4" path="res://UI/Scenes/load_button.tscn" id="3_c1jdp"]
+[ext_resource type="PackedScene" uid="uid://c1u7usj8dgwwe" path="res://Chapters/Chapter 1/c_1_guide_convo.tscn" id="4_8w4q2"]
+[ext_resource type="PackedScene" uid="uid://c2tbsk520xw56" path="res://UI/Scenes/settings_button.tscn" id="4_inc1k"]
+[ext_resource type="PackedScene" uid="uid://bws8j61yk4oht" path="res://UI/Scenes/quit_button.tscn" id="6_ggr35"]
 
 [node name="Main Menu" type="Node2D"]
 
@@ -59,47 +51,53 @@ drag_and_drop_selection_enabled = false
 layout_mode = 2
 size_flags_vertical = 2
 size_flags_stretch_ratio = 2.04
+script = ExtResource("2_q0xt6")
 
 [node name="CenterContainer - Start" type="CenterContainer" parent="VBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Button - Start" type="Button" parent="VBoxContainer/VBoxContainer/CenterContainer - Start"]
+[node name="StartButton" parent="VBoxContainer/VBoxContainer/CenterContainer - Start" instance=ExtResource("2_iqoyb")]
 layout_mode = 2
-theme = ExtResource("1_3bxdf")
-theme_override_colors/font_hover_color = Color(0.186654, 0.556213, 0.409357, 1)
-text = "Start
-"
-flat = true
-script = SubResource("GDScript_8jfi3")
+focus_neighbor_left = NodePath("../../CenterContainer - Quit/QuitButton")
+focus_neighbor_top = NodePath("../../CenterContainer - Quit/QuitButton")
+focus_neighbor_right = NodePath("../../CenterContainer - Load/LoadButton")
+text = "Start"
+scene = ExtResource("4_8w4q2")
 
 [node name="CenterContainer - Load" type="CenterContainer" parent="VBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Button - Load" type="Button" parent="VBoxContainer/VBoxContainer/CenterContainer - Load"]
+[node name="LoadButton" parent="VBoxContainer/VBoxContainer/CenterContainer - Load" instance=ExtResource("3_c1jdp")]
 layout_mode = 2
-theme = ExtResource("1_3bxdf")
-theme_override_colors/font_hover_color = Color(0.186654, 0.556213, 0.409357, 1)
-text = "Load
-"
-flat = true
-script = SubResource("GDScript_8jfi3")
+focus_neighbor_left = NodePath("../../CenterContainer - Start/StartButton")
+focus_neighbor_right = NodePath("../../CenterContainer - Settings/SettingsButton")
+text = "Load"
 
 [node name="CenterContainer - Settings" type="CenterContainer" parent="VBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Button - Settings" type="Button" parent="VBoxContainer/VBoxContainer/CenterContainer - Settings"]
+[node name="SettingsButton" parent="VBoxContainer/VBoxContainer/CenterContainer - Settings" instance=ExtResource("4_inc1k")]
 layout_mode = 2
-theme = ExtResource("1_3bxdf")
-theme_override_colors/font_hover_color = Color(0.186654, 0.556213, 0.409357, 1)
-text = "Settings
-"
-flat = true
-script = SubResource("GDScript_8jfi3")
+focus_neighbor_left = NodePath("../../CenterContainer - Load/LoadButton")
+focus_neighbor_right = NodePath("../../CenterContainer - Quit/QuitButton")
+text = "Settings"
+
+[node name="CenterContainer - Quit" type="CenterContainer" parent="VBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="QuitButton" parent="VBoxContainer/VBoxContainer/CenterContainer - Quit" instance=ExtResource("6_ggr35")]
+layout_mode = 2
+focus_neighbor_left = NodePath("../../CenterContainer - Settings/SettingsButton")
+focus_neighbor_right = NodePath("../../CenterContainer - Start/StartButton")
+focus_neighbor_bottom = NodePath("../../CenterContainer - Start/StartButton")
+text = "Quit"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_aowep")
 autoplay = true
 attenuation = 1e-05
+
+[connection signal="pressed" from="VBoxContainer/VBoxContainer/CenterContainer - Quit/QuitButton" to="VBoxContainer/VBoxContainer" method="_on_quit_button_pressed"]
