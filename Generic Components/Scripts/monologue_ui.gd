@@ -21,7 +21,7 @@ func _process(delta: float) -> void:
 		dialogue_label.visible_characters += 1
 
 func start_monologue():
-	dialogue_label.text = monologue.monologue_dictionary["monologue"][0]["text"]
+	dialogue_label.text = "[center]" + monologue.monologue_dictionary["monologue"][0]["text"] + "[/center]"
 	display_characters()
 
 func handle_monologue():
@@ -37,7 +37,7 @@ func handle_monologue():
 		# Potentially add anxiety increasing function here for when player has self-doubting thoughts
 		
 	else:
-		dialogue_label.text = monologue.monologue_dictionary["monologue"][dialogue_index]["text"]
+		dialogue_label.text = "[center]" + monologue.monologue_dictionary["monologue"][dialogue_index]["text"] + "[/center]"
 		display_characters()
 		dialogue_index += 1
 
