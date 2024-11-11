@@ -9,6 +9,7 @@ extends Node2D
 # Reference for controlling fade in and fade out
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
+# Reference to nodes that receive click input
 @onready var monologue_click_area: Area2D = $MonologueClickArea
 @onready var monologue_collision_shape_2d: CollisionShape2D = $MonologueClickArea/MonologueCollisionShape2D
 
@@ -18,14 +19,15 @@ var monologue_dictionary
 func _ready() -> void:
 	# Load in dialogue when instantiated
 	load_dialogue()
-	disable_monologue_click_collision()
 	
 	# Connect signal for handling dialogue with click
 	monologue_click_area.input_event.connect(on_monologue_click)
 	
+	# For MonolgueUI to tell Monologue when tot disable/enable click collision
 	monologue_ui.disable_monologue_input.connect(disable_monologue_click_collision)
 	monologue_ui.enable_monologue_input.connect(enable_monologue_click_collision)
 	
+	# When the fade_in animation finsihes playing, start displaying the dialogue.
 	animation_player.animation_finished.connect(display_dialogue)
 	animation_player.play("fade_in")
 
@@ -44,11 +46,15 @@ func load_dialogue():
 		monologue_dictionary = test_json_conv.get_data()
 
 func display_dialogue(anim_name: StringName) -> void:
+	# Connected to signal in animation_player when an animation finishes.
+	# Cnim_name is the animation that is finished.
 	if anim_name == "fade_in":
 		monologue_collision_shape_2d.disabled = false
 		monologue_ui.handle_monologue()
 
 func end_monologue():
+	# When the player exhausts monologue, play fade out and delete from the scene.
+	# Wait for the signal for the animation to be finished first before deleting.
 	disable_monologue_click_collision()
 	animation_player.play("fade_out")
 	await animation_player.animation_finished

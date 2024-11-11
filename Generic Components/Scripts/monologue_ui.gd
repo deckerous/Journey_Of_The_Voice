@@ -25,7 +25,6 @@ func start_monologue():
 	display_characters()
 
 func handle_monologue():
-	print(dialogue_index)
 	# Error handling for if a player clicks too fast
 	if dialogue_index > len(monologue.monologue_dictionary["monologue"]):
 		return
@@ -34,6 +33,9 @@ func handle_monologue():
 	if monologue.monologue_dictionary["monologue"][dialogue_index].has("function"):
 		if monologue.monologue_dictionary["monologue"][dialogue_index]["function"] == "end_monologue":
 			monologue.end_monologue()
+		
+		# Potentially add anxiety increasing function here for when player has self-doubting thoughts
+		
 	else:
 		dialogue_label.text = monologue.monologue_dictionary["monologue"][dialogue_index]["text"]
 		display_characters()

@@ -127,6 +127,7 @@ monitorable = false
 [node name="MonologueCollisionShape2D" type="CollisionShape2D" parent="MonologueClickArea"]
 position = Vector2(576, 324)
 shape = SubResource("RectangleShape2D_ljmr6")
+disabled = true
 
 [node name="MonologueUI" type="CanvasLayer" parent="."]
 layer = -1
@@ -172,6 +173,8 @@ layout_mode = 2
 offset_top = 75.0
 offset_right = 1152.0
 offset_bottom = 117.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_vertical = 6
 
 [node name="MarginLeft" type="Control" parent="MonologueUI/Monologue/Control/MonologueTextContainer"]
