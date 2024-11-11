@@ -1,0 +1,196 @@
+[gd_scene load_steps=10 format=3 uid="uid://cpcee510pqlxr"]
+
+[ext_resource type="Script" path="res://Generic Components/Scripts/monologue.gd" id="1_f4rij"]
+[ext_resource type="Script" path="res://Generic Components/Scripts/monologue_ui.gd" id="2_77838"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ljmr6"]
+size = Vector2(1152, 648)
+
+[sub_resource type="Gradient" id="Gradient_42gpj"]
+offsets = PackedFloat32Array(0.305195, 0.74026)
+colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jwsua"]
+gradient = SubResource("Gradient_42gpj")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[sub_resource type="Animation" id="Animation_jun24"]
+resource_name = "fade_out"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MonologueUI/GreyFilter:color")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.211765, 0.211765, 0.211765, 0.662745), Color(0.211765, 0.211765, 0.211765, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MonologueUI/Monologue/Control/RadialGradient:modulate")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MonologueUI/Monologue/Control/MonologueTextContainer/DialogueLabel:modulate")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.366667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_j8n2j"]
+resource_name = "fade_in"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MonologueUI/GreyFilter:color")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.211765, 0.211765, 0.211765, 0), Color(0.211765, 0.211765, 0.211765, 0.662745)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MonologueUI/Monologue/Control/RadialGradient:modulate")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MonologueUI/Monologue/Control/MonologueTextContainer/DialogueLabel:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_b8r8q"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MonologueUI/Monologue/Control/MonologueTextContainer/DialogueLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_a431b"]
+_data = {
+"RESET": SubResource("Animation_b8r8q"),
+"fade_in": SubResource("Animation_j8n2j"),
+"fade_out": SubResource("Animation_jun24")
+}
+
+[node name="Monologue" type="Node2D"]
+script = ExtResource("1_f4rij")
+monologue_file = "res://Generic Components/Dialogue/mono_test.json"
+
+[node name="MonologueClickArea" type="Area2D" parent="."]
+monitorable = false
+
+[node name="MonologueCollisionShape2D" type="CollisionShape2D" parent="MonologueClickArea"]
+position = Vector2(576, 324)
+shape = SubResource("RectangleShape2D_ljmr6")
+
+[node name="MonologueUI" type="CanvasLayer" parent="."]
+layer = -1
+script = ExtResource("2_77838")
+
+[node name="GreyFilter" type="ColorRect" parent="MonologueUI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.211765, 0.211765, 0.211765, 0.662745)
+
+[node name="Monologue" type="VBoxContainer" parent="MonologueUI"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 8
+alignment = 2
+
+[node name="Control" type="Control" parent="MonologueUI/Monologue"]
+custom_minimum_size = Vector2(0, 192)
+layout_mode = 2
+size_flags_vertical = 10
+
+[node name="RadialGradient" type="TextureRect" parent="MonologueUI/Monologue/Control"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -192.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 10
+texture = SubResource("GradientTexture2D_jwsua")
+
+[node name="MonologueTextContainer" type="HBoxContainer" parent="MonologueUI/Monologue/Control"]
+layout_mode = 2
+offset_top = 75.0
+offset_right = 1152.0
+offset_bottom = 117.0
+size_flags_vertical = 6
+
+[node name="MarginLeft" type="Control" parent="MonologueUI/Monologue/Control/MonologueTextContainer"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+
+[node name="DialogueLabel" type="RichTextLabel" parent="MonologueUI/Monologue/Control/MonologueTextContainer"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+fit_content = true
+
+[node name="MarginRight" type="Control" parent="MonologueUI/Monologue/Control/MonologueTextContainer"]
+custom_minimum_size = Vector2(160, 0)
+layout_mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_a431b")
+}
