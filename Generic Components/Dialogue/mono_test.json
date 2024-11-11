@@ -1,13 +1,13 @@
 {
 	"monologue": [
 		{
-			"text": "meow."
+			"text": "[center]meow.[/center]"
 		},
 		{
-			"text": "meow five times a day for good luck."
+			"text": "[center]meow five times a day for good luck.[/center]"
 		},
 		{
-			"text": "that is my message, goodbye."
+			"text": "[center]that is my message, goodbye.[/center]"
 		},
 		{
 			"function": "end_monologue"
