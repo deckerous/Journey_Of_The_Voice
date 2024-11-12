@@ -10,14 +10,15 @@ script/source = "extends Button
 @export var scene: PackedScene
 
 @onready var hover_sound: AudioStreamPlayer2D = $HoverSound
-@onready var pressed_sound: AudioStreamPlayer2D = $PressedSound
+@onready var pressed_sound: AudioStreamWAV = load(\"res://Audio/sound-effects/dramatic-boom-sound.wav\")
 @onready var stream: AudioStreamPlayer2D = $\"../../../../AudioStreamPlayer2D\"
 @onready var tween = get_tree().create_tween()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	focus_entered.connect(hover_sound.play)
-	pressed.connect(pressed_sound.play)
+	var callable = Callable(GlobalAudio, \"play_sound\")
+	pressed.connect(callable.bind(pressed_sound))
 	pressed.connect(go_to_scene)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

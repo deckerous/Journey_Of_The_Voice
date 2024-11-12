@@ -8,12 +8,14 @@ extends Node2D
 @onready var vol_level: RichTextLabel = $NotebookImgCont/Notebook/Page2/LeftPageCont/HBoxContainer2/VolLevel
 @onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
 
+@onready var bgm: AudioStream = load("res://Audio/songs/wave/wave-theme.wav")
 
 var pg = 1;
 var vol = 100;
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	GlobalAudio.play_sound(bgm)
 	h_slider_vol.value = vol
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -41,4 +43,4 @@ func _on_button_l_pressed():
 
 func _on_h_slider_vol_drag_ended(_value_changed: bool) -> void:
 	vol = h_slider_vol.value
-	audio_stream_player.volume_db = linear_to_db(vol/100)
+	GlobalAudio.set_global_vol(vol)

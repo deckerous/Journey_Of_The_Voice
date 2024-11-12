@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://cpxo23gojvngq"]
+[gd_scene load_steps=7 format=3 uid="uid://cpxo23gojvngq"]
 
 [ext_resource type="Texture2D" uid="uid://bnhcqnykykaxl" path="res://Images/UI/notebook_open.png" id="1_kjn6p"]
 [ext_resource type="Script" path="res://UI/Scenes/notebook.gd" id="1_pjd0k"]
 [ext_resource type="Theme" uid="uid://v3tjxnq7o5ny" path="res://Themes/notebook_text.tres" id="2_fwp36"]
 [ext_resource type="Texture2D" uid="uid://dkvbvhyin2plw" path="res://Images/UI/arrow_r.png" id="4_65gpl"]
 [ext_resource type="Texture2D" uid="uid://5jg40dsml7tc" path="res://Images/UI/arrow_l.png" id="5_xcnod"]
+
+[sub_resource type="AudioStreamWAV" id="AudioStreamWAV_2dmhf"]
 
 [node name="Main Menu" type="Node2D"]
 script = ExtResource("1_pjd0k")
@@ -302,6 +304,7 @@ offset_bottom = 284.0
 texture_normal = ExtResource("5_xcnod")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamWAV_2dmhf")
 autoplay = true
 
 [connection signal="drag_ended" from="NotebookImgCont/Notebook/Page2/LeftPageCont/HSlider_vol" to="." method="_on_h_slider_vol_drag_ended"]
