@@ -19,6 +19,9 @@ var save_path = TEST_SAVE_PATH
 @onready var conversation_characters: Node2D = $ConversationCharacters
 @onready var character_collision_shape_2d: CollisionShape2D = $ConversationCharacters/StartingCharacter/CharacterClickArea/CharacterCollisionShape2D
 
+# Sound for transitioning between dialogue blocks
+@onready var transition_sound: AudioStreamPlayer2D = $TransitionSound
+
 # Dialogue UI node references
 @onready var conversation_ui: CanvasLayer = $ConversationUI
 
@@ -54,6 +57,7 @@ func on_dialogue_click(viewport: Node, event: InputEvent, shape_idx: int):
 	if event is InputEventMouseButton:
 		if event.is_action_pressed("click"):
 			conversation_ui.handle_dialogue()
+			transition_sound.play()
 
 # Initialize dialogue dictionary with provided .json file
 func load_dialogue():

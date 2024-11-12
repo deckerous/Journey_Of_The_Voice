@@ -9,6 +9,9 @@ extends CanvasLayer
 @onready var dialogue_choices: VBoxContainer = $Dialogue/Control/DialogueChoices
 @onready var leave_dialogue_button: TextureButton = $LeaveDialogueButton
 
+# Sound for transitioning between dialogue blocks
+@onready var transition_sound: AudioStreamPlayer2D = $"../TransitionSound"
+
 # Button template for instantiating branching dialogue button options
 @onready var dialogue_choice_button = preload("res://UI/Scenes/dialogue_choice_button.tscn")
 
