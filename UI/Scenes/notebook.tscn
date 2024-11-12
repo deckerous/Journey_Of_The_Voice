@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://cpxo23gojvngq"]
 
-[ext_resource type="Texture2D" uid="uid://bnhcqnykykaxl" path="res://Images/UI/notebook_open.png" id="1_kjn6p"]
+[ext_resource type="Texture2D" uid="uid://byo1lorfm8471" path="res://Images/UI/notebook_open.png" id="1_kjn6p"]
 [ext_resource type="Script" path="res://UI/Scenes/notebook.gd" id="1_pjd0k"]
-[ext_resource type="Theme" uid="uid://v3tjxnq7o5ny" path="res://Themes/notebook_text.tres" id="2_fwp36"]
-[ext_resource type="Texture2D" uid="uid://dkvbvhyin2plw" path="res://Images/UI/arrow_r.png" id="4_65gpl"]
-[ext_resource type="Texture2D" uid="uid://5jg40dsml7tc" path="res://Images/UI/arrow_l.png" id="5_xcnod"]
+[ext_resource type="Theme" path="res://Themes/notebook_text.tres" id="2_fwp36"]
+[ext_resource type="Texture2D" uid="uid://cqhec8ipmsye5" path="res://Images/UI/arrow_r.png" id="4_65gpl"]
+[ext_resource type="Texture2D" uid="uid://c7vrcggtouj2a" path="res://Images/UI/arrow_l.png" id="5_xcnod"]
 
 [sub_resource type="AudioStreamWAV" id="AudioStreamWAV_2dmhf"]
 

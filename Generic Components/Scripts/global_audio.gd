@@ -6,7 +6,7 @@ func set_global_vol(val):
 	global_vol = val
 	for audio in get_children():
 		if audio is AudioStreamPlayer:
-			audio.volume_db = linear_to_db(global_vol/100)
+			audio.set("volume_db", linear_to_db(global_vol / 100))
 
 func play_sound(audio_stream: AudioStream) -> AudioStreamPlayer:
 	var temp_stream = AudioStreamPlayer.new()
@@ -25,10 +25,10 @@ func play_sound_id(audio_stream: AudioStream, id: String) -> AudioStreamPlayer:
 	return temp_stream
 	
 func get_stream_from_id(id: String) -> AudioStreamPlayer:
-	return find_child(id)
+	return get_node("/root/GlobalAudio/" + id)
 
 func stop_stream_from_id(id: String):
-	remove_child(find_child(id))
+	remove_child(get_stream_from_id(id))
 
 func finished():
 	for audio in get_children():
