@@ -1,10 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://cee0f16o8788r"]
+[gd_scene load_steps=10 format=3 uid="uid://cee0f16o8788r"]
 
 [ext_resource type="Script" path="res://Generic Components/Scripts/conversation.gd" id="1_i3n2i"]
 [ext_resource type="Script" path="res://Generic Components/Scripts/conversation_characters.gd" id="2_bcwbx"]
-[ext_resource type="Texture2D" uid="uid://dtec6um3p1mxr" path="res://UI/Assets/back_button.png" id="2_ffb15"]
-
+[ext_resource type="Texture2D" uid="uid://dxbx31a3e6nkx" path="res://UI/Assets/back_button.png" id="2_ffb15"]
 [ext_resource type="Script" path="res://Generic Components/Scenes/conversation_ui.gd" id="3_k11cb"]
+[ext_resource type="AudioStream" uid="uid://xke7o0kn3arr" path="res://Audio/sound-effects/pop-1.wav" id="5_ugvqk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uw144"]
 size = Vector2(1152, 64.8)
@@ -146,3 +146,6 @@ offset_right = 16.0
 offset_bottom = 16.0
 scale = Vector2(4, 4)
 texture_normal = ExtResource("2_ffb15")
+
+[node name="SpeechSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_ugvqk")

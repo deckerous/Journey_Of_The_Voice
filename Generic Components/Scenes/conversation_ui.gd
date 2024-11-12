@@ -17,6 +17,9 @@ extends CanvasLayer
 # controls dialogue appearing character by character
 @onready var start_displaying = false
 
+# Sound that plays when character dialogue is appearing
+@onready var speech_sound: AudioStreamPlayer2D = $"../SpeechSound"
+
 # For parent to enable/disable dialogue input checks
 signal disable_dialogue_input
 signal enable_dialogue_input
@@ -31,6 +34,7 @@ func _process(delta: float) -> void:
 		start_displaying = false
 	if start_displaying:
 		dialogue_label.visible_characters += 1
+		speech_sound.play()
 
 func start_dialogue():
 	name_label.text = conversation.dialogue_dictionary["dialogue"][0]["character"]
