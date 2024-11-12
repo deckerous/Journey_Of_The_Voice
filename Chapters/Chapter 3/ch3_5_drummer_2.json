@@ -1,90 +1,121 @@
-[
-  [
-	{
-	  "id": "Start"
-	},
-	{
-	  "character": "Drummer",
-	  "text": "Go on then, ask your questions!"
-	},
-	{
-	  "character": "You",
-	  "text": "Uh... So you are a drummer? Sorry, that wasn't really a question.."
-	},
-	{
-	  "character": "Drummer",
-	  "text": "Yes, I am a drummer. What of it?"
-	},
-	{
-	  "character": "You",
-	  "text": "..."
-	},
-	{
-	  "character": "You",
-	  "text": "*oh no I'm going to choke*"
-	},
-	{
-	  "character": "Drummer",
-	  "text": "Don't forget to breath, friend."
-	},
-	{
-	  "character": "You",
-	  "text": "How... did you get into it?"
-	},
-	{
-	  "character": "Drummer",
-	  "text": "Ahh, excellent question. You see, I used to be a taiko drummer for the yakuza..."
-	},
-	{
-	  "character": "You",
-	  "text": "*WHAT DOES THAT EVEN MEAN*"
-	},
-	{
-	  "character": "Drummer",
-	  "text": "Life was... chaotic, loud, violent and I was full of anger. One day my nerves got the better of me and I failed to the play the bosses favorite song correctly. So I was banished."
-	},
-	{
-	  "character": "You",
-	  "text": "What does a banish yakuza drummer even do after that?"
-	},
-	{
-	  "character": "You",
-	  "text": "*Is this really a conversation that I am having or did I pass out again*"
-	},
-	{
-	  "character": "Drummer",
-	  "text": "Well, I was never able to get the sound of my mistake out of my head. So one day I decided to punish myself by sitting underneath a powerful waterfall..."
-	},
-	{
-	  "character": "You",
-	  "text": "*Doesn't he realize that its much easier to beat yourself up in your head?*"
-	},
-	{
-	  "character": "Drummer",
-	  "text": "I found myself struggling to breath as the cold deluge of water cascaded over me. Something about it-the way I was forced to focus on my breathing-it washed away all the noise from my head."
-	},
-	{
-	  "character": "Drummer",
-	  "text": "From then on, drumming was different. It became a way of finding peace."
-	},
-	{
-	  "character": "You",
-	  "text": "*Your eyes widen*"
-	},
-	{
-	  "character": "You",
-	  "text": "Wow... That's... incredible."
-	},
-	{
-	  "character": "Drummer",
-	  "text": "Thank you. Drumming's more than beating a drum. Its about finding a rhythm that calms-or ignites-your spirit. That is what my music means to me."
-	},
-	{
-	  "character": "You",
-	  "text": "*He's right... Maybe music can help me find peace, too.*"
-	},
-	{
-	  "function": "end_dialogue"
-	}
-  ]
-]
+{
+	"dialogue": [
+		{
+			"id": "Start"
+		},
+		{
+			"character": "Drummer",
+			"text": "Go on then, ask your questions!"
+		},
+		{
+			"character": "You",
+			"text": "Uh... So you are a drummer? Sorry, that wasn't really a question.."
+		},
+		{
+			"character": "Drummer",
+			"text": "Yes, I am a drummer. What of it?"
+		},
+		{
+			"character": "You",
+			"text": "..."
+		},
+		{
+			"character": "You",
+			"text": "*oh no I'm going to choke*"
+		},
+		{
+			"character": "Drummer",
+			"text": "Don't forget to breath, friend."
+		},
+		{
+			"character": "You",
+			"text": "How... did you get into it?"
+		},
+		{
+			"character": "Drummer",
+			"text": "Ahh, excellent question. You see, I used to be a taiko drummer for the yakuza..."
+		},
+		{
+			"character": "You",
+			"text": "*WHAT DOES THAT EVEN MEAN*"
+		},
+		{
+			"character": "Drummer",
+			"text": "Life was... chaotic, loud, violent and I was full of anger."
+		},
+		{
+			"character": "Drummer",
+			"text": "One day my nerves got the better of me and I failed to the play the bosses favorite song correctly."
+		},
+		{
+			"character": "Drummer",
+			"text": "So I was banished."
+		},
+		{
+			"character": "You",
+			"text": "What does a banish yakuza drummer even do after that?"
+		},
+		{
+			"character": "You",
+			"text": "*Is this really a conversation that I am having or did I pass out again*"
+		},
+		{
+			"character": "Drummer",
+			"text": "Well, I was never able to get the sound of my mistake out of my head."
+		},
+		{
+			"character": "Drummer",
+			"text": "So one day I decided to punish myself by sitting underneath a powerful waterfall..."
+		},
+		{
+			"character": "You",
+			"text": "*Doesn't he realize that its much easier to just beat yourself up in your head?*"
+		},
+		{
+			"character": "Drummer",
+			"text": "I found myself struggling to breath as the cold deluge of water cascaded over me."
+		},
+		{
+			"character": "Drummer",
+			"text": "Something about it"
+		},
+		{
+			"character": "Drummer",
+			"text": "The way I was forced to focus on my breathing"
+		},
+		{
+			"character": "Drummer",
+			"text": "It washed away all the noise from my head."
+		},
+		{
+			"character": "Drummer",
+			"text": "From then on, drumming was different."
+		},{
+			"character": "Drummer",
+			"text": "It became a way of finding peace."
+		},
+		{
+			"character": "You",
+			"text": "Wow... That's... incredible."
+		},
+		{
+			"character": "Drummer",
+			"text": "Thank you. Drumming's more than beating a drum."
+		},
+		{
+			"character": "Drummer",
+			"text": "Its about finding a rhythm that calms-or ignites-your spirit."
+		},
+		{
+			"character": "Drummer",
+			"text": "That is what my music means to me."
+		},
+		{
+			"character": "You",
+			"text": "*He's right... Maybe music can help me find peace, too.*"
+		},
+		{
+			"function": "end_dialogue"
+		}
+	]
+}

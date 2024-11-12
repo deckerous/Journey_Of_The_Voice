@@ -1,38 +1,38 @@
-[
-  [
-	{
-	  "id": "Start",
-	  "text": "You enter into the bar nervously, scanning the room for Guide."
-	},
-	{
-	  "text": "The bar is bustling, and the energy of Open Mic night is contagious, if not overwhelming."
-	},
-	{
-	  "character": "You",
-	  "text": "This isn't good, look at all these people..."
-	},
-	{
-	  "character": "You",
-	  "text": "I don't belong here."
-	},
-	{
-	  "character": "You",
-	  "text": "I mean look at that guy with, what are those?! Wood swords and irezumi tattoo! "
-	},
-	{
-	  "character": "You",
-	  "text": "If I slip up around that guy its curtains for me!"
-	},
-	{
-	  "character": "Guide",
-	  "text": "Hey! Over here! There’s someone I’ve been wanting you to meet."
-	},
-	{
-	  "character": "You",
-	  "text": "...here we go again..."
-	},
-	{
-	  "function": "end_dialogue"
-	}
-  ]
-]
+{
+	"monologue": [
+		{
+			"id": "Start",
+			"text": "You enter into the bar nervously, scanning the room for Guide."
+		},
+		{
+			"text": "The bar is bustling, and the energy of Open Mic night is contagious, if not overwhelming."
+		},
+		{
+			"character": "You",
+			"text": "[i]*This isn't good, look at all these people...*[/i]"
+		},
+		{
+			"character": "You",
+			"text": "[i]*I don't belong here.*[/i]"
+		},
+		{
+			"character": "You",
+			"text": "[i]*I mean look at that guy with, what are those?! Wood swords and irezumi tattoo!*[/i]"
+		},
+		{
+			"character": "You",
+			"text": "[i]*If I slip up around that guy its curtains for me!*[/i]"
+		},
+		{
+			"character": "Guide",
+			"text": "Hey! Over here! There’s someone I’ve been wanting you to meet."
+		},
+		{
+			"character": "You",
+			"text": "[i]*...here we go again...*[/i]"
+		},
+		{
+			"function": "end_dialogue"
+		}
+	]
+}
