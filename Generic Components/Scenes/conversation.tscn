@@ -2,17 +2,18 @@
 
 [ext_resource type="Script" path="res://Generic Components/Scripts/conversation.gd" id="1_i3n2i"]
 [ext_resource type="Script" path="res://Generic Components/Scripts/conversation_characters.gd" id="2_bcwbx"]
-[ext_resource type="Texture2D" uid="uid://bkdpm6yak24pj" path="res://UI/Assets/back_button.png" id="2_ffb15"]
+[ext_resource type="Texture2D" uid="uid://dtec6um3p1mxr" path="res://UI/Assets/back_button.png" id="2_ffb15"]
+
 [ext_resource type="Script" path="res://Generic Components/Scenes/conversation_ui.gd" id="3_k11cb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uw144"]
 size = Vector2(1152, 64.8)
 
-[sub_resource type="Gradient" id="Gradient_7xqp5"]
+[sub_resource type="Gradient" id="Gradient_mm07e"]
 colors = PackedColorArray(0, 0, 0, 1, 0, 0, 0, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_5yje8"]
-gradient = SubResource("Gradient_7xqp5")
+gradient = SubResource("Gradient_mm07e")
 height = 192
 fill_to = Vector2(0, 1)
 
