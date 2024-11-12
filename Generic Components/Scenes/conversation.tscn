@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Generic Components/Scripts/conversation_characters.gd" id="2_bcwbx"]
 [ext_resource type="Texture2D" uid="uid://dxbx31a3e6nkx" path="res://UI/Assets/back_button.png" id="2_ffb15"]
 [ext_resource type="Script" path="res://Generic Components/Scenes/conversation_ui.gd" id="3_k11cb"]
-[ext_resource type="AudioStream" uid="uid://xke7o0kn3arr" path="res://Audio/sound-effects/pop-1.wav" id="5_ugvqk"]
+[ext_resource type="AudioStream" uid="uid://dc28mxkygx7gy" path="res://Audio/sound-effects/pop-2.wav" id="5_s68cj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uw144"]
 size = Vector2(1152, 64.8)
@@ -148,4 +148,4 @@ scale = Vector2(4, 4)
 texture_normal = ExtResource("2_ffb15")
 
 [node name="SpeechSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_ugvqk")
+stream = ExtResource("5_s68cj")
