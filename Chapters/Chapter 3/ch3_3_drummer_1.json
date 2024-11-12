@@ -17,7 +17,7 @@
 		},
 		{
 			"character": "You",
-			"text": "[pulse freq=1.0 color=#ffffff40 ease=-2.0][i]*What did I just say?! This guy is going to kill me...*[/i][/pulse]"
+			"text": "[pulse freq=1.0 color=#ffffff40 ease=-2.0]*What did I just say?! This guy is going to kill me...*[/pulse]"
 		},
 		{
 			"character": "Drummer",
@@ -25,7 +25,7 @@
 		},
 		{
 			"character": "You",
-			"text": "[pulse freq=1.0 color=#ffffff40 ease=-2.0][i]*Well this is it*[/i][/pulse]"
+			"text": "[pulse freq=1.0 color=#ffffff40 ease=-2.0]*Well this is it*[/pulse]"
 		},
 		{
 			"character": "You",

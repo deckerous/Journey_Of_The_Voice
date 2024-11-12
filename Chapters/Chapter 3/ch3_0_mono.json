@@ -9,19 +9,19 @@
 		},
 		{
 			"character": "You",
-			"text": "[i]*This isn't good, look at all these people...*[/i]"
+			"text": "*This isn't good, look at all these people...*"
 		},
 		{
 			"character": "You",
-			"text": "[i]*I don't belong here.*[/i]"
+			"text": "*I don't belong here.*"
 		},
 		{
 			"character": "You",
-			"text": "[i]*I mean look at that guy with, what are those?! Wood swords and irezumi tattoo!*[/i]"
+			"text": "*I mean look at that guy with, what are those?! Wood swords and irezumi tattoo!*"
 		},
 		{
 			"character": "You",
-			"text": "[i]*If I slip up around that guy its curtains for me!*[/i]"
+			"text": "*If I slip up around that guy its curtains for me!*"
 		},
 		{
 			"character": "Guide",
@@ -29,10 +29,10 @@
 		},
 		{
 			"character": "You",
-			"text": "[i]*...here we go again...*[/i]"
+			"text": "*...here we go again...*"
 		},
 		{
-			"function": "end_dialogue"
+			"function": "end_monologue"
 		}
 	]
 }
