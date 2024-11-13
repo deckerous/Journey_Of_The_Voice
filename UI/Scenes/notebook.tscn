@@ -6,9 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dc15oljwf3lv8" path="res://Images/UI/arrow_r.png" id="4_65gpl"]
 [ext_resource type="Texture2D" uid="uid://b8y3sj36vgtcf" path="res://Images/UI/arrow_l.png" id="5_xcnod"]
 
-[sub_resource type="AudioStreamWAV" id="AudioStreamWAV_2dmhf"]
-
-[node name="Main Menu" type="Node2D"]
+[node name="Notebook" type="Node2D"]
 script = ExtResource("1_pjd0k")
 
 [node name="NotebookImgCont" type="VBoxContainer" parent="."]
