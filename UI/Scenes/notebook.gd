@@ -1,7 +1,6 @@
 extends Node2D
 @onready var h_slider_mus_vol: HSlider = %HSlider_mus_vol
 @onready var h_slider_sfx_vol: HSlider = %HSlider_sfx_vol
-@onready var check_box_violence: CheckBox = $NotebookImgCont/Notebook/Page2/LeftPageCont/CheckBox_violence
 @onready var sfx_vol_level: RichTextLabel = %SFXVolLevel
 @onready var mus_vol_level: RichTextLabel = %MusVolLevel
 @onready var button_r: TextureButton = %ButtonR
