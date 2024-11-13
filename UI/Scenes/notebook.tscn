@@ -321,7 +321,7 @@ stream = ExtResource("6_ohas5")
 bus = &"SFX"
 
 [connection signal="drag_ended" from="NotebookImgCont/Notebook/Page2/LeftPageCont/HSlider_sfx_vol" to="." method="_on_h_slider_sfx_vol_drag_ended"]
-[connection signal="drag_ended" from="NotebookImgCont/Notebook/Page2/LeftPageCont/HSlider_mus_vol" to="." method="_on_h_slider_mus_vol_drag_ended"]
 [connection signal="drag_ended" from="NotebookImgCont/Notebook/Page2/LeftPageCont/HSlider_mus_vol" to="." method="_on_h_slider_vol_drag_ended"]
+[connection signal="drag_ended" from="NotebookImgCont/Notebook/Page2/LeftPageCont/HSlider_mus_vol" to="." method="_on_h_slider_mus_vol_drag_ended"]
 [connection signal="pressed" from="ButtonR" to="." method="_on_button_r_pressed"]
 [connection signal="pressed" from="ButtonL" to="." method="_on_button_l_pressed"]
