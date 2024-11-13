@@ -15,34 +15,39 @@ texture = ExtResource("2_qriyx")
 
 [node name="page_1" type="Node2D" parent="."]
 unique_name_in_owner = true
-visible = false
 
 [node name="RichTextLabel" type="RichTextLabel" parent="page_1"]
 offset_left = 328.0
 offset_top = 136.0
 offset_right = 828.0
-offset_bottom = 436.0
+offset_bottom = 464.0
 theme = ExtResource("3_y7tol")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
-text = "Box breathing:
-A biofeedback technique which can help you to lower your anxiety levels by controlling your breathing."
+text = "Box breathing is a biofeedback technique which can help lower your anxiety levels through controlled breathing.
+Visualize your breathing as moving around the perimeter of a box, each side taking 4 seconds to complete:
+Inhale for 4 seconds  							→
+Hold the breath in  for 4 seconds 		 ↑		↓
+Exhale for 4 seconds 							←
+Hold the breath out for 4 seconds			
+"
 scroll_active = false
 shortcut_keys_enabled = false
 
 [node name="page_2" type="Node2D" parent="."]
 unique_name_in_owner = true
+visible = false
 
 [node name="RichTextLabel" type="RichTextLabel" parent="page_2"]
 offset_left = 328.0
 offset_top = 136.0
 offset_right = 828.0
-offset_bottom = 436.0
+offset_bottom = 472.0
 theme = ExtResource("3_y7tol")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 text = "Box breathing:
-Click and hold within the target area to inhale
+Click and hold within the target area to inhale, your intake of breath will be visualized as a shrinking circle
 
-Release when the breath circle is within the white area to stop inhaling
+Release the mouse when the breath circle is within the black area to stop inhaling
 
 Click and hold again to exhale"
 scroll_active = false
