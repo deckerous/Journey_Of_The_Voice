@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=3 uid="uid://b45cj1t6je1f2"]
+
+[ext_resource type="Script" path="res://UI/Scenes/game_tutorial.gd" id="1_wkrhh"]
+[ext_resource type="Texture2D" uid="uid://w320hssu8uco" path="res://Images/UI/popup_bg.png" id="2_qriyx"]
+[ext_resource type="PackedScene" uid="uid://bfv6gxyo50n2o" path="res://Anxiety Effects/Box Breathing/box_breathing.tscn" id="2_y5m41"]
+[ext_resource type="Theme" uid="uid://v3tjxnq7o5ny" path="res://Themes/notebook_text.tres" id="3_y7tol"]
+
+[node name="GameTutorial" type="Node2D"]
+script = ExtResource("1_wkrhh")
+game_scene = ExtResource("2_y5m41")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+texture = ExtResource("2_qriyx")
+
+[node name="page_1" type="Node2D" parent="."]
+unique_name_in_owner = true
+visible = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="page_1"]
+offset_left = 328.0
+offset_top = 136.0
+offset_right = 828.0
+offset_bottom = 436.0
+theme = ExtResource("3_y7tol")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Box breathing:
+A biofeedback technique which can help you to lower your anxiety levels by controlling your breathing."
+scroll_active = false
+shortcut_keys_enabled = false
+
+[node name="page_2" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="page_2"]
+offset_left = 328.0
+offset_top = 136.0
+offset_right = 828.0
+offset_bottom = 436.0
+theme = ExtResource("3_y7tol")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Box breathing:
+Click and hold within the target area to inhale
+
+Release when the breath circle is within the white area to stop inhaling
+
+Click and hold again to exhale"
+scroll_active = false
+shortcut_keys_enabled = false
+
+[node name="TutorialButton" type="Button" parent="."]
+unique_name_in_owner = true
+offset_left = 544.0
+offset_top = 488.0
+offset_right = 644.0
+offset_bottom = 514.0
+text = "Fart"
+
+[connection signal="pressed" from="TutorialButton" to="." method="_on_tutorial_button_pressed"]
