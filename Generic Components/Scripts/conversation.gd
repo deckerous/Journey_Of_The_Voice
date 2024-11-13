@@ -15,6 +15,16 @@ var save_path = TEST_SAVE_PATH
 # Determines whether the starting character is on the right or left side of the screen
 @export var starting_convo_character_right: bool = true
 
+# For when a conversation immediately follows a monologue without player input
+@export var start_conversation_after_monologue: bool = false
+
+# Controls whether another conversation should follow this one after it is done.
+@export var has_following_conversation: bool = false
+@export var following_conversation: PackedScene
+
+@export var has_following_monologue: bool = false
+@export var following_monologue: PackedScene
+
 # Reference to parent node for handling character positioning and animation
 @onready var conversation_characters: Node2D = $ConversationCharacters
 @onready var character_collision_shape_2d: CollisionShape2D = $ConversationCharacters/StartingCharacter/CharacterClickArea/CharacterCollisionShape2D
@@ -25,15 +35,21 @@ var save_path = TEST_SAVE_PATH
 @onready var dialogue_click_area: Area2D = $DialogueClickArea
 @onready var dialogue_collision_shape_2d: CollisionShape2D = $DialogueClickArea/DialogueCollisionShape2D
 
+# Reference to animation node that controls fading in and fading out animations
+@onready var conversation_animation_player = $ConversationAnimationPlayer
+
 @onready var ended_dialogue = false
 @onready var dialogue_index = 1
 
 @onready var dialogue_choice_button = preload("res://UI/Scenes/dialogue_choice_button.tscn")
+@onready var vignette = preload("res://Anxiety Effects/Vignette/vignette.tscn")
 
 # Holds dialogue text and other attributes accessed via keys
 var dialogue_dictionary
 # controls dialogue appearing character by character
 var start_displaying = false
+
+signal finished_conversation
 
 func _ready():
 	# Connect signal for handling dialogue with click
@@ -48,6 +64,17 @@ func _ready():
 	
 	# When loaded in to the chapter disable collision for continuing dialogue 
 	dialogue_collision_shape_2d.disabled = true
+	
+	conversation_ui.anxiety_effect.connect(instance_anxiety_effect)
+	
+	if start_conversation_after_monologue:
+		conversation_ui.show()
+		conversation_animation_player.play("fade_in")
+		await conversation_animation_player.animation_finished
+		load_dialogue()
+	else:
+		conversation_animation_player.play("fade_in")
+		await conversation_animation_player.animation_finished
 
 # For advancing dialogue when in a conversation
 func on_dialogue_click(viewport: Node, event: InputEvent, shape_idx: int):
@@ -68,6 +95,15 @@ func load_dialogue():
 func end_dialogue():
 	ended_dialogue = true
 	disable_dialogue_click_collision()
+	if has_following_monologue:
+		self.finished_conversation.emit()
+	conversation_animation_player.play("fade_out")
+	await conversation_animation_player.animation_finished
+	self.queue_free()
+
+func instance_anxiety_effect():
+	var inst = vignette.instantiate()
+	self.add_child(inst)
 
 func toggle_dialogue_click_collision():
 	dialogue_collision_shape_2d.disabled = !dialogue_collision_shape_2d.disabled

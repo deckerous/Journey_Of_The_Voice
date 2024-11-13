@@ -1,9 +1,6 @@
 {
 	"dialogue": [
 		{
-			"id": "Start"
-		},
-		{
 			"character": "Guide",
 			"text": "Oh jeez, sorry about them."
 		},

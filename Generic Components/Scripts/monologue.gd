@@ -13,6 +13,10 @@ extends Node2D
 @onready var monologue_click_area: Area2D = $MonologueClickArea
 @onready var monologue_collision_shape_2d: CollisionShape2D = $MonologueClickArea/MonologueCollisionShape2D
 
+# For when a conversation immediately follows a monologue without player input
+@export var has_following_conversation: bool = false
+@export var following_conversation: PackedScene
+
 # Holds dialogue text and other attributes accessed via keys
 var monologue_dictionary
 
@@ -60,7 +64,7 @@ func end_monologue():
 	disable_monologue_click_collision()
 	animation_player.play("fade_out")
 	await animation_player.animation_finished
-	emit_signal("finished_monologue")
+	self.emit_signal("finished_monologue")
 	self.queue_free()
 
 func enable_monologue_click_collision():

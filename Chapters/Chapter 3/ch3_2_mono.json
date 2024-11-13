@@ -23,7 +23,7 @@
 			"text":"He literally has."
 		},
 		{
-			"function": "end_dialogue"
+			"function": "end_monologue"
 		}
 	]
 }

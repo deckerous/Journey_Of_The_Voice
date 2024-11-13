@@ -17,6 +17,3 @@ shape = SubResource("RectangleShape2D_2g7bh")
 [node name="Guide" parent="ConversationCharacters/StartingCharacter" index="2" instance=ExtResource("2_fy8dh")]
 
 [node name="Drummer" parent="ConversationCharacters/OtherCharacter" index="1" instance=ExtResource("3_xe72q")]
-
-[node name="DialogueClickArea" parent="." index="1"]
-visible = true

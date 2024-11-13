@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://b58drff60tawy"]
+
+[ext_resource type="PackedScene" uid="uid://cee0f16o8788r" path="res://Generic Components/Scenes/conversation.tscn" id="1_h4gx5"]
+[ext_resource type="PackedScene" uid="uid://v2r4jwck0vko" path="res://Chapters/Chapter 3/Monologues/ch_3_2_mono.tscn" id="2_m27vf"]
+[ext_resource type="PackedScene" uid="uid://c0u1fdrgiinbp" path="res://Characters/guide.tscn" id="2_wpnks"]
+
+[node name="Ch_3_1_Convo" instance=ExtResource("1_h4gx5")]
+dialogue_file = "res://Chapters/Chapter 3/ch3_1.json"
+starting_convo_character_right = false
+start_conversation_after_monologue = true
+has_following_monologue = true
+following_monologue = ExtResource("2_m27vf")
+
+[node name="StartingCharacter" parent="ConversationCharacters" index="0"]
+position = Vector2(303, 204)
+
+[node name="Guide" parent="ConversationCharacters/StartingCharacter" index="2" instance=ExtResource("2_wpnks")]

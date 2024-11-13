@@ -7,7 +7,6 @@ extends CanvasLayer
 @onready var name_label: Label = $Dialogue/Control/CharacterDialogue/NameLabel
 @onready var dialogue_label: RichTextLabel = $Dialogue/Control/CharacterDialogue/HBoxContainer/DialogueLabel
 @onready var dialogue_choices: VBoxContainer = $Dialogue/Control/DialogueChoices
-@onready var leave_dialogue_button: TextureButton = $LeaveDialogueButton
 
 # Button template for instantiating branching dialogue button options
 @onready var dialogue_choice_button = preload("res://UI/Scenes/dialogue_choice_button.tscn")
@@ -23,6 +22,8 @@ extends CanvasLayer
 # For parent to enable/disable dialogue input checks
 signal disable_dialogue_input
 signal enable_dialogue_input
+
+signal anxiety_effect
 
 func _ready():
 	# When loaded in to the chapter, hide the conversation_ui and collision for continuing dialogue 
@@ -55,8 +56,7 @@ func handle_dialogue():
 	if conversation.dialogue_dictionary["dialogue"][dialogue_index].has("function"):
 		if conversation.dialogue_dictionary["dialogue"][dialogue_index]["function"] == "end_dialogue":
 			conversation.end_dialogue()
-		if conversation.dialogue_dictionary["dialogue"][dialogue_index]["function"] == "branch_dialogue":
-			
+		elif conversation.dialogue_dictionary["dialogue"][dialogue_index]["function"] == "branch_dialogue":
 			# Provide error message and end dialogue if there aren't options labeled for the dialogue branch
 			if !conversation.dialogue_dictionary["dialogue"][dialogue_index].has("options"):
 				dialogue_label.text = "ERROR: No options? Make sure the .json file has an options string array field that corresponds to a dialogue id."
@@ -64,6 +64,12 @@ func handle_dialogue():
 			
 			# Continue to dialogue branching
 			branch_dialogue(conversation.dialogue_dictionary["dialogue"][dialogue_index]["options"])
+		elif conversation.dialogue_dictionary["dialogue"][dialogue_index]["function"] == "anxiety_effect":
+			dialogue_label.text = conversation.dialogue_dictionary["dialogue"][dialogue_index]["text"]
+			self.anxiety_effect.emit()
+			display_characters()
+			dialogue_index += 1
+			print("ANXIETY")
 	else:
 		dialogue_label.text = conversation.dialogue_dictionary["dialogue"][dialogue_index]["text"]
 		

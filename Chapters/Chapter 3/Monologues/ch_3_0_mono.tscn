@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bxvi2sf2kfitm"]
+
+[ext_resource type="PackedScene" uid="uid://cpcee510pqlxr" path="res://Generic Components/Scenes/monologue.tscn" id="1_rb1rj"]
+
+[node name="Ch3_0_Mono" instance=ExtResource("1_rb1rj")]
+monologue_file = "res://Chapters/Chapter 3/ch3_0_mono.json"
