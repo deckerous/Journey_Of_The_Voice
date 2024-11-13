@@ -1,11 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://cpxo23gojvngq"]
+[gd_scene load_steps=7 format=3 uid="uid://cpxo23gojvngq"]
 
+[ext_resource type="Texture2D" uid="uid://byo1lorfm8471" path="res://Images/UI/notebook_open.png" id="1_kjn6p"]
 [ext_resource type="Script" path="res://UI/Scenes/notebook.gd" id="1_pjd0k"]
-[ext_resource type="Theme" uid="uid://v3tjxnq7o5ny" path="res://Themes/notebook_text.tres" id="2_fwp36"]
-[ext_resource type="Texture2D" uid="uid://cb8wh6ye0pgk3" path="res://Images/UI/arrow_r.png" id="4_65gpl"]
-[ext_resource type="Texture2D" uid="uid://iroe3iry1pvo" path="res://Images/UI/notebook_open_level.png" id="5_gy7gq"]
-[ext_resource type="Texture2D" uid="uid://bepst3xq1hg31" path="res://Images/UI/arrow_l.png" id="5_xcnod"]
-[ext_resource type="AudioStream" uid="uid://bgxg4k61mh8ro" path="res://Audio/sound-effects/page-flip-2.wav" id="6_ohas5"]
+[ext_resource type="Theme" path="res://Themes/notebook_text.tres" id="2_fwp36"]
+[ext_resource type="Texture2D" uid="uid://cqhec8ipmsye5" path="res://Images/UI/arrow_r.png" id="4_65gpl"]
+[ext_resource type="Texture2D" uid="uid://c7vrcggtouj2a" path="res://Images/UI/arrow_l.png" id="5_xcnod"]
+
+[sub_resource type="AudioStreamWAV" id="AudioStreamWAV_2dmhf"]
 
 
 [node name="Notebook" type="Node2D"]
@@ -316,10 +317,9 @@ offset_bottom = 340.0
 rotation = -0.139626
 texture_normal = ExtResource("5_xcnod")
 
-[node name="PageFlipSoundEffect" type="AudioStreamPlayer" parent="."]
-unique_name_in_owner = true
-stream = ExtResource("6_ohas5")
-bus = &"SFX"
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = SubResource("AudioStreamWAV_2dmhf")
+autoplay = true
 
 [connection signal="drag_ended" from="NotebookImgCont/Notebook/Page2/LeftPageCont/HSlider_sfx_vol" to="." method="_on_h_slider_sfx_vol_drag_ended"]
 [connection signal="drag_ended" from="NotebookImgCont/Notebook/Page2/LeftPageCont/HSlider_mus_vol" to="." method="_on_h_slider_mus_vol_drag_ended"]
