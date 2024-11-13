@@ -1,22 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bn7psuhvxjr8t"]
 
-[ext_resource type="Theme" path="res://Themes/notebook_text.tres" id="1_u30v6"]
-[ext_resource type="Script" path="res://Generic Components/Scripts/transition.gd" id="1_ymefe"]
-
-[sub_resource type="Animation" id="Animation_nxltl"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 0)]
-}
+[ext_resource type="Theme" uid="uid://v3tjxnq7o5ny" path="res://Themes/notebook_text.tres" id="1_u30v6"]
+[ext_resource type="Script" path="res://Generic Components/Scenes/transition.gd" id="1_ymefe"]
 
 [sub_resource type="Animation" id="Animation_tly7e"]
 resource_name = "fade_in"
@@ -31,6 +16,21 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 0.5),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_nxltl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_el5ta"]
