@@ -1,0 +1,144 @@
+[gd_scene load_steps=5 format=3 uid="uid://b2jm2tuudsa2q"]
+
+[ext_resource type="Theme" uid="uid://v3tjxnq7o5ny" path="res://Themes/notebook_text.tres" id="1_h0pv2"]
+[ext_resource type="Theme" uid="uid://digcvgrw3a2je" path="res://Themes/default.tres" id="2_qgjmh"]
+[ext_resource type="Script" path="res://UI/Scripts/save_button.gd" id="2_ttl11"]
+[ext_resource type="PackedScene" uid="uid://cytkowxct06e2" path="res://Chapters/Chapter 3/chapter_3_bar.tscn" id="3_vmvan"]
+
+[node name="LoadSaveMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="SavesLabel" type="RichTextLabel" parent="VBoxContainer/CenterContainer"]
+custom_minimum_size = Vector2(156, 0)
+layout_mode = 2
+theme = ExtResource("1_h0pv2")
+theme_override_font_sizes/normal_font_size = 100
+text = "Saves"
+fit_content = true
+
+[node name="Save" type="ColorRect" parent="VBoxContainer"]
+z_index = 5
+custom_minimum_size = Vector2(512, 140)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+mouse_default_cursor_shape = 2
+color = Color(0.41598, 0.41598, 0.41598, 1)
+script = ExtResource("2_ttl11")
+chapter_scene = ExtResource("3_vmvan")
+
+[node name="SaveInfoVBoxContainer" type="VBoxContainer" parent="VBoxContainer/Save"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 3
+mouse_filter = 2
+
+[node name="SaveNameContainer" type="HBoxContainer" parent="VBoxContainer/Save/SaveInfoVBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Padding" type="Control" parent="VBoxContainer/Save/SaveInfoVBoxContainer/SaveNameContainer"]
+custom_minimum_size = Vector2(16, 0)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="FileLabel" type="RichTextLabel" parent="VBoxContainer/Save/SaveInfoVBoxContainer/SaveNameContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+mouse_filter = 2
+theme = ExtResource("2_qgjmh")
+theme_override_font_sizes/normal_font_size = 42
+text = "File 1:"
+fit_content = true
+
+[node name="SaveNameLabel" type="RichTextLabel" parent="VBoxContainer/Save/SaveInfoVBoxContainer/SaveNameContainer"]
+custom_minimum_size = Vector2(0, 56)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+theme = ExtResource("1_h0pv2")
+theme_override_font_sizes/normal_font_size = 36
+text = "Martin"
+
+[node name="ChapterContainer" type="HBoxContainer" parent="VBoxContainer/Save/SaveInfoVBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Padding" type="Control" parent="VBoxContainer/Save/SaveInfoVBoxContainer/ChapterContainer"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="ChapterLabel" type="RichTextLabel" parent="VBoxContainer/Save/SaveInfoVBoxContainer/ChapterContainer"]
+custom_minimum_size = Vector2(92, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+mouse_filter = 2
+theme = ExtResource("2_qgjmh")
+theme_override_font_sizes/normal_font_size = 24
+text = "Chapter:"
+fit_content = true
+
+[node name="ChapterNumerLabel" type="RichTextLabel" parent="VBoxContainer/Save/SaveInfoVBoxContainer/ChapterContainer"]
+custom_minimum_size = Vector2(0, 34)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+mouse_filter = 2
+theme = ExtResource("1_h0pv2")
+theme_override_font_sizes/normal_font_size = 24
+text = "3"
+
+[node name="PlaytimeContainer" type="HBoxContainer" parent="VBoxContainer/Save/SaveInfoVBoxContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Padding" type="Control" parent="VBoxContainer/Save/SaveInfoVBoxContainer/PlaytimeContainer"]
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="PlaytimeLabel" type="RichTextLabel" parent="VBoxContainer/Save/SaveInfoVBoxContainer/PlaytimeContainer"]
+custom_minimum_size = Vector2(92, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+mouse_filter = 2
+theme = ExtResource("2_qgjmh")
+theme_override_font_sizes/normal_font_size = 24
+text = "Playtime:"
+fit_content = true
+
+[node name="PlaytimeAmountLabel" type="RichTextLabel" parent="VBoxContainer/Save/SaveInfoVBoxContainer/PlaytimeContainer"]
+custom_minimum_size = Vector2(0, 34)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+theme = ExtResource("1_h0pv2")
+theme_override_font_sizes/normal_font_size = 24
+text = "14:31"

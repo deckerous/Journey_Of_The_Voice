@@ -18,9 +18,11 @@
 		},
 		{
 			"character": "Drummer",
-			"text": "..."
+			"text": "...",
+			"function": "other_character_leaves"
 		},
 		{
+			"character": "",
 			"text": "Kenshiro settles into their stance, feet as firm as the roots of a mountain."
 		},
 		{
@@ -62,32 +64,12 @@
 			"text": "Let's try it together."
 		},
 		{
-			"function": "box_breathing"
+			"character": "",
+			"text": "[shake rate=20.0 level=5 connected=1]*Boxed breathing intensifies*[/shake]"
 		},
 		{
 			"character": "Drummer",
-			"text": "How do you feel? Better, right?"
-		},
-		{
-			"character": "You",
-			"text": "I feel...",
-		},
-		{
-			"character": "You",
-			"text": "more in control.",
-		},
-		{
-			"character": "You",
-			"text": "Thank you, this will really help!",
-			"function": "sound_effect"
-		},
-		{
-			"character": "Drummer",
-			"text": "Hmm... Now, go on, try again."
-		},
-		{
-			"character": "Drummer",
-			"text": "What do you want to know?"
+			"text": "Woah ok... I'll let you try it on your own. I'll go over there and once you're ready to talk again I'll answer any questions."
 		},
 		{
 			"function": "end_dialogue"

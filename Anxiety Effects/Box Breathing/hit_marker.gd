@@ -2,6 +2,11 @@ extends Node2D
 
 @onready var speed = 0.9
 
+var num_successes = 0
+var success_number = 4
+
+signal success_number_reached
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# Hide until button down
@@ -24,7 +29,7 @@ func _draw() -> void:
 	
 # When button held down, start animation & make self visible
 func _on_buttonDown() -> void:
-	$"../RichTextLabel".text = "breathing intensifies"
+	$"../RichTextLabel".text = "[center]Breathing intensifies[/center]"
 	visible = true
 	$"AnimationPlayer".queue("scale_down")
 	
@@ -32,9 +37,12 @@ func _on_buttonDown() -> void:
 func _on_buttonRelease() -> void:
 	if abs(scale.x - 1.0) < 0.3:
 		# success state
-		$"../RichTextLabel".text = "Success!"
+		$"../RichTextLabel".text = "[center]Success![/center]"
+		num_successes += 1
+		if num_successes == success_number:
+			success_number_reached.emit()
 	else:
 		# failure state
-		$"../RichTextLabel".text = "Failure"
+		$"../RichTextLabel".text = "[center]Failure[/center]"
 	$"AnimationPlayer".play("disappear")
 	

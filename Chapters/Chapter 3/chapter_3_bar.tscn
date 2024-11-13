@@ -19,8 +19,19 @@ position = Vector2(303, 204)
 position = Vector2(1041, 375)
 scale = Vector2(1.35, 1.35)
 
+[node name="CanvasLayer" parent="." index="6"]
+layer = -2
+
 [node name="TextureRect" parent="CanvasLayer" index="0"]
+z_index = -2
 offset_top = -126.0
 offset_bottom = 171.231
+mouse_filter = 2
 texture = ExtResource("2_j52db")
 expand_mode = 5
+
+[node name="ToBeContinued" parent="CanvasLayer" index="1"]
+mouse_filter = 2
+
+[node name="RichTextLabel" parent="CanvasLayer/ToBeContinued" index="0"]
+mouse_filter = 2

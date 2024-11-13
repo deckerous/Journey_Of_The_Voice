@@ -25,6 +25,8 @@ signal enable_dialogue_input
 
 signal anxiety_effect
 
+signal fade_out_character
+
 func _ready():
 	# When loaded in to the chapter, hide the conversation_ui and collision for continuing dialogue 
 	self.visible = false
@@ -69,7 +71,11 @@ func handle_dialogue():
 			self.anxiety_effect.emit()
 			display_characters()
 			dialogue_index += 1
-			print("ANXIETY")
+		elif conversation.dialogue_dictionary["dialogue"][dialogue_index]["function"] == "other_character_leaves":
+			dialogue_label.text = conversation.dialogue_dictionary["dialogue"][dialogue_index]["text"]
+			self.fade_out_character.emit()
+			display_characters()
+			dialogue_index += 1
 	else:
 		dialogue_label.text = conversation.dialogue_dictionary["dialogue"][dialogue_index]["text"]
 		

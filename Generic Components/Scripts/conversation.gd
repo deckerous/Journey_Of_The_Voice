@@ -25,6 +25,9 @@ var save_path = TEST_SAVE_PATH
 @export var has_following_monologue: bool = false
 @export var following_monologue: PackedScene
 
+@export var has_following_minigame: bool = false
+@export var following_minigame: PackedScene
+
 # Reference to parent node for handling character positioning and animation
 @onready var conversation_characters: Node2D = $ConversationCharacters
 @onready var character_collision_shape_2d: CollisionShape2D = $ConversationCharacters/StartingCharacter/CharacterClickArea/CharacterCollisionShape2D
@@ -42,7 +45,6 @@ var save_path = TEST_SAVE_PATH
 @onready var dialogue_index = 1
 
 @onready var dialogue_choice_button = preload("res://UI/Scenes/dialogue_choice_button.tscn")
-@onready var vignette = preload("res://Anxiety Effects/Vignette/vignette.tscn")
 
 # Holds dialogue text and other attributes accessed via keys
 var dialogue_dictionary
@@ -50,6 +52,8 @@ var dialogue_dictionary
 var start_displaying = false
 
 signal finished_conversation
+
+signal start_anxiety_effect
 
 func _ready():
 	# Connect signal for handling dialogue with click
@@ -66,6 +70,8 @@ func _ready():
 	dialogue_collision_shape_2d.disabled = true
 	
 	conversation_ui.anxiety_effect.connect(instance_anxiety_effect)
+	
+	conversation_ui.fade_out_character.connect(fade_out_character)
 	
 	if start_conversation_after_monologue:
 		conversation_ui.show()
@@ -95,15 +101,17 @@ func load_dialogue():
 func end_dialogue():
 	ended_dialogue = true
 	disable_dialogue_click_collision()
-	if has_following_monologue:
-		self.finished_conversation.emit()
+	#if has_following_monologue or has_following_conversation:
+	self.finished_conversation.emit()
 	conversation_animation_player.play("fade_out")
 	await conversation_animation_player.animation_finished
 	self.queue_free()
 
 func instance_anxiety_effect():
-	var inst = vignette.instantiate()
-	self.add_child(inst)
+	start_anxiety_effect.emit()
+
+func fade_out_character():
+	conversation_animation_player.play("fade_out_other_character")
 
 func toggle_dialogue_click_collision():
 	dialogue_collision_shape_2d.disabled = !dialogue_collision_shape_2d.disabled

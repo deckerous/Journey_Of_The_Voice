@@ -1,13 +1,13 @@
 [gd_scene load_steps=9 format=3 uid="uid://cpp2n27xhy763"]
 
 [ext_resource type="Theme" uid="uid://v3tjxnq7o5ny" path="res://Themes/notebook_text.tres" id="1_3bxdf"]
-[ext_resource type="AudioStream" uid="uid://d2cqp8xvy5de0" path="res://Audio/songs/beep/beep-theme.wav" id="2_aowep"]
+[ext_resource type="AudioStream" uid="uid://vupcq7avpham" path="res://Audio/songs/beep/beep-theme.wav" id="2_aowep"]
 [ext_resource type="PackedScene" uid="uid://buulbpdh08bqu" path="res://UI/Scenes/start_button.tscn" id="2_iqoyb"]
 [ext_resource type="Script" path="res://UI/Scenes/v_box_container.gd" id="2_q0xt6"]
 [ext_resource type="PackedScene" uid="uid://w6k5cj8hiag4" path="res://UI/Scenes/load_button.tscn" id="3_c1jdp"]
 [ext_resource type="PackedScene" uid="uid://c1u7usj8dgwwe" path="res://Chapters/Chapter 1/c_1_guide_convo.tscn" id="4_8w4q2"]
-[ext_resource type="PackedScene" uid="uid://c2tbsk520xw56" path="res://UI/Scenes/settings_button.tscn" id="4_inc1k"]
 [ext_resource type="PackedScene" uid="uid://bws8j61yk4oht" path="res://UI/Scenes/quit_button.tscn" id="6_ggr35"]
+[ext_resource type="PackedScene" uid="uid://b2jm2tuudsa2q" path="res://UI/Scenes/load_save_menu.tscn" id="6_x28e7"]
 
 [node name="Main Menu" type="Node2D"]
 
@@ -73,25 +73,14 @@ size_flags_vertical = 3
 [node name="LoadButton" parent="VBoxContainer/VBoxContainer/CenterContainer - Load" instance=ExtResource("3_c1jdp")]
 layout_mode = 2
 focus_neighbor_left = NodePath("../../CenterContainer - Start/StartButton")
-focus_neighbor_right = NodePath("../../CenterContainer - Settings/SettingsButton")
 text = "Load"
-
-[node name="CenterContainer - Settings" type="CenterContainer" parent="VBoxContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="SettingsButton" parent="VBoxContainer/VBoxContainer/CenterContainer - Settings" instance=ExtResource("4_inc1k")]
-layout_mode = 2
-focus_neighbor_left = NodePath("../../CenterContainer - Load/LoadButton")
-focus_neighbor_right = NodePath("../../CenterContainer - Quit/QuitButton")
-text = "Settings"
+scene = ExtResource("6_x28e7")
 
 [node name="CenterContainer - Quit" type="CenterContainer" parent="VBoxContainer/VBoxContainer"]
 layout_mode = 2
 
 [node name="QuitButton" parent="VBoxContainer/VBoxContainer/CenterContainer - Quit" instance=ExtResource("6_ggr35")]
 layout_mode = 2
-focus_neighbor_left = NodePath("../../CenterContainer - Settings/SettingsButton")
 focus_neighbor_right = NodePath("../../CenterContainer - Start/StartButton")
 focus_neighbor_bottom = NodePath("../../CenterContainer - Start/StartButton")
 text = "Quit"

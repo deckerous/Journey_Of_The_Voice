@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://c0u1fdrgiinbp"]
 
 [ext_resource type="PackedScene" uid="uid://cfcuodb5inj3o" path="res://Generic Components/Scenes/character.tscn" id="1_wcxgl"]
-[ext_resource type="Texture2D" uid="uid://bje5sppiou5yg" path="res://Characters/guydeBarnam.png" id="2_ycprh"]
+[ext_resource type="Texture2D" uid="uid://dk1lxta3rspue" path="res://Characters/guideFilled.png" id="2_pofwb"]
 
 [node name="Guide" instance=ExtResource("1_wcxgl")]
 
 [node name="Sprite2D" parent="." index="0"]
 scale = Vector2(0.15, 0.15)
-texture = ExtResource("2_ycprh")
+texture = ExtResource("2_pofwb")
