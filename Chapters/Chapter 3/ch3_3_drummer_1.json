@@ -1,0 +1,42 @@
+{
+	"dialogue": [
+		{
+			"id": "Start",
+		},
+		{
+			"character": "Drummer",
+			"text": "My name is Kenshiro Takemura. Nice to meet you."
+		},
+		{
+			"character": "You",
+			"text": "Uh, uh, nice tat too...",
+		},
+		{
+			"text": "uh, meet you.",
+			"function": "anxiety_effect_1"
+		},
+		{
+			"character": "You",
+			"text": "[pulse freq=1.0 color=#ffffff40 ease=-2.0]*What did I just say?! This guy is going to kill me...*[/pulse]"
+		},
+		{
+			"character": "Drummer",
+			"text": "..."
+		},
+		{
+			"character": "You",
+			"text": "[pulse freq=1.0 color=#ffffff40 ease=-2.0]*Well this is it*[/pulse]"
+		},
+		{
+			"character": "You",
+			"text": "[pulse freq=1.0 color=#ffffff40 ease=-2.0]...[/pulse]"
+		},
+		{
+			"character": "Drummer",
+			"text": "..."
+		},
+		{
+			"function": "end_dialogue"
+		}
+	]
+}

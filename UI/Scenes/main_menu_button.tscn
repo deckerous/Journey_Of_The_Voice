@@ -1,29 +1,36 @@
 [gd_scene load_steps=5 format=3 uid="uid://hsxry7hy2u46"]
 
-[ext_resource type="AudioStream" uid="uid://cbg3whxtej08s" path="res://Audio/sound-effects/shick-sound.wav" id="1_ku08p"]
+[ext_resource type="AudioStream" uid="uid://y1hllmlp7xdd" path="res://Audio/sound-effects/shick-sound.wav" id="1_ku08p"]
 [ext_resource type="Theme" uid="uid://v3tjxnq7o5ny" path="res://Themes/notebook_text.tres" id="1_xlx6t"]
-[ext_resource type="AudioStream" uid="uid://bym4o1qq6m1f4" path="res://Audio/sound-effects/dramatic-boom-sound.wav" id="3_4j0ph"]
+[ext_resource type="AudioStream" uid="uid://c0vo60a5nbwpj" path="res://Audio/sound-effects/dramatic-boom-sound.wav" id="3_4j0ph"]
 
 [sub_resource type="GDScript" id="GDScript_1qqp5"]
 script/source = "extends Button
 
 @export var scene: PackedScene
 
-@onready var hover_sound: AudioStreamPlayer2D = $HoverSound
-@onready var pressed_sound: AudioStreamPlayer2D = $PressedSound
-
+@onready var hover_sound: AudioStreamWAV = load(\"res://Audio/sound-effects/shick-sound.wav\")
+@onready var pressed_sound: AudioStreamWAV = load(\"res://Audio/sound-effects/dramatic-boom-sound.wav\")
+@onready var stream: AudioStreamPlayer2D = $\"../../../../AudioStreamPlayer2D\"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	focus_entered.connect(hover_sound.play)
-	pressed.connect(pressed_sound.play)
+	var pressed_callable = Callable(GlobalAudio, \"play_sound\")
+	var hover_callable = Callable(GlobalAudio, \"play_sound\")
+	focus_entered.connect(hover_callable.bind(hover_sound))
+	pressed.connect(pressed_callable.bind(pressed_sound))
 	pressed.connect(go_to_scene)
-	
-
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func go_to_scene():
-	get_tree().change_scene_to_packed(scene)
+	if scene is PackedScene:
+		get_tree().paused = true
+		var tween = get_tree().create_tween()
+		tween.tween_property(stream, \"volume_db\", -80, 0.9)
+		await Transition.show()
+		get_tree().paused = false
+		get_tree().change_scene_to_packed(scene)
+		Transition.disappear()
 "
 
 [node name="MainMenuButton" type="Button"]
