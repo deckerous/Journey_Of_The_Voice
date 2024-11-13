@@ -7,7 +7,6 @@
 [ext_resource type="Texture2D" uid="uid://bepst3xq1hg31" path="res://Images/UI/arrow_l.png" id="5_xcnod"]
 [ext_resource type="AudioStream" uid="uid://bgxg4k61mh8ro" path="res://Audio/sound-effects/page-flip-2.wav" id="6_ohas5"]
 
-
 [node name="Notebook" type="Node2D"]
 script = ExtResource("1_pjd0k")
 
