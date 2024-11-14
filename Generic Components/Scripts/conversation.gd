@@ -28,6 +28,8 @@ var save_path = TEST_SAVE_PATH
 @export var has_following_minigame: bool = false
 @export var following_minigame: PackedScene
 
+@export var can_continue_to_next_chapter: bool
+
 # Reference to parent node for handling character positioning and animation
 @onready var conversation_characters: Node2D = $ConversationCharacters
 @onready var character_collision_shape_2d: CollisionShape2D = $ConversationCharacters/StartingCharacter/CharacterClickArea/CharacterCollisionShape2D

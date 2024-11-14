@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://8perod6qncm7"]
 
 [ext_resource type="PackedScene" uid="uid://cee0f16o8788r" path="res://Generic Components/Scenes/conversation.tscn" id="1_xkegs"]
-[ext_resource type="PackedScene" uid="uid://pie5vurh8eoo" path="res://Characters/drummer.tscn" id="2_4lwj7"]
+[ext_resource type="PackedScene" uid="uid://pie5vurh8eoo" path="res://Characters/Scenes/drummer.tscn" id="2_4lwj7"]
 [ext_resource type="PackedScene" uid="uid://bjsmaufdw42hm" path="res://Chapters/Chapter 3/Conversations/ch_4_convo.tscn" id="2_vrqal"]
 
 [node name="Ch3_Drummer_1_Convo" instance=ExtResource("1_xkegs")]

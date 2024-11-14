@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://cpp2n27xhy763"]
+[gd_scene load_steps=10 format=3 uid="uid://cpp2n27xhy763"]
 
 [ext_resource type="Theme" uid="uid://v3tjxnq7o5ny" path="res://Themes/notebook_text.tres" id="1_3bxdf"]
+[ext_resource type="Script" path="res://UI/Scripts/main_menu.gd" id="1_yxa7y"]
 [ext_resource type="AudioStream" uid="uid://vupcq7avpham" path="res://Audio/songs/beep/beep-theme.wav" id="2_aowep"]
 [ext_resource type="PackedScene" uid="uid://buulbpdh08bqu" path="res://UI/Scenes/start_button.tscn" id="2_iqoyb"]
 [ext_resource type="Script" path="res://UI/Scenes/v_box_container.gd" id="2_q0xt6"]
@@ -10,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://b2jm2tuudsa2q" path="res://UI/Scenes/load_save_menu.tscn" id="6_x28e7"]
 
 [node name="Main Menu" type="Node2D"]
+script = ExtResource("1_yxa7y")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -102,7 +104,6 @@ text = "Quit"
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 process_mode = 3
 stream = ExtResource("2_aowep")
-autoplay = true
 attenuation = 1e-05
 
 [connection signal="pressed" from="CanvasLayer/VBoxContainer/VBoxContainer/CenterContainer - Quit/QuitButton" to="CanvasLayer/VBoxContainer/VBoxContainer" method="_on_quit_button_pressed"]

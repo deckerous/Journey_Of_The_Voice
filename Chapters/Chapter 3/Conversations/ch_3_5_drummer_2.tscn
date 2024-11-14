@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://cexou3rp8qi88"]
+
+[ext_resource type="PackedScene" uid="uid://cee0f16o8788r" path="res://Generic Components/Scenes/conversation.tscn" id="1_blb08"]
+[ext_resource type="PackedScene" uid="uid://pie5vurh8eoo" path="res://Characters/Scenes/drummer.tscn" id="2_wmra5"]
+
+[node name="Ch3_5_Drummer_2" instance=ExtResource("1_blb08")]
+
+[node name="Drummer" parent="ConversationCharacters/StartingCharacter" index="2" instance=ExtResource("2_wmra5")]
