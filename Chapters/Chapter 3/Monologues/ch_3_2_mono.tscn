@@ -5,4 +5,5 @@
 
 [node name="Ch3_2_mono" instance=ExtResource("1_xh4lb")]
 monologue_file = "res://Chapters/Chapter 3/ch3_2_mono.json"
+has_following_conversation = true
 following_conversation = ExtResource("2_r1r08")

@@ -11,7 +11,7 @@ script/source = "extends Button
 
 @onready var hover_sound: AudioStreamWAV = load(\"res://Audio/sound-effects/shick-sound.wav\")
 @onready var pressed_sound: AudioStreamWAV = load(\"res://Audio/sound-effects/shika-sha-sound.wav\")
-@onready var stream: AudioStreamPlayer2D = $\"../../../../AudioStreamPlayer2D\"
+@onready var stream: AudioStreamPlayer2D = $\"../../../../../AudioStreamPlayer2D\"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -40,6 +40,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_xlx6t")
+theme_override_font_sizes/font_size = 48
 flat = true
 script = SubResource("GDScript_1qqp5")
 
