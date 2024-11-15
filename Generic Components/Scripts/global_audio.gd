@@ -2,6 +2,9 @@ extends Node
 
 @onready var global_vol = 100
 
+func get_global_vol() -> int:
+	return global_vol
+
 func set_global_vol(val):
 	global_vol = val
 	for audio in get_children():
@@ -29,6 +32,11 @@ func get_stream_from_id(id: String) -> AudioStreamPlayer:
 
 func stop_stream_from_id(id: String):
 	remove_child(get_stream_from_id(id))
+
+func tween_from_id(id: String, value: float, duration: float):
+	var tweener = get_tree().create_tween()
+	var audio = get_stream_from_id(id)
+	tweener.tween_property(audio, "volume_db", value, duration)
 
 func finished():
 	for audio in get_children():
