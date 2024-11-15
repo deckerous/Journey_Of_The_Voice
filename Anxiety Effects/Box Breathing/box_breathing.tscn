@@ -93,8 +93,8 @@ _data = {
 "scale_down": SubResource("Animation_kc30g")
 }
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_bnl1x"]
-radius = 32.9848
+[sub_resource type="CircleShape2D" id="CircleShape2D_1owfr"]
+radius = 33.0
 
 [sub_resource type="Animation" id="Animation_xxmus"]
 length = 0.001
@@ -207,7 +207,8 @@ libraries = {
 monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable/Area2D"]
-shape = SubResource("CircleShape2D_bnl1x")
+shape = SubResource("CircleShape2D_1owfr")
+debug_color = Color(0, 0.6, 0.701961, 0.368627)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 z_index = -1

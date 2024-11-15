@@ -20,11 +20,11 @@ func interactable_input(viewport: Node, event: InputEvent, shape_idx: int) -> vo
 		if event.is_action_released("click"):
 			isPressed = false
 			buttonReleased.emit()
-		print(isPressed)
+		print("interactable_input ", isPressed)
 
 # Signal from Area2D, check for mouse leaving the button area
 func _on_interactable_mouse_exited() -> void:
 	if isPressed:
 		buttonReleased.emit()
 	isPressed = false
-	print(isPressed)
+	print("mouse_exit ", isPressed)
