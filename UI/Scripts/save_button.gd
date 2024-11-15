@@ -19,4 +19,4 @@ func on_dialogue_click(event: InputEvent):
 				Transition.disappear()
 				var player = GlobalAudio.play_sound_id(music, "bar-theme")
 				player.volume_db = -80
-				GlobalAudio.tween_from_id("bar-theme", -15, 1.0) # TODO: change to global volume
+				GlobalAudio.tween_from_id("bar-theme", -15, 0) # TODO: change to global volume

@@ -22,16 +22,17 @@ func _ready() -> void:
 	hit_marker.success_number_reached.connect(end_box_breathing)
 	
 	# tweening manually to avoid the await
-	await tweener.tween_property(bar_audio, "volume_db", -80, 2.0)
+	await tweener.tween_property(bar_audio, "volume_db", -80, 5.0)
 	var player = GlobalAudio.play_sound_id(breathing_sound, "breathing-theme")
-	GlobalAudio.tween_from_id("breathing-theme", -15, 3.0)
+	player.volume_db = -80;
+	GlobalAudio.tween_from_id("breathing-theme", -15, 4.0)
 
 func end_box_breathing():
 	self.box_breathing_complete.emit()
 	bb_animation_player.play("fade_out")
-	GlobalAudio.tween_from_id("breathing-theme", -80.0, 0.5)
+	GlobalAudio.tween_from_id("breathing-theme", -80.0, 1.5)
 	await bb_animation_player.animation_finished
 	GlobalAudio.stop_stream_from_id("breathing_sound")
-	GlobalAudio.tween_from_id("bar-theme", -15.0, 1.0)
+	GlobalAudio.tween_from_id("bar-theme", -15.0, 0.5)
 	
 	self.queue_free()
