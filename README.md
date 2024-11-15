@@ -36,10 +36,9 @@ Accessing scenes, scripts, resources, and tools in Godot can be done by double c
   - Versions for other OS lower in the page
 - Clone the main branch of the repository.
 - Start Godot and import the project.
+- Double click on the imported project to open the project in the editor.
+- To run the project press the "Run Project" button at the top right which will open up a new window running the game.
 <img src="ReadmePics/godot-import.png" width="75%">
 <img src="ReadmePics/import-project-file.png" width="75%">
-Double click on the imported project to open the project in the editor.
-
-To run the project press the "Run Project" button at the top right which will open up a new window running the game.
 <img src="ReadmePics/project-run.png" width="75%">
 <img src="ReadmePics/project-running-window.png" width="75%">
