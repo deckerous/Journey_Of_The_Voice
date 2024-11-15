@@ -1,9 +1,6 @@
 {
 	"dialogue": [
 		{
-			"id": "Start",
-		},
-		{
 			"character": "Guide",
 			"text": "You are looking a lot less...twitchy today."
 		},

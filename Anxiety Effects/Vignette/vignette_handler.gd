@@ -7,4 +7,3 @@ extends Node2D
 func _ready() -> void:
 	# apply_scale(Vector2(1.25, 1.25))
 	global_position = Vector2(get_viewport_rect().size.x / 2, get_viewport_rect().size.y / 2)
-	

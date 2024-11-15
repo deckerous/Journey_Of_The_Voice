@@ -1,45 +1,61 @@
-[gd_scene load_steps=9 format=3 uid="uid://cpp2n27xhy763"]
+[gd_scene load_steps=10 format=3 uid="uid://cpp2n27xhy763"]
 
 [ext_resource type="Theme" uid="uid://v3tjxnq7o5ny" path="res://Themes/notebook_text.tres" id="1_3bxdf"]
-[ext_resource type="AudioStream" uid="uid://d2cqp8xvy5de0" path="res://Audio/songs/beep/beep-theme.wav" id="2_aowep"]
+[ext_resource type="Script" path="res://UI/Scripts/main_menu.gd" id="1_yxa7y"]
+[ext_resource type="AudioStream" uid="uid://vupcq7avpham" path="res://Audio/songs/beep/beep-theme.wav" id="2_aowep"]
 [ext_resource type="PackedScene" uid="uid://buulbpdh08bqu" path="res://UI/Scenes/start_button.tscn" id="2_iqoyb"]
 [ext_resource type="Script" path="res://UI/Scenes/v_box_container.gd" id="2_q0xt6"]
 [ext_resource type="PackedScene" uid="uid://w6k5cj8hiag4" path="res://UI/Scenes/load_button.tscn" id="3_c1jdp"]
-[ext_resource type="PackedScene" uid="uid://c1u7usj8dgwwe" path="res://Chapters/Chapter 1/c_1_guide_convo.tscn" id="4_8w4q2"]
-[ext_resource type="PackedScene" uid="uid://c2tbsk520xw56" path="res://UI/Scenes/settings_button.tscn" id="4_inc1k"]
+[ext_resource type="PackedScene" uid="uid://cytkowxct06e2" path="res://Chapters/Chapter 3/chapter_3_bar.tscn" id="4_1dn7j"]
 [ext_resource type="PackedScene" uid="uid://bws8j61yk4oht" path="res://UI/Scenes/quit_button.tscn" id="6_ggr35"]
+[ext_resource type="PackedScene" uid="uid://b2jm2tuudsa2q" path="res://UI/Scenes/load_save_menu.tscn" id="6_x28e7"]
 
 [node name="Main Menu" type="Node2D"]
+script = ExtResource("1_yxa7y")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
 layout_direction = 2
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_right = 1152.0
-offset_bottom = 648.0
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 alignment = 1
 
-[node name="TitleVbox" type="VBoxContainer" parent="VBoxContainer"]
+[node name="TitleVbox" type="VBoxContainer" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 2
 
-[node name="Title Container" type="CenterContainer" parent="VBoxContainer/TitleVbox"]
+[node name="Title Container" type="CenterContainer" parent="CanvasLayer/VBoxContainer/TitleVbox"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="Title" type="RichTextLabel" parent="VBoxContainer/TitleVbox/Title Container"]
+[node name="Title" type="RichTextLabel" parent="CanvasLayer/VBoxContainer/TitleVbox/Title Container"]
 layout_mode = 2
 theme = ExtResource("1_3bxdf")
+theme_override_colors/default_color = Color(1, 1, 1, 1)
 theme_override_constants/shadow_offset_y = 10
 theme_override_constants/shadow_offset_x = 10
 theme_override_font_sizes/normal_font_size = 140
+bbcode_enabled = true
 text = "Journey Of The Voice"
 fit_content = true
 scroll_active = false
@@ -47,51 +63,40 @@ autowrap_mode = 0
 deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 
-[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 2
 size_flags_stretch_ratio = 2.04
 script = ExtResource("2_q0xt6")
 
-[node name="CenterContainer - Start" type="CenterContainer" parent="VBoxContainer/VBoxContainer"]
+[node name="CenterContainer - Start" type="CenterContainer" parent="CanvasLayer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="StartButton" parent="VBoxContainer/VBoxContainer/CenterContainer - Start" instance=ExtResource("2_iqoyb")]
+[node name="StartButton" parent="CanvasLayer/VBoxContainer/VBoxContainer/CenterContainer - Start" instance=ExtResource("2_iqoyb")]
 process_mode = 3
 layout_mode = 2
 focus_neighbor_left = NodePath("../../CenterContainer - Quit/QuitButton")
 focus_neighbor_top = NodePath("../../CenterContainer - Quit/QuitButton")
 focus_neighbor_right = NodePath("../../CenterContainer - Load/LoadButton")
 text = "Start"
-scene = ExtResource("4_8w4q2")
+scene = ExtResource("4_1dn7j")
 
-[node name="CenterContainer - Load" type="CenterContainer" parent="VBoxContainer/VBoxContainer"]
+[node name="CenterContainer - Load" type="CenterContainer" parent="CanvasLayer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
 
-[node name="LoadButton" parent="VBoxContainer/VBoxContainer/CenterContainer - Load" instance=ExtResource("3_c1jdp")]
+[node name="LoadButton" parent="CanvasLayer/VBoxContainer/VBoxContainer/CenterContainer - Load" instance=ExtResource("3_c1jdp")]
 layout_mode = 2
 focus_neighbor_left = NodePath("../../CenterContainer - Start/StartButton")
-focus_neighbor_right = NodePath("../../CenterContainer - Settings/SettingsButton")
 text = "Load"
+scene = ExtResource("6_x28e7")
 
-[node name="CenterContainer - Settings" type="CenterContainer" parent="VBoxContainer/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 3
-
-[node name="SettingsButton" parent="VBoxContainer/VBoxContainer/CenterContainer - Settings" instance=ExtResource("4_inc1k")]
-layout_mode = 2
-focus_neighbor_left = NodePath("../../CenterContainer - Load/LoadButton")
-focus_neighbor_right = NodePath("../../CenterContainer - Quit/QuitButton")
-text = "Settings"
-
-[node name="CenterContainer - Quit" type="CenterContainer" parent="VBoxContainer/VBoxContainer"]
+[node name="CenterContainer - Quit" type="CenterContainer" parent="CanvasLayer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="QuitButton" parent="VBoxContainer/VBoxContainer/CenterContainer - Quit" instance=ExtResource("6_ggr35")]
+[node name="QuitButton" parent="CanvasLayer/VBoxContainer/VBoxContainer/CenterContainer - Quit" instance=ExtResource("6_ggr35")]
 layout_mode = 2
-focus_neighbor_left = NodePath("../../CenterContainer - Settings/SettingsButton")
 focus_neighbor_right = NodePath("../../CenterContainer - Start/StartButton")
 focus_neighbor_bottom = NodePath("../../CenterContainer - Start/StartButton")
 text = "Quit"
@@ -99,7 +104,6 @@ text = "Quit"
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 process_mode = 3
 stream = ExtResource("2_aowep")
-autoplay = true
 attenuation = 1e-05
 
-[connection signal="pressed" from="VBoxContainer/VBoxContainer/CenterContainer - Quit/QuitButton" to="VBoxContainer/VBoxContainer" method="_on_quit_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/VBoxContainer/VBoxContainer/CenterContainer - Quit/QuitButton" to="CanvasLayer/VBoxContainer/VBoxContainer" method="_on_quit_button_pressed"]

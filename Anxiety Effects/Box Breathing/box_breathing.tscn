@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bfv6gxyo50n2o"]
+[gd_scene load_steps=13 format=3 uid="uid://bfv6gxyo50n2o"]
 
 [ext_resource type="Script" path="res://Anxiety Effects/Box Breathing/box_breathing.gd" id="1_thdss"]
 [ext_resource type="Script" path="res://Anxiety Effects/Box Breathing/draw_circle.gd" id="1_vvqqq"]
@@ -96,14 +96,104 @@ _data = {
 [sub_resource type="CircleShape2D" id="CircleShape2D_bnl1x"]
 radius = 32.9848
 
+[sub_resource type="Animation" id="Animation_xxmus"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/ColorRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_lsqu2"]
+resource_name = "fade_in"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/ColorRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.966667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_le71j"]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/ColorRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bo4pt"]
+_data = {
+"RESET": SubResource("Animation_xxmus"),
+"fade_in": SubResource("Animation_lsqu2"),
+"fade_out": SubResource("Animation_le71j")
+}
+
 [node name="BoxBreathing" type="Node2D"]
+modulate = Color(1, 1, 1, 0)
+z_index = 7
 script = ExtResource("1_thdss")
 
 [node name="Button" type="Node2D" parent="."]
-z_index = -1
 script = ExtResource("1_vvqqq")
 
 [node name="Hit Marker" type="Node2D" parent="."]
+z_index = 4
 script = ExtResource("2_t1i2k")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Hit Marker"]
@@ -120,12 +210,32 @@ monitorable = false
 shape = SubResource("CircleShape2D_bnl1x")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
+z_index = -1
 offset_left = -80.0
 offset_top = -80.0
 offset_right = 80.0
 offset_bottom = -40.0
 mouse_filter = 2
-text = "breathing intesifies"
+bbcode_enabled = true
+
+[node name="BBAnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_bo4pt")
+}
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 0.6)
 
 [connection signal="input_event" from="Interactable/Area2D" to="Button" method="interactable_input"]
 [connection signal="mouse_exited" from="Interactable/Area2D" to="Button" method="_on_interactable_mouse_exited"]

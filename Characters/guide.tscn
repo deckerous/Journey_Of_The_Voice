@@ -1,9 +1,0 @@
-[gd_scene load_steps=3 format=3 uid="uid://c0u1fdrgiinbp"]
-
-[ext_resource type="PackedScene" uid="uid://cfcuodb5inj3o" path="res://Generic Components/Scenes/character.tscn" id="1_wcxgl"]
-[ext_resource type="Texture2D" uid="uid://d1wbobfmpetck" path="res://icon.svg" id="2_bjven"]
-
-[node name="Guide" instance=ExtResource("1_wcxgl")]
-
-[node name="Sprite2D" parent="." index="0"]
-texture = ExtResource("2_bjven")

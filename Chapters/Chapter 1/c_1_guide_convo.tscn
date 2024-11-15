@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://c1u7usj8dgwwe"]
 
 [ext_resource type="PackedScene" uid="uid://cee0f16o8788r" path="res://Generic Components/Scenes/conversation.tscn" id="1_atbyn"]
-[ext_resource type="PackedScene" uid="uid://c0u1fdrgiinbp" path="res://Characters/guide.tscn" id="2_fy8dh"]
-[ext_resource type="PackedScene" uid="uid://pie5vurh8eoo" path="res://Characters/drummer.tscn" id="3_xe72q"]
+[ext_resource type="PackedScene" uid="uid://c0u1fdrgiinbp" path="res://Characters/Scenes/guide.tscn" id="2_fy8dh"]
+[ext_resource type="PackedScene" uid="uid://pie5vurh8eoo" path="res://Characters/Scenes/drummer.tscn" id="3_xe72q"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2g7bh"]
 size = Vector2(176, 168)
@@ -17,6 +17,3 @@ shape = SubResource("RectangleShape2D_2g7bh")
 [node name="Guide" parent="ConversationCharacters/StartingCharacter" index="2" instance=ExtResource("2_fy8dh")]
 
 [node name="Drummer" parent="ConversationCharacters/OtherCharacter" index="1" instance=ExtResource("3_xe72q")]
-
-[node name="DialogueClickArea" parent="." index="1"]
-visible = true

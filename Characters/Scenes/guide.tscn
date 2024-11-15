@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://c0u1fdrgiinbp"]
+
+[ext_resource type="PackedScene" uid="uid://cfcuodb5inj3o" path="res://Generic Components/Scenes/character.tscn" id="1_mu2oh"]
+[ext_resource type="Texture2D" uid="uid://dk1lxta3rspue" path="res://Characters/Assets/guideFilled.png" id="2_m8byt"]
+
+[node name="Guide" instance=ExtResource("1_mu2oh")]
+
+[node name="Sprite2D" parent="." index="0"]
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("2_m8byt")

@@ -1,9 +1,6 @@
 {
 	"dialogue": [
 		{
-			"id": "Start",
-		},
-		{
 			"character": "Drummer",
 			"text": "My name is Kenshiro Takemura. Nice to meet you."
 		},
@@ -13,7 +10,7 @@
 		},
 		{
 			"text": "uh, meet you.",
-			"function": "anxiety_effect_1"
+			"function": "anxiety_effect"
 		},
 		{
 			"character": "You",
