@@ -17,5 +17,6 @@ func on_dialogue_click(event: InputEvent):
 				get_tree().paused = false
 				get_tree().change_scene_to_packed(chapter_scene)
 				Transition.disappear()
-				var stream = GlobalAudio.play_sound(music)
-				stream.volume_db = -15
+				var player = GlobalAudio.play_sound_id(music, "bar-theme")
+				player.volume_db = -80
+				GlobalAudio.tween_from_id("bar-theme", -15, 1.0) # TODO: change to global volume
