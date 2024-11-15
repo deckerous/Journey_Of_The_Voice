@@ -85,6 +85,7 @@ offset_left = 499.0
 offset_top = 306.0
 offset_right = 660.008
 offset_bottom = 329.261
+mouse_filter = 2
 theme = ExtResource("1_u30v6")
 theme_override_colors/default_color = Color(1, 1, 1, 1)
 text = "Journey of the Voice"
