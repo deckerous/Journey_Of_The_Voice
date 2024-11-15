@@ -1,8 +1,8 @@
 # Journey_Of_The_Voice
 
 **User Manual:**
-- Located in the itch.io page and in-game.
-- https://wearethem.itch.io/journey-of-the-voice
+- Located in the itch.io page and in-game tutorials.
+  - https://wearethem.itch.io/journey-of-the-voice
 
  **Source Code Access:**
  - No special resources excluded from the repo, just clone repo onto your machine.
@@ -18,7 +18,7 @@
  - tests/unit: Contains written unit tests for the game that are run on commit to the repo.
 
 Accessing scenes, scripts, resources, and tools in Godot can be done by double clicking files in the FileSystem
- - (image)
+<img src="ReadmePics/godot-file-system.png" width="75%">
 
 **How to Build the Sofware:**
 - In Godot, running the "Play" button will build and run the project in the editor, and "Run Current Scene" builds and runs individual scenes that are runnable.
@@ -30,15 +30,16 @@ Accessing scenes, scripts, resources, and tools in Godot can be done by double c
 - Under the tests/unit directory add a new test file with the convention "test_[test name].gd" and make sure it extends GutTest.
 - Documentation for writing GUT test can be found here: https://gut.readthedocs.io/en/latest/Quick-Start.html#
 
-**How to Build a Release:**
+**How to Build the Project:**
 - Download the latest version of Godot:
   - https://godotengine.org/download/windows/
   - Versions for other OS lower in the page
 - Clone the main branch of the repository.
 - Start Godot and import the project.
-  - (image)
-  - (image)
- - Double click on the imported project to open the project in the editor.
- - To run the project press the "Run Project" button at the top right which will open up a new window running the game.
-   - (image)
-   - (image)
+<img src="ReadmePics/godot-import.png" width="75%">
+<img src="ReadmePics/import-project-file.png" width="75%">
+Double click on the imported project to open the project in the editor.
+
+To run the project press the "Run Project" button at the top right which will open up a new window running the game.
+<img src="ReadmePics/project-run.png" width="75%">
+<img src="ReadmePics/project-running-window.png" width="75%">
