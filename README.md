@@ -30,7 +30,7 @@ Accessing scenes, scripts, resources, and tools in Godot can be done by double c
 3. In the file system locate a test file you want to run and double click to select it.
 4. Run the test by clicking on the "<test_file>.gd" button next to "Current:" and a results window will appear.
 <img src="ReadmePics/GUT-instructions.png" width="75%">
-<img src="ReadmePics/GUT-test-results-screen.png" width="75%">
+<img src="ReadmePics/GUT-test-results-window.png" width="75%">
 
 **How to Add New Tests:**
 - Under the tests/unit directory add a new test file with the convention "test_[test name].gd" and make sure it extends GutTest.
