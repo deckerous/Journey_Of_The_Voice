@@ -23,8 +23,14 @@ Accessing scenes, scripts, resources, and tools in Godot can be done by double c
 **How to Build the Sofware:**
 - In Godot, running the "Play" button will build and run the project in the editor, and "Run Current Scene" builds and runs individual scenes that are runnable.
 
-**How to Test:**
+**How to Run Tests:**
 - In Godot, there is a tab labeled "GUT" at the bottom of the editor that opens a menu for running selected GUT test files and viewing test diagnostics.
+1. In the editor, open the "GUT" tab.
+2. Scroll down to "Test Directories" and press on "..." to find the directory tests/unit.
+3. In the file system locate a test file you want to run and double click to select it.
+4. Run the test by clicking on the "<test_file>.gd" button next to "Current:" and a results window will appear.
+<img src="ReadmePics/GUT-instructions.png" width="75%">
+<img src="ReadmePics/GUT-test-results-screen.png" width="75%">
 
 **How to Add New Tests:**
 - Under the tests/unit directory add a new test file with the convention "test_[test name].gd" and make sure it extends GutTest.
