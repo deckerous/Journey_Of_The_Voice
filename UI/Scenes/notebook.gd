@@ -13,13 +13,17 @@ extends Node2D
 
 @onready var bgm: AudioStream = load("res://Audio/songs/wave/wave-theme.wav")
 
-var pg = 1;
-var vol = 100;
+var pg = 1
+var sfxvol = 100
+var musvol = 100
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	GlobalAudio.play_sound(bgm)
-	h_slider_vol.value = vol
+	#GlobalAudio.play_sound(bgm)
+	h_slider_sfx_vol.value = sfxvol
+	h_slider_mus_vol.value = musvol
+	mus_vol_level.text = str(musvol)
+	sfx_vol_level.text = str(sfxvol)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
@@ -27,23 +31,34 @@ func _process(_delta: float) -> void:
 		1:
 			page_1.visible = true
 			page_2.visible = false
-			button_l.visible = false
-			button_r.visible = true
+			button_l.modulate.a = 0
+			button_l.disabled = true
+			button_r.modulate.a = 1
+			button_r.disabled = false
 		2:
 			page_1.visible = false
 			page_2.visible = true
-			button_l.visible = true
-			button_r.visible = false
-	vol_level.text = str(vol,"%")
+			button_l.modulate.a = 1
+			button_l.disabled = false
+			button_r.modulate.a = 0
+			button_r.disabled = true
 
 func _on_button_r_pressed():
 	pg += 1
-	
+	page_flip_sound_effect.play()
 
 func _on_button_l_pressed():
 	pg -= 1
+	page_flip_sound_effect.play()
 	
 
-func _on_h_slider_vol_drag_ended(_value_changed: bool) -> void:
-	vol = h_slider_vol.value
-	GlobalAudio.set_global_vol(vol)
+
+func _on_h_slider_mus_vol_drag_ended(value_changed: bool) -> void:
+	musvol = h_slider_mus_vol.value
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), linear_to_db(musvol*.01))
+	mus_vol_level.text = str(musvol)
+
+func _on_h_slider_sfx_vol_drag_ended(value_changed: bool) -> void:
+	sfxvol = h_slider_sfx_vol.value
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), linear_to_db(sfxvol*.01))
+	sfx_vol_level.text = str(sfxvol)
