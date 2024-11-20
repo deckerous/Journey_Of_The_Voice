@@ -2,6 +2,11 @@ extends Node
 
 @onready var global_vol = 100
 
+func set_sfx_vol(level: int):
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), linear_to_db(level*.01))
+
+func set_music_vol(level: int):
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), linear_to_db(level*.01))
 
 func play_sound(audio_stream: AudioStream) -> AudioStreamPlayer:
 	var temp_stream = AudioStreamPlayer.new()

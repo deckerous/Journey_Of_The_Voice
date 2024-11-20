@@ -53,10 +53,10 @@ func _on_button_l_pressed():
 
 func _on_h_slider_mus_vol_drag_ended(value_changed: bool) -> void:
 	musvol = h_slider_mus_vol.value
-	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), linear_to_db(musvol*.01))
+	GlobalAudio.set_music_vol(musvol)
 	mus_vol_level.text = str(musvol)
 
 func _on_h_slider_sfx_vol_drag_ended(value_changed: bool) -> void:
 	sfxvol = h_slider_sfx_vol.value
-	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), linear_to_db(sfxvol*.01))
+	GlobalAudio.set_sfx_vol(sfxvol)
 	sfx_vol_level.text = str(sfxvol)
