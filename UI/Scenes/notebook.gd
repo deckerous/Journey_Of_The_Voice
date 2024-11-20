@@ -8,9 +8,7 @@ extends Node2D
 @onready var button_l: TextureButton = %ButtonL
 @onready var page_2: Control = %Page2
 @onready var page_1: Control = %Page1
-@onready var page_flip_sound_effect: AudioStreamPlayer = %PageFlipSoundEffect
-
-
+@onready var page_flip_sound_effect: AudioStreamWAV = load("res://Audio/sound-effects/page-flip-2.wav")
 @onready var bgm: AudioStream = load("res://Audio/songs/wave/wave-theme.wav")
 
 var pg = 1
@@ -19,7 +17,7 @@ var musvol = 100
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	#GlobalAudio.play_sound(bgm)
+	GlobalAudio.play_music(bgm)
 	h_slider_sfx_vol.value = sfxvol
 	h_slider_mus_vol.value = musvol
 	mus_vol_level.text = str(musvol)
@@ -45,11 +43,11 @@ func _process(_delta: float) -> void:
 
 func _on_button_r_pressed():
 	pg += 1
-	page_flip_sound_effect.play()
+	GlobalAudio.play_sound(page_flip_sound_effect)
 
 func _on_button_l_pressed():
 	pg -= 1
-	page_flip_sound_effect.play()
+	GlobalAudio.play_sound(page_flip_sound_effect)
 	
 
 

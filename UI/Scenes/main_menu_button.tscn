@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://hsxry7hy2u46"]
 
-[ext_resource type="AudioStream" uid="uid://dgktypvlkw28r" path="res://Audio/sound-effects/shick-sound.wav" id="1_ku08p"]
+[ext_resource type="AudioStream" uid="uid://b8xf0yga4gece" path="res://Audio/sound-effects/shick-sound.wav" id="1_ku08p"]
 [ext_resource type="Theme" uid="uid://v3tjxnq7o5ny" path="res://Themes/notebook_text.tres" id="1_xlx6t"]
-[ext_resource type="AudioStream" uid="uid://c383mebpqsrgg" path="res://Audio/sound-effects/shika-sha-sound.wav" id="3_daydt"]
+[ext_resource type="AudioStream" uid="uid://bp3ljvrs7l0np" path="res://Audio/sound-effects/shika-sha-sound.wav" id="3_daydt"]
 
 [sub_resource type="GDScript" id="GDScript_1qqp5"]
 script/source = "extends Button
