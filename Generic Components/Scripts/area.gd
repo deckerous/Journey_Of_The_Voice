@@ -1,6 +1,12 @@
 class_name Area
 extends Node2D
 
+# TODO: add save file paths here to check for if the minigame has been
+# played before and to display the tutorial popup accordingly.
+# Check flag in save file that says the tutorial has been red,
+# then displays tutorial in the notebook for future reference.
+# Add "I made a note in my notebook..." popup.
+
 @export var start_with_monologue: bool
 @export var starting_monologue: PackedScene
 @onready var monologues = $Monologues
@@ -62,6 +68,7 @@ func go_to_next_convo(conversation: PackedScene):
 		inst.finished_conversation.connect(unhide_characters)
 
 func go_to_next_minigame(minigame: PackedScene):
+	
 	var inst = minigame.instantiate()
 	self.add_child(inst)
 	remove_anxiety_effect()

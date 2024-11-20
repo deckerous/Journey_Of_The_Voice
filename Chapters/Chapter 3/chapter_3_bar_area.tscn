@@ -1,12 +1,12 @@
 [gd_scene load_steps=6 format=3 uid="uid://cytkowxct06e2"]
 
 [ext_resource type="PackedScene" uid="uid://3kgo3ypehagf" path="res://Generic Components/Scenes/area.tscn" id="1_ogb4d"]
-[ext_resource type="Texture2D" uid="uid://dll6d7bc3xaj2" path="res://Area Backgrounds/bar_background.png" id="2_j52db"]
+[ext_resource type="Texture2D" uid="uid://lrtotxcjnho5" path="res://Area Backgrounds/bar_background.png" id="2_j52db"]
 [ext_resource type="PackedScene" uid="uid://bxvi2sf2kfitm" path="res://Chapters/Chapter 3/Monologues/ch_3_0_mono.tscn" id="2_se6rg"]
 [ext_resource type="PackedScene" uid="uid://c0u1fdrgiinbp" path="res://Characters/Scenes/guide.tscn" id="3_og506"]
 [ext_resource type="PackedScene" uid="uid://pie5vurh8eoo" path="res://Characters/Scenes/drummer.tscn" id="4_egn52"]
 
-[node name="Chapter3Bar" instance=ExtResource("1_ogb4d")]
+[node name="Chapter3BarArea" instance=ExtResource("1_ogb4d")]
 start_with_monologue = true
 starting_monologue = ExtResource("2_se6rg")
 

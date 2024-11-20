@@ -2,6 +2,7 @@ extends Node2D
 @onready var page_1: Node2D = %page_1
 @onready var page_2: Node2D = %page_2
 @onready var tutorial_button: Button = %TutorialButton
+@onready var sprite_2d: Sprite2D = $Sprite2D
 
 var pg = 1
 @export var game_scene: PackedScene
@@ -22,6 +23,12 @@ func _on_tutorial_button_pressed() -> void:
 		page_1.visible = false
 		page_2.visible = true
 		tutorial_button.text = "Try Game" 
-	if pg == 2:
-		var tutorial = game_scene.instantiate()
-		add_child(tutorial)
+		tutorial_button.pressed.connect(instantiate_minigame)
+	elif pg == 2:
+		page_2.visible = false
+		sprite_2d.visible = false
+		tutorial_button.visible = false
+
+func instantiate_minigame():
+	var tutorial = game_scene.instantiate()
+	self.add_child(tutorial)
