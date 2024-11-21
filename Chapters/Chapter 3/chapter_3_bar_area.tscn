@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cytkowxct06e2"]
 
 [ext_resource type="PackedScene" uid="uid://3kgo3ypehagf" path="res://Generic Components/Scenes/area.tscn" id="1_ogb4d"]
-[ext_resource type="Texture2D" uid="uid://lrtotxcjnho5" path="res://Area Backgrounds/bar_background.png" id="2_j52db"]
+[ext_resource type="Texture2D" uid="uid://b6ln6f7cpqgu5" path="res://Area Backgrounds/bar_background.png" id="2_j52db"]
 [ext_resource type="PackedScene" uid="uid://bxvi2sf2kfitm" path="res://Chapters/Chapter 3/Monologues/ch_3_0_mono.tscn" id="2_se6rg"]
 [ext_resource type="PackedScene" uid="uid://c0u1fdrgiinbp" path="res://Characters/Scenes/guide.tscn" id="3_og506"]
 [ext_resource type="PackedScene" uid="uid://pie5vurh8eoo" path="res://Characters/Scenes/drummer.tscn" id="4_egn52"]

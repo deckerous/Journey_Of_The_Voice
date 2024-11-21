@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://r4he0blyv1bh"]
 
 [ext_resource type="PackedScene" uid="uid://3kgo3ypehagf" path="res://Generic Components/Scenes/area.tscn" id="1_ken8t"]
-[ext_resource type="PackedScene" uid="uid://c1u7usj8dgwwe" path="res://Chapters/Chapter 1/c_1_guide_convo.tscn" id="2_jye1t"]
+[ext_resource type="PackedScene" uid="uid://c1u7usj8dgwwe" path="res://Chapters/Chapter 1/Conversations/c_1_guide_convo.tscn" id="2_jye1t"]
 
 [node name="C1BarArea" instance=ExtResource("1_ken8t")]
 

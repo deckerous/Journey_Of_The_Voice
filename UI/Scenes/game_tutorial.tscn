@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://b45cj1t6je1f2"]
 
 [ext_resource type="Script" path="res://UI/Scenes/game_tutorial.gd" id="1_wkrhh"]
-[ext_resource type="Texture2D" uid="uid://bipbah02rtf4s" path="res://Images/UI/popup_bg.png" id="2_qriyx"]
+[ext_resource type="Texture2D" uid="uid://2cwh12xovypr" path="res://Images/UI/popup_bg.png" id="2_qriyx"]
 [ext_resource type="PackedScene" uid="uid://bfv6gxyo50n2o" path="res://Anxiety Effects/Box Breathing/box_breathing.tscn" id="2_y5m41"]
 [ext_resource type="Theme" uid="uid://v3tjxnq7o5ny" path="res://Themes/notebook_text.tres" id="3_y7tol"]
 
@@ -59,6 +59,5 @@ offset_left = 544.0
 offset_top = 488.0
 offset_right = 644.0
 offset_bottom = 514.0
-text = "Fart"
 
 [connection signal="pressed" from="TutorialButton" to="." method="_on_tutorial_button_pressed"]
