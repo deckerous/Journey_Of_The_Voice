@@ -3,7 +3,7 @@ func before_each():
 	GlobalAudio.set_sfx_vol(1)
 	GlobalAudio.set_music_vol(1)
 	GlobalAudio.play_sound_id(load("res://Audio/songs/bar/bar-theme.wav"), "bar")
-	GlobalAudio.play_music_id(load("res://Audio/songs/beep/beep-theme.wav"), "beep")
+	GlobalAudio.play_sound_id(load("res://Audio/songs/beep/beep-theme.wav"), "beep", GlobalAudio.Bus.MUSIC)
 	# await get_tree().create_timer(1.0).timeout
 	gut.p("ran setup")
 

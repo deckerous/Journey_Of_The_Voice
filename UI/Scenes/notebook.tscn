@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://c7366i15i2pl3"]
 
 [ext_resource type="Script" path="res://UI/Scenes/notebook.gd" id="1_pjd0k"]
-[ext_resource type="Theme" uid="uid://v3tjxnq7o5ny" path="res://Themes/notebook_text.tres" id="2_fwp36"]
-[ext_resource type="Texture2D" uid="uid://cb8wh6ye0pgk3" path="res://Images/UI/arrow_r.png" id="4_65gpl"]
-[ext_resource type="Texture2D" uid="uid://iroe3iry1pvo" path="res://Images/UI/notebook_open_level.png" id="4_y6sl8"]
-[ext_resource type="Texture2D" uid="uid://bepst3xq1hg31" path="res://Images/UI/arrow_l.png" id="5_xcnod"]
-[ext_resource type="AudioStream" uid="uid://bgxg4k61mh8ro" path="res://Audio/sound-effects/page-flip-2.wav" id="6_pgjxh"]
+[ext_resource type="Theme" path="res://Themes/notebook_text.tres" id="2_fwp36"]
+[ext_resource type="Texture2D" uid="uid://cqhec8ipmsye5" path="res://Images/UI/arrow_r.png" id="4_65gpl"]
+[ext_resource type="Texture2D" uid="uid://b55jxyjcugj4y" path="res://Images/UI/notebook_open_level.png" id="4_y6sl8"]
+[ext_resource type="Texture2D" uid="uid://c7vrcggtouj2a" path="res://Images/UI/arrow_l.png" id="5_xcnod"]
+[ext_resource type="AudioStream" uid="uid://dbvswf5t2akyi" path="res://Audio/sound-effects/page-flip-2.wav" id="6_pgjxh"]
 
 [node name="Notebook" type="Node2D"]
 script = ExtResource("1_pjd0k")

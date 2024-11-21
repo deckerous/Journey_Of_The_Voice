@@ -17,7 +17,7 @@ var musvol = 100
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	GlobalAudio.play_music(bgm)
+	GlobalAudio.play_sound(bgm, GlobalAudio.Bus.MUSIC)
 	h_slider_sfx_vol.value = sfxvol
 	h_slider_mus_vol.value = musvol
 	mus_vol_level.text = str(musvol)

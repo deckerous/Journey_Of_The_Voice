@@ -1,43 +1,46 @@
 extends Node
 
-@onready var global_vol = 100
+enum Bus {
+	SFX,
+	MUSIC,
+}
+
+var master_vol = 100
+var sfx_vol = 100
+var music_vol = 100
+
+func set_master_vol(level: int):
+	master_vol = level
+	update_bus()
 
 func set_sfx_vol(level: int):
-	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), linear_to_db(level*.01))
+	sfx_vol = level
+	update_bus()
 
 func set_music_vol(level: int):
-	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), linear_to_db(level*.01))
+	music_vol = level
+	update_bus()
+	
+func update_bus():
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), linear_to_db(sfx_vol * 0.01 * master_vol * 0.01))
+	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), linear_to_db(music_vol * 0.01 * master_vol * 0.01))
 
-func play_sound(audio_stream: AudioStream) -> AudioStreamPlayer:
+func play_sound(audio_stream: AudioStream, bus: Bus = Bus.SFX) -> AudioStreamPlayer:
 	var temp_stream = AudioStreamPlayer.new()
 	temp_stream.stream = audio_stream
-	temp_stream.bus = &"SFX"
+	match bus:
+		Bus.SFX:
+			temp_stream.bus = &"SFX"
+		Bus.MUSIC:
+			temp_stream.bus = &"Music"
 	temp_stream.autoplay = true
-	temp_stream.volume_db = linear_to_db(global_vol/100)
 	temp_stream.finished.connect(finished)
 	
 	add_child(temp_stream)
 	return temp_stream
 	
-func play_sound_id(audio_stream: AudioStream, id: String) -> AudioStreamPlayer:
-	var temp_stream = play_sound(audio_stream)
-	temp_stream.name = id
-	
-	return temp_stream
-
-func play_music(audio_stream: AudioStream) -> AudioStreamPlayer:
-	var temp_stream = AudioStreamPlayer.new()
-	temp_stream.stream = audio_stream
-	temp_stream.bus = &"Music"
-	temp_stream.autoplay = true
-	temp_stream.volume_db = linear_to_db(global_vol/100)
-	temp_stream.finished.connect(finished)
-	
-	add_child(temp_stream)
-	return temp_stream
-
-func play_music_id(audio_stream: AudioStream, id: String) -> AudioStreamPlayer:
-	var temp_stream = play_music(audio_stream)
+func play_sound_id(audio_stream: AudioStream, id: String, bus: Bus = Bus.SFX) -> AudioStreamPlayer:
+	var temp_stream = play_sound(audio_stream, bus)
 	temp_stream.name = id
 	
 	return temp_stream
