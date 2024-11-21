@@ -1,11 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://c7366i15i2pl3"]
+[gd_scene load_steps=6 format=3 uid="uid://c7366i15i2pl3"]
 
 [ext_resource type="Script" path="res://UI/Scenes/notebook.gd" id="1_pjd0k"]
-[ext_resource type="Theme" path="res://Themes/notebook_text.tres" id="2_fwp36"]
-[ext_resource type="Texture2D" uid="uid://cqhec8ipmsye5" path="res://Images/UI/arrow_r.png" id="4_65gpl"]
-[ext_resource type="Texture2D" uid="uid://b55jxyjcugj4y" path="res://Images/UI/notebook_open_level.png" id="4_y6sl8"]
-[ext_resource type="Texture2D" uid="uid://c7vrcggtouj2a" path="res://Images/UI/arrow_l.png" id="5_xcnod"]
-[ext_resource type="AudioStream" uid="uid://dbvswf5t2akyi" path="res://Audio/sound-effects/page-flip-2.wav" id="6_pgjxh"]
+[ext_resource type="Theme" uid="uid://v3tjxnq7o5ny" path="res://Themes/notebook_text.tres" id="2_fwp36"]
+[ext_resource type="Texture2D" uid="uid://cb8wh6ye0pgk3" path="res://Images/UI/arrow_r.png" id="4_65gpl"]
+[ext_resource type="Texture2D" uid="uid://iroe3iry1pvo" path="res://Images/UI/notebook_open_level.png" id="4_y6sl8"]
+[ext_resource type="Texture2D" uid="uid://bepst3xq1hg31" path="res://Images/UI/arrow_l.png" id="5_xcnod"]
 
 [node name="Notebook" type="Node2D"]
 script = ExtResource("1_pjd0k")
@@ -207,12 +206,49 @@ clip_contents = false
 layout_mode = 2
 size_flags_horizontal = 2
 size_flags_stretch_ratio = 0.0
+text = "Volume:"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="VolLevel" type="RichTextLabel" parent="Notebook/Container/Page2/LeftPageCont/HBoxContainer2"]
+unique_name_in_owner = true
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_stretch_ratio = 0.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "
+"
+fit_content = true
+scroll_active = false
+autowrap_mode = 2
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="HSlider_main_vol" type="HSlider" parent="Notebook/Container/Page2/LeftPageCont"]
+unique_name_in_owner = true
+layout_mode = 2
+focus_neighbor_left = NodePath("../../../../ButtonL")
+focus_neighbor_top = NodePath("../../../../ButtonL")
+focus_previous = NodePath("../../../../ButtonL")
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Notebook/Container/Page2/LeftPageCont"]
+layout_mode = 2
+size_flags_vertical = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Notebook/Container/Page2/LeftPageCont/HBoxContainer4"]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_stretch_ratio = 0.0
 text = "SFX Volume:"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
 
-[node name="SFXVolLevel" type="RichTextLabel" parent="Notebook/Container/Page2/LeftPageCont/HBoxContainer2"]
+[node name="SFXVolLevel" type="RichTextLabel" parent="Notebook/Container/Page2/LeftPageCont/HBoxContainer4"]
 unique_name_in_owner = true
 clip_contents = false
 layout_mode = 2
@@ -309,12 +345,8 @@ size_flags_horizontal = 6
 size_flags_vertical = 4
 texture_normal = ExtResource("4_65gpl")
 
-[node name="PageFlipSoundEffect" type="AudioStreamPlayer" parent="."]
-unique_name_in_owner = true
-stream = ExtResource("6_pgjxh")
-bus = &"SFX"
-
 [connection signal="pressed" from="Notebook/ButtonL" to="." method="_on_button_l_pressed"]
-[connection signal="drag_ended" from="Notebook/Container/Page2/LeftPageCont/HSlider_sfx_vol" to="." method="_on_h_slider_sfx_vol_drag_ended"]
-[connection signal="drag_ended" from="Notebook/Container/Page2/LeftPageCont/HSlider_mus_vol" to="." method="_on_h_slider_mus_vol_drag_ended"]
+[connection signal="value_changed" from="Notebook/Container/Page2/LeftPageCont/HSlider_main_vol" to="." method="_on_h_slider_main_vol_value_changed"]
+[connection signal="value_changed" from="Notebook/Container/Page2/LeftPageCont/HSlider_sfx_vol" to="." method="_on_h_slider_sfx_vol_value_changed"]
+[connection signal="value_changed" from="Notebook/Container/Page2/LeftPageCont/HSlider_mus_vol" to="." method="_on_h_slider_mus_vol_value_changed"]
 [connection signal="pressed" from="Notebook/ButtonR" to="." method="_on_button_r_pressed"]
