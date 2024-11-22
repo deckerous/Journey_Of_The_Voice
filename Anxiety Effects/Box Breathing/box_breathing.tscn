@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://bfv6gxyo50n2o"]
+[gd_scene load_steps=14 format=3 uid="uid://bfv6gxyo50n2o"]
 
 [ext_resource type="Script" path="res://Anxiety Effects/Box Breathing/box_breathing.gd" id="1_thdss"]
 [ext_resource type="Script" path="res://Anxiety Effects/Box Breathing/draw_circle.gd" id="1_vvqqq"]
 [ext_resource type="Script" path="res://Anxiety Effects/Box Breathing/hit_marker.gd" id="2_t1i2k"]
+[ext_resource type="PackedScene" uid="uid://b45cj1t6je1f2" path="res://UI/Scenes/game_tutorial.tscn" id="4_yx70w"]
 
 [sub_resource type="Animation" id="Animation_p8twe"]
 length = 0.001
@@ -238,5 +239,9 @@ grow_vertical = 2
 mouse_filter = 2
 color = Color(0, 0, 0, 0.6)
 
+[node name="GameTutorial" parent="." instance=ExtResource("4_yx70w")]
+
 [connection signal="input_event" from="Interactable/Area2D" to="Button" method="interactable_input"]
 [connection signal="mouse_exited" from="Interactable/Area2D" to="Button" method="_on_interactable_mouse_exited"]
+
+[editable path="GameTutorial"]
