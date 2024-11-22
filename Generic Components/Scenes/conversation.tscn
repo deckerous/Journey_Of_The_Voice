@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Generic Components/Scripts/conversation.gd" id="1_i3n2i"]
 [ext_resource type="Script" path="res://Generic Components/Scripts/conversation_characters.gd" id="2_bcwbx"]
 [ext_resource type="Script" path="res://Generic Components/Scenes/conversation_ui.gd" id="3_k11cb"]
-[ext_resource type="AudioStream" uid="uid://bodxm3t5f0dk0" path="res://Audio/sound-effects/pop-2.wav" id="5_s68cj"]
+[ext_resource type="AudioStream" uid="uid://b6a3mlb3pf73g" path="res://Audio/sound-effects/pop-2.wav" id="5_s68cj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uw144"]
 size = Vector2(1152, 64.8)
@@ -219,12 +219,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 8
+mouse_filter = 2
 alignment = 2
 
 [node name="Control" type="Control" parent="ConversationUI/Dialogue"]
 custom_minimum_size = Vector2(0, 192)
 layout_mode = 2
 size_flags_vertical = 10
+mouse_filter = 2
 
 [node name="Gradient" type="TextureRect" parent="ConversationUI/Dialogue/Control"]
 layout_mode = 1
@@ -236,6 +238,7 @@ offset_top = -192.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_vertical = 10
+mouse_filter = 2
 texture = SubResource("GradientTexture2D_5yje8")
 
 [node name="CharacterDialogue" type="VBoxContainer" parent="ConversationUI/Dialogue/Control"]
@@ -245,6 +248,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 
 [node name="NameLabel" type="Label" parent="ConversationUI/Dialogue/Control/CharacterDialogue"]
 custom_minimum_size = Vector2(128, 64)
@@ -256,14 +260,17 @@ vertical_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ConversationUI/Dialogue/Control/CharacterDialogue"]
 layout_mode = 2
+mouse_filter = 2
 
 [node name="MarginLeft" type="Control" parent="ConversationUI/Dialogue/Control/CharacterDialogue/HBoxContainer"]
 custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
+mouse_filter = 2
 
 [node name="DialogueLabel" type="RichTextLabel" parent="ConversationUI/Dialogue/Control/CharacterDialogue/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_filter = 2
 theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
 fit_content = true
@@ -271,6 +278,7 @@ fit_content = true
 [node name="MarginRight" type="Control" parent="ConversationUI/Dialogue/Control/CharacterDialogue/HBoxContainer"]
 custom_minimum_size = Vector2(64, 0)
 layout_mode = 2
+mouse_filter = 2
 
 [node name="DialogueChoices" type="VBoxContainer" parent="ConversationUI/Dialogue/Control"]
 visible = false
@@ -283,6 +291,7 @@ offset_top = -34.0
 offset_bottom = 34.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 theme_override_constants/separation = 16
 
 [node name="SpeechSound" type="AudioStreamPlayer2D" parent="."]

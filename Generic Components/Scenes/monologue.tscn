@@ -150,12 +150,14 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 8
+mouse_filter = 2
 alignment = 2
 
 [node name="Control" type="Control" parent="MonologueUI/Monologue"]
 custom_minimum_size = Vector2(0, 192)
 layout_mode = 2
 size_flags_vertical = 10
+mouse_filter = 2
 
 [node name="RadialGradient" type="TextureRect" parent="MonologueUI/Monologue/Control"]
 modulate = Color(1, 1, 1, 0)
@@ -168,6 +170,7 @@ offset_top = -192.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_vertical = 10
+mouse_filter = 2
 texture = SubResource("GradientTexture2D_jwsua")
 
 [node name="MonologueTextContainer" type="HBoxContainer" parent="MonologueUI/Monologue/Control"]
@@ -178,14 +181,17 @@ offset_bottom = 117.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_vertical = 6
+mouse_filter = 2
 
 [node name="MarginLeft" type="Control" parent="MonologueUI/Monologue/Control/MonologueTextContainer"]
 custom_minimum_size = Vector2(160, 0)
 layout_mode = 2
+mouse_filter = 2
 
 [node name="DialogueLabel" type="RichTextLabel" parent="MonologueUI/Monologue/Control/MonologueTextContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_filter = 2
 theme_override_font_sizes/normal_font_size = 30
 bbcode_enabled = true
 fit_content = true
@@ -193,6 +199,7 @@ fit_content = true
 [node name="MarginRight" type="Control" parent="MonologueUI/Monologue/Control/MonologueTextContainer"]
 custom_minimum_size = Vector2(160, 0)
 layout_mode = 2
+mouse_filter = 2
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
