@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://Generic Components/Scripts/conversation.gd" id="1_i3n2i"]
 [ext_resource type="Script" path="res://Generic Components/Scripts/conversation_characters.gd" id="2_bcwbx"]
 [ext_resource type="Script" path="res://Generic Components/Scenes/conversation_ui.gd" id="3_k11cb"]
-[ext_resource type="AudioStream" uid="uid://b1k2ybhrm1jab" path="res://Audio/sound-effects/pop-2.wav" id="5_s68cj"]
+[ext_resource type="AudioStream" uid="uid://bodxm3t5f0dk0" path="res://Audio/sound-effects/pop-2.wav" id="5_s68cj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uw144"]
 size = Vector2(1152, 64.8)

@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://3kgo3ypehagf"]
 
 [ext_resource type="Script" path="res://Generic Components/Scripts/area.gd" id="1_44oh5"]
-[ext_resource type="FontFile" uid="uid://c8gqrh6ittomx" path="res://Fonts/skippy.ttf" id="2_687nb"]
+[ext_resource type="FontFile" uid="uid://d01nsye73adcj" path="res://Fonts/skippy.ttf" id="2_687nb"]
 
 [sub_resource type="Animation" id="Animation_wnlh5"]
 length = 0.001
