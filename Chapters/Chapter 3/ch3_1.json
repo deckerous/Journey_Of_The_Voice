@@ -2,15 +2,15 @@
 	"dialogue": [
 		{
 			"character": "Guide",
-			"text": "You are looking a lot less...twitchy today."
+			"text": "You're looking a lot less...twitchy today."
 		},
 		{
 			"character": "You",
-			"text": "Yeah, that herbal tea you gave me is keeping my heartbeat from being defening."
+			"text": "Yeah, that herbal tea you gave me is keeping my heartbeat from being deafening."
 		},
 		{
 			"character": "You",
-			"text": "This is quite the crowd today..."
+			"text": "This is quite the crowd today."
 		},
 		{
 			"character": "You",
@@ -18,7 +18,7 @@
 		},
 		{
 			"character": "You",
-			"text": "Shady looking individuals here today right? I mean, tell me the guy with the swords isn't out here for blood!"
+			"text": "Shady looking individuals here today right?"
 		},
 		{
 			"character": "You",
@@ -46,11 +46,11 @@
 		},
 		{
 			"character": "You",
-			"text": "You are making it sound like thats who you want me to meet...."
+			"text": "You're making it sound like that's who you want me to meet...."
 		},
 		{
 			"character": "Guide",
-			"text": "Well aren't you observant."
+			"text": "Well, aren't you observant."
 		},
 		{
 			"character": "Guide",

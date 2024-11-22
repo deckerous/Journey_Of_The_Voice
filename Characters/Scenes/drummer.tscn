@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://pie5vurh8eoo"]
 
 [ext_resource type="PackedScene" uid="uid://cfcuodb5inj3o" path="res://Generic Components/Scenes/character.tscn" id="1_67384"]
-[ext_resource type="Texture2D" uid="uid://d3u2gctck040" path="res://Characters/Assets/drummerSan.png" id="2_gktxj"]
+[ext_resource type="Texture2D" uid="uid://do5dy0whq88x4" path="res://Characters/Assets/drummerSan.png" id="2_gktxj"]
 
 [node name="Drummer" instance=ExtResource("1_67384")]
 scale = Vector2(1.25, 1.25)

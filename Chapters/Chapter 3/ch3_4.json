@@ -45,7 +45,7 @@
 		},
 		{
 			"character": "Drummer",
-			"text": "Breath in for four counts..."
+			"text": "Breathe in for four counts..."
 		},
 		{
 			"character": "Drummer",
@@ -69,7 +69,7 @@
 		},
 		{
 			"character": "Drummer",
-			"text": "Woah ok... I'll let you try it on your own. I'll go over there and once you're ready to talk again I'll answer any questions."
+			"text": "Woah. Ok... I'll let you try it on your own. I'll go over there and once you're ready to talk again I'll answer any questions."
 		},
 		{
 			"function": "end_dialogue"
