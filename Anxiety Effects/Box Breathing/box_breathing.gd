@@ -13,9 +13,12 @@ func _ready() -> void:
 	# Access the player's save file and see if they have already seen the tutorial for box breathing.
 	# If that is the case, hide the tutorial from being shown.
 	var has_done_box_breathing = Player.save_file.get_value("Player", "has_done_box_breathing") == null
-	print(has_done_box_breathing)
 	if !has_done_box_breathing:
 		game_tutorial.visible = false
+	else:
+		# Check now exists for later instantiations of box breathing
+		print("adding check")
+		Player.add_check("has_done_box_breathing")
 	
 	bb_animation_player.play("fade_in")
 	
