@@ -39,7 +39,7 @@ func _summon_word():
 	curr_words += 1
 	var random = RandomNumberGenerator.new()
 	var posX = random.randf_range(-(centerX - 200), centerX - 200) 
-	var posY = random.randf_range(-(centerY - 200), centerY - 200)
+	var posY = random.randf_range(-(centerY - 100), centerY - 100)
 	var word = load(word_scene).instantiate()
 	word.position = Vector2(posX, posY)
 	word.collision_box = $Area2D
