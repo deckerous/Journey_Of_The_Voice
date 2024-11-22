@@ -2,11 +2,11 @@
 
 [ext_resource type="Theme" path="res://Themes/notebook_text.tres" id="1_3bxdf"]
 [ext_resource type="Script" path="res://UI/Scripts/main_menu.gd" id="1_yxa7y"]
-[ext_resource type="AudioStream" uid="uid://bpv5ir5xkgj8c" path="res://Audio/songs/beep/beep-theme.wav" id="2_aowep"]
+[ext_resource type="AudioStream" uid="uid://d31f7meq3aamf" path="res://Audio/songs/beep/beep-theme.wav" id="2_aowep"]
 [ext_resource type="PackedScene" uid="uid://buulbpdh08bqu" path="res://UI/Scenes/start_button.tscn" id="2_iqoyb"]
 [ext_resource type="Script" path="res://UI/Scenes/v_box_container.gd" id="2_q0xt6"]
 [ext_resource type="PackedScene" uid="uid://w6k5cj8hiag4" path="res://UI/Scenes/load_button.tscn" id="3_c1jdp"]
-[ext_resource type="PackedScene" uid="uid://cytkowxct06e2" path="res://Chapters/Chapter 3/chapter_3_bar.tscn" id="4_1dn7j"]
+[ext_resource type="PackedScene" uid="uid://ccsjhqnnoaker" path="res://UI/Scenes/new_game_name_screen.tscn" id="5_ctjce"]
 [ext_resource type="PackedScene" uid="uid://bws8j61yk4oht" path="res://UI/Scenes/quit_button.tscn" id="6_ggr35"]
 [ext_resource type="PackedScene" uid="uid://b2jm2tuudsa2q" path="res://UI/Scenes/load_save_menu.tscn" id="6_x28e7"]
 
@@ -75,12 +75,13 @@ size_flags_vertical = 3
 
 [node name="StartButton" parent="CanvasLayer/VBoxContainer/VBoxContainer/CenterContainer - Start" instance=ExtResource("2_iqoyb")]
 process_mode = 3
+custom_minimum_size = Vector2(164, 64)
 layout_mode = 2
 focus_neighbor_left = NodePath("../../CenterContainer - Quit/QuitButton")
 focus_neighbor_top = NodePath("../../CenterContainer - Quit/QuitButton")
 focus_neighbor_right = NodePath("../../CenterContainer - Load/LoadButton")
-text = "Start"
-scene = ExtResource("4_1dn7j")
+text = "New Game"
+scene = ExtResource("5_ctjce")
 
 [node name="CenterContainer - Load" type="CenterContainer" parent="CanvasLayer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
