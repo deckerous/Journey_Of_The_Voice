@@ -3,7 +3,7 @@ extends Node2D
 @onready var hit_marker = $"Hit Marker"
 @onready var bb_animation_player = $BBAnimationPlayer
 @onready var breathing_sound = load("res://Audio/songs/breathe/breathe-theme.wav")
-@onready var game_tutorial: Node2D = $GameTutorial
+@onready var game_tutorial = $GameTutorial
 
 signal box_breathing_complete
 signal box_breathing_started
@@ -13,7 +13,8 @@ func _ready() -> void:
 	# Access the player's save file and see if they have already seen the tutorial for box breathing.
 	# If that is the case, hide the tutorial from being shown.
 	var has_done_box_breathing = Player.save_file.get_value("Player", "has_done_box_breathing") == null
-	if has_done_box_breathing:
+	print(has_done_box_breathing)
+	if !has_done_box_breathing:
 		game_tutorial.visible = false
 	
 	bb_animation_player.play("fade_in")
@@ -42,4 +43,5 @@ func end_box_breathing():
 	await bb_animation_player.animation_finished
 	GlobalAudio.stop_stream_from_id("breathing_sound")
 	GlobalAudio.tween_from_id("bar-theme", -15.0, 1.0)
+	
 	self.queue_free()

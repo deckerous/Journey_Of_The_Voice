@@ -5,7 +5,6 @@ extends Node2D
 @onready var sprite_2d: Sprite2D = $Sprite2D
 
 var pg = 1
-@export var game_scene: PackedScene
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -22,7 +21,7 @@ func _on_tutorial_button_pressed() -> void:
 		pg = 2
 		page_1.visible = false
 		page_2.visible = true
-		tutorial_button.text = "Try Game" 
+		tutorial_button.text = "Try Game"
 	elif pg == 2:
 		page_2.visible = false
 		sprite_2d.visible = false
