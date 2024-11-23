@@ -54,12 +54,20 @@ func handle_dialogue():
 	dialogue_choices.visible = false
 	enable_dialogue_input.emit()
 	
-	# Run any functions that the text has
-	if conversation.dialogue_dictionary["dialogue"][dialogue_index].has("function"):
+	if dialogue_label.visible_ratio != 1.0:
+		# When the dialogue is still appearing and another 
+		# click comes in, skip to being fully visible
+		
+		dialogue_label.visible_ratio = 1.0
+	
+	elif conversation.dialogue_dictionary["dialogue"][dialogue_index].has("function"):
+		# Run any functions that the text has
+		
 		if conversation.dialogue_dictionary["dialogue"][dialogue_index]["function"] == "end_dialogue":
 			conversation.end_dialogue()
 		elif conversation.dialogue_dictionary["dialogue"][dialogue_index]["function"] == "branch_dialogue":
 			# Provide error message and end dialogue if there aren't options labeled for the dialogue branch
+			
 			if !conversation.dialogue_dictionary["dialogue"][dialogue_index].has("options"):
 				dialogue_label.text = "ERROR: No options? Make sure the .json file has an options string array field that corresponds to a dialogue id."
 				conversation.end_dialogue()
