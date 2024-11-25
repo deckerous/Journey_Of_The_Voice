@@ -1,0 +1,16 @@
+{
+	"journal": [
+        {
+			"id": "Start"
+		},
+		{
+			"journal_entry": "Drummer-San taught me box breathing tonight. I didn’t think it would work, but it actually helped. For the first time, I was able to calm myself down and have a real conversation with someone other than Guide."
+		},
+		{
+			"journal_entry": "He talked about finding rhythm and peace through drumming. It made me think about my relationship to music, maybe singing can help me find peace too..."
+		},
+        {
+            "fucntion": "end_journal"
+        }
+    ]
+}
