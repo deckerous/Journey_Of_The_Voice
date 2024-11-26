@@ -40,6 +40,8 @@ func _process(delta: float) -> void:
 		speech_pitch = 1.0
 	if start_displaying:
 		dialogue_label.visible_characters += 1
+		# Reset pitch to 1 for each letter. Avoids it being driven high or low
+		speech_pitch = 1.0;
 		speech_pitch += randf_range(-0.1, 0.1)
 		GlobalAudio.play_sound_id(speech_wav, "speech_audio", GlobalAudio.Bus.SFX, speech_pitch)
 
