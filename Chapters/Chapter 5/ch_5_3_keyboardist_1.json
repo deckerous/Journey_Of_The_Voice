@@ -1,0 +1,87 @@
+{
+    "dialogue": [
+        {
+            "id": "start"
+        },
+		{
+			"character": "Keyboardist",
+			"text": "Piacere, mi chiamo Alessandro Vincenzo DeLuca."
+		},
+        {
+            "character": "Keyboardist",
+            "text": "But here, I am Keebs"
+        },
+		{
+			"character": "You",
+			"text": "Uh... hi... I’m, um... trying to start a band..."
+		},
+        {
+			"function": "start_intrusive_thoughts"
+		},
+        {
+            "function": "disable_cursor"
+		},
+		{
+			"character": "Keyboardist",
+			"text": "Hey, you alright?"
+		},
+        {
+			"character": "Keyboardist",
+			"text": "It seems as though you’re stuck in your head."
+		},
+		{
+			"character": "You",
+			"text": "Uh... sorry, I... Yeah,I’m struggling a little..."
+		},
+		{
+			"character": "Keyboardist",
+			"text": "No worries. Here’s a trick:"
+		},
+        {
+			"character": "Keyboardist",
+			"text": "Challege the noise your mind produces,"
+		},
+        {
+			"character": "Keyboardist",
+			"text": "When the melody of negative self-talk fills your mind,"
+		},
+        {
+			"character": "Keyboardist",
+			"text": "Don't just loop the sample,"
+		},
+        {
+			"character": "Keyboardist",
+			"text": "Shift the pitch up, and layer in a positve counter example."
+		},
+        {
+			"function": "enable_cursor",
+            "text": "Reframe the negative thought in your mind and click it away."
+		},
+		{
+			"function": "start_minigame_clear_thoughts"
+		},
+		{
+			"character": "You",
+			"text": "I... think that helped. Thanks."
+		},
+		{
+			"character": "Keyboardist",
+			"text": "Hey, everyone’s got noise in their head."
+		},
+		{
+			"character": "You",
+			"text": "So, uh... do you want to join my band?"
+		},
+		{
+			"character": "Keyboardist",
+			"text": "Join your band? Hmm... sure, why not? Let’s make some noise together."
+		},
+		{
+			"character": "Guide",
+			"text": "Man, Keebs is so cool..."
+		},
+		{
+			"function": "end_dialogue"
+		}
+    ]
+}
