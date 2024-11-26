@@ -1,9 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://cee0f16o8788r"]
+[gd_scene load_steps=13 format=3 uid="uid://cee0f16o8788r"]
 
 [ext_resource type="Script" path="res://Generic Components/Scripts/conversation.gd" id="1_i3n2i"]
 [ext_resource type="Script" path="res://Generic Components/Scripts/conversation_characters.gd" id="2_bcwbx"]
 [ext_resource type="Script" path="res://Generic Components/Scenes/conversation_ui.gd" id="3_k11cb"]
-[ext_resource type="AudioStream" uid="uid://dp0fey6b8vqhw" path="res://Audio/sound-effects/pop-2.wav" id="5_s68cj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_uw144"]
 size = Vector2(1152, 64.8)
@@ -293,9 +292,6 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 theme_override_constants/separation = 16
-
-[node name="SpeechSound" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("5_s68cj")
 
 [node name="ConversationAnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

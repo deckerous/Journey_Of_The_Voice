@@ -9,6 +9,8 @@ extends CanvasLayer
 
 # controls dialogue appearing character by character
 @onready var start_displaying = false
+@onready var speech_wav: AudioStreamWAV = load("res://Audio/sound-effects/pop-2.wav")
+var speech_pitch: float
 
 # For parent to enable/disable dialogue input checks
 signal disable_monologue_input
@@ -18,8 +20,11 @@ func _process(delta: float) -> void:
 	# Handle displaying characters one character at a time
 	if dialogue_label.visible_ratio == 1.0:
 		start_displaying = false
+		speech_pitch = 1.0
 	if start_displaying:
 		dialogue_label.visible_characters += 1
+		speech_pitch += randf_range(-0.1, 0.1)
+		GlobalAudio.play_sound_id(speech_wav, "speech_audio", GlobalAudio.Bus.SFX, speech_pitch)
 
 # Starts up the json file reading from the first index
 func start_monologue():
