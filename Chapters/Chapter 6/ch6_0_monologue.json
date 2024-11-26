@@ -1,0 +1,26 @@
+{
+  "monologue": [
+    {
+      "id": "Start",
+      "text": "You step inside, shutting the door behind you as the weight of the day settles on your shoulders."
+    },
+    {
+      "character": "You",
+      "text": "*Wow, I can't believe that I am actually doing this.*"
+    },
+     {
+      "character": "You",
+      "text": "*I'm well on my way to making an actual band!*"
+    },
+    {
+      "character": "You",
+      "text": "*Maybe I should write some of this down...*"
+    },
+    {
+      "function": "journal_available"
+    },
+    {
+      "function": "end_monologue"
+    }
+  ]
+}

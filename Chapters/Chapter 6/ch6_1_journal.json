@@ -1,0 +1,25 @@
+{
+    "journal": [
+      {
+        "id": "Start"
+      },
+      {
+        "journal_entry": "Keebs taught me how to reframe negative self-talk today."
+      },
+      {
+        "journal_entry": "He helped me understand that my immediate thoughts can be challenged,"
+      }, 
+      {
+        "journal_entry": "Countering harsh thoughts with gentle understanding."
+      },
+      {
+        "journal_entry": "Allowing me to mute the noise in my mind."
+      },
+      {
+        "journal_entry": "Man...he's so cool!"
+      },
+      {
+        "function": "end_journal"
+      }
+    ]
+  }
