@@ -17,7 +17,8 @@ extends CanvasLayer
 @onready var start_displaying = false
 
 # Sound that plays when character dialogue is appearing
-@onready var speech_player: AudioStreamPlayer2D = $"../SpeechSound"
+@onready var speech_wav: AudioStreamWAV = load("res://Audio/sound-effects/pop-2.wav")
+var speech_pitch: float
 
 # For parent to enable/disable dialogue input checks
 signal disable_dialogue_input
@@ -31,18 +32,16 @@ func _ready():
 	# When loaded in to the chapter, hide the conversation_ui and collision for continuing dialogue 
 	self.visible = false
 	dialogue_choices.visible = false
+	speech_pitch = 1.0
 
 func _process(delta: float) -> void:
 	if dialogue_label.visible_ratio == 1.0:
 		start_displaying = false
+		speech_pitch = 1.0
 	if start_displaying:
 		dialogue_label.visible_characters += 1
-		var new_speech_player = speech_player.duplicate()
-		new_speech_player.pitch_scale += randf_range(-0.1, 0.1);
-		get_tree().root.add_child(new_speech_player)
-		new_speech_player.play()
-		await new_speech_player.finished
-		new_speech_player.queue_free()
+		speech_pitch += randf_range(-0.1, 0.1)
+		GlobalAudio.play_sound_id(speech_wav, "speech_audio", GlobalAudio.Bus.SFX, speech_pitch)
 
 func start_dialogue():
 	name_label.text = conversation.dialogue_dictionary["dialogue"][0]["character"]
