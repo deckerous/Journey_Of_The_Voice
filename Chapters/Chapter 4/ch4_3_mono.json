@@ -1,0 +1,17 @@
+{
+	"monologue": [
+		{
+			"id": "Start"
+		},
+		{
+			"character": "You",
+			"text": "*It doesn't seem like much, but maybe...maybe I can do this*"
+		},
+		{
+			"function": "bed_available"
+		},
+		{
+			"function": "end_monologue"
+		}
+	]
+}
