@@ -7,6 +7,7 @@ extends Node2D
 @onready var vol_level: RichTextLabel = %VolLevel
 @onready var sfx_vol_level: RichTextLabel = %SFXVolLevel
 
+@onready var exit_button: TextureButton = %ExitButton
 
 @onready var button_r: TextureButton = %ButtonR
 @onready var button_l: TextureButton = %ButtonL
@@ -14,6 +15,8 @@ extends Node2D
 @onready var page_1: Control = %Page1
 @onready var page_flip_sound_effect: AudioStreamWAV = load("res://Audio/sound-effects/page-flip-2.wav")
 @onready var bgm: AudioStream = load("res://Audio/songs/wave/wave-theme.wav")
+
+signal exit_pressed
 
 var pg = 1
 var vol = 100
@@ -79,3 +82,15 @@ func _on_h_slider_mus_vol_value_changed(value: float) -> void:
 	musvol = value
 	GlobalAudio.set_music_vol(musvol)
 	mus_vol_level.text = str(musvol)
+
+
+func _on_exit_button_pressed() -> void:
+	emit_signal("exit_pressed")
+
+
+func _on_exit_button_mouse_entered() -> void:
+	exit_button.modulate.v = .8
+
+
+func _on_exit_button_mouse_exited() -> void:
+	exit_button.modulate.v = 1
