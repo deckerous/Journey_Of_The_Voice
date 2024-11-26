@@ -20,6 +20,7 @@ func _process(delta: float) -> void:
 	# Handle displaying characters one character at a time
 	if dialogue_label.visible_ratio == 1.0:
 		start_displaying = false
+		speech_pitch = 1.0
 	if start_displaying:
 		dialogue_label.visible_characters += 1
 		speech_pitch += randf_range(-0.1, 0.1)
