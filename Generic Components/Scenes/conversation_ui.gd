@@ -44,6 +44,7 @@ func _process(delta: float) -> void:
 		dialogue_label.visible_characters += 1
 		# Load the Wav file based on who is currently talking
 		var speech_wav: AudioStreamWAV = load("res://Audio/voices/"+char_talking+".wav")
+		speech_pitch = 1.0
 		speech_pitch += randf_range(-0.1, 0.1)
 		print(char_talking);
 		GlobalAudio.play_sound_id(speech_wav, "speech_audio", GlobalAudio.Bus.SFX, speech_pitch)
