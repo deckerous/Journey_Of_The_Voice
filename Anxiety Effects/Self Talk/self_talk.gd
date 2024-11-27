@@ -3,6 +3,8 @@ extends Node2D
 @export var music_turndown_id: String = ""
 @export var num_to_win: int
 
+#TODO: change to self_talk music
+@onready var minigame_music = load("res://Audio/songs/wave/wave-theme.wav")
 @onready var word_scene = "res://Anxiety Effects/Self Talk/interactable_word.tscn"
 @onready var centerX = get_viewport_rect().size.x / 2
 @onready var centerY = get_viewport_rect().size.y / 2
@@ -17,7 +19,6 @@ const possible_phrases = ["I don't belong here......", "What did I just say?", "
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-
 	position = Vector2(centerX, centerY)
 
 	if num_to_win == -1:
@@ -28,6 +29,10 @@ func _ready() -> void:
 		
 	# tweening manually to avoid the await
 	GlobalAudio.tween_from_id(music_turndown_id, -80, 1.0)
+	GlobalAudio.play_sound_id(minigame_music, "self_talk", GlobalAudio.Bus.MUSIC)
+	var music: AudioStreamPlayer = GlobalAudio.get_sound_from_id("self_talk")
+	music.volume_db = -80
+	GlobalAudio.tween_from_id("self_talk", -15, 1.0)
 	
 func _end_self_talk():
 	self.self_talk_complete.emit()
