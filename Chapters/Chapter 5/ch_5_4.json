@@ -1,0 +1,30 @@
+{
+  "dialogue":  [
+    {
+      "id": "Start"  
+    },
+    {
+      "character": "You",
+      "text": "I... think that helped. Thanks."
+    },
+    {
+      "character": "Keyboardist",
+      "text": "Hey, everyone’s got noise in their head."
+    },
+    {
+      "character": "You",
+      "text": "So, uh... would you maybe want to join my band?"
+    },
+    {
+      "character": "Keyboardist",
+      "text": "Join your band? Hmm... sure, why not? Let’s make some noise together."
+    },
+    {
+      "character": "Guide",
+      "text": "Man, Keebs is so cool..."
+    },
+    {
+      "function": "end_dialogue"
+    }
+  ]
+}
