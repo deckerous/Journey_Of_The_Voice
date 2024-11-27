@@ -19,8 +19,7 @@ extends CanvasLayer
 # Name of the character that is currently speaking. You by default
 @onready var char_talking: String = "You"
 
-# Sound that plays when character dialogue is appearing
-@onready var speech_wav: AudioStreamWAV = load("res://Audio/sound-effects/pop-2.wav")
+# Pitch of the voice for whoever's talking
 var speech_pitch: float
 
 # For parent to enable/disable dialogue input checks
@@ -43,13 +42,15 @@ func _process(delta: float) -> void:
 		speech_pitch = 1.0
 	if start_displaying:
 		dialogue_label.visible_characters += 1
+		# Load the Wav file based on who is currently talking
+		var speech_wav: AudioStreamWAV = load("res://Audio/voices/"+char_talking+".wav")
 		speech_pitch += randf_range(-0.1, 0.1)
 		print(char_talking);
 		GlobalAudio.play_sound_id(speech_wav, "speech_audio", GlobalAudio.Bus.SFX, speech_pitch)
 
 func start_dialogue():
 	name_label.text = conversation.dialogue_dictionary["dialogue"][0]["character"]
-	char_talking = conversation.dialogue_dictionary["dialogue"][0]["character"];
+	char_talking = conversation.dialogue_dictionary["dialogue"][0]["character"]
 	dialogue_label.text = conversation.dialogue_dictionary["dialogue"][0]["text"]
 	display_characters()
 
