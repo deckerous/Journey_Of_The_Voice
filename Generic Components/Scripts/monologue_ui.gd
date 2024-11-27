@@ -9,7 +9,7 @@ extends CanvasLayer
 
 # controls dialogue appearing character by character
 @onready var start_displaying = false
-@onready var speech_wav: AudioStreamWAV = load("res://Audio/sound-effects/pop-2.wav")
+@onready var speech_wav: AudioStreamWAV = load("res://Audio/voices/Monologue.wav")
 var speech_pitch: float
 
 # For parent to enable/disable dialogue input checks
