@@ -1,0 +1,51 @@
+{
+    "dialogue": [
+      {
+        "id": "Start"
+      },
+      {
+        "character": "Cy",
+        "text": "Scanning..."
+      },
+      {
+        "character": "Cy",
+        "text": "Target Aquired!"
+      },
+      {
+        "character": "You",
+        "text": "Wha...what?"
+      },
+      {
+        "character": "Cy",
+        "text": "You look like a musician."
+      },
+      {
+        "character": "Cy",
+        "text": "You gonna perform tonight?"
+      },
+      {
+        "function": "start_wandering_eyes"
+      },
+      {
+        "function": "disable_cursor"
+      },
+      {
+        "character": "You",
+        "text": "Uh...no..."
+      },
+      {
+        "character": "Cy",
+        "text": "Eye tracking lost..."
+      },
+      {
+        "character": "Cy",
+        "text": "What are you looking over there for?"
+      },
+      {
+        "function": "end_dialogue"
+      },
+      {
+        "function": "enable_cursor"
+      }
+    ]
+  }

@@ -1,0 +1,34 @@
+{
+    "dialogue": [
+      {
+        "id": "Start"
+      },
+      {
+        "character": "Guide",
+        "text": "Look at that! Three for Three."
+      },
+      {
+        "character": "You",
+        "text": "Yeah, the band is really starting to come together."
+      },
+      {
+        "character": "Guide",
+        "text": "You know, there's this guitarist that's been going from town to town,"
+      },
+      {
+        "character": "Guide",
+        "text": "Absolutely crushing any stage they step foot on."
+      },
+      {
+        "character": "Guide",
+        "text": "Word is, this is their next stop."
+      },
+      {
+        "character": "You",
+        "text": "...well, then I guess I will be back here before you know it!"
+      },
+      {
+        "function": "end_dialogue"
+      }
+    ]
+  }
