@@ -1,0 +1,30 @@
+{
+    "dialogue": [
+      {
+        "id": "Start"
+      },
+      {
+        "character": "Guide",
+        "text": "Hey! I'm glad you made it."
+      },
+      {
+        "character": "Guide",
+        "text": "Seems like open mic night is bringing in some out of this world musicians!"
+      },
+      {
+        "character": "You",
+        "text": "Yeah, I noticed...that bassist-"
+      },
+      {
+        "character": "Guide",
+        "text": "Oh, did Cy catch your eye!"
+      },
+      {
+        "character": "Guide",
+        "text": "Well you're in luck, they're heading this way..."
+      },
+      {
+        "function": "end_dialogue"
+      }
+    ]
+  }

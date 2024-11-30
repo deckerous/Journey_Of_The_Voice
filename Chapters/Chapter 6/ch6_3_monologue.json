@@ -1,0 +1,25 @@
+{
+    "monologue": [
+      {
+        "id": "Start"
+      },
+      {
+        "character": "You",
+        "text": "*A keyboardist who knows how to turn chaos into melody.*"
+      },
+      {
+        "character": "You",
+        "text": "*A drummer who can find a rhythm in a waterfall.*"
+      },
+      {
+        "character": "You",
+        "text": "*Now we just need some strings...*"
+      },
+      {
+        "function": "bed_available"
+      },
+      {
+        "function": "end_monologue"
+      }
+    ]
+  }

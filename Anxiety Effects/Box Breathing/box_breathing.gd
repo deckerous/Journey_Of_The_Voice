@@ -3,12 +3,23 @@ extends Node2D
 @onready var hit_marker = $"Hit Marker"
 @onready var bb_animation_player = $BBAnimationPlayer
 @onready var breathing_sound = load("res://Audio/songs/breathe/breathe-theme.wav")
+@onready var game_tutorial = $GameTutorial
 
 signal box_breathing_complete
 signal box_breathing_started
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	# Access the player's save file and see if they have already seen the tutorial for box breathing.
+	# If that is the case, hide the tutorial from being shown.
+	var has_done_box_breathing = Player.save_file.get_value("Player", "has_done_box_breathing") == null
+	if !has_done_box_breathing:
+		game_tutorial.visible = false
+	else:
+		# Check now exists for later instantiations of box breathing
+		print("adding check")
+		Player.add_check("has_done_box_breathing")
+	
 	bb_animation_player.play("fade_in")
 	
 	var tweener = get_tree().create_tween()
@@ -19,6 +30,8 @@ func _ready() -> void:
 	var centerY = get_viewport_rect().size.y / 2
 	
 	position = Vector2(centerX, centerY)
+	game_tutorial.position = Vector2(-centerX,-centerY)
+	
 	hit_marker.success_number_reached.connect(end_box_breathing)
 	
 	# tweening manually to avoid the await

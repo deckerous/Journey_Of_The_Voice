@@ -1,0 +1,17 @@
+{
+	"monologue": [
+		{
+			"id": "Start"
+		},
+		{
+			"character": "You",
+			"text": "*Should I practice box breathing again?*"
+		},
+		{
+			"function": "box_breathing_available"
+		},
+		{
+			"function": "end_monologue"
+		}
+	]
+}

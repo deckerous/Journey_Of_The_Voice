@@ -1,0 +1,74 @@
+{
+    "dialogue": [
+      {
+        "id": "Start"
+      },
+      {
+        "character": "You",
+        "text": "*I can't keep freezing up like this...*"
+      },
+      {
+        "character": "Cy",
+        "text": "Processing..."
+      },
+      {
+        "character": "Cy",
+        "text": "Processing..."
+      },
+      {
+        "character": "Cy",
+        "text": "You seem to be struggling with maintaining eye contact."
+      },
+      {
+        "character": "Guide",
+        "text": "You would think it would be easy...seeing as how they only have one. Ha!"
+      },
+      {
+        "character": "Cy",
+        "text": "Many struggle to make eye contact during conversations."
+      },
+      {
+        "character": "Cy",
+        "text": "It's a known bug. Resolveable."
+      }, 
+      {
+        "character": "You",
+        "text": "Can...you help me then?"
+      },
+      {
+        "character": "Cy",
+        "text": "Try to focus on the periphery of my eye."
+      },
+      {
+        "character": "Cy",
+        "text": "This way you can avoid noticing that"
+      },
+      {
+        "character": "Cy",
+        "text": "[shake rate=20.0 level=5 connected=1]I AM STARING INTO YOUR SOUL[/shake]"
+      },
+      {
+        "character": "You",
+        "text": "..."
+      },
+      {
+        "character": "Cy",
+        "text": "Relax, just try to focus on the side of my head."
+      },
+      {
+        "character": "Cy",
+        "text": "And when you feel your glance slipping,"
+      },
+      {
+        "character": "Cy",
+        "text": "Gently remind yourself to refocus."
+      },
+      {
+        "character": "Cy",
+        "text": "Just like clicking a cursor back on target!"
+      },
+      {
+        "function": "end_dialogue"
+      }
+    ]
+  }

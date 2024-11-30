@@ -25,7 +25,7 @@ func update_bus():
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("SFX"), linear_to_db(sfx_vol * 0.01 * master_vol * 0.01))
 	AudioServer.set_bus_volume_db(AudioServer.get_bus_index("Music"), linear_to_db(music_vol * 0.01 * master_vol * 0.01))
 
-func play_sound(audio_stream: AudioStream, bus: Bus = Bus.SFX) -> AudioStreamPlayer:
+func play_sound(audio_stream: AudioStream, bus: Bus = Bus.SFX, pitch_scale: float = 1) -> AudioStreamPlayer:
 	var temp_stream = AudioStreamPlayer.new()
 	temp_stream.stream = audio_stream
 	match bus:
@@ -33,14 +33,15 @@ func play_sound(audio_stream: AudioStream, bus: Bus = Bus.SFX) -> AudioStreamPla
 			temp_stream.bus = &"SFX"
 		Bus.MUSIC:
 			temp_stream.bus = &"Music"
+	temp_stream.pitch_scale = pitch_scale
 	temp_stream.autoplay = true
 	temp_stream.finished.connect(finished)
 	
 	add_child(temp_stream)
 	return temp_stream
 	
-func play_sound_id(audio_stream: AudioStream, id: String, bus: Bus = Bus.SFX) -> AudioStreamPlayer:
-	var temp_stream = play_sound(audio_stream, bus)
+func play_sound_id(audio_stream: AudioStream, id: String, bus: Bus = Bus.SFX, pitch_scale: float = 1) -> AudioStreamPlayer:
+	var temp_stream = play_sound(audio_stream, bus, pitch_scale)
 	temp_stream.name = id
 	
 	return temp_stream
