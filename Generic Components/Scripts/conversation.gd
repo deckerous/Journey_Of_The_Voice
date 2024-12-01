@@ -123,6 +123,12 @@ func end_dialogue():
 func instance_anxiety_effect():
 	start_anxiety_effect.emit()
 
+func fade_out_convo():
+	conversation_animation_player.play("fade_out")
+
+func fade_in_convo():
+	conversation_animation_player.play("fade_in")
+
 func fade_out_character():
 	conversation_animation_player.play("fade_out_other_character")
 

@@ -12,7 +12,6 @@ start_with_monologue = true
 starting_monologue = ExtResource("2_se6rg")
 
 [node name="Ch3_5_Drummer_2" parent="ConversationsRoot" index="0" instance=ExtResource("3_cccoc")]
-starting_convo_character_right = false
 
 [node name="StartingCharacter" parent="ConversationsRoot/Ch3_5_Drummer_2/ConversationCharacters" index="0"]
 position = Vector2(1041, 375)

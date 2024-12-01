@@ -3,7 +3,6 @@ extends Node2D
 
 @export var start_with_monologue: bool
 @export var starting_monologue: PackedScene
-@onready var monologues = $Monologues
 
 @export var start_with_conversation: bool
 @export var starting_conversation: PackedScene
@@ -30,8 +29,7 @@ func _ready():
 	# Check if we enter the area with a starting monologue.
 	# Error check, hide conversations, then instantiate provided monologue.
 	if start_with_monologue and starting_monologue != null:
-		for convo in available_conversations:
-			convo.visible = false
+		conversations_root.visible = false
 		get_tree().paused = true
 		await get_tree().create_timer(2.0).timeout
 		begin_starting_monologue()
@@ -70,13 +68,13 @@ func go_to_next_convo(conversation: PackedScene):
 	else:
 		# No following conversation or monologue, go to base area scene
 		# inst.finished_conversation.connect(unhide_characters)
-		inst.finished_conversation.connect(unhide_clickable_conversations)
+		inst.finished_conversation.connect(fade_in_clickable_conversations)
 
 func go_to_next_minigame(minigame: PackedScene):
 	var inst = minigame.instantiate()
 	self.add_child(inst)
 	remove_anxiety_effect()
-	inst.box_breathing_complete.connect(unhide_clickable_conversations)
+	inst.box_breathing_complete.connect(fade_in_clickable_conversations)
 
 func instance_anxiety_effect():
 	var inst = vignette.instantiate()
@@ -99,22 +97,21 @@ func unhide_characters():
 	area_animation_player.play("fade_in_characters")
 
 # Unhide all clickable conversations available to the player in the area.
-func unhide_clickable_conversations():
+func fade_in_clickable_conversations():
+	conversations_root.visible = true
 	for convo in available_conversations:
-			convo.visible = true
-	area_animation_player.play("fade_in_clickable_conversations")
+		if convo is Conversation:
+			convo.fade_in_convo()
 
 # Hide all clickable conversations available to the player in the area.
-func hide_clickable_conversaitons(clicked_convo: Conversation = null):
-	area_animation_player.play("fade_out_clickable_conversations")
+func fade_out_clickable_conversaitons(clicked_convo: Conversation = null):
 	for convo in available_conversations:
-		# if the clicked conversation is supplied and is the loop convo, don't hide.
-		if clicked_convo != null and convo == clicked_convo:
+		if convo == clicked_convo:
 			continue
-		convo.visible = false
+		elif convo != null and convo is Conversation:
+			convo.fade_out_convo()
 
 func start_clickable_conversation(convo: Conversation):
-	hide_clickable_conversaitons(convo)
+	fade_out_clickable_conversaitons(convo)
+	print("here")
 	convo.visible = true
-	convo
-	print("meow")
