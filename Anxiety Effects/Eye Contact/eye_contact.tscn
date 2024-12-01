@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://o1myb1obems7"]
+
+[ext_resource type="Script" path="res://Anxiety Effects/Eye Contact/eye_contact.gd" id="1_ryo6m"]
+[ext_resource type="Texture2D" uid="uid://bysv8dp2mkvx2" path="res://Anxiety Effects/Eye Contact/visualization.jpg" id="2_qovll"]
+
+[node name="EyeContact" type="Node2D"]
+script = ExtResource("1_ryo6m")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(570, 326)
+scale = Vector2(0.358333, 0.344444)
+texture = ExtResource("2_qovll")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

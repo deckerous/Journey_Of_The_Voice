@@ -1,0 +1,20 @@
+{
+    "monologue": [
+      {
+        "id": "Start"
+      },
+      {
+        "character": "You",
+        "text": "*Should I practice some of the techniques I've learned?*"
+      },
+      {
+        "function": "box_breathing_available"
+      },
+      {
+        "function": "self_talk_available"
+      },
+      {
+        "function": "end_monologue"
+      }
+    ]
+  }
