@@ -1,6 +1,6 @@
 extends Node2D
 
-# 
+# Reference to the parent, Conversation
 @onready var conversation: Conversation = get_parent()
 
 # Starting character references
@@ -41,19 +41,21 @@ func on_character_click(viewport: Node, event: InputEvent, shape_idx: int):
 		if !in_dialogue:
 			if event.is_action_pressed("click"):
 				in_dialogue = true
+				clicked = true
+				started_conversation.emit()
+				await conversation.faded_out_characters
 				if !conversation.starting_character_alone:
 					position_chatacters()
 				else:
 					# Place character in the middle if they are alone
+					
 					starting_character.global_position = middle_position
-				clicked = true
-				started_conversation.emit()
+				
 
 # Place characters in positions within conversation 
 # according to export var starting_convo_character_right.
 # Can be called when another character joins conversation half way through.
 func position_chatacters():
-	
 	if conversation.starting_convo_character_right:
 		starting_character.global_position = right_position
 		other_character.global_position = left_position

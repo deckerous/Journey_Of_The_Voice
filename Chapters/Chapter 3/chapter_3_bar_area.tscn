@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cytkowxct06e2"]
+[gd_scene load_steps=7 format=3 uid="uid://cytkowxct06e2"]
 
 [ext_resource type="PackedScene" uid="uid://3kgo3ypehagf" path="res://Generic Components/Scenes/area.tscn" id="1_ogb4d"]
-[ext_resource type="Texture2D" uid="uid://b6ln6f7cpqgu5" path="res://Area Backgrounds/bar_background.png" id="2_j52db"]
+[ext_resource type="Texture2D" uid="uid://83gxd3hsrhjq" path="res://Area Backgrounds/bar_background.png" id="2_j52db"]
 [ext_resource type="PackedScene" uid="uid://bxvi2sf2kfitm" path="res://Chapters/Chapter 3/Monologues/ch_3_0_mono.tscn" id="2_se6rg"]
+[ext_resource type="PackedScene" uid="uid://cexou3rp8qi88" path="res://Chapters/Chapter 3/Conversations/ch_3_5_drummer_2.tscn" id="3_cccoc"]
 [ext_resource type="PackedScene" uid="uid://c0u1fdrgiinbp" path="res://Characters/Scenes/guide.tscn" id="3_og506"]
 [ext_resource type="PackedScene" uid="uid://pie5vurh8eoo" path="res://Characters/Scenes/drummer.tscn" id="4_egn52"]
 
@@ -10,14 +11,19 @@
 start_with_monologue = true
 starting_monologue = ExtResource("2_se6rg")
 
+[node name="Ch3_5_Drummer_2" parent="ConversationsRoot" index="0" instance=ExtResource("3_cccoc")]
+starting_convo_character_right = false
+
+[node name="StartingCharacter" parent="ConversationsRoot/Ch3_5_Drummer_2/ConversationCharacters" index="0"]
+position = Vector2(1041, 375)
+
 [node name="Guide" parent="Characters" index="0" instance=ExtResource("3_og506")]
 position = Vector2(303, 204)
 
 [node name="Drummer" parent="Characters" index="1" instance=ExtResource("4_egn52")]
 position = Vector2(1041, 375)
-scale = Vector2(1.35, 1.35)
 
-[node name="CanvasLayer" parent="." index="6"]
+[node name="CanvasLayer" parent="." index="5"]
 layer = -2
 
 [node name="TextureRect" parent="CanvasLayer" index="0"]
@@ -28,8 +34,4 @@ mouse_filter = 2
 texture = ExtResource("2_j52db")
 expand_mode = 5
 
-[node name="ToBeContinued" parent="CanvasLayer" index="1"]
-mouse_filter = 2
-
-[node name="RichTextLabel" parent="CanvasLayer/ToBeContinued" index="0"]
-mouse_filter = 2
+[editable path="ConversationsRoot/Ch3_5_Drummer_2"]
