@@ -2,9 +2,9 @@
 
 [ext_resource type="PackedScene" uid="uid://cee0f16o8788r" path="res://Generic Components/Scenes/conversation.tscn" id="1_xkegs"]
 [ext_resource type="PackedScene" uid="uid://pie5vurh8eoo" path="res://Characters/Scenes/drummer.tscn" id="2_4lwj7"]
-[ext_resource type="PackedScene" uid="uid://bjsmaufdw42hm" path="res://Chapters/Chapter 3/Conversations/ch_4_convo.tscn" id="2_vrqal"]
+[ext_resource type="PackedScene" uid="uid://bjsmaufdw42hm" path="res://Chapters/Chapter 3/Conversations/ch_3_4_convo.tscn" id="2_vrqal"]
 
-[node name="Ch3_Drummer_1_Convo" instance=ExtResource("1_xkegs")]
+[node name="Ch_3_3_Drummer_1_Convo" instance=ExtResource("1_xkegs")]
 dialogue_file = "res://Chapters/Chapter 3/ch3_3_drummer_1.json"
 start_conversation_after_monologue = true
 has_following_conversation = true
