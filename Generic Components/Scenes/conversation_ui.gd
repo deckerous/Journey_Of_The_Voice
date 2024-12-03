@@ -46,10 +46,13 @@ func _process(delta: float) -> void:
 		# If nobody is talking then use the Monologue sound.
 		if (char_talking == ""):
 			char_talking = "Monologue"
-		var speech_wav: AudioStreamWAV = load("res://Audio/voices/"+char_talking+".wav")
-		speech_pitch = 1.0
-		speech_pitch += randf_range(-0.1, 0.1)
-		GlobalAudio.play_sound_id(speech_wav, "speech_audio", GlobalAudio.Bus.SFX, speech_pitch)
+		# Only play the audio every 5 letters
+		if (dialogue_label.visible_characters % 5 == 0):
+			var speech_wav: AudioStreamWAV = load("res://Audio/voices/"+char_talking+".wav")
+			speech_pitch = 1.0
+			speech_pitch += randf_range(-0.1, 0.1)
+			GlobalAudio.play_sound_id(speech_wav, "speech_audio", GlobalAudio.Bus.SFX, speech_pitch)		
+		
 
 func start_dialogue():
 	name_label.text = conversation.dialogue_dictionary["dialogue"][0]["character"]
