@@ -1,9 +1,7 @@
 {
   "dialogue":  [
     {
-      "id": "Start"  
-    },
-    {
+      "id": "Start",
       "character": "You",
       "text": "I... think that helped. Thanks."
     },

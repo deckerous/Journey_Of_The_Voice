@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bkjj25su42kio"]
+
+[ext_resource type="PackedScene" uid="uid://cee0f16o8788r" path="res://Generic Components/Scenes/conversation.tscn" id="1_mfq57"]
+
+[node name="Ch0Convo" instance=ExtResource("1_mfq57")]
+dialogue_file = "res://Chapters/Chapter 0/chapter0.json"
+wants_to_talk = false
+starting_character_alone = false
+starting_convo_character_right = false
+start_conversation_on_load = true

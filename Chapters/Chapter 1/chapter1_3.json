@@ -1,9 +1,7 @@
-[
-  [
+{
+  "dialogue": [
 	{
-	  "id": "start"
-	},
-	{
+	  "id": "start",
 	  "character": "Guide",
 	  "text": "Hey, are you alright? You totally shut down during your conversation"
 	},
@@ -29,11 +27,14 @@
 	},
 	{
 	  "character": "Guide",
-	  "text": "Let’s just focus on one thing at a time…firstly, no more crazy caffeinated, overly sweetened coffee. Try this instead… *Gives Player Herbal Tea*",
-	  "function": "aquire_help"
+	  "text": "Let’s just focus on one thing at a time…firstly, no more crazy caffeinated, overly sweetened coffee. Try this instead…"
+	},
+	{
+		"character": "",
+		"text": "*gives you a herbal tea*"
 	},
 	{
 	  "function": "end_dialogue"
 	}
   ]
-]
+}

@@ -1,45 +1,42 @@
 {
     "dialogue": [
         {
-        	"id": "Start"
-        },
-        {
-		"character": "Guide",
-		"text": "There you are!"
-	},
-        {
-        	"character": "Guide",
-        	"text": "A pal of mine just finished his set."
-        },
-        {
-        	"character": "Guide",
-        	"text": "Let's go say hi."
-        },
-        {
-		"character": "You",
-		"text": "Uh... do I really have to?"
-	},
-        {
-		"character": "You",
-		"text": "He looks so cool, he won't want to talk to me..."
-	},
-	{
-		"character": "Guide",
-		"text": "Jeez, you're always beating yourself up..."
-	},	
-        {
-		"character": "Guide",
-		"text": "Come on now, you gotta make that band somehow!"
-	},
-	{
-		"text": "Guide leads you toward the stage, where a short, stylish figure is adjusting the knobs on a keyboard."
-	},
-	{
-		"character": "Guide",
-		"text": "Hey, Keebs! Key-Blur! The Mini Midi Master!"
-	},
-        {
-            "function": "end_dialogue"
-        }
+			"id": "Start",
+			"character": "Guide",
+			"text": "There you are!"
+		},
+		{
+			"text": "A pal of mine just finished his set."
+		},
+		{
+			"text": "Let's go say hi."
+		},
+		{
+			"character": "You",
+			"text": "Uh... do I really have to?"
+		},
+		{
+
+			"text": "He looks so cool, he won't want to talk to me..."
+		},
+		{
+			"character": "Guide",
+			"text": "Jeez, you're always beating yourself up..."
+		},	
+		{
+			"character": "Guide",
+			"text": "Come on now, you gotta make that band somehow!"
+		},
+		{
+			"character": "",
+			"text": "*Guide leads you toward the stage, where a short, stylish figure is adjusting the knobs on a keyboard.*"
+		},
+		{
+			"character": "Guide",
+			"text": "Hey, Keebs! Key-Blur! The Mini Midi Master!"
+		},
+		{
+			"function": "end_dialogue"
+		}
     ]
 }

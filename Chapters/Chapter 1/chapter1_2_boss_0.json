@@ -1,16 +1,13 @@
-[
-  [
+{
+  "dialogue": [
 	{
-	  "id": "start"
-	},
-	{
+	  "id": "start",
 	  "character": "Boss",
 	  "text": "Hi I am Boss I run the record label of your dreams! I started the label after my band Jet Set Pirate Radio rose waaay back. Maybe you've heard of them?"
 	},
 	{
 	  "character": "You",
-	  "text": "…uhhh…",
-	  "function": "anxiety_effect_1"
+	  "text": "…uhhh…"
 	},
 	{
 	  "character": "Guide",
@@ -21,8 +18,7 @@
 	  "text": "We got some tips that there are some seriously talented artists in this town, Guide says you may be one of them."
 	},
 	{
-	  "text": "…me? No way, I'm horrible…",
-	  "function": "anxiety_effect_2"
+	  "text": "…me? No way, I'm horrible…"
 	},
 	{
 	  "character": "Guide",
@@ -34,8 +30,7 @@
 	},
 	{
 	  "character": "You",
-	  "text": "…I…I HAVE A BAND!…",
-	  "function": "anxiety_effect_3"
+	  "text": "…I…I HAVE A BAND!…"
 	},
 	{
 	  "character": "Guide",
@@ -53,28 +48,39 @@
 	},
 	{
 	  "id": "Well",
-	  "text": "...",
-	},
-	{
-	  "id": "Actually",
-	  "text": "...",
-	},
-	{
-	  "id": "Erm",
-	  "text": "...",
-	},
-	{
-		"function": "end_dialogue"
+	  "character": "You",
+	  "text": "..."
 	},
 	{
 	  "character": "Boss",
 	  "text": "You muted or what?"
 	},
 	{
-	  "function":"anxiety_effect_4"
+	  "function": "end_dialogue"
+	},
+	{
+	  "id": "Actually",
+	  "character": "You",
+	  "text": "..."
+	},
+	{
+	  "character": "Boss",
+	  "text": "You muted or what?"
+	},
+	{
+	  "function": "end_dialogue"
+	},
+	{
+	  "id": "Erm",
+	  "character": "You",
+	  "text": "..."
+	},
+	{
+	  "character": "Boss",
+	  "text": "You muted or what?"
 	},
 	{
 	  "function": "end_dialogue"
 	}
   ]
-]
+}

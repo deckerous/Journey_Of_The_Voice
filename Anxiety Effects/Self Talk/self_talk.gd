@@ -30,7 +30,7 @@ func _ready() -> void:
 	# tweening manually to avoid the await
 	GlobalAudio.tween_from_id(music_turndown_id, -80, 1.0)
 	GlobalAudio.play_sound_id(minigame_music, "self_talk", GlobalAudio.Bus.MUSIC)
-	var music: AudioStreamPlayer = GlobalAudio.get_sound_from_id("self_talk")
+	var music: AudioStreamPlayer = GlobalAudio.get_stream_from_id("self_talk")
 	music.volume_db = -80
 	GlobalAudio.tween_from_id("self_talk", -15, 1.0)
 	

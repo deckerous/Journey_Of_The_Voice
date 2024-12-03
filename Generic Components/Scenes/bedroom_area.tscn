@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://daapn4kvhq3fe"]
+
+[ext_resource type="PackedScene" uid="uid://3kgo3ypehagf" path="res://Generic Components/Scenes/area.tscn" id="1_pli24"]
+
+[sub_resource type="Gradient" id="Gradient_y6tnc"]
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_0riyr"]
+gradient = SubResource("Gradient_y6tnc")
+
+[node name="BedroomArea" instance=ExtResource("1_pli24")]
+
+[node name="TextureRect" parent="CanvasLayer" index="0"]
+texture = SubResource("GradientTexture1D_0riyr")

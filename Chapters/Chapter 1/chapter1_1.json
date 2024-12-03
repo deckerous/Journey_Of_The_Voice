@@ -1,13 +1,7 @@
-[
-  [
+{
+  "dialogue": [
 	{
-	  "id": "start"
-	},
-	{
-	  "character": "You",
-	  "text": "I can’t believe that I actually came here, I can’t sing in front of people, Im such an idiot"
-	},
-	{
+      "id": "start",
 	  "character": "Guide",
 	  "text": "Hey! You made it!"
 	},
@@ -35,4 +29,4 @@
 	  "function": "end_dialogue"
 	}
   ]
-]
+}

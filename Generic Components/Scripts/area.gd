@@ -34,6 +34,12 @@ func _ready():
 		await get_tree().create_timer(2.0).timeout
 		begin_starting_monologue()
 		get_tree().paused = false
+	elif start_with_conversation and starting_conversation != null:
+		conversations_root.visible = false
+		get_tree().paused = true
+		await get_tree().create_timer(2.0).timeout
+		go_to_next_convo(starting_conversation)
+		get_tree().paused = false
 
 func begin_starting_monologue():
 	var inst = starting_monologue.instantiate()

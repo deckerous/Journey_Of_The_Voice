@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://cspkkmyyir4t0"]
+
+[ext_resource type="PackedScene" uid="uid://cpcee510pqlxr" path="res://Generic Components/Scenes/monologue.tscn" id="1_0cy5b"]
+[ext_resource type="PackedScene" uid="uid://ck1witugd6qqc" path="res://Chapters/Chapter 1/Conversations/ch_1_1_convo.tscn" id="2_dibw7"]
+
+[node name="Ch1_0_Mono" instance=ExtResource("1_0cy5b")]
+monologue_file = "res://Chapters/Chapter 1/chapter1_0_mono.json"
+has_following_conversation = true
+following_conversation = ExtResource("2_dibw7")
