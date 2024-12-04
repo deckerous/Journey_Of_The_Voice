@@ -1,0 +1,476 @@
+[gd_scene load_steps=12 format=3 uid="uid://bdlyds7b50cwh"]
+
+[ext_resource type="Theme" uid="uid://mrmpkimvequ6" path="res://Themes/credits_header.tres" id="1_85xxj"]
+[ext_resource type="Script" path="res://UI/Scenes/credits.gd" id="1_irc42"]
+[ext_resource type="Theme" uid="uid://dlpa8luwucobq" path="res://Themes/credits_names.tres" id="2_7g37u"]
+[ext_resource type="Texture2D" uid="uid://b5glcn74ddows" path="res://Characters/Assets/player.png" id="3_18r1b"]
+[ext_resource type="Texture2D" uid="uid://i2bhn5qixatq" path="res://Characters/Assets/kenshiro.png" id="4_kopb1"]
+[ext_resource type="Texture2D" uid="uid://c8h8s2c1uj1lm" path="res://Characters/Assets/keebs.png" id="5_5jlwd"]
+[ext_resource type="Texture2D" uid="uid://dotmro4tlsd0h" path="res://Characters/Assets/cy.png" id="5_dg47a"]
+[ext_resource type="Texture2D" uid="uid://iw1fcgn13127" path="res://Characters/Assets/donna.png" id="7_l2e6r"]
+
+[sub_resource type="Animation" id="Animation_2ycib"]
+resource_name = "Credit Scroll"
+length = 15.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CenterContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 14.9983),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 653.495), Vector2(23.43, -2023.71)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2, 4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Kenshiro:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2.5, 4.5, 6.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Keebs:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(4.9, 6.9, 8.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Cy:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(7.26667, 9.26667, 11.2667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Donna:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(10.1, 12.1, 14.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Player:scale")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 4.03333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.174, 0.174), Vector2(0.199, 0.199)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Kenshiro:scale")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(2.43333, 6.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.275, 0.275), Vector2(0.3, 0.3)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Keebs:scale")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(4.73333, 8.93333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.179, 0.179), Vector2(0.198, 0.198)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Cy:scale")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(7.26667, 11.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.224, 0.224), Vector2(0.248, 0.248)]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Donna:scale")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(10.1333, 14.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.3, 0.3), Vector2(0.369, 0.369)]
+}
+
+[sub_resource type="Animation" id="Animation_jh7du"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CenterContainer:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Player:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Player:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.208642, 0.208642)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Kenshiro:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.275, 0.275)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Keebs:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.179, 0.179)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Cy:scale")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.224, 0.224)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_33jgy"]
+_data = {
+"Credit Scroll": SubResource("Animation_2ycib"),
+"RESET": SubResource("Animation_jh7du")
+}
+
+[node name="Credits" type="Node2D"]
+script = ExtResource("1_irc42")
+
+[node name="Player" type="Sprite2D" parent="."]
+position = Vector2(808, 472)
+scale = Vector2(0.208642, 0.208642)
+texture = ExtResource("3_18r1b")
+
+[node name="Kenshiro" type="Sprite2D" parent="."]
+position = Vector2(336, 440)
+scale = Vector2(0.275, 0.275)
+texture = ExtResource("4_kopb1")
+
+[node name="Keebs" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(872, 472)
+scale = Vector2(0.179, 0.179)
+texture = ExtResource("5_5jlwd")
+
+[node name="Cy" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(376, 424)
+scale = Vector2(0.224, 0.224)
+texture = ExtResource("5_dg47a")
+
+[node name="Donna" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(832, 448)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("7_l2e6r")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+offset_right = 1152.0
+offset_bottom = 2113.0
+size_flags_vertical = 0
+size_flags_stretch_ratio = 0.0
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Credits" type="RichTextLabel" parent="CenterContainer/VBoxContainer"]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("1_85xxj")
+text = "Credits (in no particular order)
+"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="SpacerThin" type="BoxContainer" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+
+[node name="Concept" type="RichTextLabel" parent="CenterContainer/VBoxContainer"]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("1_85xxj")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 55
+text = "Concept:
+"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Names" type="RichTextLabel" parent="CenterContainer/VBoxContainer"]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_7g37u")
+text = "Josh Chernetsky"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="SpacerThick" type="BoxContainer" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Programming" type="RichTextLabel" parent="CenterContainer/VBoxContainer"]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("1_85xxj")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "Programming:"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Names2" type="RichTextLabel" parent="CenterContainer/VBoxContainer"]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_7g37u")
+bbcode_enabled = true
+text = "[center]Josh Chernetsky
+Benito Correa
+Tracy Sheng
+Matthew Brosnon
+James Decker
+Martin Greytak[/center]"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="SpacerThick2" type="BoxContainer" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Music" type="RichTextLabel" parent="CenterContainer/VBoxContainer"]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 50
+text = "Music:
+"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Names3" type="RichTextLabel" parent="CenterContainer/VBoxContainer"]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_7g37u")
+text = "Benito Correa"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="SpacerThick3" type="BoxContainer" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Minigames" type="RichTextLabel" parent="CenterContainer/VBoxContainer"]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 50
+text = "Minigames:"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Names4" type="RichTextLabel" parent="CenterContainer/VBoxContainer"]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_7g37u")
+text = "Mathhew Brosnon"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="SpacerThick4" type="BoxContainer" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Character Art" type="RichTextLabel" parent="CenterContainer/VBoxContainer"]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 50
+text = "Character Art:"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Names5" type="RichTextLabel" parent="CenterContainer/VBoxContainer"]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_7g37u")
+text = "James Decker"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="SpacerThick5" type="BoxContainer" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Interface Design" type="RichTextLabel" parent="CenterContainer/VBoxContainer"]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 50
+text = "Interface Design:"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Names6" type="RichTextLabel" parent="CenterContainer/VBoxContainer"]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_7g37u")
+text = "Martin Greytak"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="SpacerThick6" type="BoxContainer" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Writing" type="RichTextLabel" parent="CenterContainer/VBoxContainer"]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/normal_font_size = 50
+text = "Writing:"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="Names7" type="RichTextLabel" parent="CenterContainer/VBoxContainer"]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("2_7g37u")
+text = "James Decker"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="SpacerThick7" type="BoxContainer" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_33jgy")
+}
+autoplay = "Credit Scroll"
