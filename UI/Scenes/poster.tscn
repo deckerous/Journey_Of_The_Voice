@@ -27,7 +27,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.76735, 0, 0.410776, 0.466667)
+mouse_filter = 1
+color = Color(0.237539, 0.237539, 0.237539, 0.266667)
 
 [node name="Poster" type="HBoxContainer" parent="CanvasLayer"]
 anchors_preset = 15
@@ -41,6 +42,7 @@ size_flags_vertical = 3
 [node name="Control" type="Control" parent="CanvasLayer/Poster"]
 layout_mode = 2
 size_flags_horizontal = 3
+mouse_filter = 1
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/Poster"]
 layout_mode = 2
@@ -66,4 +68,3 @@ texture = ExtResource("2_fuhdx")
 
 [connection signal="pressed" from="CanvasLayer/PosterButton" to="." method="_on_poster_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/BackButton" to="." method="_on_back_button_pressed"]
-[connection signal="pressed" from="CanvasLayer/BackButton" to="." method="_on_poster_button_pressed"]
