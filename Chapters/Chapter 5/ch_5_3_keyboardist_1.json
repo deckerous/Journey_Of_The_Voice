@@ -1,31 +1,31 @@
 {
-    "dialogue": [
-        {
-            "id": "start"
-        },
+	"dialogue": [
+		{
+			"id": "start"
+		},
 		{
 			"character": "Keyboardist",
 			"text": "Piacere, mi chiamo Alessandro Vincenzo DeLuca."
 		},
-        {
-            "character": "Keyboardist",
-            "text": "But here, I am Keebs"
-        },
+		{
+			"character": "Keyboardist",
+			"text": "But here, I am Keebs"
+		},
 		{
 			"character": "You",
 			"text": "Uh... hi... I’m, um... trying to start a band..."
 		},
-        {
+		{
 			"function": "start_intrusive_thoughts"
 		},
-        {
-            "function": "disable_cursor"
+		{
+			"function": "disable_cursor"
 		},
 		{
 			"character": "Keyboardist",
 			"text": "Hey, you alright?"
 		},
-        {
+		{
 			"character": "Keyboardist",
 			"text": "It seems as though you’re stuck in your head."
 		},
@@ -37,25 +37,25 @@
 			"character": "Keyboardist",
 			"text": "No worries. Here’s a trick:"
 		},
-        {
+		{
 			"character": "Keyboardist",
 			"text": "Challege the noise your mind produces,"
 		},
-        {
+		{
 			"character": "Keyboardist",
 			"text": "When the melody of negative self-talk fills your mind,"
 		},
-        {
+		{
 			"character": "Keyboardist",
 			"text": "Don't just loop the sample,"
 		},
-        {
+		{
 			"character": "Keyboardist",
 			"text": "Shift the pitch up, and layer in a positve counter example."
 		},
-        {
+		{
 			"function": "enable_cursor",
-            "text": "Reframe the negative thought in your mind and click it away."
+			"text": "Reframe the negative thought in your mind and click it away."
 		},
 		{
 			"function": "start_minigame_clear_thoughts"
@@ -83,5 +83,5 @@
 		{
 			"function": "end_dialogue"
 		}
-    ]
+	]
 }

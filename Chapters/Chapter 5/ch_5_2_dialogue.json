@@ -1,25 +1,25 @@
 {
-    "dialogue": [
-        {
-            "id": "Start"
-        },
-        {
+	"dialogue": [
+		{
+			"id": "Start"
+		},
+		{
 			"character": "Guide",
 			"text": "There you are!"
 		},
-        {
-            "character": "Guide",
-            "text": "A pal of mine just finished his set."
-        },
-        {
-            "character": "Guide",
-            "text": "Let's go say hi."
-        },
-        {
+		{
+			"character": "Guide",
+			"text": "A pal of mine just finished his set."
+		},
+		{
+			"character": "Guide",
+			"text": "Let's go say hi."
+		},
+		{
 			"character": "You",
 			"text": "Uh... do I really have to?"
 		},
-        {
+		{
 			"character": "You",
 			"text": "He looks so cool, he won't want to talk to me..."
 		},
@@ -27,7 +27,7 @@
 			"character": "Guide",
 			"text": "Jeez, you're always beating yourself up..."
 		},	
-        {
+		{
 			"character": "Guide",
 			"text": "Come on now, you gotta make that band somehow!"
 		},
@@ -38,8 +38,8 @@
 			"character": "Guide",
 			"text": "Hey, Keebs! Key-Blur! The Mini Midi Master!"
 		},
-        {
-            "function": "end_dialogue"
-        }
-    ]
+		{
+			"function": "end_dialogue"
+		}
+	]
 }

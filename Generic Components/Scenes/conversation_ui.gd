@@ -46,6 +46,8 @@ func _process(delta: float) -> void:
 		# If nobody is talking then use the Monologue sound.
 		if (char_talking == ""):
 			char_talking = "Monologue"
+		#if (char_talking == "Drummer"):
+		char_talking = "Guitarist"
 		# Only play the audio every 5 letters
 		if (dialogue_label.visible_characters % 5 == 0):
 			var speech_wav: AudioStreamWAV = load("res://Audio/voices/"+char_talking+".wav")
