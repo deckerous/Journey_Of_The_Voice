@@ -1,18 +1,20 @@
 [gd_scene load_steps=5 format=3 uid="uid://hsxry7hy2u46"]
 
-[ext_resource type="AudioStream" uid="uid://bgtnrdrr6w4xy" path="res://Audio/sound-effects/shick-sound.wav" id="1_ku08p"]
-[ext_resource type="Theme" path="res://Themes/notebook_text.tres" id="1_xlx6t"]
-[ext_resource type="AudioStream" uid="uid://mv1uk4vahs8e" path="res://Audio/sound-effects/shika-sha-sound.wav" id="3_daydt"]
+[ext_resource type="AudioStream" uid="uid://04ootanlar8p" path="res://Audio/sound-effects/shick-sound.wav" id="1_ku08p"]
+[ext_resource type="Theme" uid="uid://v3tjxnq7o5ny" path="res://Themes/notebook_text.tres" id="1_xlx6t"]
+[ext_resource type="AudioStream" uid="uid://cdhvmi83ejika" path="res://Audio/sound-effects/shika-sha-sound.wav" id="3_daydt"]
 
 [sub_resource type="GDScript" id="GDScript_1qqp5"]
 script/source = "extends Button
 
-@export var scene: PackedScene
 @export var otherButtons: Array[Button]
+@export var is_quit_button: bool
 
 @onready var hover_sound: AudioStreamWAV = load(\"res://Audio/sound-effects/shick-sound.wav\")
 @onready var pressed_sound: AudioStreamWAV = load(\"res://Audio/sound-effects/shika-sha-sound.wav\")
 @onready var stream: AudioStreamPlayer2D = $\"../../../../../AudioStreamPlayer2D\"
+
+var chapter_scene = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -20,11 +22,18 @@ func _ready() -> void:
 	var hover_callable = Callable(GlobalAudio, \"play_sound\")
 	focus_entered.connect(hover_callable.bind(hover_sound))
 	pressed.connect(pressed_callable.bind(pressed_sound))
+	
+	if chapter_scene != null:
+		pressed.connect(go_to_scene)
+	elif is_quit_button:
+		pressed.connect(func(): get_tree().quit())
+
+func make_connection_to_chapter():
 	pressed.connect(go_to_scene)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func go_to_scene():
-	if scene is PackedScene:
+	if chapter_scene is PackedScene:
 		for button in otherButtons:
 			button.disabled = true
 		get_tree().paused = true
@@ -32,7 +41,7 @@ func go_to_scene():
 		tween.tween_property(stream, \"volume_db\", -80, 0.9)
 		await Transition.show()
 		get_tree().paused = false
-		get_tree().change_scene_to_packed(scene)
+		get_tree().change_scene_to_packed(chapter_scene)
 		Transition.disappear()
 "
 

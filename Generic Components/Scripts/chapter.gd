@@ -1,6 +1,12 @@
 class_name Chapter
 extends Node
 
+const SAVE_PATH = "user://save.cfg"
+const TEST_SAVE_PATH = "res://Globals/save.cfg"
+
+var save_path = TEST_SAVE_PATH
+
+@export var chapter_number: int
 @export var next_chapter: PackedScene
 @export var area: Area
 
@@ -15,4 +21,6 @@ func unhide_continue_button():
 	continue_button.visible = true
 
 func go_to_next_chapter():
+	Player.update_chapter(chapter_number + 1)
+	Player.write_save(save_path)
 	get_tree().change_scene_to_packed(next_chapter)

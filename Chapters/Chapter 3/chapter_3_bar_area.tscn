@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://cytkowxct06e2"]
 
 [ext_resource type="PackedScene" uid="uid://3kgo3ypehagf" path="res://Generic Components/Scenes/area.tscn" id="1_ogb4d"]
-[ext_resource type="Texture2D" uid="uid://dacoulkwkkpqe" path="res://Area Backgrounds/bar_background.png" id="2_j52db"]
+[ext_resource type="Texture2D" uid="uid://b8dcx1b1emqbg" path="res://Area Backgrounds/bar_background.png" id="2_j52db"]
 [ext_resource type="PackedScene" uid="uid://bxvi2sf2kfitm" path="res://Chapters/Chapter 3/Monologues/ch_3_0_mono.tscn" id="2_se6rg"]
 [ext_resource type="PackedScene" uid="uid://cexou3rp8qi88" path="res://Chapters/Chapter 3/Conversations/ch_3_5_drummer_2.tscn" id="3_cccoc"]
 [ext_resource type="PackedScene" uid="uid://c0u1fdrgiinbp" path="res://Characters/Scenes/guide.tscn" id="3_og506"]
@@ -33,8 +33,5 @@ offset_bottom = 171.231
 mouse_filter = 2
 texture = ExtResource("2_j52db")
 expand_mode = 5
-
-[node name="UICanvas" parent="." index="7"]
-visible = false
 
 [editable path="ConversationsRoot/Ch3_5_Drummer_2"]
