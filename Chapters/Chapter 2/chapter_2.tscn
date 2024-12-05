@@ -1,5 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://btaoyjxp608xx"]
+[gd_scene load_steps=4 format=3 uid="uid://nluno2jnk6wo"]
 
-[ext_resource type="PackedScene" uid="uid://cp4p4iaomvynx" path="res://Generic Components/Scenes/chapter.tscn" id="1_3takm"]
+[ext_resource type="PackedScene" uid="uid://cp4p4iaomvynx" path="res://Generic Components/Scenes/chapter.tscn" id="1_wihm5"]
+[ext_resource type="PackedScene" uid="uid://hh1fx1v5akao" path="res://Chapters/Chapter 2/chapter_2_bar_area.tscn" id="2_2bbtp"]
+[ext_resource type="PackedScene" uid="uid://cvq0l0i1ro2lt" path="res://Chapters/Chapter 3/chapter_3.tscn" id="2_8c7kx"]
 
-[node name="Chapter2" instance=ExtResource("1_3takm")]
+[node name="Chapter2" node_paths=PackedStringArray("area") instance=ExtResource("1_wihm5")]
+next_chapter = ExtResource("2_8c7kx")
+area = NodePath("Chapter2BarArea")
+
+[node name="Chapter2BarArea" parent="." index="0" instance=ExtResource("2_2bbtp")]
+
+[node name="Chapter" parent="CanvasLayer/ColorRect" index="0"]
+text = "[center]Chapter 2"

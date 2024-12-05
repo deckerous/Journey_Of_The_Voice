@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://c7366i15i2pl3"]
+[gd_scene load_steps=7 format=3 uid="uid://c7366i15i2pl3"]
 
 [ext_resource type="Script" path="res://UI/Scenes/notebook.gd" id="1_pjd0k"]
-[ext_resource type="Theme" uid="uid://v3tjxnq7o5ny" path="res://Themes/notebook_text.tres" id="2_fwp36"]
-[ext_resource type="Texture2D" uid="uid://cb8wh6ye0pgk3" path="res://Images/UI/arrow_r.png" id="4_65gpl"]
-[ext_resource type="Texture2D" uid="uid://iroe3iry1pvo" path="res://Images/UI/notebook_open_level.png" id="4_y6sl8"]
-[ext_resource type="Texture2D" uid="uid://bepst3xq1hg31" path="res://Images/UI/arrow_l.png" id="5_xcnod"]
+[ext_resource type="Theme" path="res://Themes/notebook_text.tres" id="2_fwp36"]
+[ext_resource type="Texture2D" uid="uid://cqhec8ipmsye5" path="res://Images/UI/arrow_r.png" id="4_65gpl"]
+[ext_resource type="Texture2D" uid="uid://b55jxyjcugj4y" path="res://Images/UI/notebook_open_level.png" id="4_y6sl8"]
+[ext_resource type="Texture2D" uid="uid://c7vrcggtouj2a" path="res://Images/UI/arrow_l.png" id="5_xcnod"]
+[ext_resource type="Texture2D" uid="uid://coob2h55xg21m" path="res://Images/UI/notebook_icon.png" id="6_d7wvd"]
 
 [node name="Notebook" type="Node2D"]
 script = ExtResource("1_pjd0k")
@@ -89,13 +90,14 @@ autowrap_mode = 2
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="Notebook/Container/Page1/LeftPageCont"]
 layout_mode = 2
-size_flags_vertical = 2
-size_flags_stretch_ratio = 0.0
+size_flags_vertical = 3
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Notebook/Container/Page1/LeftPageCont/HBoxContainer3"]
+[node name="bio1" type="RichTextLabel" parent="Notebook/Container/Page1/LeftPageCont/HBoxContainer3"]
+unique_name_in_owner = true
 clip_contents = false
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 0
 text = "Me: Vocals
 I need to come up with a name for the band!
 "
@@ -107,13 +109,14 @@ drag_and_drop_selection_enabled = false
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="Notebook/Container/Page1/LeftPageCont"]
 layout_mode = 2
-size_flags_vertical = 2
-size_flags_stretch_ratio = 0.0
+size_flags_vertical = 3
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Notebook/Container/Page1/LeftPageCont/HBoxContainer4"]
+[node name="bio2" type="RichTextLabel" parent="Notebook/Container/Page1/LeftPageCont/HBoxContainer4"]
+unique_name_in_owner = true
 clip_contents = false
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 0
 text = "Josh: Drums
 A former taiko drummer, now he has a girlfriend in another state. He swears.
 "
@@ -124,15 +127,16 @@ deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 
 [node name="HBoxContainer5" type="HBoxContainer" parent="Notebook/Container/Page1/LeftPageCont"]
-visible = false
 layout_mode = 2
-size_flags_vertical = 2
+size_flags_vertical = 3
 size_flags_stretch_ratio = 0.0
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Notebook/Container/Page1/LeftPageCont/HBoxContainer5"]
+[node name="bio3" type="RichTextLabel" parent="Notebook/Container/Page1/LeftPageCont/HBoxContainer5"]
+unique_name_in_owner = true
 clip_contents = false
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 0
 text = "Benito: Bleeps and Bloops
 Benny, Benny, Benny and the Jets!
 "
@@ -151,18 +155,24 @@ offset_bottom = 582.066
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Notebook/Container/Page1/RightPageCont"]
+[node name="HBoxContainer5" type="HBoxContainer" parent="Notebook/Container/Page1/RightPageCont"]
+layout_mode = 2
+size_flags_vertical = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="bio4" type="RichTextLabel" parent="Notebook/Container/Page1/RightPageCont/HBoxContainer5"]
+unique_name_in_owner = true
 clip_contents = false
 layout_mode = 2
-size_flags_vertical = 3
-size_flags_stretch_ratio = 0.0
-text = "Box Breathing:
-Click and hold on the target to inhale
-Release when the breath circle is within the black circle
-Click and hold again to exhale
+size_flags_horizontal = 3
+text = "Benito: Bleeps and Bloops
+Benny, Benny, Benny and the Jets!
 "
 fit_content = true
+scroll_active = false
 autowrap_mode = 2
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
 
 [node name="Page2" type="Control" parent="Notebook/Container"]
 unique_name_in_owner = true
@@ -171,143 +181,34 @@ size_flags_horizontal = 2
 theme = ExtResource("2_fwp36")
 
 [node name="LeftPageCont" type="VBoxContainer" parent="Notebook/Container/Page2"]
-clip_contents = true
 layout_mode = 2
-offset_left = 24.8219
-offset_top = 21.7367
-offset_right = 391.822
-offset_bottom = 582.737
+offset_left = 18.9203
+offset_top = 21.1886
+offset_right = 385.92
+offset_bottom = 582.189
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Header" type="HBoxContainer" parent="Notebook/Container/Page2/LeftPageCont"]
+[node name="Tutorial1" type="RichTextLabel" parent="Notebook/Container/Page2/LeftPageCont"]
+unique_name_in_owner = true
+clip_contents = false
 layout_mode = 2
-size_flags_horizontal = 4
 size_flags_vertical = 3
-size_flags_stretch_ratio = 0.0
-alignment = 1
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Notebook/Container/Page2/LeftPageCont/Header"]
-clip_contents = false
-layout_mode = 2
-size_flags_horizontal = 3
-text = "SETTINGS!"
-fit_content = true
-scroll_active = false
-autowrap_mode = 0
-
-[node name="HBoxContainer2" type="HBoxContainer" parent="Notebook/Container/Page2/LeftPageCont"]
-layout_mode = 2
-size_flags_vertical = 2
-size_flags_stretch_ratio = 0.0
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Notebook/Container/Page2/LeftPageCont/HBoxContainer2"]
-clip_contents = false
-layout_mode = 2
-size_flags_horizontal = 2
-size_flags_stretch_ratio = 0.0
-text = "Volume:"
-fit_content = true
-scroll_active = false
-autowrap_mode = 0
-
-[node name="VolLevel" type="RichTextLabel" parent="Notebook/Container/Page2/LeftPageCont/HBoxContainer2"]
-unique_name_in_owner = true
-clip_contents = false
-layout_mode = 2
-size_flags_horizontal = 2
-size_flags_stretch_ratio = 0.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-text = "
-"
+theme_override_font_sizes/normal_font_size = 30
 fit_content = true
 scroll_active = false
 autowrap_mode = 2
-deselect_on_focus_loss_enabled = false
-drag_and_drop_selection_enabled = false
 
-[node name="HSlider_main_vol" type="HSlider" parent="Notebook/Container/Page2/LeftPageCont"]
-unique_name_in_owner = true
-layout_mode = 2
-focus_neighbor_left = NodePath("../../../../ButtonL")
-focus_neighbor_top = NodePath("../../../../ButtonL")
-focus_previous = NodePath("../../../../ButtonL")
-
-[node name="HBoxContainer4" type="HBoxContainer" parent="Notebook/Container/Page2/LeftPageCont"]
-layout_mode = 2
-size_flags_vertical = 2
-size_flags_stretch_ratio = 0.0
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Notebook/Container/Page2/LeftPageCont/HBoxContainer4"]
-clip_contents = false
-layout_mode = 2
-size_flags_horizontal = 2
-size_flags_stretch_ratio = 0.0
-text = "SFX Volume:"
-fit_content = true
-scroll_active = false
-autowrap_mode = 0
-
-[node name="SFXVolLevel" type="RichTextLabel" parent="Notebook/Container/Page2/LeftPageCont/HBoxContainer4"]
+[node name="Tutorial2" type="RichTextLabel" parent="Notebook/Container/Page2/LeftPageCont"]
 unique_name_in_owner = true
 clip_contents = false
 layout_mode = 2
-size_flags_horizontal = 2
-size_flags_stretch_ratio = 0.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-text = "
-"
+size_flags_vertical = 3
 fit_content = true
 scroll_active = false
 autowrap_mode = 2
-deselect_on_focus_loss_enabled = false
-drag_and_drop_selection_enabled = false
 
-[node name="HSlider_sfx_vol" type="HSlider" parent="Notebook/Container/Page2/LeftPageCont"]
-unique_name_in_owner = true
-layout_mode = 2
-focus_neighbor_left = NodePath("../../../../ButtonL")
-focus_neighbor_top = NodePath("../../../../ButtonL")
-focus_previous = NodePath("../../../../ButtonL")
-
-[node name="HBoxContainer3" type="HBoxContainer" parent="Notebook/Container/Page2/LeftPageCont"]
-layout_mode = 2
-size_flags_vertical = 2
-size_flags_stretch_ratio = 0.0
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Notebook/Container/Page2/LeftPageCont/HBoxContainer3"]
-clip_contents = false
-layout_mode = 2
-size_flags_horizontal = 2
-size_flags_stretch_ratio = 0.0
-text = "Music Volume:"
-fit_content = true
-scroll_active = false
-autowrap_mode = 0
-
-[node name="MusVolLevel" type="RichTextLabel" parent="Notebook/Container/Page2/LeftPageCont/HBoxContainer3"]
-unique_name_in_owner = true
-clip_contents = false
-layout_mode = 2
-size_flags_horizontal = 2
-size_flags_stretch_ratio = 0.0
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-text = "
-"
-fit_content = true
-scroll_active = false
-autowrap_mode = 2
-deselect_on_focus_loss_enabled = false
-drag_and_drop_selection_enabled = false
-
-[node name="HSlider_mus_vol" type="HSlider" parent="Notebook/Container/Page2/LeftPageCont"]
-unique_name_in_owner = true
-layout_mode = 2
-focus_neighbor_left = NodePath("../../../../ButtonL")
-focus_neighbor_top = NodePath("../../../../ButtonL")
-focus_previous = NodePath("../../../../ButtonL")
-
-[node name="RightPageCont" type="VBoxContainer" parent="Notebook/Container/Page2"]
+[node name="RightPageCont2" type="VBoxContainer" parent="Notebook/Container/Page2"]
 layout_mode = 2
 offset_left = 465.0
 offset_top = 26.0
@@ -316,23 +217,21 @@ offset_bottom = 587.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Notebook/Container/Page2/RightPageCont"]
+[node name="Tutorial3" type="RichTextLabel" parent="Notebook/Container/Page2/RightPageCont2"]
+unique_name_in_owner = true
 clip_contents = false
 layout_mode = 2
 size_flags_vertical = 3
-size_flags_stretch_ratio = 0.0
 theme_override_font_sizes/normal_font_size = 30
-text = "My song:
-"
 fit_content = true
+scroll_active = false
 autowrap_mode = 2
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="Notebook/Container/Page2/RightPageCont"]
+[node name="Tutorial4" type="RichTextLabel" parent="Notebook/Container/Page2/RightPageCont2"]
+unique_name_in_owner = true
 clip_contents = false
 layout_mode = 2
 size_flags_vertical = 3
-size_flags_stretch_ratio = 0.0
-text = "I really hope I can write something before the open mic!"
 fit_content = true
 autowrap_mode = 2
 
@@ -345,8 +244,24 @@ size_flags_horizontal = 6
 size_flags_vertical = 4
 texture_normal = ExtResource("4_65gpl")
 
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_right = 1152.0
+offset_bottom = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="ExitButton" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+texture_normal = ExtResource("6_d7wvd")
+
 [connection signal="pressed" from="Notebook/ButtonL" to="." method="_on_button_l_pressed"]
-[connection signal="value_changed" from="Notebook/Container/Page2/LeftPageCont/HSlider_main_vol" to="." method="_on_h_slider_main_vol_value_changed"]
-[connection signal="value_changed" from="Notebook/Container/Page2/LeftPageCont/HSlider_sfx_vol" to="." method="_on_h_slider_sfx_vol_value_changed"]
-[connection signal="value_changed" from="Notebook/Container/Page2/LeftPageCont/HSlider_mus_vol" to="." method="_on_h_slider_mus_vol_value_changed"]
 [connection signal="pressed" from="Notebook/ButtonR" to="." method="_on_button_r_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/HBoxContainer/ExitButton" to="." method="_on_exit_button_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/HBoxContainer/ExitButton" to="." method="_on_exit_button_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cee0f16o8788r"]
+[gd_scene load_steps=15 format=3 uid="uid://cee0f16o8788r"]
 
 [ext_resource type="Script" path="res://Generic Components/Scripts/conversation.gd" id="1_i3n2i"]
 [ext_resource type="Script" path="res://Generic Components/Scripts/conversation_characters.gd" id="2_bcwbx"]
@@ -111,6 +111,21 @@ tracks/2/keys = {
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
+[sub_resource type="Animation" id="Animation_riqnb"]
+resource_name = "fade_in_characters"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ConversationCharacters:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_y1pxo"]
 resource_name = "fade_out"
 length = 1.5
@@ -151,6 +166,21 @@ tracks/2/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_cnht3"]
+resource_name = "fade_out_characters"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ConversationCharacters:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
 [sub_resource type="Animation" id="Animation_nlonn"]
 resource_name = "fade_out_other_character"
 tracks/0/type = "value"
@@ -170,7 +200,9 @@ tracks/0/keys = {
 _data = {
 "RESET": SubResource("Animation_ls7t0"),
 "fade_in": SubResource("Animation_ji8uk"),
+"fade_in_characters": SubResource("Animation_riqnb"),
 "fade_out": SubResource("Animation_y1pxo"),
+"fade_out_characters": SubResource("Animation_cnht3"),
 "fade_out_other_character": SubResource("Animation_nlonn")
 }
 

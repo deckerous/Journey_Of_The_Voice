@@ -47,15 +47,16 @@ func play_sound_id(audio_stream: AudioStream, id: String, bus: Bus = Bus.SFX, pi
 	return temp_stream
 	
 func get_stream_from_id(id: String) -> AudioStreamPlayer:
-	return get_node("/root/GlobalAudio/" + id)
+	return get_node_or_null("/root/GlobalAudio/" + id)
 
 func stop_stream_from_id(id: String):
 	remove_child(get_stream_from_id(id))
 
 func tween_from_id(id: String, value: float, duration: float):
-	var tweener = get_tree().create_tween()
 	var audio = get_stream_from_id(id)
-	tweener.tween_property(audio, "volume_db", value, duration)
+	if audio != null:
+		var tweener = get_tree().create_tween()
+		tweener.tween_property(audio, "volume_db", value, duration)
 
 func finished():
 	for audio in get_children():
@@ -63,4 +64,3 @@ func finished():
 			if !audio.playing:
 				remove_child(audio)
 				return
-			

@@ -1,0 +1,60 @@
+[gd_scene load_steps=6 format=3 uid="uid://d2chvft3tiotq"]
+
+[ext_resource type="Texture2D" uid="uid://b17n7riy1t31d" path="res://Images/UI/pause_icon.png" id="1_b2kth"]
+[ext_resource type="Script" path="res://UI/Scenes/ui_menu.gd" id="1_v1jh8"]
+[ext_resource type="Texture2D" uid="uid://ntf41bdbvbhg" path="res://Images/UI/notebook_icon.png" id="2_kh1iv"]
+[ext_resource type="PackedScene" uid="uid://c7366i15i2pl3" path="res://UI/Scenes/notebook.tscn" id="2_orhmw"]
+[ext_resource type="PackedScene" uid="uid://bqk024x3by5ou" path="res://UI/Scenes/settings.tscn" id="5_w5oyq"]
+
+[node name="UIMenu" type="Node2D"]
+script = ExtResource("1_v1jh8")
+
+[node name="ButtonsContainer" type="VBoxContainer" parent="."]
+offset_right = 1152.0
+offset_bottom = 648.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+mouse_filter = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ButtonsContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+mouse_filter = 2
+
+[node name="PauseButton" type="TextureButton" parent="ButtonsContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+texture_normal = ExtResource("1_b2kth")
+
+[node name="NotebookButton" type="TextureButton" parent="ButtonsContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+texture_normal = ExtResource("2_kh1iv")
+
+[node name="Notebook_Wrapper" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Notebook" parent="Notebook_Wrapper" instance=ExtResource("2_orhmw")]
+
+[node name="Settings_Wrapper" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Settings" parent="Settings_Wrapper" instance=ExtResource("5_w5oyq")]
+
+[connection signal="mouse_entered" from="ButtonsContainer/HBoxContainer/PauseButton" to="." method="_on_pause_button_mouse_entered"]
+[connection signal="mouse_exited" from="ButtonsContainer/HBoxContainer/PauseButton" to="." method="_on_pause_button_mouse_exited"]
+[connection signal="pressed" from="ButtonsContainer/HBoxContainer/PauseButton" to="." method="_on_pause_button_pressed"]
+[connection signal="mouse_entered" from="ButtonsContainer/HBoxContainer/NotebookButton" to="." method="_on_notebook_button_mouse_entered"]
+[connection signal="mouse_exited" from="ButtonsContainer/HBoxContainer/NotebookButton" to="." method="_on_notebook_button_mouse_exited"]
+[connection signal="pressed" from="ButtonsContainer/HBoxContainer/NotebookButton" to="." method="_on_notebook_button_pressed"]
+[connection signal="exit_pressed" from="Notebook_Wrapper/Notebook" to="." method="_on_notebook_exit_pressed"]
+[connection signal="exit_pressed" from="Settings_Wrapper/Settings" to="." method="_on_settings_exit_pressed"]

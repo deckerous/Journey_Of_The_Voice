@@ -1,0 +1,23 @@
+{
+    "monologue": [
+        {
+            "id": "Start",
+            "text": "You return to the bar, a deep bassline steadily courses through the space."
+        },
+        {
+            "text": "Guide is behind the bar, cleaning glasses and giving you an enthusiastic wave as you enter."
+        },
+        {
+            "text": "Your eyes shift to the stage, where someone is playing the bass."
+        },
+        {
+            "text": "Their metallic limbs moving with a surprising fluidity."
+        },
+        {
+            "text": " The deep bass notes reverberate through the room, creating a steady rhythm."
+        },
+        {
+            "function": "end_monologue"
+        }
+    ]
+}

@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://UI/Scripts/dialogue_choice_button.gd" id="1_plua4"]
 
 [node name="DialogueChoiceButton" type="Button"]
+z_index = 5
 custom_minimum_size = Vector2(128, 40)
 offset_right = 8.0
 offset_bottom = 8.0

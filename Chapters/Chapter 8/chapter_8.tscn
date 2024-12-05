@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://dswukq67y653n"]
+
+[ext_resource type="PackedScene" uid="uid://cp4p4iaomvynx" path="res://Generic Components/Scenes/chapter.tscn" id="1_deets"]
+[ext_resource type="PackedScene" uid="uid://bax1pin7v2htp" path="res://Chapters/Chapter 9/chapter_9.tscn" id="2_2k8nk"]
+[ext_resource type="PackedScene" uid="uid://bwto6787cl1q6" path="res://Chapters/Chapter 8/chapter_8_bedroom_area.tscn" id="2_fiqbw"]
+
+[node name="Chapter8" node_paths=PackedStringArray("area") instance=ExtResource("1_deets")]
+next_chapter = ExtResource("2_2k8nk")
+area = NodePath("Chapter8BedroomArea")
+
+[node name="Chapter8BedroomArea" parent="." index="0" instance=ExtResource("2_fiqbw")]
+
+[node name="Chapter" parent="CanvasLayer/ColorRect" index="0"]
+text = "[center]Chapter 8"

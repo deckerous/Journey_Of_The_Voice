@@ -1,7 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://3kgo3ypehagf"]
+[gd_scene load_steps=9 format=3 uid="uid://3kgo3ypehagf"]
 
 [ext_resource type="Script" path="res://Generic Components/Scripts/area.gd" id="1_44oh5"]
-[ext_resource type="FontFile" uid="uid://d01nsye73adcj" path="res://Fonts/skippy.ttf" id="2_687nb"]
+[ext_resource type="PackedScene" uid="uid://d2chvft3tiotq" path="res://UI/Scenes/ui_menu.tscn" id="2_ut1x2"]
 
 [sub_resource type="Animation" id="Animation_wnlh5"]
 length = 0.001
@@ -20,14 +20,14 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("CanvasLayer/ToBeContinued:modulate")
+tracks/1/path = NodePath("ConversationsRoot:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_ck1wn"]
@@ -45,17 +45,16 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_avmam"]
-resource_name = "fade_in_tbc"
-length = 3.0
+[sub_resource type="Animation" id="Animation_ipagi"]
+resource_name = "fade_in_clickable_conversations"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("CanvasLayer/ToBeContinued:modulate")
-tracks/0/interp = 2
+tracks/0/path = NodePath("ConversationsRoot:modulate")
+tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 3),
+"times": PackedFloat32Array(0, 1),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
@@ -76,20 +75,34 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_r2ps2"]
+resource_name = "fade_out_clickable_conversations"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ConversationsRoot:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_j11yb"]
 _data = {
 "RESET": SubResource("Animation_wnlh5"),
 "fade_in_characters": SubResource("Animation_ck1wn"),
-"fade_in_tbc": SubResource("Animation_avmam"),
-"fade_out_characters": SubResource("Animation_v1j30")
+"fade_in_clickable_conversations": SubResource("Animation_ipagi"),
+"fade_out_characters": SubResource("Animation_v1j30"),
+"fade_out_clickable_conversations": SubResource("Animation_r2ps2")
 }
 
 [node name="Area" type="Node2D"]
 script = ExtResource("1_44oh5")
 
-[node name="Conversations" type="Node2D" parent="."]
-
-[node name="Monologues" type="Node2D" parent="."]
+[node name="ConversationsRoot" type="Node2D" parent="."]
 
 [node name="Characters" type="Node2D" parent="."]
 
@@ -109,30 +122,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="ToBeContinued" type="ColorRect" parent="CanvasLayer"]
-modulate = Color(1, 1, 1, 0)
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 1)
-
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/ToBeContinued"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_fonts/normal_font = ExtResource("2_687nb")
-theme_override_font_sizes/normal_font_size = 96
-bbcode_enabled = true
-text = "
-
-[center] [wave]To be continued...[/wave][/center]"
-
 [node name="AreaAnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_j11yb")
 }
+
+[node name="UICanvas" type="CanvasLayer" parent="."]
+layer = 4
+
+[node name="UIMenu" parent="UICanvas" instance=ExtResource("2_ut1x2")]

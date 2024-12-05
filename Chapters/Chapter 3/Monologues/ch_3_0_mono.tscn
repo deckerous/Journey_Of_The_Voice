@@ -7,3 +7,4 @@
 monologue_file = "res://Chapters/Chapter 3/ch3_0_mono.json"
 has_following_conversation = true
 following_conversation = ExtResource("2_3nth4")
+hide_characters_after = true

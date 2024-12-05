@@ -1,0 +1,143 @@
+{
+    "dialogue": [
+      {
+        "id": "Start",
+        "character": "Donna",
+        "text": "Great timing!"
+      },
+      {
+        "text": "I'll take another"
+      },
+      {
+        "text": "Light ice this time.",
+        "function": "branch_dialogue",
+        "options": [
+          "*take the empty glass*",
+          "...",
+          "Actually..."
+        ]
+      },
+      {
+        "id": "*take the empty glass*",
+        "text": "I'll let the bartender know...",
+        "function": "end_dialogue"
+      },
+      {
+        "id": "...",
+        "text": "...",
+        "function": "end_dialogue"
+      },
+      {
+        "id": "Actually...",
+        "text": "I'm not part of the staff..."
+      },
+      {
+        "character": "Donna",
+        "text": "So what are you then?"
+      },
+      {
+        "text": "A fan?"
+      },
+      {
+        "text": "Don't tell me you want to jam...",
+        "function": "branch_dialogue",
+        "options": [
+          "*take the empty glass*",
+          "...",
+          "Actually..."
+        ]
+      },
+      {
+        "id": "*take the empty glass*",
+        "text": "I'll let the bartender know...",
+        "function": "end_dialogue"
+      },
+      {
+        "id": "...",
+        "text": "...",
+        "function": "end_dialogue"
+      },
+      {
+        "id": "Actually...",
+        "text": "I am putting together a group of incredible musicians."
+      },
+      {
+        "character": "Donna",
+        "text": "Yeah, you and everyone at every venue I've torn through."
+      },
+      {
+        "text": "What makes you so special?",
+        "function": "branch_dialogue",
+        "options": [
+          "I'm friends with the bartender?",
+          "...",
+          "I've been on a journey"
+        ]
+      },
+      {
+        "id": "I'm friends with the bartender?",
+        "text": "I don't think guide would like you tearing up his bar...",
+        "function": "end_dialogue"
+      },
+      {
+        "id": "...",
+        "text": "...",
+        "function": "end_dialogue"
+      },
+      {
+        "id": "I've been on a journey",
+        "text": "I'm building something real..."
+      },
+      {
+        "character": "You",
+        "text": "A band that's about overcoming challenges and being there for each other."
+      },
+      {
+        "character": "Donna",
+        "text": "A journey, huh?"
+      },
+      {
+        "text": "Everyone's on a journey. What makes yours worth my time?",
+        "function": "branch_dialogue",
+        "options": [
+          "Because we want to tear up every stage!",
+          "...",
+          "Because we won't give up!"
+        ]
+      },
+      {
+        "id": "Because we want to be famous.",
+        "text": "We want to play on the biggest stages...just like you?",
+        "function": "end_dialogue"
+      },
+      {
+        "id": "...",
+        "text": "...",
+        "function": "end_dialogue"
+      },
+      {
+        "id": "Because we won't give up.",
+        "text": "We've all faced our own struggles, but together, we support each other."
+      },
+      {
+        "character": "You",
+        "text": "Because no matter how hard it gets, we keep moving forward."
+      },
+      {
+        "character": "Donna",
+        "text": "Persistence, huh?"
+      },
+      {
+        "text": "Alright, I'll bite."
+      },
+      {
+        "text": " But if I join, we're doing this all the way."
+      },
+      {
+        "text": "No half-measures"
+      },
+      {
+        "function": "end_dialogue"
+      }
+    ]
+  }

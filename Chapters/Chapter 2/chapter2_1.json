@@ -1,0 +1,32 @@
+{
+  "dialogue": [
+	{
+      "id": "start",
+	  "character": "Guide",
+	  "text": "Hey! You made it!"
+	},
+	{
+	  "character": "You",
+	  "text": "…oh hi, yeah, thanks…"
+	},
+	{
+	  "character": "Guide",
+	  "text": "What are you drinking? Don’t tell me you are drinking that liquid heart attack you call a coffee order…"
+	},
+	{
+	  "character": "You",
+	  "text": "…"
+	},
+	{
+	  "character": "Guide",
+	  "text": "Oh! Here comes the record label scout, Boss, they volunteered to be our MC for the next few weeks."
+	},
+	{
+	  "character": "You",
+	  "text": "… *heartbeat intensifies*"
+	},
+	{
+	  "function": "end_dialogue"
+	}
+  ]
+}

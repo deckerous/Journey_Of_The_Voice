@@ -1,20 +1,23 @@
 {
-    "monologue": [
-      {
-        "id": "Start"
-      },
-      {
-        "character": "You",
-        "text": "*Should I practice some of the techniques I've learned?*"
-      },
-      {
-        "function": "box_breathing_available"
-      },
-      {
-        "function": "self_talk_available"
-      },
-      {
-        "function": "end_monologue"
-      }
-    ]
-  }
+  "monologue": [
+    {
+      "id": "Start",
+      "character": "You",
+      "text": "*Maybe I should practice some of the self-soothing techniques...*",
+      "function": "branch_dialogue",
+      "options": [
+        "Practice Bcx Breathing?",
+        "Practice Silencing Negative Self Talk"
+      ]
+    },
+    {
+      "function": "box_breathing"
+    },
+    {
+      "function": "self_talk"
+    },
+    {
+      "function": "end_monologue"
+    }
+  ]
+}

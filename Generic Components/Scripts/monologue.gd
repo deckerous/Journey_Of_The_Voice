@@ -17,6 +17,9 @@ extends Node2D
 @export var has_following_conversation: bool = false
 @export var following_conversation: PackedScene
 
+@export var hide_characters_after: bool
+@export var end_of_chapter: bool
+
 # Holds dialogue text and other attributes accessed via keys
 var monologue_dictionary
 

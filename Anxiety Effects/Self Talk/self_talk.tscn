@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnxvcgy3n31mx"]
+
+[ext_resource type="Script" path="res://Anxiety Effects/Self Talk/self_talk.gd" id="1_mgfui"]
+[ext_resource type="PackedScene" uid="uid://ds8c1rlw6rdhm" path="res://UI/Scenes/game_tutorial_self_talk.tscn" id="2_74b75"]
+
+[node name="SelfTalk" type="Node2D"]
+script = ExtResource("1_mgfui")
+num_to_win = -1
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(-576, -324)
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(0, 0, 0, 648, 1152, 648, 1152, 0, 1088, 64, 1088, 584, 64, 584, 64, 64, 1088, 64, 1152, 0)
+
+[node name="GameTutorial" parent="." instance=ExtResource("2_74b75")]
+position = Vector2(-576, -324)
+
+[connection signal="area_shape_entered" from="Area2D" to="." method="_on_area_2d_area_shape_entered"]
+[connection signal="finished_tutorial" from="GameTutorial" to="." method="_on_game_tutorial_finished_tutorial"]

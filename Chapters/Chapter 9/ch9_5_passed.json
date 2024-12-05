@@ -1,0 +1,43 @@
+{
+  "dialogue": [
+    {
+      "id": "Start",
+       "character": "Guide",
+      "text": "Look at you!"
+    },
+    {
+      "text": "I knew you'd find a way to make it happen."
+    },
+    {
+      "character": "You",
+      "text": "Yeah..."
+    },
+    {
+      "text": "I can't believe she said yes."
+    },
+    {
+      "character": "Guide",
+      "text": "Told you she was the real deal."
+    },
+    {
+      "character": "You",
+      "text": "Thanks, Guide."
+    },
+    {
+      "text": "Couldn't have done it without you..."
+    },
+    {
+      "character": "Guide",
+      "text": "Now that you have a full band..."
+    },
+    {
+      "text": "Its time to get to work preparing for the battle!"
+    },
+    {
+      "text": "Well? What are you waiting for?!"
+    },
+    {
+      "function": "end_dialogue"
+    }
+  ]
+}

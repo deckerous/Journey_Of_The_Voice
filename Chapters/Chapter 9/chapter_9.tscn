@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://bax1pin7v2htp"]
+
+[ext_resource type="PackedScene" uid="uid://cp4p4iaomvynx" path="res://Generic Components/Scenes/chapter.tscn" id="1_42jhu"]
+[ext_resource type="PackedScene" uid="uid://cpyhwsgsi0o23" path="res://Chapters/Chapter 10/chapter_10.tscn" id="2_jrng7"]
+
+[node name="Chapter9" instance=ExtResource("1_42jhu")]
+next_chapter = ExtResource("2_jrng7")
+
+[node name="Chapter" parent="CanvasLayer/ColorRect" index="0"]
+text = "[center]Chapter 9"

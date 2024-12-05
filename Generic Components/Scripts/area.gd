@@ -3,11 +3,12 @@ extends Node2D
 
 @export var start_with_monologue: bool
 @export var starting_monologue: PackedScene
-@onready var monologues = $Monologues
 
 @export var start_with_conversation: bool
 @export var starting_conversation: PackedScene
-@onready var conversations = $Conversations
+@onready var conversations_root: Node2D = $ConversationsRoot
+var available_conversations = null
+var current_conversation = null
 
 @onready var anxiety_effect = $AnxietyEffect
 var curr_effect = null
@@ -18,32 +19,52 @@ var curr_effect = null
 
 @onready var vignette = preload("res://Anxiety Effects/Vignette/vignette.tscn")
 
+signal area_complete
+
 func _ready():
-	# Begin area with starting monologue.
-	# Error check then instantiate provided monologue.
+	# Get reference to all clickable conversations in the area.
+	available_conversations = conversations_root.get_children()
+	for convo in available_conversations:
+		# Connect each conversation to a remove function with extra functionality
+		convo.started_conversation.connect(start_clickable_conversation.bind(convo))
+	
+	# Check if we enter the area with a starting monologue.
+	# Error check, hide conversations, then instantiate provided monologue.
 	if start_with_monologue and starting_monologue != null:
+		conversations_root.visible = false
 		get_tree().paused = true
 		await get_tree().create_timer(2.0).timeout
-		begin_starting_monologue()
+		go_to_next_monologue(starting_monologue)
 		get_tree().paused = false
-
-func begin_starting_monologue():
-	var inst = starting_monologue.instantiate()
-	monologues.add_child.call_deferred(inst)
-	if inst.has_following_conversation and inst.following_conversation != null:
-		inst.finished_monologue.connect(go_to_next_convo.bind(inst.following_conversation))
-		inst.finished_monologue.connect(hide_characters)
+	elif start_with_conversation and starting_conversation != null:
+		conversations_root.visible = false
+		get_tree().paused = true
+		await get_tree().create_timer(2.0).timeout
+		go_to_next_convo(starting_conversation)
+		get_tree().paused = false
 
 func go_to_next_monologue(monologue: PackedScene):
 	var inst = monologue.instantiate()
-	monologues.add_child(inst)
+	self.add_child(inst)
+	
+	if inst.hide_characters_after:
+		inst.finished_monologue.connect(hide_characters)
+	
+	if inst.end_of_chapter:
+		# When a conversation has this check, unhide button to go to next chapter
+		inst.finished_monologue.connect(allow_traversal_to_next_chapter)
+	
 	if inst.has_following_conversation and inst.following_conversation != null:
 		inst.finished_monologue.connect(go_to_next_convo.bind(inst.following_conversation))
 
 func go_to_next_convo(conversation: PackedScene):
 	var inst = conversation.instantiate()
-	conversations.add_child(inst)
+	self.add_child(inst)
 	inst.start_anxiety_effect.connect(instance_anxiety_effect)
+	
+	if inst.end_of_chapter:
+		# When a conversation has this check, unhide button to go to next chapter
+		inst.finished_conversation.connect(allow_traversal_to_next_chapter)
 	
 	if inst.has_following_minigame and inst.following_minigame != null:
 		# When this conversation is finsihed, instantiate next provided minigame
@@ -59,13 +80,14 @@ func go_to_next_convo(conversation: PackedScene):
 		
 	else:
 		# No following conversation or monologue, go to base area scene
-		inst.finished_conversation.connect(unhide_characters)
+		# inst.finished_conversation.connect(unhide_characters)
+		inst.finished_conversation.connect(fade_in_clickable_conversations)
 
 func go_to_next_minigame(minigame: PackedScene):
 	var inst = minigame.instantiate()
 	self.add_child(inst)
 	remove_anxiety_effect()
-	inst.box_breathing_complete.connect(to_be_continued)
+	inst.box_breathing_complete.connect(fade_in_clickable_conversations)
 
 func instance_anxiety_effect():
 	var inst = vignette.instantiate()
@@ -77,11 +99,34 @@ func remove_anxiety_effect():
 	await curr_effect.anim.animation_finished
 	curr_effect.queue_free()
 
+func remove_from_available_conversations(convo: Conversation):
+	var index = available_conversations.find(convo)
+	available_conversations.remove(index)
+
 func hide_characters():
 	area_animation_player.play("fade_out_characters")
 
 func unhide_characters():
 	area_animation_player.play("fade_in_characters")
 
-func to_be_continued():
-	area_animation_player.play("fade_in_tbc")
+# Unhide all clickable conversations available to the player in the area.
+func fade_in_clickable_conversations():
+	conversations_root.visible = true
+	for convo in available_conversations:
+		if convo is Conversation:
+			convo.fade_in_convo()
+
+# Hide all clickable conversations available to the player in the area.
+func fade_out_clickable_conversaitons(clicked_convo: Conversation = null):
+	for convo in available_conversations:
+		if convo == clicked_convo:
+			continue
+		elif convo != null and convo is Conversation:
+			convo.fade_out_convo()
+
+func start_clickable_conversation(convo: Conversation):
+	fade_out_clickable_conversaitons(convo)
+	convo.visible = true
+
+func allow_traversal_to_next_chapter():
+	area_complete.emit()
