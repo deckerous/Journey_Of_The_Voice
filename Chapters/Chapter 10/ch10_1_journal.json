@@ -1,0 +1,31 @@
+{
+    "journal": [
+      {
+        "id": "Start"
+      },
+      {
+        "journal_entry": "This is it...Tomorrow is the Battle of the Bands and a chance to realize my dreams"
+      },
+      {
+        "journal_entry": "I wouldn't have made it here without the help of my friends..."
+      },
+      {
+        "journal_entry": "Kenshiro taught me how to breathe when everything feels too heavy. Box breathing—it sounds so simple, but it works. Without it, I don't think I would have even made it past that first conversation."
+      },
+      {
+        "journal_entry": "Keebs showed me how to silence the negative voices in my head. The ones that always tell me I'm not good enough. Learning to push those thoughts aside and find my own voice was hard, but Keebs made it seem possible."
+      },
+      {
+        "journal_entry": "Cy taught me the importance of eye contact, and how avoiding it only makes me feel more disconnected. They showed me how to hold someone's gaze without fear. It made a difference—I finally feel like I'm truly connecting with people."
+      },
+      {
+        "journal_entry": "And Donna... Donna taught me to be persistent. To keep pushing, even when everything feels impossible. She's fierce, and she's not afraid to demand the best. She reminded me that if I want to reach the big stage, I need to be relentless in my pursuit."
+      },
+      {
+        "journal_entry": "I've learned so much from each of them, and together, I think we can really make this work..."
+      },
+      {
+        "function": "end_journal"
+      }
+    ]
+  }

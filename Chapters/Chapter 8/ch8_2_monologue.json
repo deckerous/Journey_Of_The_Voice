@@ -1,20 +1,29 @@
 {
-    "monologue": [
-      {
-        "id": "Start"
-      },
-      {
-        "character": "You",
-        "text": "*Maybe I should practice some of the self-soothing techniques...*"
-      },
-      {
-        "function": "box_breathing_available"
-      },
-      {
-        "function": "eye_contact_practice_available"
-      },
-      {
-        "function": "end_monologue"
-      }
-    ]
-  }
+  "monologue": [
+    {
+      "id": "Start"
+    },
+    {
+      "character": "You",
+      "text": "*Maybe I should practice some of the self-soothing techniques...*",
+      "function": "branch_dialogue",
+      "options": [
+        "Practice Bcx Breathing?",
+        "Practice Silencing Negative Self Talk",
+        "Practice Maintaining Eye Contact"
+      ]
+    },
+    {
+      "function": "box_breathing"
+    },
+    {
+      "function": "eye_contact"
+    },
+    {
+      "function": "self_talk"
+    },
+    {
+      "function": "end_monologue"
+    }
+  ]
+}
