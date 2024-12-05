@@ -4,3 +4,4 @@
 
 [node name="Ch_6_0_Mono" instance=ExtResource("1_6bcbh")]
 monologue_file = "res://Chapters/Chapter 6/ch6_0_monologue.json"
+end_of_chapter = true

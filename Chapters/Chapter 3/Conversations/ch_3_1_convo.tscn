@@ -12,6 +12,6 @@ has_following_monologue = true
 following_monologue = ExtResource("2_m27vf")
 
 [node name="StartingCharacter" parent="ConversationCharacters" index="0"]
-position = Vector2(303, 204)
+position = Vector2(162, 167)
 
 [node name="Guide" parent="ConversationCharacters/StartingCharacter" index="2" instance=ExtResource("2_wpnks")]

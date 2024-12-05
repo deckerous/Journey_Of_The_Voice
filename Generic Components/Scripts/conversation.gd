@@ -30,7 +30,7 @@ var save_path = TEST_SAVE_PATH
 @export var has_following_minigame: bool = false
 @export var following_minigame: PackedScene
 
-@export var can_continue_to_next_chapter: bool
+@export var end_of_chapter: bool
 
 # Reference to parent node for handling character positioning and animation
 @onready var conversation_characters: Node2D = $ConversationCharacters

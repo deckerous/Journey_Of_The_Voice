@@ -12,11 +12,11 @@ has_following_minigame = true
 following_minigame = ExtResource("2_rv5xg")
 
 [node name="StartingCharacter" parent="ConversationCharacters" index="0"]
-position = Vector2(823, 357)
+position = Vector2(823, 324)
 
 [node name="Drummer" parent="ConversationCharacters/StartingCharacter" index="2" instance=ExtResource("3_tisjf")]
 
 [node name="OtherCharacter" parent="ConversationCharacters" index="1"]
-position = Vector2(303, 204)
+position = Vector2(162, 167)
 
 [node name="Guide" parent="ConversationCharacters/OtherCharacter" index="1" instance=ExtResource("4_rp0m0")]
