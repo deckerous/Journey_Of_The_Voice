@@ -1,8 +1,8 @@
 [gd_scene load_steps=3 format=3 uid="uid://hh1fx1v5akao"]
 
 [ext_resource type="PackedScene" uid="uid://cws7m5i6qkna3" path="res://Generic Components/Scenes/bar_area.tscn" id="1_msa61"]
-[ext_resource type="PackedScene" uid="uid://cspkkmyyir4t0" path="res://Chapters/Chapter 1/Monologues/ch_1_0_mono.tscn" id="2_f40xx"]
+[ext_resource type="PackedScene" uid="uid://cspkkmyyir4t0" path="res://Chapters/Chapter 2/Monologues/ch_2_0_mono.tscn" id="2_f40xx"]
 
-[node name="Chapter1BarArea" instance=ExtResource("1_msa61")]
+[node name="Chapter2BarArea" instance=ExtResource("1_msa61")]
 start_with_monologue = true
 starting_monologue = ExtResource("2_f40xx")

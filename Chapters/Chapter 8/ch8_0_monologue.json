@@ -1,0 +1,20 @@
+{
+    "monologue": [
+      {
+        "id": "Start",
+        "text": "*You step into your bedroom, catching your reflection on a mirror and notice a small but determined smile on your face.*"
+      },
+      {
+        "text": "Another band member down...."
+      },
+       {
+        "text": "I bet Cy would have a much harder time hiding where their eyes are looking..."
+      },
+      {
+        "text": "What a night. Where is that journal..."
+      },
+      {
+        "function": "end_monologue"
+      }
+    ]
+  }

@@ -1,9 +1,7 @@
 {
     "dialogue": [
       {
-        "id": "Start"
-      },
-      {
+        "id": "Start",
         "character": "Guide",
         "text": "Look at that! Three for Three."
       },
@@ -16,11 +14,9 @@
         "text": "You know, there's this guitarist that's been going from town to town,"
       },
       {
-        "character": "Guide",
         "text": "Absolutely crushing any stage they step foot on."
       },
       {
-        "character": "Guide",
         "text": "Word is, this is their next stop."
       },
       {

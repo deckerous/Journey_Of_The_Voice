@@ -2,7 +2,8 @@
     "monologue": [
       {
         "id": "Start",
-        "text": "Should I practice some of the techniques I've learned?"
+        "character": "You",
+        "text": "Maybe I should practice some of the self-soothing techniques..."
       },
       {
         "function": "end_monologue"

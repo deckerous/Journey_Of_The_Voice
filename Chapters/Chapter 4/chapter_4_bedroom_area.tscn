@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://w5hkt3j0sisw"]
+[gd_scene load_steps=3 format=3 uid="uid://w5hkt3j0sisw"]
 
 [ext_resource type="PackedScene" uid="uid://daapn4kvhq3fe" path="res://Generic Components/Scenes/bedroom_area.tscn" id="1_hauu2"]
+[ext_resource type="PackedScene" uid="uid://bg7tgwka22fr0" path="res://Chapters/Chapter 4/Monologues/ch_4_0_mono.tscn" id="2_8pc3h"]
 
 [node name="Chapter4BedroomArea" instance=ExtResource("1_hauu2")]
 start_with_monologue = true
+starting_monologue = ExtResource("2_8pc3h")
