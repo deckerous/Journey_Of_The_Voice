@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c0u1fdrgiinbp" path="res://Characters/Scenes/guide.tscn" id="3_7yyj1"]
 
 [node name="Ch_2_2_Boss_Convo_0" instance=ExtResource("1_lwj0r")]
-dialogue_file = "res://Chapters/Chapter 2/jsons/chapter2_2_boss_0.json"
+dialogue_file = "res://Chapters/Chapter 2/chapter2_2_boss_0.json"
 wants_to_talk = false
 starting_character_alone = false
 starting_convo_character_right = false

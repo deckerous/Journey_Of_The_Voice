@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://02buyslchn8j"]
+
+[ext_resource type="PackedScene" uid="uid://cee0f16o8788r" path="res://Generic Components/Scenes/conversation.tscn" id="1_l4hk3"]
+[ext_resource type="PackedScene" uid="uid://c0u1fdrgiinbp" path="res://Characters/Scenes/guide.tscn" id="2_50jtn"]
+[ext_resource type="PackedScene" uid="uid://b3hivppemhhla" path="res://Chapters/Chapter 7/Conversations/ch_7_3_bassist_1_convo.tscn" id="2_vn3gx"]
+[ext_resource type="PackedScene" uid="uid://cym1xw41nikgc" path="res://Characters/Scenes/cy.tscn" id="3_h0vg4"]
+
+[node name="Ch_7_2_Convo" instance=ExtResource("1_l4hk3")]
+dialogue_file = "res://Chapters/Chapter 7/ch7_2_dialogue.json"
+wants_to_talk = false
+starting_character_alone = false
+starting_convo_character_right = false
+start_conversation_on_load = true
+has_following_conversation = true
+following_conversation = ExtResource("2_vn3gx")
+
+[node name="StartingCharacter" parent="ConversationCharacters" index="0"]
+position = Vector2(162, 167)
+
+[node name="Guide" parent="ConversationCharacters/StartingCharacter" index="2" instance=ExtResource("2_50jtn")]
+
+[node name="OtherCharacter" parent="ConversationCharacters" index="1"]
+position = Vector2(853, 310)
+
+[node name="Cy" parent="ConversationCharacters/OtherCharacter" index="1" instance=ExtResource("3_h0vg4")]

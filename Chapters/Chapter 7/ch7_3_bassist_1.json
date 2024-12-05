@@ -20,12 +20,6 @@
         "text": "You gonna perform tonight?"
       },
       {
-        "function": "start_wandering_eyes"
-      },
-      {
-        "function": "disable_cursor"
-      },
-      {
         "character": "You",
         "text": "Uh...no..."
       },

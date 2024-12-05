@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cee0f16o8788r" path="res://Generic Components/Scenes/conversation.tscn" id="1_mfq57"]
 
 [node name="Ch1Convo" instance=ExtResource("1_mfq57")]
-dialogue_file = "res://Chapters/Chapter 1/jsons/chapter1.json"
+dialogue_file = "res://Chapters/Chapter 1/chapter1.json"
 wants_to_talk = false
 starting_character_alone = false
 starting_convo_character_right = false
