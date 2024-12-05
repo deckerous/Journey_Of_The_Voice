@@ -11,7 +11,7 @@
 
 [sub_resource type="Animation" id="Animation_2ycib"]
 resource_name = "Credit Scroll"
-length = 15.0
+length = 25.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -19,10 +19,10 @@ tracks/0/path = NodePath("CenterContainer:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 14.9983),
+"times": PackedFloat32Array(0, 25),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 653.495), Vector2(23.43, -2023.71)]
+"values": [Vector2(0, 661.35), Vector2(0, -2023.71)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -235,6 +235,7 @@ scale = Vector2(0.208642, 0.208642)
 texture = ExtResource("3_18r1b")
 
 [node name="Kenshiro" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
 position = Vector2(336, 440)
 scale = Vector2(0.275, 0.275)
 texture = ExtResource("4_kopb1")
