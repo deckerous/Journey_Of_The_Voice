@@ -19,12 +19,16 @@
       },
       {
         "id": "*take the empty glass*",
-        "text": "I'll let the bartender know...",
+        "text": "I'll let the bartender know..."
+      },
+      {
         "function": "end_dialogue"
       },
       {
         "id": "...",
-        "text": "...",
+        "text": "..."
+      },
+      {
         "function": "end_dialogue"
       },
       {
@@ -44,21 +48,26 @@
         "options": [
           "*take the empty glass*",
           "...",
-          "Actually..."
+          "Well..."
         ]
       },
       {
         "id": "*take the empty glass*",
-        "text": "I'll let the bartender know...",
+        "text": "I'll let the bartender know..."
+      },
+      {
         "function": "end_dialogue"
       },
       {
         "id": "...",
-        "text": "...",
+        "text": "..."
+      },
+      {
         "function": "end_dialogue"
       },
       {
-        "id": "Actually...",
+        "id": "Well...",
+        "character": "You",
         "text": "I am putting together a group of incredible musicians."
       },
       {
@@ -76,20 +85,24 @@
       },
       {
         "id": "I'm friends with the bartender?",
-        "text": "I don't think guide would like you tearing up his bar...",
+        "text": "I don't think guide would like you tearing up his bar..."
+      },
+      {
         "function": "end_dialogue"
       },
       {
         "id": "...",
-        "text": "...",
+        "text": "..."
+      },
+      {
         "function": "end_dialogue"
       },
       {
         "id": "I've been on a journey",
+        "character": "You",
         "text": "I'm building something real..."
       },
       {
-        "character": "You",
         "text": "A band that's about overcoming challenges and being there for each other."
       },
       {
@@ -107,20 +120,24 @@
       },
       {
         "id": "Because we want to be famous.",
-        "text": "We want to play on the biggest stages...just like you?",
+        "text": "We want to play on the biggest stages...just like you?"
+      },
+      {
         "function": "end_dialogue"
       },
       {
         "id": "...",
-        "text": "...",
+        "text": "..."
+      },
+      {
         "function": "end_dialogue"
       },
       {
-        "id": "Because we won't give up.",
+        "id": "Because we won't give up!",
+        "character": "You",
         "text": "We've all faced our own struggles, but together, we support each other."
       },
       {
-        "character": "You",
         "text": "Because no matter how hard it gets, we keep moving forward."
       },
       {

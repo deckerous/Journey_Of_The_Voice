@@ -16,7 +16,7 @@
 			"character": "Keyboardist",
 			"text": "Hey, you alright?"
 		},
-	    {
+		{
 			"character": "",
 			"text": "It seems as though you’re stuck in your head."
 		},
@@ -28,20 +28,20 @@
 			"character": "Keyboardist",
 			"text": "No worries. Here’s a trick:"
 		},
-	    {
+		{
 			"text": "Challege the noise your mind produces,"
 		},
-	    {
+		{
 			"text": "When the melody of negative self-talk fills your mind,"
 		},
-	    {
+		{
 			"text": "Don't just loop the sample,"
 		},
-	    {
+		{
 			"text": "Shift the pitch up, and layer in a positve counter example."
 		},
-	    {
-	        "text": "Reframe the negative thought in your mind and click it away."
+		{
+			"text": "Reframe the negative thought in your mind and click it away."
 		},
 		{
 			"function": "end_dialogue"
