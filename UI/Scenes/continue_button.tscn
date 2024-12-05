@@ -2,4 +2,4 @@
 
 [ext_resource type="PackedScene" uid="uid://hsxry7hy2u46" path="res://UI/Scenes/main_menu_button.tscn" id="1_7dfcf"]
 
-[node name="LoadButton" instance=ExtResource("1_7dfcf")]
+[node name="ContinueButton" instance=ExtResource("1_7dfcf")]
