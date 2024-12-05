@@ -1,0 +1,23 @@
+{
+    "monologue": [
+        {
+            "id": "Start",
+            "text": "You don't have to scan the bar to find the guitartist."
+        },
+        {
+            "text": "They have a presence that is undeniable."
+        },
+        {
+            "text": "[shake rate=20.0 level=5 connected=1]This is it...[/shake]"
+        },
+        {
+            "text": "Your chance to form the band of your dreams..."
+        },
+        {
+            "text": "You approach the stage..."
+        },
+        {
+            "function": "end_monologue"
+        }
+    ]
+}

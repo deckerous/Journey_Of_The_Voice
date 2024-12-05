@@ -1,0 +1,53 @@
+{
+    "dialogue": [
+      {
+        "id": "Start"
+      },
+      {
+        "character": "Cy",
+        "text": "Scanning..."
+      },
+      {
+        "character": "Cy",
+        "text": "Target Aquired!"
+      },
+      {
+        "character": "You",
+        "text": "Wha...what?"
+      },
+      {
+        "character": "Cy",
+        "text": "You look like a musician."
+      },
+      {
+        "character": "Cy",
+        "text": "You gonna perform tonight?"
+      },
+      {
+        "function": "start_wandering_eyes"
+      },
+      {
+        "character": "You",
+        "text": "Uh...no..."
+      },
+      {
+        "character": "You",
+        "text": "Well, not tonight at least."
+      },
+      {
+        "character": "Cy",
+        "text": "All parameters indicate that you are of type SINGER"
+      },
+      {
+        "character": "You",
+        "text": "Uh, yeah. I actually want to put together a band for the battle coming up."
+      },
+      {
+        "character": "Cy",
+        "text": "Ah, Then you followed the bassline to me!"
+      },
+      {
+        "function": "end_dialogue"
+      }
+    ]
+  }
