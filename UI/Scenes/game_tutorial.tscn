@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b45cj1t6je1f2"]
 
 [ext_resource type="Script" path="res://UI/Scenes/game_tutorial.gd" id="1_wkrhh"]
-[ext_resource type="Texture2D" uid="uid://cgj63hoelbgrk" path="res://Images/UI/popup_bg.png" id="2_qriyx"]
+[ext_resource type="Texture2D" uid="uid://w320hssu8uco" path="res://Images/UI/popup_bg.png" id="2_qriyx"]
 [ext_resource type="Theme" uid="uid://v3tjxnq7o5ny" path="res://Themes/notebook_text.tres" id="3_y7tol"]
 
 [node name="GameTutorial" type="Node2D"]

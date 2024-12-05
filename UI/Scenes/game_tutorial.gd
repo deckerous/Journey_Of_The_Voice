@@ -4,6 +4,8 @@ extends Node2D
 @onready var tutorial_button: Button = %TutorialButton
 @onready var sprite_2d: Sprite2D = $Sprite2D
 
+signal finished_tutorial()
+
 var pg = 1
 
 # Called when the node enters the scene tree for the first time.
@@ -26,3 +28,4 @@ func _on_tutorial_button_pressed() -> void:
 		page_2.visible = false
 		sprite_2d.visible = false
 		tutorial_button.visible = false
+		finished_tutorial.emit()

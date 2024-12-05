@@ -64,6 +64,7 @@ modulate = Color(1, 1, 1, 0)
 script = ExtResource("1_nxtku")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
+modulate = Color(0, 0, 0, 1)
 offset_left = -73.0
 offset_top = -18.0
 offset_right = 73.0

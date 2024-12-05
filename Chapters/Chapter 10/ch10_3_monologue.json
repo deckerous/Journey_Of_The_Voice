@@ -1,0 +1,23 @@
+{
+    "monologue": [
+      {
+        "id": "Start"
+      },
+      {
+        "character": "You",
+        "text": "*We still have a long way to go, but I'm ready for it.*"
+      },
+       {
+        "text": "*We've come this far, and there's no turning back now.*"
+      },
+      {
+        "text": "*Its Cook or be Cooked*"
+      },
+      {
+        "function": "bed_available"
+      },
+      {
+        "function": "end_monologue"
+      }
+    ]
+  }
