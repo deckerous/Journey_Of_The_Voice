@@ -2,7 +2,7 @@
 
 [ext_resource type="Theme" path="res://Themes/notebook_text.tres" id="1_3bxdf"]
 [ext_resource type="Script" path="res://UI/Scripts/main_menu.gd" id="1_yxa7y"]
-[ext_resource type="AudioStream" uid="uid://1u5vgegkrrq4" path="res://Audio/songs/beep/beep-theme.wav" id="2_aowep"]
+[ext_resource type="AudioStream" uid="uid://cjoftnq151iox" path="res://Audio/songs/beep/beep-theme.wav" id="2_aowep"]
 [ext_resource type="PackedScene" uid="uid://buulbpdh08bqu" path="res://UI/Scenes/start_button.tscn" id="2_iqoyb"]
 [ext_resource type="Script" path="res://UI/Scenes/v_box_container.gd" id="2_q0xt6"]
 [ext_resource type="PackedScene" uid="uid://w6k5cj8hiag4" path="res://UI/Scenes/load_button.tscn" id="3_c1jdp"]

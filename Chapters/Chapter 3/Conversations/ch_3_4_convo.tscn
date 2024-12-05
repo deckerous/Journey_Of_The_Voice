@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://bjsmaufdw42hm"]
+
+[ext_resource type="PackedScene" uid="uid://cee0f16o8788r" path="res://Generic Components/Scenes/conversation.tscn" id="1_anyjm"]
+[ext_resource type="PackedScene" uid="uid://bfv6gxyo50n2o" path="res://Anxiety Effects/Box Breathing/box_breathing.tscn" id="2_rv5xg"]
+[ext_resource type="PackedScene" uid="uid://pie5vurh8eoo" path="res://Characters/Scenes/drummer.tscn" id="3_tisjf"]
+[ext_resource type="PackedScene" uid="uid://c0u1fdrgiinbp" path="res://Characters/Scenes/guide.tscn" id="4_rp0m0"]
+
+[node name="Ch_3_4_Convo" instance=ExtResource("1_anyjm")]
+dialogue_file = "res://Chapters/Chapter 3/ch3_4.json"
+start_conversation_after_monologue = true
+has_following_minigame = true
+following_minigame = ExtResource("2_rv5xg")
+
+[node name="StartingCharacter" parent="ConversationCharacters" index="0"]
+position = Vector2(823, 357)
+
+[node name="Drummer" parent="ConversationCharacters/StartingCharacter" index="2" instance=ExtResource("3_tisjf")]
+
+[node name="OtherCharacter" parent="ConversationCharacters" index="1"]
+position = Vector2(303, 204)
+
+[node name="Guide" parent="ConversationCharacters/OtherCharacter" index="1" instance=ExtResource("4_rp0m0")]

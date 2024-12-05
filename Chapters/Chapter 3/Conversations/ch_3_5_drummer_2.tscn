@@ -1,8 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://cexou3rp8qi88"]
+[gd_scene load_steps=4 format=3 uid="uid://cexou3rp8qi88"]
 
 [ext_resource type="PackedScene" uid="uid://cee0f16o8788r" path="res://Generic Components/Scenes/conversation.tscn" id="1_blb08"]
 [ext_resource type="PackedScene" uid="uid://pie5vurh8eoo" path="res://Characters/Scenes/drummer.tscn" id="2_wmra5"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sdgvy"]
+size = Vector2(226, 570)
+
 [node name="Ch3_5_Drummer_2" instance=ExtResource("1_blb08")]
+dialogue_file = "res://Chapters/Chapter 3/ch3_5_drummer_2.json"
+starting_convo_character_right = false
+
+[node name="CharacterCollisionShape2D" parent="ConversationCharacters/StartingCharacter/CharacterClickArea" index="0"]
+shape = SubResource("RectangleShape2D_sdgvy")
 
 [node name="Drummer" parent="ConversationCharacters/StartingCharacter" index="2" instance=ExtResource("2_wmra5")]
+position = Vector2(0, 29)
