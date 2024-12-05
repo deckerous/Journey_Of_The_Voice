@@ -1,9 +1,7 @@
 {
   "monologue": [
     {
-      "id": "Start"
-    },
-    {
+      "id": "Start",
       "character": "You",
       "text": "*Maybe I should practice some of the self-soothing techniques...*",
       "function": "branch_dialogue",

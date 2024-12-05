@@ -1,14 +1,11 @@
 {
     "dialogue": [
       {
-        "id": "Start"
-      },
-      {
+        "id": "Start",
         "character": "Cy",
         "text": "Scanning..."
       },
       {
-        "character": "Cy",
         "text": "Target Aquired!"
       },
       {
@@ -20,18 +17,13 @@
         "text": "You look like a musician."
       },
       {
-        "character": "Cy",
         "text": "You gonna perform tonight?"
-      },
-      {
-        "function": "start_wandering_eyes"
       },
       {
         "character": "You",
         "text": "Uh...no..."
       },
       {
-        "character": "You",
         "text": "Well, not tonight at least."
       },
       {
@@ -49,5 +41,5 @@
       {
         "function": "end_dialogue"
       }
-    ]
-  }
+  ]
+}

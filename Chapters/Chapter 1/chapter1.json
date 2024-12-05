@@ -1,8 +1,12 @@
-[
-  [
+{
+  "dialogue": [
 	{
-	  "id": "Start",
-	  "text": "*Ring*   *Ring*   Looks like my friend Guide is calling me!"
+		"character": "",
+		"text": "*Ring*   *Ring*"
+	},
+	{
+	  "character": "You",
+	  "text": "Looks like my friend Guide is calling me!"
 	},
 	{
 	  "character": "Guide",
@@ -22,14 +26,18 @@
 	},
 	{
 	  "character": "Guide",
-	  "text": "Nope. Come to the bar, there is someone you have to meet… *click*" 
+	  "text": "Nope. Come to the bar, there is someone you have to meet…" 
+	},
+	{
+	  "character": "Guide",
+	  "text": "*click*" 
 	},
 	{
 	  "character":"You",
-	  "text": "Time to stop at Caffeine Central Coffee and get a quad-shot, 5-pump caramel redeye and chase my dream! Or fail miserably, embarrass myself and (Guide), never use my voice again, and live the rest of my life as a rock…."
+	  "text": "Time to stop at Caffeine Central Coffee and get a quad-shot, 5-pump caramel redeye and chase my dream! Or fail miserably, embarrass myself and Guide, never use my voice again, and live the rest of my life as a rock…."
 	},
 	{
 	  "function": "end_dialogue"
 	}
   ]
-]
+}

@@ -1,14 +1,11 @@
 {
     "dialogue": [
       {
-        "id": "Start"
-      },
-      {
+        "id": "Start",
         "character": "Guide",
         "text": "Oh my, Cy, the Mechanical Eye!"
       },
       {
-        "character": "Guide",
         "text": "When are you gonna play an [wave amp=50.0 freq=5.0 connected=1]UNPLUGGED[/wave] set for us? HA!"
       },
       {
@@ -16,15 +13,12 @@
         "text": "Ah, robot jokes. You must be running out of material."
       },
       {
-        "character": "Cy",
         "text": "Jeez, its like you can [wave amp=50.0 freq=5.0 connected=1]SEE[/wave] right through me!"
       },
       {
-        "character": "Cy",
         "text": "Stop that. Anyway..."
       },
       {
-        "character": "Cy",
         "text": "Who's the shifty eyed ball of angst next to you?"
       },
       {
@@ -32,7 +26,6 @@
         "text": "See. Insanely perceptive. "
       },
       {
-        "character": "Guide",
         "text": "Couldn't sneak a hobbit past you. Eh, Sauron?"
       },
       {

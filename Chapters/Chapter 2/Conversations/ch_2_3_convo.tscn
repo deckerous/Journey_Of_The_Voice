@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhpnhjgkksvrp"]
+
+[ext_resource type="PackedScene" uid="uid://cee0f16o8788r" path="res://Generic Components/Scenes/conversation.tscn" id="1_neku2"]
+[ext_resource type="PackedScene" uid="uid://c0u1fdrgiinbp" path="res://Characters/Scenes/guide.tscn" id="2_t36t0"]
+
+[node name="Ch_2_3_Convo" instance=ExtResource("1_neku2")]
+dialogue_file = "res://Chapters/Chapter 2/chapter2_3.json"
+wants_to_talk = false
+starting_character_alone = false
+starting_convo_character_right = false
+start_conversation_after_monologue = true
+can_continue_to_next_chapter = true
+
+[node name="StartingCharacter" parent="ConversationCharacters" index="0"]
+position = Vector2(304, 202)
+
+[node name="Guide" parent="ConversationCharacters/StartingCharacter" index="2" instance=ExtResource("2_t36t0")]

@@ -1,18 +1,14 @@
 {
-	"dialogue": [
-		{
-			"id": "Start"
-		},
-		{
+    "dialogue": [
+        {
+			"id": "Start",
 			"character": "Guide",
 			"text": "There you are!"
 		},
 		{
-			"character": "Guide",
 			"text": "A pal of mine just finished his set."
 		},
 		{
-			"character": "Guide",
 			"text": "Let's go say hi."
 		},
 		{
@@ -20,7 +16,6 @@
 			"text": "Uh... do I really have to?"
 		},
 		{
-			"character": "You",
 			"text": "He looks so cool, he won't want to talk to me..."
 		},
 		{
@@ -32,7 +27,8 @@
 			"text": "Come on now, you gotta make that band somehow!"
 		},
 		{
-			"text": "Guide leads you toward the stage, where a short, stylish figure is adjusting the knobs on a keyboard."
+			"character": "",
+			"text": "*Guide leads you toward the stage, where a short, stylish figure is adjusting the knobs on a keyboard.*"
 		},
 		{
 			"character": "Guide",
@@ -41,5 +37,5 @@
 		{
 			"function": "end_dialogue"
 		}
-	]
+    ]
 }

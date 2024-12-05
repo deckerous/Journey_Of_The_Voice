@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bwto6787cl1q6"]
+
+[ext_resource type="PackedScene" uid="uid://daapn4kvhq3fe" path="res://Generic Components/Scenes/bedroom_area.tscn" id="1_d4erv"]
+[ext_resource type="PackedScene" uid="uid://c3sfs7uul580o" path="res://Chapters/Chapter 8/Monologues/ch_8_0_mono.tscn" id="2_catyd"]
+
+[node name="Chapter8BedroomArea" instance=ExtResource("1_d4erv")]
+start_with_monologue = true
+starting_monologue = ExtResource("2_catyd")

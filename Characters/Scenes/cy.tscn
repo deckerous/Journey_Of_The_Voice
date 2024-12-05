@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://cym1xw41nikgc"]
+
+[ext_resource type="PackedScene" uid="uid://cfcuodb5inj3o" path="res://Generic Components/Scenes/character.tscn" id="1_d1r7f"]
+[ext_resource type="Texture2D" uid="uid://cb1upf8e11yva" path="res://Characters/Assets/cy.png" id="2_uh55t"]
+
+[node name="Cy" instance=ExtResource("1_d1r7f")]
+scale = Vector2(0.25, 0.25)
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_uh55t")
+flip_h = true
