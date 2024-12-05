@@ -1,0 +1,37 @@
+{
+    "dialogue": [
+      {
+        "id": "Start",
+        "character": "Cy",
+        "text": "Scanning..."
+      },
+      {
+        "text": "Target Aquired!"
+      },
+      {
+        "character": "You",
+        "text": "Wha...what?"
+      },
+      {
+        "character": "Cy",
+        "text": "You look like a musician."
+      },
+      {
+        "text": "You gonna perform tonight?"
+      },
+      {
+        "character": "You",
+        "text": "Uh...no..."
+      },
+      {
+        "character": "Cy",
+        "text": "Eye tracking lost..."
+      },
+      {
+        "text": "What are you looking over there for?"
+      },
+      {
+        "function": "end_dialogue"
+      }
+    ]
+  }

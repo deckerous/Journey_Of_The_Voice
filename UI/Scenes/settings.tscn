@@ -1,0 +1,210 @@
+[gd_scene load_steps=5 format=3 uid="uid://bqk024x3by5ou"]
+
+[ext_resource type="Script" path="res://UI/Scenes/settings.gd" id="1_i2je3"]
+[ext_resource type="Theme" uid="uid://v3tjxnq7o5ny" path="res://Themes/notebook_text.tres" id="2_kh07w"]
+[ext_resource type="Texture2D" uid="uid://cjpj48jh7p5oq" path="res://Images/UI/pause_icon.png" id="4_5jvyq"]
+[ext_resource type="Texture2D" uid="uid://cc0qn3x1eqaug" path="res://Images/UI/notebook_open_level.png" id="4_43oof"]
+
+[node name="Settings" type="Node2D"]
+script = ExtResource("1_i2je3")
+
+[node name="Notebook" type="BoxContainer" parent="."]
+offset_left = 40.0
+offset_top = 16.0
+offset_right = 1127.0
+offset_bottom = 620.0
+rotation = -0.0645772
+pivot_offset = Vector2(544, 312)
+size_flags_horizontal = 3
+size_flags_vertical = 6
+size_flags_stretch_ratio = 0.0
+theme = ExtResource("2_kh07w")
+
+[node name="Container" type="BoxContainer" parent="Notebook"]
+custom_minimum_size = Vector2(849, 604)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="Notebook/Container"]
+texture = ExtResource("4_43oof")
+centered = false
+
+[node name="Page" type="Control" parent="Notebook/Container"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 2
+theme = ExtResource("2_kh07w")
+
+[node name="LeftPageCont" type="VBoxContainer" parent="Notebook/Container/Page"]
+clip_contents = true
+layout_mode = 2
+offset_left = 24.8219
+offset_top = 21.7367
+offset_right = 391.822
+offset_bottom = 582.737
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Header" type="HBoxContainer" parent="Notebook/Container/Page/LeftPageCont"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Notebook/Container/Page/LeftPageCont/Header"]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 3
+text = "SETTINGS!"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Notebook/Container/Page/LeftPageCont"]
+layout_mode = 2
+size_flags_vertical = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Notebook/Container/Page/LeftPageCont/HBoxContainer2"]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_stretch_ratio = 0.0
+text = "Volume:"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="VolLevel" type="RichTextLabel" parent="Notebook/Container/Page/LeftPageCont/HBoxContainer2"]
+unique_name_in_owner = true
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_stretch_ratio = 0.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "
+"
+fit_content = true
+scroll_active = false
+autowrap_mode = 2
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="HSlider_main_vol" type="HSlider" parent="Notebook/Container/Page/LeftPageCont"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Notebook/Container/Page/LeftPageCont"]
+layout_mode = 2
+size_flags_vertical = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Notebook/Container/Page/LeftPageCont/HBoxContainer4"]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_stretch_ratio = 0.0
+text = "SFX Volume:"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="SFXVolLevel" type="RichTextLabel" parent="Notebook/Container/Page/LeftPageCont/HBoxContainer4"]
+unique_name_in_owner = true
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_stretch_ratio = 0.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "
+"
+fit_content = true
+scroll_active = false
+autowrap_mode = 2
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="HSlider_sfx_vol" type="HSlider" parent="Notebook/Container/Page/LeftPageCont"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Notebook/Container/Page/LeftPageCont"]
+layout_mode = 2
+size_flags_vertical = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Notebook/Container/Page/LeftPageCont/HBoxContainer3"]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_stretch_ratio = 0.0
+text = "Music Volume:"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="MusVolLevel" type="RichTextLabel" parent="Notebook/Container/Page/LeftPageCont/HBoxContainer3"]
+unique_name_in_owner = true
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_stretch_ratio = 0.0
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "
+"
+fit_content = true
+scroll_active = false
+autowrap_mode = 2
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+
+[node name="HSlider_mus_vol" type="HSlider" parent="Notebook/Container/Page/LeftPageCont"]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="QuitButton" type="Button" parent="Notebook/Container/Page/LeftPageCont"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 10
+text = "Quit Game
+"
+
+[node name="RightPageCont" type="VBoxContainer" parent="Notebook/Container/Page"]
+layout_mode = 2
+offset_left = 465.0
+offset_top = 26.0
+offset_right = 832.0
+offset_bottom = 587.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Notebook/Container/Page/RightPageCont"]
+layout_mode = 2
+size_flags_vertical = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_right = 1152.0
+offset_bottom = 100.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="ExitButton" type="TextureButton" parent="VBoxContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 8
+texture_normal = ExtResource("4_5jvyq")
+
+[connection signal="value_changed" from="Notebook/Container/Page/LeftPageCont/HSlider_main_vol" to="." method="_on_h_slider_main_vol_value_changed"]
+[connection signal="value_changed" from="Notebook/Container/Page/LeftPageCont/HSlider_sfx_vol" to="." method="_on_h_slider_sfx_vol_value_changed"]
+[connection signal="value_changed" from="Notebook/Container/Page/LeftPageCont/HSlider_mus_vol" to="." method="_on_h_slider_mus_vol_value_changed"]
+[connection signal="pressed" from="Notebook/Container/Page/LeftPageCont/QuitButton" to="." method="_on_quit_button_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/HBoxContainer/ExitButton" to="." method="_on_exit_button_mouse_entered"]
+[connection signal="mouse_exited" from="VBoxContainer/HBoxContainer/ExitButton" to="." method="_on_exit_button_mouse_exited"]
+[connection signal="pressed" from="VBoxContainer/HBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

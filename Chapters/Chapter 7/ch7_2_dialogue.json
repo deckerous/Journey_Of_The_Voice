@@ -1,0 +1,35 @@
+{
+    "dialogue": [
+      {
+        "id": "Start",
+        "character": "Guide",
+        "text": "Oh my, Cy, the Mechanical Eye!"
+      },
+      {
+        "text": "When are you gonna play an [wave amp=50.0 freq=5.0 connected=1]UNPLUGGED[/wave] set for us? HA!"
+      },
+      {
+        "character": "Cy",
+        "text": "Ah, robot jokes. You must be running out of material."
+      },
+      {
+        "text": "Jeez, its like you can [wave amp=50.0 freq=5.0 connected=1]SEE[/wave] right through me!"
+      },
+      {
+        "text": "Stop that. Anyway..."
+      },
+      {
+        "text": "Who's the shifty eyed ball of angst next to you?"
+      },
+      {
+        "character": "Guide",
+        "text": "See. Insanely perceptive. "
+      },
+      {
+        "text": "Couldn't sneak a hobbit past you. Eh, Sauron?"
+      },
+      {
+        "function": "end_dialogue"
+      }
+    ]
+  }

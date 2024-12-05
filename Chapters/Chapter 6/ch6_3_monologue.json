@@ -1,0 +1,17 @@
+{
+    "monologue": [
+      {
+        "id": "Start",
+        "text": "A keyboardist who knows how to turn chaos into melody."
+      },
+      {
+        "text": "A drummer who can find a rhythm in a waterfall."
+      },
+      {
+        "text": "Now we just need some strings..."
+      },
+      {
+        "function": "end_monologue"
+      }
+    ]
+  }

@@ -1,0 +1,21 @@
+{
+	"monologue": [
+	  {
+		"id": "Start"
+	  },
+	  {
+		"character": "You",
+		"text": "*Maybe I should practice a self-soothing techniques...*",
+		"function": "branch_dialogue",
+		"options": [
+		  "Practice Bcx Breathing?"
+		]
+	  },
+	  {
+		"function": "box_breathing"
+	  },
+	  {
+		"function": "end_monologue"
+	  }
+	]
+  }

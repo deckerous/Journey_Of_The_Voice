@@ -1,0 +1,22 @@
+{
+	"monologue": [
+		{
+			"id": "Start",
+			"text": "*You return home, closing the door to the bedroom with a sigh.*"
+		},
+		{
+			"character": "You",
+			"text": "What a night... That was intense."
+		},
+		{
+			"text": "*You sit on the edge of their bed, staring at a journal resting on the bedside table.*"
+		},
+		{
+			"character": "You",
+			"text": "Maybe I should write some of this down..."
+		},
+		{
+			"function": "end_monologue"
+		}
+	]
+}

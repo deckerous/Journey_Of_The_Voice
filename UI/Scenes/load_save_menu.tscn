@@ -3,7 +3,7 @@
 [ext_resource type="Theme" uid="uid://v3tjxnq7o5ny" path="res://Themes/notebook_text.tres" id="1_h0pv2"]
 [ext_resource type="Theme" uid="uid://digcvgrw3a2je" path="res://Themes/default.tres" id="2_qgjmh"]
 [ext_resource type="Script" path="res://UI/Scripts/save_button.gd" id="2_ttl11"]
-[ext_resource type="PackedScene" uid="uid://cytkowxct06e2" path="res://Chapters/Chapter 3/chapter_3_bar.tscn" id="3_vmvan"]
+[ext_resource type="PackedScene" uid="uid://cytkowxct06e2" path="res://Chapters/Chapter 3/chapter_3_bar_area.tscn" id="3_vmvan"]
 
 [node name="LoadSaveMenu" type="Control"]
 layout_mode = 3

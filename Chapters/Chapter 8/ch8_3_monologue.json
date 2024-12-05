@@ -1,0 +1,17 @@
+{
+    "monologue": [
+      {
+        "id": "Start",
+        "text": "The band only needs a guitarist before we can really start jamming."
+      },
+       {
+        "text": "Guide mentioned that there is an amazing guitarist that may turn up at his bar..."
+      },
+      {
+        "text": "I really hope that I am able to work through my anxiety and convince them to join our group."
+      },
+      {
+        "function": "end_monologue"
+      }
+    ]
+  }

@@ -17,6 +17,8 @@ var save_path = TEST_SAVE_PATH
 
 # For when a conversation immediately follows a monologue without player input
 @export var start_conversation_after_monologue: bool = false
+# For when you want to this conversation to play on load
+@export var start_conversation_on_load: bool = false
 
 # Controls whether another conversation should follow this one after it is done.
 @export var has_following_conversation: bool = false
@@ -28,7 +30,7 @@ var save_path = TEST_SAVE_PATH
 @export var has_following_minigame: bool = false
 @export var following_minigame: PackedScene
 
-@export var can_continue_to_next_chapter: bool
+@export var end_of_chapter: bool
 
 # Reference to parent node for handling character positioning and animation
 @onready var conversation_characters: Node2D = $ConversationCharacters
@@ -53,17 +55,27 @@ var dialogue_dictionary
 # controls dialogue appearing character by character
 var start_displaying = false
 
+signal started_conversation
 signal finished_conversation
 
 signal start_anxiety_effect
 
+signal faded_out_characters
+
 func _ready():
+	# Connect signal from conversation_characters in order to unhide conversations in area.
+	# Uses lambda function to avoid new function decleration for "forwarding" signal updwards.
+	conversation_characters.started_conversation.connect(func(): self.started_conversation.emit())
+	
 	# Connect signal for handling dialogue with click
 	dialogue_click_area.input_event.connect(on_dialogue_click)
 	
 	# Show dialogue_ui when starting conversation
 	conversation_characters.started_conversation.connect(conversation_ui.show)
-	conversation_characters.started_conversation.connect(load_dialogue)
+	# If this is a conversation the player clicked on, wait to load and start dialogue
+	# until characters have been moved to the correct place
+	if wants_to_talk:
+		self.faded_out_characters.connect(load_dialogue)
 	
 	conversation_ui.disable_dialogue_input.connect(disable_dialogue_click_collision)
 	conversation_ui.enable_dialogue_input.connect(enable_dialogue_click_collision)
@@ -74,8 +86,9 @@ func _ready():
 	conversation_ui.anxiety_effect.connect(instance_anxiety_effect)
 	
 	conversation_ui.fade_out_character.connect(fade_out_character)
+	conversation_characters.started_conversation.connect(move_charcters)
 	
-	if start_conversation_after_monologue:
+	if start_conversation_after_monologue or start_conversation_on_load:
 		conversation_ui.show()
 		conversation_animation_player.play("fade_in")
 		await conversation_animation_player.animation_finished
@@ -112,8 +125,26 @@ func end_dialogue():
 func instance_anxiety_effect():
 	start_anxiety_effect.emit()
 
+func fade_out_convo():
+	conversation_animation_player.play("fade_out")
+
+func fade_in_convo():
+	conversation_animation_player.play("fade_in")
+
 func fade_out_character():
 	conversation_animation_player.play("fade_out_other_character")
+
+func fade_out_characters():
+	conversation_animation_player.play("fade_out_characters")
+
+func fade_in_characters():
+	conversation_animation_player.play("fade_in_characters")
+
+func move_charcters():
+	fade_out_characters()
+	await conversation_animation_player.animation_finished
+	self.faded_out_characters.emit()
+	fade_in_characters()
 
 func toggle_dialogue_click_collision():
 	dialogue_collision_shape_2d.disabled = !dialogue_collision_shape_2d.disabled

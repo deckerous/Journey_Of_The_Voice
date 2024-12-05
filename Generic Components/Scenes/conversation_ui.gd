@@ -16,8 +16,11 @@ extends CanvasLayer
 # controls dialogue appearing character by character
 @onready var start_displaying = false
 
-# Sound that plays when character dialogue is appearing
-@onready var speech_player: AudioStreamPlayer2D = $"../SpeechSound"
+# Name of the character that is currently speaking. You by default
+@onready var char_talking: String = "You"
+
+# Pitch of the voice for whoever's talking
+var speech_pitch: float
 
 # For parent to enable/disable dialogue input checks
 signal disable_dialogue_input
@@ -31,21 +34,29 @@ func _ready():
 	# When loaded in to the chapter, hide the conversation_ui and collision for continuing dialogue 
 	self.visible = false
 	dialogue_choices.visible = false
+	speech_pitch = 1.0
 
 func _process(delta: float) -> void:
 	if dialogue_label.visible_ratio == 1.0:
 		start_displaying = false
+		speech_pitch = 1.0
 	if start_displaying:
 		dialogue_label.visible_characters += 1
-		var new_speech_player = speech_player.duplicate()
-		new_speech_player.pitch_scale += randf_range(-0.1, 0.1);
-		get_tree().root.add_child(new_speech_player)
-		new_speech_player.play()
-		await new_speech_player.finished
-		new_speech_player.queue_free()
+		# Load the Wav file based on who is currently talking.
+		# If nobody is talking then use the Monologue sound.
+		if (char_talking == ""):
+			char_talking = "Monologue"
+		# Only play the audio every 5 letters
+		if (dialogue_label.visible_characters % 5 == 0):
+			var speech_wav: AudioStreamWAV = load("res://Audio/voices/"+char_talking+".wav")
+			speech_pitch = 1.0
+			speech_pitch += randf_range(-0.1, 0.1)
+			GlobalAudio.play_sound_id(speech_wav, "speech_audio", GlobalAudio.Bus.SFX, speech_pitch)		
+		
 
 func start_dialogue():
 	name_label.text = conversation.dialogue_dictionary["dialogue"][0]["character"]
+	char_talking = conversation.dialogue_dictionary["dialogue"][0]["character"]
 	dialogue_label.text = conversation.dialogue_dictionary["dialogue"][0]["text"]
 	display_characters()
 
@@ -54,12 +65,20 @@ func handle_dialogue():
 	dialogue_choices.visible = false
 	enable_dialogue_input.emit()
 	
-	# Run any functions that the text has
-	if conversation.dialogue_dictionary["dialogue"][dialogue_index].has("function"):
+	if dialogue_label.visible_ratio != 1.0:
+		# When the dialogue is still appearing and another 
+		# click comes in, skip to being fully visible
+		
+		dialogue_label.visible_ratio = 1.0
+	
+	elif conversation.dialogue_dictionary["dialogue"][dialogue_index].has("function"):
+		# Run any functions that the text has
+		
 		if conversation.dialogue_dictionary["dialogue"][dialogue_index]["function"] == "end_dialogue":
 			conversation.end_dialogue()
 		elif conversation.dialogue_dictionary["dialogue"][dialogue_index]["function"] == "branch_dialogue":
 			# Provide error message and end dialogue if there aren't options labeled for the dialogue branch
+			
 			if !conversation.dialogue_dictionary["dialogue"][dialogue_index].has("options"):
 				dialogue_label.text = "ERROR: No options? Make sure the .json file has an options string array field that corresponds to a dialogue id."
 				conversation.end_dialogue()
@@ -82,6 +101,8 @@ func handle_dialogue():
 		# change displayed name to character's name
 		if conversation.dialogue_dictionary["dialogue"][dialogue_index].has("character"):
 			name_label.text = conversation.dialogue_dictionary["dialogue"][dialogue_index]["character"]
+			# Grab the name of the character whose talking. Used for the speech dialogue
+			char_talking = conversation.dialogue_dictionary["dialogue"][dialogue_index]["character"]
 		display_characters()
 		dialogue_index += 1
 

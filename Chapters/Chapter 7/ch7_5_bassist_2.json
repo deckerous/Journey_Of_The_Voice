@@ -1,0 +1,45 @@
+{
+    "dialogue": [
+      {
+        "id": "Start",
+        "character": "Cy",
+        "text": "Scanning..."
+      },
+      {
+        "text": "Target Aquired!"
+      },
+      {
+        "character": "You",
+        "text": "Wha...what?"
+      },
+      {
+        "character": "Cy",
+        "text": "You look like a musician."
+      },
+      {
+        "text": "You gonna perform tonight?"
+      },
+      {
+        "character": "You",
+        "text": "Uh...no..."
+      },
+      {
+        "text": "Well, not tonight at least."
+      },
+      {
+        "character": "Cy",
+        "text": "All parameters indicate that you are of type SINGER"
+      },
+      {
+        "character": "You",
+        "text": "Uh, yeah. I actually want to put together a band for the battle coming up."
+      },
+      {
+        "character": "Cy",
+        "text": "Ah, Then you followed the bassline to me!"
+      },
+      {
+        "function": "end_dialogue"
+      }
+  ]
+}

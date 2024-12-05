@@ -1,9 +1,6 @@
 {
 	"dialogue": [
 		{
-			"id": "Start"
-		},
-		{
 			"character": "Drummer",
 			"text": "Go on then, ask your questions!"
 		},

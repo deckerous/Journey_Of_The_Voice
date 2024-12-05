@@ -1,0 +1,58 @@
+[gd_scene load_steps=4 format=3 uid="uid://b561r3n76f56b"]
+
+[ext_resource type="Script" path="res://UI/Scenes/game_tutorial.gd" id="1_wbcti"]
+[ext_resource type="Texture2D" uid="uid://ds0t64ya574em" path="res://Images/UI/popup_bg.png" id="2_m6cpt"]
+[ext_resource type="Theme" uid="uid://v3tjxnq7o5ny" path="res://Themes/notebook_text.tres" id="3_8rkhx"]
+
+[node name="GameTutorial" type="Node2D"]
+script = ExtResource("1_wbcti")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(576, 324)
+texture = ExtResource("2_m6cpt")
+
+[node name="page_1" type="Node2D" parent="."]
+unique_name_in_owner = true
+visible = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="page_1"]
+offset_left = 328.0
+offset_top = 136.0
+offset_right = 828.0
+offset_bottom = 464.0
+theme = ExtResource("3_8rkhx")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+text = "Eye contact is a conversational technique based around maintaining consistant eye contact with your conversation partner.
+Try to keep your eyes in contact at the start of the conversation, then maintaining contact about 50% - 70% of the time for short intervals."
+scroll_active = false
+shortcut_keys_enabled = false
+
+[node name="page_2" type="Node2D" parent="."]
+unique_name_in_owner = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="page_2"]
+offset_left = 328.0
+offset_top = 136.0
+offset_right = 828.0
+offset_bottom = 472.0
+theme = ExtResource("3_8rkhx")
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+bbcode_enabled = true
+text = "Eye contact:
+Click and hold to move the screen around. If the screen goes too far off to the side, the conversation will reset.
+
+[center]
+↑
+←👁→
+↓"
+scroll_active = false
+shortcut_keys_enabled = false
+
+[node name="TutorialButton" type="Button" parent="."]
+unique_name_in_owner = true
+offset_left = 544.0
+offset_top = 488.0
+offset_right = 644.0
+offset_bottom = 514.0
+
+[connection signal="pressed" from="TutorialButton" to="." method="_on_tutorial_button_pressed"]
