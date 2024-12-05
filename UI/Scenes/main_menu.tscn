@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://cpp2n27xhy763"]
+[gd_scene load_steps=8 format=3 uid="uid://cpp2n27xhy763"]
 
 [ext_resource type="Theme" uid="uid://v3tjxnq7o5ny" path="res://Themes/notebook_text.tres" id="1_3bxdf"]
 [ext_resource type="Script" path="res://UI/Scripts/main_menu.gd" id="1_yxa7y"]
@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://buulbpdh08bqu" path="res://UI/Scenes/start_button.tscn" id="2_iqoyb"]
 [ext_resource type="Script" path="res://UI/Scenes/v_box_container.gd" id="2_q0xt6"]
 [ext_resource type="PackedScene" uid="uid://w6k5cj8hiag4" path="res://UI/Scenes/continue_button.tscn" id="3_c1jdp"]
-[ext_resource type="PackedScene" uid="uid://ce70dlgb1k21b" path="res://Chapters/Chapter 1/chapter_1.tscn" id="5_cbfvn"]
 [ext_resource type="PackedScene" uid="uid://bws8j61yk4oht" path="res://UI/Scenes/quit_button.tscn" id="6_ggr35"]
 
 [node name="Main Menu" type="Node2D"]
@@ -14,7 +13,7 @@ script = ExtResource("1_yxa7y")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+[node name="Background" type="ColorRect" parent="CanvasLayer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -80,7 +79,6 @@ focus_neighbor_left = NodePath("../../CenterContainer - Quit/QuitButton")
 focus_neighbor_top = NodePath("../../CenterContainer - Quit/QuitButton")
 focus_neighbor_right = NodePath("../../CenterContainer - Load/ContinueButton")
 text = "New Game"
-scene = ExtResource("5_cbfvn")
 otherButtons = [NodePath("../../CenterContainer - Load/ContinueButton"), NodePath("../../CenterContainer - Quit/QuitButton")]
 
 [node name="CenterContainer - Load" type="CenterContainer" parent="CanvasLayer/VBoxContainer/VBoxContainer"]
@@ -103,6 +101,57 @@ focus_neighbor_bottom = NodePath("../../CenterContainer - Start/StartButton")
 text = "Quit"
 otherButtons = [NodePath("../../CenterContainer - Start/StartButton"), NodePath("../../CenterContainer - Load/ContinueButton")]
 is_quit_button = true
+
+[node name="ConfirmPopup" type="ColorRect" parent="CanvasLayer"]
+visible = false
+custom_minimum_size = Vector2(400, 400)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -200.0
+offset_right = 200.0
+offset_bottom = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.395367, 0.395367, 0.395367, 1)
+
+[node name="ExitButton" type="Button" parent="CanvasLayer/ConfirmPopup"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
+theme_override_font_sizes/font_size = 32
+text = "X"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/ConfirmPopup"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 32
+bbcode_enabled = true
+text = "[center]Starting a new game will overwrite your save. Are you sure you want to go through with this?"
+fit_content = true
+
+[node name="ConfirmButton" type="Button" parent="CanvasLayer/ConfirmPopup"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -30.0
+offset_top = -26.0
+offset_right = 30.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 32
+text = "Confirm"
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 process_mode = 3

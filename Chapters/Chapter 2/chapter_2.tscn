@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cvq0l0i1ro2lt" path="res://Chapters/Chapter 3/chapter_3.tscn" id="2_8c7kx"]
 
 [node name="Chapter2" node_paths=PackedStringArray("area") instance=ExtResource("1_wihm5")]
+chapter_number = 2
 next_chapter = ExtResource("2_8c7kx")
 area = NodePath("Chapter2BarArea")
 

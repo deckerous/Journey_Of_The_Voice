@@ -125,6 +125,11 @@ func fade_out_clickable_conversaitons(clicked_convo: Conversation = null):
 			convo.fade_out_convo()
 
 func start_clickable_conversation(convo: Conversation):
+	if convo.end_of_chapter:
+		print("can continue")
+		# When a conversation has this check, unhide button to go to next chapter
+		convo.finished_conversation.connect(allow_traversal_to_next_chapter)
+	
 	fade_out_clickable_conversaitons(convo)
 	convo.visible = true
 
