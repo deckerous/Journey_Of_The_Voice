@@ -8,3 +8,4 @@ wants_to_talk = false
 starting_character_alone = false
 starting_convo_character_right = false
 start_conversation_on_load = true
+end_of_chapter = true

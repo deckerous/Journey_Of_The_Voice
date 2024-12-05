@@ -1,38 +1,14 @@
-[gd_scene load_steps=2 format=3 uid="uid://nluno2jnk6wo"]
+[gd_scene load_steps=4 format=3 uid="uid://nluno2jnk6wo"]
 
 [ext_resource type="PackedScene" uid="uid://cp4p4iaomvynx" path="res://Generic Components/Scenes/chapter.tscn" id="1_wihm5"]
+[ext_resource type="PackedScene" uid="uid://hh1fx1v5akao" path="res://Chapters/Chapter 2/chapter_2_bar_area.tscn" id="2_2bbtp"]
+[ext_resource type="PackedScene" uid="uid://cvq0l0i1ro2lt" path="res://Chapters/Chapter 3/chapter_3.tscn" id="2_8c7kx"]
 
-[node name="Chapter2" instance=ExtResource("1_wihm5")]
+[node name="Chapter2" node_paths=PackedStringArray("area") instance=ExtResource("1_wihm5")]
+next_chapter = ExtResource("2_8c7kx")
+area = NodePath("Chapter2BarArea")
 
-[node name="Background" type="Control" parent="." index="0"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Chapter2BarArea" parent="." index="0" instance=ExtResource("2_2bbtp")]
 
-[node name="ColorRect" type="ColorRect" parent="Background" index="0"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 1)
-
-[node name="CenterContainer" type="CenterContainer" parent="Background" index="1"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Background/CenterContainer" index="0"]
-layout_mode = 2
-theme_override_font_sizes/normal_font_size = 64
-bbcode_enabled = true
-text = "[center]Chapter 1[/center]"
-fit_content = true
-autowrap_mode = 0
+[node name="Chapter" parent="CanvasLayer/ColorRect" index="0"]
+text = "[center]Chapter 2"
