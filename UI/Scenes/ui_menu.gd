@@ -9,6 +9,7 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	# Hide menus to start
 	notebook_wrapper.visible = false
 	settings_wrapper.visible = false
 
@@ -19,36 +20,44 @@ func _process(_delta: float) -> void:
 
 
 func _on_notebook_button_pressed() -> void:
+	# Show the notebook
 	notebook_wrapper.visible = true
 	buttons_container.visible = false
 
 
 func _on_notebook_exit_pressed() -> void:
+	# Hide the notebook
 	notebook_wrapper.visible = false
 	buttons_container.visible = true
 
 
 func _on_notebook_button_mouse_entered() -> void:
+	# Hover effect on
 	notebook_button.modulate.v = .8
 
 
 func _on_notebook_button_mouse_exited() -> void:
+	# Hover effect off
 	notebook_button.modulate.v = 1
 
 
 func _on_pause_button_pressed() -> void:
+	# Show settings page
 	settings_wrapper.visible = true
 	buttons_container.visible = false
 
 
 func _on_pause_button_mouse_entered() -> void:
+	# Hover effect on
 	pause_button.modulate.v = .8
 
 
 func _on_pause_button_mouse_exited() -> void:
-	notebook_button.modulate.v = 1
+	# Hover effect off
+	pause_button.modulate.v = 1
 
 
 func _on_settings_exit_pressed() -> void:
+	# Hide settings menu
 	settings_wrapper.visible = false
 	buttons_container.visible = true
