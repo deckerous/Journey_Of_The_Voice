@@ -23,16 +23,21 @@ func _ready() -> void:
 	self.position = Vector2(0, 0)
 	initial_pos = cam.position
 	
-	timer.wait_time = duration
-	timer.start()
-	
-	base_speed = speed
-	generate_new_distract_dir()
-	
 	GlobalAudio.tween_from_id(music_turndown_id, -80, 1.0)
 	GlobalAudio.play_sound_id(minigame_music, "eye_contact", GlobalAudio.Bus.MUSIC)
 	GlobalAudio.get_stream_from_id("eye_contact").volume_db = -80
 	GlobalAudio.tween_from_id("eye_contact", -15, 1.0)
+	
+	set_physics_process(false)
+	
+	var has_done_box_breathing = Player.save_file.get_value("Player", "has_done_eye_contact") == null
+	if !has_done_box_breathing:
+		$GameTutorial.visible = false
+		_on_tutorial_end()
+	else:
+		# Check now exists for later instantiations of box breathing
+		print("adding check")
+		Player.add_check("has_done_eye_contact")
 
 func _physics_process(delta: float) -> void:
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
@@ -65,4 +70,12 @@ func cleanup():
 func _on_timer_timeout() -> void:
 	succeeded_game.emit()
 	cleanup()
+
+func _on_tutorial_end() -> void:
+	timer.wait_time = duration
+	timer.start()
 	
+	base_speed = speed
+	generate_new_distract_dir()
+	
+	set_physics_process(true)
