@@ -1,0 +1,42 @@
+{
+    "dialogue": [
+      {
+        "id": "Start",
+        "character": "Guide",
+        "text": "Bout time you got here!"
+      },
+      {
+        "text": "Remember those roumors about the guitarist tearing up the town?"
+      },
+      {
+        "text": "Well, seems like they are true!"
+      },
+      {
+        "character": "You",
+        "text": "Wait, you mean that there is a guitarist here tonight?"
+      },
+      {
+        "character": "Guide",
+        "text": "Yeah, I'd say!"
+      },
+      {
+        "text": "Look...be mindful here. That's a musician on their way up."
+      },
+      {
+        "text": "They won't let anyone stand in their way."
+      },
+      {
+        "character": "You",
+        "text": "Oh..."
+      },
+      {
+        "text": "Well..."
+      },
+      {
+        "text": "So am I."
+      },
+      {
+        "function": "end_dialogue"
+      }
+    ]
+  }
