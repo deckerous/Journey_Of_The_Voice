@@ -134,4 +134,5 @@ func start_clickable_conversation(convo: Conversation):
 	convo.visible = true
 
 func allow_traversal_to_next_chapter():
+	print("emitting")
 	area_complete.emit()

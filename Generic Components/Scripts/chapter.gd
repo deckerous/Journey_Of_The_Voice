@@ -16,6 +16,7 @@ var save_path = TEST_SAVE_PATH
 signal clicked
 
 func _ready() -> void:
+	continue_button.visible = false
 	if area != null:
 		area.area_complete.connect(unhide_continue_button)
 		continue_button.pressed.connect(go_to_next_chapter)
