@@ -8,6 +8,7 @@ extends Node2D
 @onready var bio_2: RichTextLabel = %bio2
 @onready var bio_3: RichTextLabel = %bio3
 @onready var bio_4: RichTextLabel = %bio4
+@onready var bio_5: RichTextLabel = %bio5
 
 @onready var exit_button: TextureButton = %ExitButton
 
@@ -47,10 +48,15 @@ func _process(_delta: float) -> void:
 	pass
 	
 func update_page():
-	#tutorial_1.visible = Player.save_file.get_value("player", "has_done_box_breathing") == "true"
-	#tutorial_2.visible = Player.save_file.get_value("player", "minigame2_finished") == "true"
-	#tutorial_3.visible = Player.save_file.get_value("player", "minigame3_finished") == "true"
-	#tutorial_4.visible = Player.save_file.get_value("player", "minigame4_finished") == "true"
+	bio_2.visible = Player.save_file.get_value("player", "chapter") > 3
+	bio_3.visible = Player.save_file.get_value("player", "chapter") > 5
+	bio_4.visible = Player.save_file.get_value("player", "chapter") > 7
+	bio_5.visible = Player.save_file.get_value("player", "chapter") > 9
+	tutorial_4.visible = Player.save_file.get_value("player", "chapter") > 9
+	tutorial_1.visible = Player.save_file.get_value("player", "chapter") > 3
+	tutorial_2.visible = Player.save_file.get_value("player", "chapter") > 5
+	tutorial_3.visible = Player.save_file.get_value("player", "chapter") > 7
+	tutorial_4.visible = Player.save_file.get_value("player", "chapter") > 9
 	match pg:
 		1:
 			page_1.visible = true
