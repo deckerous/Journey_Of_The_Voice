@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://c7366i15i2pl3"]
 
 [ext_resource type="Script" path="res://UI/Scenes/notebook.gd" id="1_pjd0k"]
-[ext_resource type="Theme" path="res://Themes/notebook_text.tres" id="2_fwp36"]
-[ext_resource type="Texture2D" uid="uid://cqhec8ipmsye5" path="res://Images/UI/arrow_r.png" id="4_65gpl"]
-[ext_resource type="Texture2D" uid="uid://b55jxyjcugj4y" path="res://Images/UI/notebook_open_level.png" id="4_y6sl8"]
-[ext_resource type="Texture2D" uid="uid://c7vrcggtouj2a" path="res://Images/UI/arrow_l.png" id="5_xcnod"]
-[ext_resource type="Texture2D" uid="uid://coob2h55xg21m" path="res://Images/UI/notebook_icon.png" id="6_d7wvd"]
+[ext_resource type="Theme" uid="uid://v3tjxnq7o5ny" path="res://Themes/notebook_text.tres" id="2_fwp36"]
+[ext_resource type="Texture2D" uid="uid://cb8wh6ye0pgk3" path="res://Images/UI/arrow_r.png" id="4_65gpl"]
+[ext_resource type="Texture2D" uid="uid://iroe3iry1pvo" path="res://Images/UI/notebook_open_level.png" id="4_y6sl8"]
+[ext_resource type="Texture2D" uid="uid://bepst3xq1hg31" path="res://Images/UI/arrow_l.png" id="5_xcnod"]
+[ext_resource type="Texture2D" uid="uid://4dg70r5qepy6" path="res://Images/UI/notebook_icon.png" id="6_d7wvd"]
 
 [node name="Notebook" type="Node2D"]
 script = ExtResource("1_pjd0k")
@@ -73,6 +73,10 @@ fit_content = true
 scroll_active = false
 autowrap_mode = 0
 
+[node name="BoxContainer" type="BoxContainer" parent="Notebook/Container/Page1/LeftPageCont"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
 [node name="HBoxContainer2" type="HBoxContainer" parent="Notebook/Container/Page1/LeftPageCont"]
 layout_mode = 2
 size_flags_vertical = 2
@@ -88,9 +92,13 @@ fit_content = true
 scroll_active = false
 autowrap_mode = 2
 
+[node name="Spacer2" type="BoxContainer" parent="Notebook/Container/Page1/LeftPageCont"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
 [node name="HBoxContainer3" type="HBoxContainer" parent="Notebook/Container/Page1/LeftPageCont"]
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_vertical = 0
 
 [node name="bio1" type="RichTextLabel" parent="Notebook/Container/Page1/LeftPageCont/HBoxContainer3"]
 unique_name_in_owner = true
@@ -98,6 +106,7 @@ clip_contents = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
+size_flags_stretch_ratio = 0.0
 text = "Me: Vocals
 I need to come up with a name for the band!
 "
@@ -107,9 +116,14 @@ autowrap_mode = 2
 deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 
+[node name="Spacer3" type="BoxContainer" parent="Notebook/Container/Page1/LeftPageCont"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
 [node name="HBoxContainer4" type="HBoxContainer" parent="Notebook/Container/Page1/LeftPageCont"]
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_vertical = 2
+size_flags_stretch_ratio = 0.0
 
 [node name="bio2" type="RichTextLabel" parent="Notebook/Container/Page1/LeftPageCont/HBoxContainer4"]
 unique_name_in_owner = true
@@ -117,6 +131,7 @@ clip_contents = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
+size_flags_stretch_ratio = 0.0
 text = "Josh: Drums
 A former taiko drummer, now he has a girlfriend in another state. He swears.
 "
@@ -125,6 +140,10 @@ scroll_active = false
 autowrap_mode = 2
 deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
+
+[node name="Spacer4" type="BoxContainer" parent="Notebook/Container/Page1/LeftPageCont"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
 
 [node name="HBoxContainer5" type="HBoxContainer" parent="Notebook/Container/Page1/LeftPageCont"]
 layout_mode = 2
@@ -174,6 +193,29 @@ autowrap_mode = 2
 deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 
+[node name="Spacer5" type="BoxContainer" parent="Notebook/Container/Page1/RightPageCont"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="HBoxContainer6" type="HBoxContainer" parent="Notebook/Container/Page1/RightPageCont"]
+layout_mode = 2
+size_flags_vertical = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="bio5" type="RichTextLabel" parent="Notebook/Container/Page1/RightPageCont/HBoxContainer6"]
+unique_name_in_owner = true
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Benito: Bleeps and Bloops
+Benny, Benny, Benny and the Jets!
+"
+fit_content = true
+scroll_active = false
+autowrap_mode = 2
+deselect_on_focus_loss_enabled = false
+drag_and_drop_selection_enabled = false
+
 [node name="Page2" type="Control" parent="Notebook/Container"]
 unique_name_in_owner = true
 layout_mode = 2
@@ -189,20 +231,34 @@ offset_bottom = 582.189
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Tutorial1" type="RichTextLabel" parent="Notebook/Container/Page2/LeftPageCont"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Notebook/Container/Page2/LeftPageCont"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Tutorial1" type="RichTextLabel" parent="Notebook/Container/Page2/LeftPageCont/HBoxContainer"]
 unique_name_in_owner = true
 clip_contents = false
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_horizontal = 3
+size_flags_vertical = 0
 theme_override_font_sizes/normal_font_size = 30
 fit_content = true
 scroll_active = false
 autowrap_mode = 2
 
-[node name="Tutorial2" type="RichTextLabel" parent="Notebook/Container/Page2/LeftPageCont"]
+[node name="Spacer6" type="BoxContainer" parent="Notebook/Container/Page2/LeftPageCont"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Notebook/Container/Page2/LeftPageCont"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Tutorial2" type="RichTextLabel" parent="Notebook/Container/Page2/LeftPageCont/HBoxContainer2"]
 unique_name_in_owner = true
 clip_contents = false
 layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 3
 fit_content = true
 scroll_active = false
@@ -217,7 +273,11 @@ offset_bottom = 587.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Tutorial3" type="RichTextLabel" parent="Notebook/Container/Page2/RightPageCont2"]
+[node name="HBoxContainer3" type="HBoxContainer" parent="Notebook/Container/Page2/RightPageCont2"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Tutorial3" type="RichTextLabel" parent="Notebook/Container/Page2/RightPageCont2/HBoxContainer3"]
 unique_name_in_owner = true
 clip_contents = false
 layout_mode = 2
@@ -227,13 +287,29 @@ fit_content = true
 scroll_active = false
 autowrap_mode = 2
 
-[node name="Tutorial4" type="RichTextLabel" parent="Notebook/Container/Page2/RightPageCont2"]
+[node name="Spacer6" type="BoxContainer" parent="Notebook/Container/Page2/RightPageCont2"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Notebook/Container/Page2/RightPageCont2"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Tutorial4" type="RichTextLabel" parent="Notebook/Container/Page2/RightPageCont2/HBoxContainer4"]
 unique_name_in_owner = true
 clip_contents = false
 layout_mode = 2
 size_flags_vertical = 3
 fit_content = true
 autowrap_mode = 2
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="Notebook/Container/Page2/RightPageCont2"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Button" type="Button" parent="Notebook/Container/Page2/RightPageCont2/HBoxContainer5"]
+layout_mode = 2
+text = "Practice Skills"
 
 [node name="ButtonR" type="TextureButton" parent="Notebook"]
 unique_name_in_owner = true
