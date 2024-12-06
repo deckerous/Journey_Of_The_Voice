@@ -33,7 +33,7 @@ func _ready():
 	confirm_button.pressed.connect(overwrite_confirmed)
 	check_for_save()
 	
-	var stream = GlobalAudio.play_sound(music, GlobalAudio.Bus.MUSIC)
+	var stream = GlobalAudio.play_sound_id(music, "beep-theme", GlobalAudio.Bus.MUSIC)
 	stream.volume_db = -15
 
 func check_for_save():
