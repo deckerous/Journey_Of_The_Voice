@@ -42,6 +42,7 @@ centered = false
 
 [node name="Page1" type="Control" parent="Notebook/Container"]
 unique_name_in_owner = true
+visible = false
 layout_mode = 2
 size_flags_horizontal = 2
 theme = ExtResource("2_fwp36")
@@ -72,6 +73,10 @@ fit_content = true
 scroll_active = false
 autowrap_mode = 0
 
+[node name="BoxContainer" type="BoxContainer" parent="Notebook/Container/Page1/LeftPageCont"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
 [node name="HBoxContainer2" type="HBoxContainer" parent="Notebook/Container/Page1/LeftPageCont"]
 layout_mode = 2
 size_flags_vertical = 2
@@ -86,6 +91,10 @@ text = "MEMBERS
 fit_content = true
 scroll_active = false
 autowrap_mode = 2
+
+[node name="Spacer2" type="BoxContainer" parent="Notebook/Container/Page1/LeftPageCont"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="Notebook/Container/Page1/LeftPageCont"]
 layout_mode = 2
@@ -106,6 +115,10 @@ scroll_active = false
 autowrap_mode = 2
 deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
+
+[node name="Spacer3" type="BoxContainer" parent="Notebook/Container/Page1/LeftPageCont"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="Notebook/Container/Page1/LeftPageCont"]
 layout_mode = 2
@@ -128,6 +141,10 @@ autowrap_mode = 2
 deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 
+[node name="Spacer4" type="BoxContainer" parent="Notebook/Container/Page1/LeftPageCont"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
 [node name="HBoxContainer5" type="HBoxContainer" parent="Notebook/Container/Page1/LeftPageCont"]
 layout_mode = 2
 size_flags_vertical = 3
@@ -147,9 +164,6 @@ scroll_active = false
 autowrap_mode = 2
 deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
-
-[node name="BoxContainer" type="BoxContainer" parent="Notebook/Container/Page1/LeftPageCont"]
-layout_mode = 2
 
 [node name="RightPageCont" type="VBoxContainer" parent="Notebook/Container/Page1"]
 layout_mode = 2
@@ -178,6 +192,10 @@ scroll_active = false
 autowrap_mode = 2
 deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
+
+[node name="Spacer5" type="BoxContainer" parent="Notebook/Container/Page1/RightPageCont"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
 
 [node name="HBoxContainer6" type="HBoxContainer" parent="Notebook/Container/Page1/RightPageCont"]
 layout_mode = 2
@@ -213,20 +231,34 @@ offset_bottom = 582.189
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Tutorial1" type="RichTextLabel" parent="Notebook/Container/Page2/LeftPageCont"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Notebook/Container/Page2/LeftPageCont"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Tutorial1" type="RichTextLabel" parent="Notebook/Container/Page2/LeftPageCont/HBoxContainer"]
 unique_name_in_owner = true
 clip_contents = false
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_horizontal = 3
+size_flags_vertical = 0
 theme_override_font_sizes/normal_font_size = 30
 fit_content = true
 scroll_active = false
 autowrap_mode = 2
 
-[node name="Tutorial2" type="RichTextLabel" parent="Notebook/Container/Page2/LeftPageCont"]
+[node name="Spacer6" type="BoxContainer" parent="Notebook/Container/Page2/LeftPageCont"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Notebook/Container/Page2/LeftPageCont"]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Tutorial2" type="RichTextLabel" parent="Notebook/Container/Page2/LeftPageCont/HBoxContainer2"]
 unique_name_in_owner = true
 clip_contents = false
 layout_mode = 2
+size_flags_horizontal = 3
 size_flags_vertical = 3
 fit_content = true
 scroll_active = false
@@ -250,6 +282,10 @@ theme_override_font_sizes/normal_font_size = 30
 fit_content = true
 scroll_active = false
 autowrap_mode = 2
+
+[node name="Spacer6" type="BoxContainer" parent="Notebook/Container/Page2/RightPageCont2"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
 
 [node name="Tutorial4" type="RichTextLabel" parent="Notebook/Container/Page2/RightPageCont2"]
 unique_name_in_owner = true
