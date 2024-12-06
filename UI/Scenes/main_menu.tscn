@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cpp2n27xhy763"]
+[gd_scene load_steps=8 format=3 uid="uid://cpp2n27xhy763"]
 
 [ext_resource type="Theme" uid="uid://v3tjxnq7o5ny" path="res://Themes/notebook_text.tres" id="1_3bxdf"]
 [ext_resource type="Script" path="res://UI/Scripts/main_menu.gd" id="1_yxa7y"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://UI/Scenes/v_box_container.gd" id="2_q0xt6"]
 [ext_resource type="PackedScene" uid="uid://w6k5cj8hiag4" path="res://UI/Scenes/continue_button.tscn" id="3_c1jdp"]
 [ext_resource type="PackedScene" uid="uid://bws8j61yk4oht" path="res://UI/Scenes/quit_button.tscn" id="6_ggr35"]
+[ext_resource type="Script" path="res://UI/Scripts/exit_button.gd" id="7_v2h25"]
 
 [node name="Main Menu" type="Node2D"]
 script = ExtResource("1_yxa7y")
@@ -118,11 +119,15 @@ grow_vertical = 2
 color = Color(0.395367, 0.395367, 0.395367, 1)
 
 [node name="ExitButton" type="Button" parent="CanvasLayer/ConfirmPopup"]
+custom_minimum_size = Vector2(56, 56)
 layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 66.0
+offset_bottom = 66.0
 theme_override_font_sizes/font_size = 32
 text = "X"
+script = ExtResource("7_v2h25")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/ConfirmPopup"]
 layout_mode = 1
@@ -134,7 +139,8 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
-text = "[center]Starting a new game will overwrite your save. Are you sure you want to go through with this?"
+text = "[center]Starting a new game will overwrite your save. 
+Are you sure you want to go through with this?"
 fit_content = true
 
 [node name="ConfirmButton" type="Button" parent="CanvasLayer/ConfirmPopup"]
@@ -144,9 +150,10 @@ anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -30.0
-offset_top = -26.0
-offset_right = 30.0
+offset_left = -66.5
+offset_top = -83.0
+offset_right = 66.5
+offset_bottom = -30.0
 grow_horizontal = 2
 grow_vertical = 0
 theme_override_font_sizes/font_size = 32
