@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://d2chvft3tiotq"]
 
-[ext_resource type="Texture2D" uid="uid://b17n7riy1t31d" path="res://Images/UI/pause_icon.png" id="1_b2kth"]
+[ext_resource type="Texture2D" uid="uid://cimiabjsdeikh" path="res://Images/UI/pause_icon.png" id="1_b2kth"]
 [ext_resource type="Script" path="res://UI/Scenes/ui_menu.gd" id="1_v1jh8"]
-[ext_resource type="Texture2D" uid="uid://ntf41bdbvbhg" path="res://Images/UI/notebook_icon.png" id="2_kh1iv"]
+[ext_resource type="Texture2D" uid="uid://c61u835ldmusx" path="res://Images/UI/notebook_icon.png" id="2_kh1iv"]
 [ext_resource type="PackedScene" uid="uid://c7366i15i2pl3" path="res://UI/Scenes/notebook.tscn" id="2_orhmw"]
 [ext_resource type="PackedScene" uid="uid://bqk024x3by5ou" path="res://UI/Scenes/settings.tscn" id="5_w5oyq"]
 

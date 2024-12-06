@@ -9,6 +9,10 @@
 start_with_monologue = true
 starting_monologue = ExtResource("2_f40xx")
 
+[node name="Interactables" parent="." index="1"]
+z_index = 5
+z_as_relative = false
+
 [node name="Boss" parent="Characters" index="0" instance=ExtResource("3_ikbiy")]
 position = Vector2(941, 351)
 scale = Vector2(0.525, 0.525)
