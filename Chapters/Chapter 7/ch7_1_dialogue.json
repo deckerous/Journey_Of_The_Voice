@@ -1,14 +1,11 @@
 {
     "dialogue": [
       {
-        "id": "Start"
-      },
-      {
+        "id": "Start",
         "character": "Guide",
         "text": "Hey! I'm glad you made it."
       },
       {
-        "character": "Guide",
         "text": "Seems like open mic night is bringing in some out of this world musicians!"
       },
       {
@@ -20,7 +17,6 @@
         "text": "Oh, did Cy catch your eye!"
       },
       {
-        "character": "Guide",
         "text": "Well you're in luck, they're heading this way..."
       },
       {

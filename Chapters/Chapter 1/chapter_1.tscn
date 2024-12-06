@@ -1,38 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://nluno2jnk6wo"]
+[gd_scene load_steps=4 format=3 uid="uid://ce70dlgb1k21b"]
 
-[ext_resource type="PackedScene" uid="uid://cp4p4iaomvynx" path="res://Generic Components/Scenes/chapter.tscn" id="1_wihm5"]
+[ext_resource type="PackedScene" uid="uid://cp4p4iaomvynx" path="res://Generic Components/Scenes/chapter.tscn" id="1_bjqh4"]
+[ext_resource type="PackedScene" uid="uid://c2rjr35opcgc" path="res://Chapters/Chapter 1/chapter_1_bedroom_area.tscn" id="2_jjuhi"]
+[ext_resource type="PackedScene" uid="uid://nluno2jnk6wo" path="res://Chapters/Chapter 2/chapter_2.tscn" id="2_rl532"]
 
-[node name="Chapter1" instance=ExtResource("1_wihm5")]
+[node name="Chapter1" node_paths=PackedStringArray("area") instance=ExtResource("1_bjqh4")]
+chapter_number = 1
+next_chapter = ExtResource("2_rl532")
+area = NodePath("Chapter1BedroomArea")
 
-[node name="Background" type="Control" parent="." index="0"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Chapter1BedroomArea" parent="." index="0" instance=ExtResource("2_jjuhi")]
 
-[node name="ColorRect" type="ColorRect" parent="Background" index="0"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 1)
-
-[node name="CenterContainer" type="CenterContainer" parent="Background" index="1"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Background/CenterContainer" index="0"]
-layout_mode = 2
-theme_override_font_sizes/normal_font_size = 64
-bbcode_enabled = true
-text = "[center]Chapter 1[/center]"
-fit_content = true
-autowrap_mode = 0
+[node name="Chapter" parent="CanvasLayer/ColorRect" index="0"]
+text = "[center]Chapter 1"

@@ -1,7 +1,26 @@
 class_name Chapter
 extends Node
 
-@export var next_chapter: PackedScene
-@export var starting_area: Area
+const SAVE_PATH = "user://save.cfg"
+const TEST_SAVE_PATH = "res://Globals/save.cfg"
 
-var main_objective_complete = false
+var save_path = TEST_SAVE_PATH
+
+@export var chapter_number: int
+@export var next_chapter: PackedScene
+@export var area: Area
+
+@onready var continue_button: Button = $CanvasLayer/ContinueButton
+
+func _ready() -> void:
+	if area != null:
+		area.area_complete.connect(unhide_continue_button)
+		continue_button.pressed.connect(go_to_next_chapter)
+
+func unhide_continue_button():
+	continue_button.visible = true
+
+func go_to_next_chapter():
+	Player.update_chapter(chapter_number + 1)
+	Player.write_save(save_path)
+	get_tree().change_scene_to_packed(next_chapter)

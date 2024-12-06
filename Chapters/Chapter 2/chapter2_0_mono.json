@@ -1,0 +1,11 @@
+{
+	"monologue": [
+		{
+			"id": "Start",
+			"text": "I can’t believe that I actually came here, I can’t sing in front of people, Im such an idiot"
+		},
+		{
+			"function": "end_monologue"
+		}
+	]
+}

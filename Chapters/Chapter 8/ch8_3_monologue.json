@@ -1,22 +1,14 @@
 {
     "monologue": [
       {
-        "id": "Start"
-      },
-      {
-        "character": "You",
-        "text": "*The band only needs a guitarist before we can really start jamming.*"
+        "id": "Start",
+        "text": "The band only needs a guitarist before we can really start jamming."
       },
        {
-        "character": "You",
-        "text": "*Guide mentioned that there is an amazing guitarist that may turn up at his bar...*"
+        "text": "Guide mentioned that there is an amazing guitarist that may turn up at his bar..."
       },
       {
-        "character": "You",
-        "text": "*I really hope that I am able to work through my anxiety and convince them to join our group.*"
-      },
-      {
-        "function": "bed_available"
+        "text": "I really hope that I am able to work through my anxiety and convince them to join our group."
       },
       {
         "function": "end_monologue"

@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://3kgo3ypehagf"]
+[gd_scene load_steps=9 format=3 uid="uid://3kgo3ypehagf"]
 
 [ext_resource type="Script" path="res://Generic Components/Scripts/area.gd" id="1_44oh5"]
+[ext_resource type="PackedScene" uid="uid://d2chvft3tiotq" path="res://UI/Scenes/ui_menu.tscn" id="2_ut1x2"]
 
 [sub_resource type="Animation" id="Animation_wnlh5"]
 length = 0.001
@@ -125,3 +126,8 @@ grow_vertical = 2
 libraries = {
 "": SubResource("AnimationLibrary_j11yb")
 }
+
+[node name="UICanvas" type="CanvasLayer" parent="."]
+layer = 4
+
+[node name="UIMenu" parent="UICanvas" instance=ExtResource("2_ut1x2")]

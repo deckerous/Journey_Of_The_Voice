@@ -19,6 +19,8 @@ var curr_effect = null
 
 @onready var vignette = preload("res://Anxiety Effects/Vignette/vignette.tscn")
 
+signal area_complete
+
 func _ready():
 	# Get reference to all clickable conversations in the area.
 	available_conversations = conversations_root.get_children()
@@ -32,19 +34,26 @@ func _ready():
 		conversations_root.visible = false
 		get_tree().paused = true
 		await get_tree().create_timer(2.0).timeout
-		begin_starting_monologue()
+		go_to_next_monologue(starting_monologue)
 		get_tree().paused = false
-
-func begin_starting_monologue():
-	var inst = starting_monologue.instantiate()
-	self.add_child.call_deferred(inst)
-	if inst.has_following_conversation and inst.following_conversation != null:
-		inst.finished_monologue.connect(go_to_next_convo.bind(inst.following_conversation))
-		inst.finished_monologue.connect(hide_characters)
+	elif start_with_conversation and starting_conversation != null:
+		conversations_root.visible = false
+		get_tree().paused = true
+		await get_tree().create_timer(2.0).timeout
+		go_to_next_convo(starting_conversation)
+		get_tree().paused = false
 
 func go_to_next_monologue(monologue: PackedScene):
 	var inst = monologue.instantiate()
 	self.add_child(inst)
+	
+	if inst.hide_characters_after:
+		inst.finished_monologue.connect(hide_characters)
+	
+	if inst.end_of_chapter:
+		# When a conversation has this check, unhide button to go to next chapter
+		inst.finished_monologue.connect(allow_traversal_to_next_chapter)
+	
 	if inst.has_following_conversation and inst.following_conversation != null:
 		inst.finished_monologue.connect(go_to_next_convo.bind(inst.following_conversation))
 
@@ -52,6 +61,10 @@ func go_to_next_convo(conversation: PackedScene):
 	var inst = conversation.instantiate()
 	self.add_child(inst)
 	inst.start_anxiety_effect.connect(instance_anxiety_effect)
+	
+	if inst.end_of_chapter:
+		# When a conversation has this check, unhide button to go to next chapter
+		inst.finished_conversation.connect(allow_traversal_to_next_chapter)
 	
 	if inst.has_following_minigame and inst.following_minigame != null:
 		# When this conversation is finsihed, instantiate next provided minigame
@@ -112,6 +125,13 @@ func fade_out_clickable_conversaitons(clicked_convo: Conversation = null):
 			convo.fade_out_convo()
 
 func start_clickable_conversation(convo: Conversation):
+	if convo.end_of_chapter:
+		print("can continue")
+		# When a conversation has this check, unhide button to go to next chapter
+		convo.finished_conversation.connect(allow_traversal_to_next_chapter)
+	
 	fade_out_clickable_conversaitons(convo)
-	print("here")
 	convo.visible = true
+
+func allow_traversal_to_next_chapter():
+	area_complete.emit()

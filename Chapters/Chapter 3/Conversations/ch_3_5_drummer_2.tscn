@@ -9,6 +9,7 @@ size = Vector2(226, 570)
 [node name="Ch3_5_Drummer_2" instance=ExtResource("1_blb08")]
 dialogue_file = "res://Chapters/Chapter 3/ch3_5_drummer_2.json"
 starting_convo_character_right = false
+end_of_chapter = true
 
 [node name="CharacterCollisionShape2D" parent="ConversationCharacters/StartingCharacter/CharacterClickArea" index="0"]
 shape = SubResource("RectangleShape2D_sdgvy")

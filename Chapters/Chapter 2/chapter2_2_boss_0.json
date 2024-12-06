@@ -1,0 +1,87 @@
+
+{
+  "dialogue": [
+	{
+	  "id": "start",
+	  "character": "Boss",
+	  "text": "Hi I am Boss I run the record label of your dreams! I started the label after my band Jet Set Pirate Radio rose waaay back. Maybe you've heard of them?"
+	},
+	{
+	  "character": "You",
+	  "text": "…uhhh…"
+	},
+	{
+	  "character": "Guide",
+	  "text": "Erm, of course they have!"
+	},
+	{
+	  "character": "Boss",
+	  "text": "We got some tips that there are some seriously talented artists in this town, Guide says you may be one of them."
+	},
+	{
+	  "text": "…me? No way, I'm horrible…"
+	},
+	{
+	  "character": "Guide",
+	  "text": "Don't be so modest, you are an amazing singer!"
+	},
+	{
+	  "character": "Boss",
+	  "text": "Oh you are a singer! Outsanding! Will you be performing by yourself or with a band?"
+	},
+	{
+	  "character": "You",
+	  "text": "…I…I HAVE A BAND!…"
+	},
+	{
+	  "character": "Guide",
+	  "text": "…"
+	},
+	{
+	  "character": "Boss",
+	  "text": "Thats great, we are always looking for new groups to sling into the spotlight! What sort of band are you working with?",
+	  "function": "branch_dialogue",
+	  "options": [
+				"Well",
+				"Actually",
+				"Erm"
+			]
+	},
+	{
+	  "id": "Well",
+	  "character": "You",
+	  "text": "..."
+	},
+	{
+	  "character": "Boss",
+	  "text": "You muted or what?"
+	},
+	{
+	  "function": "end_dialogue"
+	},
+	{
+	  "id": "Actually",
+	  "character": "You",
+	  "text": "..."
+	},
+	{
+	  "character": "Boss",
+	  "text": "You muted or what?"
+	},
+	{
+	  "function": "end_dialogue"
+	},
+	{
+	  "id": "Erm",
+	  "character": "You",
+	  "text": "..."
+	},
+	{
+	  "character": "Boss",
+	  "text": "You muted or what?"
+	},
+	{
+	  "function": "end_dialogue"
+	}
+  ]
+}

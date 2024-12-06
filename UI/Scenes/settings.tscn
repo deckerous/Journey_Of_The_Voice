@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" path="res://UI/Scenes/settings.gd" id="1_i2je3"]
 [ext_resource type="Theme" uid="uid://v3tjxnq7o5ny" path="res://Themes/notebook_text.tres" id="2_kh07w"]
-[ext_resource type="Texture2D" uid="uid://id7ypbgp172b" path="res://Images/UI/pause_icon.png" id="4_5jvyq"]
-[ext_resource type="Texture2D" uid="uid://iroe3iry1pvo" path="res://Images/UI/notebook_open_level.png" id="4_43oof"]
+[ext_resource type="Texture2D" uid="uid://cjpj48jh7p5oq" path="res://Images/UI/pause_icon.png" id="4_5jvyq"]
+[ext_resource type="Texture2D" uid="uid://cc0qn3x1eqaug" path="res://Images/UI/notebook_open_level.png" id="4_43oof"]
 
 [node name="Settings" type="Node2D"]
 script = ExtResource("1_i2je3")

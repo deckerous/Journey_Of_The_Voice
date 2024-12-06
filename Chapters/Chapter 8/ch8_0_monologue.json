@@ -2,22 +2,16 @@
     "monologue": [
       {
         "id": "Start",
-        "text": "You step into your bedroom, catching your reflection on a mirror and notice a small but determined smile on your face."
+        "text": "*You step into your bedroom, catching your reflection on a mirror and notice a small but determined smile on your face.*"
       },
       {
-        "character": "You",
-        "text": "*Another band member down....*"
+        "text": "Another band member down...."
       },
        {
-        "character": "You",
-        "text": "*I bet Cy would have a much harder time hiding where their eyes are looking...*"
+        "text": "I bet Cy would have a much harder time hiding where their eyes are looking..."
       },
       {
-        "character": "You",
-        "text": "*What a night. Where is that journal...*"
-      },
-      {
-        "function": "journal_available"
+        "text": "What a night. Where is that journal..."
       },
       {
         "function": "end_monologue"

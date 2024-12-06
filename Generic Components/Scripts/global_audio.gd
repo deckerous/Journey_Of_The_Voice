@@ -64,4 +64,3 @@ func finished():
 			if !audio.playing:
 				remove_child(audio)
 				return
-			

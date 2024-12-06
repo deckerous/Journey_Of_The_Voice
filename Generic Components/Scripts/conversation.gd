@@ -17,6 +17,8 @@ var save_path = TEST_SAVE_PATH
 
 # For when a conversation immediately follows a monologue without player input
 @export var start_conversation_after_monologue: bool = false
+# For when you want to this conversation to play on load
+@export var start_conversation_on_load: bool = false
 
 # Controls whether another conversation should follow this one after it is done.
 @export var has_following_conversation: bool = false
@@ -28,7 +30,7 @@ var save_path = TEST_SAVE_PATH
 @export var has_following_minigame: bool = false
 @export var following_minigame: PackedScene
 
-@export var can_continue_to_next_chapter: bool
+@export var end_of_chapter: bool
 
 # Reference to parent node for handling character positioning and animation
 @onready var conversation_characters: Node2D = $ConversationCharacters
@@ -86,7 +88,7 @@ func _ready():
 	conversation_ui.fade_out_character.connect(fade_out_character)
 	conversation_characters.started_conversation.connect(move_charcters)
 	
-	if start_conversation_after_monologue:
+	if start_conversation_after_monologue or start_conversation_on_load:
 		conversation_ui.show()
 		conversation_animation_player.play("fade_in")
 		await conversation_animation_player.animation_finished
