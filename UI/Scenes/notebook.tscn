@@ -98,7 +98,11 @@ layout_mode = 2
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="Notebook/Container/Page1/LeftPageCont"]
 layout_mode = 2
+<<<<<<< HEAD
 size_flags_vertical = 0
+=======
+size_flags_vertical = 3
+>>>>>>> 0490ef9e1cef440dba266ed00b47d08b845173cb
 
 [node name="bio1" type="RichTextLabel" parent="Notebook/Container/Page1/LeftPageCont/HBoxContainer3"]
 unique_name_in_owner = true
@@ -106,7 +110,10 @@ clip_contents = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
+<<<<<<< HEAD
 size_flags_stretch_ratio = 0.0
+=======
+>>>>>>> 0490ef9e1cef440dba266ed00b47d08b845173cb
 text = "Me: Vocals
 I need to come up with a name for the band!
 "
@@ -122,8 +129,7 @@ layout_mode = 2
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="Notebook/Container/Page1/LeftPageCont"]
 layout_mode = 2
-size_flags_vertical = 2
-size_flags_stretch_ratio = 0.0
+size_flags_vertical = 3
 
 [node name="bio2" type="RichTextLabel" parent="Notebook/Container/Page1/LeftPageCont/HBoxContainer4"]
 unique_name_in_owner = true
@@ -131,7 +137,10 @@ clip_contents = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 0
+<<<<<<< HEAD
 size_flags_stretch_ratio = 0.0
+=======
+>>>>>>> 0490ef9e1cef440dba266ed00b47d08b845173cb
 text = "Josh: Drums
 A former taiko drummer, now he has a girlfriend in another state. He swears.
 "
@@ -141,12 +150,17 @@ autowrap_mode = 2
 deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
 
+<<<<<<< HEAD
 [node name="Spacer4" type="BoxContainer" parent="Notebook/Container/Page1/LeftPageCont"]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 
 [node name="HBoxContainer5" type="HBoxContainer" parent="Notebook/Container/Page1/LeftPageCont"]
 layout_mode = 2
+=======
+[node name="HBoxContainer5" type="HBoxContainer" parent="Notebook/Container/Page1/LeftPageCont"]
+layout_mode = 2
+>>>>>>> 0490ef9e1cef440dba266ed00b47d08b845173cb
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.0
 
@@ -192,6 +206,7 @@ scroll_active = false
 autowrap_mode = 2
 deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
+<<<<<<< HEAD
 
 [node name="Spacer5" type="BoxContainer" parent="Notebook/Container/Page1/RightPageCont"]
 custom_minimum_size = Vector2(0, 20)
@@ -215,6 +230,8 @@ scroll_active = false
 autowrap_mode = 2
 deselect_on_focus_loss_enabled = false
 drag_and_drop_selection_enabled = false
+=======
+>>>>>>> 0490ef9e1cef440dba266ed00b47d08b845173cb
 
 [node name="Page2" type="Control" parent="Notebook/Container"]
 unique_name_in_owner = true
@@ -231,6 +248,7 @@ offset_bottom = 582.189
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
+<<<<<<< HEAD
 [node name="HBoxContainer" type="HBoxContainer" parent="Notebook/Container/Page2/LeftPageCont"]
 layout_mode = 2
 size_flags_vertical = 3
@@ -260,10 +278,30 @@ clip_contents = false
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+=======
+[node name="Tutorial1" type="RichTextLabel" parent="Notebook/Container/Page2/LeftPageCont"]
+unique_name_in_owner = true
+clip_contents = false
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_font_sizes/normal_font_size = 30
+>>>>>>> 0490ef9e1cef440dba266ed00b47d08b845173cb
 fit_content = true
 scroll_active = false
 autowrap_mode = 2
 
+<<<<<<< HEAD
+=======
+[node name="Tutorial2" type="RichTextLabel" parent="Notebook/Container/Page2/LeftPageCont"]
+unique_name_in_owner = true
+clip_contents = false
+layout_mode = 2
+size_flags_vertical = 3
+fit_content = true
+scroll_active = false
+autowrap_mode = 2
+
+>>>>>>> 0490ef9e1cef440dba266ed00b47d08b845173cb
 [node name="RightPageCont2" type="VBoxContainer" parent="Notebook/Container/Page2"]
 layout_mode = 2
 offset_left = 465.0
@@ -273,11 +311,15 @@ offset_bottom = 587.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
+<<<<<<< HEAD
 [node name="HBoxContainer3" type="HBoxContainer" parent="Notebook/Container/Page2/RightPageCont2"]
 layout_mode = 2
 size_flags_vertical = 0
 
 [node name="Tutorial3" type="RichTextLabel" parent="Notebook/Container/Page2/RightPageCont2/HBoxContainer3"]
+=======
+[node name="Tutorial3" type="RichTextLabel" parent="Notebook/Container/Page2/RightPageCont2"]
+>>>>>>> 0490ef9e1cef440dba266ed00b47d08b845173cb
 unique_name_in_owner = true
 clip_contents = false
 layout_mode = 2
@@ -287,6 +329,7 @@ fit_content = true
 scroll_active = false
 autowrap_mode = 2
 
+<<<<<<< HEAD
 [node name="Spacer6" type="BoxContainer" parent="Notebook/Container/Page2/RightPageCont2"]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
@@ -296,11 +339,15 @@ layout_mode = 2
 size_flags_vertical = 0
 
 [node name="Tutorial4" type="RichTextLabel" parent="Notebook/Container/Page2/RightPageCont2/HBoxContainer4"]
+=======
+[node name="Tutorial4" type="RichTextLabel" parent="Notebook/Container/Page2/RightPageCont2"]
+>>>>>>> 0490ef9e1cef440dba266ed00b47d08b845173cb
 unique_name_in_owner = true
 clip_contents = false
 layout_mode = 2
 size_flags_vertical = 3
 fit_content = true
+scroll_active = false
 autowrap_mode = 2
 
 [node name="HBoxContainer5" type="HBoxContainer" parent="Notebook/Container/Page2/RightPageCont2"]

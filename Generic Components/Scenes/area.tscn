@@ -104,9 +104,9 @@ script = ExtResource("1_44oh5")
 
 [node name="ConversationsRoot" type="Node2D" parent="."]
 
-[node name="Characters" type="Node2D" parent="."]
-
 [node name="Interactables" type="Node2D" parent="."]
+
+[node name="Characters" type="Node2D" parent="."]
 
 [node name="Minigames" type="Node2D" parent="."]
 
