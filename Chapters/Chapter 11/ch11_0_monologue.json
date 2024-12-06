@@ -1,0 +1,26 @@
+{
+    "monologue": [
+      {
+        "id": "Start",
+        "text": "The night of the Battle of the Bands has finally arrived."
+      },
+      {
+        "text": "The venue is packed, and the energy in the air is electric."
+      },
+      {
+        "text": "You've been preparing for this moment, every waking hour spent with the band, perfecting your set."
+      },
+      {
+        "text": "This is the moment where everything you've learned will be put to the test."
+      },
+      {
+        "text": "Boss, the record label scout and MC, steps on stage to introduce the next band."
+      },
+      {
+        "text": " You take a deep breath, reminding yourself of everything that brought you here."
+      },
+      {
+        "function": "end_monologue"
+      }
+    ]
+  }

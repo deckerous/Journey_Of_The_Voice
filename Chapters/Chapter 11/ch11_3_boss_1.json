@@ -1,0 +1,143 @@
+{
+    "dialogue": [
+        {
+        "id": "Start",
+        "character": "Boss",
+        "text": "Guide told me this group has something special..."
+        },
+        {
+            "text": "What a suprise!"
+        },
+        {
+            "text": "The singer without a voice."
+        },
+        {
+            "text": "I am not in the business of giving out free rides you know."
+        },
+        {
+            "function": "negative_self_talk_minigame"
+        },
+        {
+            "character": "You",
+            "text": "*I've got this... Stay calm. Breathe.*"
+        },
+        {
+            "character": "Boss",
+            "text": "So, tell me. What makes you think you're ready to take the stage and win tonight?",
+            "function": "branch_dialogue",
+            "options": [
+                "We've been through so much as a band",
+                "Spaghetti Dumpster",
+                "..."
+            ]
+        },
+            {
+                "id": "We've been through so much as a band",
+                "character": "You",
+                "text": "We've faced setbacks, had doubts, and moments that nearly broke us. But we won't quit."
+            },
+            {
+                "character": "Boss",
+                "text": "What are you a self-help group that plays music?"
+            },
+            {
+                "id": "Spaghetti Dumpster",
+                "character": "You",
+                "text": "I'm am a huge fan of your old band Spaghetti Dumpster."
+            },
+            {
+                "character": "Boss",
+                "text": "Old? Choose your next words wisely, fanboy."
+            },
+            {
+                "id": "...",
+                "character": "You",
+                "text": "..."
+            },
+            {
+                "character": "Boss",
+                "text": "Still speechless, I see. If you want the big stage, you better learn to speak up.",
+                "function": "end_dialogue"
+            },
+        {
+            "character": "Boss",
+            "text": "This industry is not always kind."
+        },
+        {
+         "text": "You can have all the heart in the world and still get no where."   
+        },
+        {
+            "text": "So, what is it that sets your band apart?"
+        },
+        {
+            "text": "Why should I care about you more than any other group that plays tonight?"
+        },
+        {
+            "character": "You",
+            "text": "*He is so intimidating, he can see right through me...*"
+        },
+        {
+            "function": "eye_contact_minigame"
+        },
+        {
+            "text": "*No, I am capable of doing this!*"
+        },
+        {
+            "character": "Boss",
+            "text": "I said..."
+        },
+        {
+            "text": "Why should I care about you more than any other group that plays tonight?",
+            "function": "branch_dialogue",
+            "options": [
+                "You don't have to",
+                "Our guitarist shreds",
+                "..."
+            ]
+        },
+            {
+                "id": "You don't have to",
+                "character": "You",
+                "text": "Because no matter what happens, we won't give up. "
+            },
+            {
+                "text": "We've pushed each other, supported each other, and we're not afraid of failing."
+            },
+            {
+                "character": "Boss",
+                "text": "Persistence, huh? We'll see if that persistence pays off."
+            },
+            {
+                "id": "Our guitarist shreds better than anyone.",
+                "character": "You",
+                "text": "Our guitarist is the best there is. She can shred like no one else."
+            },
+            {
+                "character": "Boss",
+                "text": "A flashy guitarist is good, but music is about more than one person..."
+            },
+            {
+                "id": "...",
+                "character": "You",
+                "text": "..."
+            },
+            {
+                "character": "Boss",
+                "text": "You've got to do better than that. Come on, show me something real.",
+                "function": "end_dialogue"
+            },
+        {
+            "character": "Boss",
+            "text": "Alright then. You've talked the talk."
+        },
+        {
+            "text": "Now it's time to see if you can walk the walk."
+        },
+        {
+            "text": " Get ready to take the stage."
+        },
+        {
+            "function": "end_dialogue"
+        }
+    ]
+}

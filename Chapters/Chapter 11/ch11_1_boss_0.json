@@ -1,0 +1,24 @@
+{
+    "dialogue": [
+        {
+          "id": "Start",
+          "character": "Boss",
+          "text": "Welcome back everyone to the Battle of the Bands!"
+        },
+        {
+            "text": "Tonight, we have had some incredible talent in this line up..."
+        },
+        {
+            "text": "But I am only signing one act tonight..."
+        },
+        {
+            "text": "Will our final band tonight impress me?"
+        },
+        {
+            "text": "[shake rate=20.0 level=5 connected=1]Or will they fail to even make a sound?[/shake]"
+        },
+        {
+            "function": "end_dialogue"
+        }
+    ]
+}
