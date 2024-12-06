@@ -2,16 +2,16 @@
 
 [ext_resource type="Theme" uid="uid://mrmpkimvequ6" path="res://Themes/credits_header.tres" id="1_85xxj"]
 [ext_resource type="Script" path="res://UI/Scenes/credits.gd" id="1_irc42"]
-[ext_resource type="Theme" uid="uid://c65owfpitmyd2" path="res://Themes/credits_names.tres" id="2_7g37u"]
-[ext_resource type="Texture2D" uid="uid://bvqoyfjl6bsgv" path="res://Characters/Assets/BoTB.png" id="2_t6lod"]
-[ext_resource type="Texture2D" uid="uid://b5glcn74ddows" path="res://Characters/Assets/player.png" id="3_18r1b"]
-[ext_resource type="Texture2D" uid="uid://i2bhn5qixatq" path="res://Characters/Assets/kenshiro.png" id="4_kopb1"]
-[ext_resource type="Texture2D" uid="uid://c8h8s2c1uj1lm" path="res://Characters/Assets/keebs.png" id="5_5jlwd"]
-[ext_resource type="Texture2D" uid="uid://dotmro4tlsd0h" path="res://Characters/Assets/cy.png" id="5_dg47a"]
-[ext_resource type="Texture2D" uid="uid://iw1fcgn13127" path="res://Characters/Assets/donna.png" id="7_l2e6r"]
-[ext_resource type="Texture2D" uid="uid://bvfn31ah6rmf7" path="res://Characters/Assets/guy_legs.png" id="8_3hcp7"]
-[ext_resource type="Texture2D" uid="uid://c2luojliucird" path="res://Characters/Assets/boss.png" id="9_s0ywd"]
-[ext_resource type="Theme" uid="uid://8kiqv6kckpfr" path="res://Themes/JoTV.tres" id="11_g3gd3"]
+[ext_resource type="Theme" uid="uid://dlpa8luwucobq" path="res://Themes/credits_names.tres" id="2_7g37u"]
+[ext_resource type="Texture2D" uid="uid://bgi1cmpde7h6t" path="res://Characters/Assets/BoTB.png" id="2_t6lod"]
+[ext_resource type="Texture2D" uid="uid://cgomlxpyr5cas" path="res://Characters/Assets/player.png" id="3_18r1b"]
+[ext_resource type="Texture2D" uid="uid://cas716vgsh70m" path="res://Characters/Assets/kenshiro.png" id="4_kopb1"]
+[ext_resource type="Texture2D" uid="uid://japlrk2r01fn" path="res://Characters/Assets/keebs.png" id="5_5jlwd"]
+[ext_resource type="Texture2D" uid="uid://xhroofeex57n" path="res://Characters/Assets/cy.png" id="5_dg47a"]
+[ext_resource type="Texture2D" uid="uid://klhmfb4m04q7" path="res://Characters/Assets/donna.png" id="7_l2e6r"]
+[ext_resource type="Texture2D" uid="uid://dqn21gt14f0n0" path="res://Characters/Assets/guy_legs.png" id="8_3hcp7"]
+[ext_resource type="Texture2D" uid="uid://bu6tlij1rivi6" path="res://Characters/Assets/boss.png" id="9_s0ywd"]
+[ext_resource type="Theme" path="res://Themes/JoTV.tres" id="11_g3gd3"]
 
 [sub_resource type="Animation" id="Animation_2ycib"]
 resource_name = "Credit Scroll"
@@ -540,7 +540,7 @@ clip_contents = false
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("2_7g37u")
-text = "Mathhew Brosnon"
+text = "Matthew Brosnon"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
