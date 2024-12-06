@@ -19,6 +19,7 @@
       },
       {
         "id": "*take the empty glass*",
+        "character": "You",
         "text": "I'll let the bartender know..."
       },
       {
@@ -26,6 +27,7 @@
       },
       {
         "id": "...",
+        "character": "You",
         "text": "..."
       },
       {
@@ -33,6 +35,7 @@
       },
       {
         "id": "Actually...",
+        "character": "You",
         "text": "I'm not part of the staff..."
       },
       {
@@ -85,6 +88,7 @@
       },
       {
         "id": "I'm friends with the bartender?",
+        "character": "You",
         "text": "I don't think guide would like you tearing up his bar..."
       },
       {
