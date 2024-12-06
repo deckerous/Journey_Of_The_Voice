@@ -1,9 +1,11 @@
-[gd_scene load_steps=3 format=3 uid="uid://daapn4kvhq3fe"]
+[gd_scene load_steps=4 format=3 uid="uid://daapn4kvhq3fe"]
 
 [ext_resource type="PackedScene" uid="uid://3kgo3ypehagf" path="res://Generic Components/Scenes/area.tscn" id="1_pli24"]
-[ext_resource type="Texture2D" uid="uid://cpyivnft5ydh3" path="res://Area Backgrounds/bedroom_background.png" id="2_vfjst"]
+[ext_resource type="Script" path="res://Generic Components/Scripts/bedroom_area.gd" id="2_l0u07"]
+[ext_resource type="Texture2D" uid="uid://xgr63mdg5w0a" path="res://Area Backgrounds/bedroom_background.png" id="2_vfjst"]
 
 [node name="BedroomArea" instance=ExtResource("1_pli24")]
+script = ExtResource("2_l0u07")
 
 [node name="TextureRect" parent="CanvasLayer" index="0"]
 offset_top = -76.21

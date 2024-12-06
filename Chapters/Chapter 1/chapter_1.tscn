@@ -13,3 +13,6 @@ area = NodePath("Chapter1BedroomArea")
 
 [node name="Chapter" parent="CanvasLayer/ColorRect" index="0"]
 text = "[center]Chapter 1"
+
+[node name="ContinueButton" parent="CanvasLayer" index="1"]
+visible = true

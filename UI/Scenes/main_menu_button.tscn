@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://hsxry7hy2u46"]
 
-[ext_resource type="AudioStream" uid="uid://04ootanlar8p" path="res://Audio/sound-effects/shick-sound.wav" id="1_ku08p"]
+[ext_resource type="AudioStream" uid="uid://cbg3whxtej08s" path="res://Audio/sound-effects/shick-sound.wav" id="1_ku08p"]
 [ext_resource type="Theme" uid="uid://v3tjxnq7o5ny" path="res://Themes/notebook_text.tres" id="1_xlx6t"]
-[ext_resource type="AudioStream" uid="uid://cdhvmi83ejika" path="res://Audio/sound-effects/shika-sha-sound.wav" id="3_daydt"]
+[ext_resource type="AudioStream" uid="uid://drfs3ohq8b5pp" path="res://Audio/sound-effects/shika-sha-sound.wav" id="3_daydt"]
 
 [sub_resource type="GDScript" id="GDScript_1qqp5"]
 script/source = "extends Button
@@ -11,8 +11,7 @@ script/source = "extends Button
 @export var is_quit_button: bool
 
 @onready var hover_sound: AudioStreamWAV = load(\"res://Audio/sound-effects/shick-sound.wav\")
-@onready var pressed_sound: AudioStreamWAV = load(\"res://Audio/sound-effects/shika-sha-sound.wav\")
-@onready var stream: AudioStreamPlayer2D = $\"../../../../../AudioStreamPlayer2D\"
+@onready var pressed_sound: AudioStreamWAV = load(\"res://Audio/sound-effects/wood-block-sound.wav\")
 
 var chapter_scene = null
 
@@ -37,8 +36,8 @@ func go_to_scene():
 		for button in otherButtons:
 			button.disabled = true
 		get_tree().paused = true
-		var tween = get_tree().create_tween()
-		tween.tween_property(stream, \"volume_db\", -80, 0.9)
+		#GlobalAudio.tween_from_id(\"beep-theme\", -80, 0.9)
+		GlobalAudio.stop_stream_from_id(\"beep-theme\")
 		await Transition.show()
 		get_tree().paused = false
 		get_tree().change_scene_to_packed(chapter_scene)
