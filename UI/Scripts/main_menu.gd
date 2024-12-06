@@ -30,7 +30,7 @@ var save_path = TEST_SAVE_PATH
 func _ready():
 	confirm_popup.visible = false
 	exit_button.pressed.connect(func(): confirm_popup.visible = false)
-	confirm_button.pressed.connect(create_save)
+	confirm_button.pressed.connect(overwrite_confirmed)
 	check_for_save()
 	
 	var stream = GlobalAudio.play_sound(music, GlobalAudio.Bus.MUSIC)
@@ -61,3 +61,14 @@ func create_save():
 	# Store chapter the player is starting on in "chapter".
 	config.set_value("player", "chapter", 1)
 	config.save(save_path)
+
+func overwrite_confirmed():
+	# Error handle a save file not existing, delete save file,
+	# make fresh save file and save it, then go to chapter 1.
+	var dir = DirAccess.open("res://")
+	if dir.file_exists(save_path):
+		dir.remove(save_path)
+		create_save()
+		get_tree().change_scene_to_packed(chapters.get(1))
+	else:
+		print("ERROR: Save file doesn't exist when trying to overwrite with New Game")
