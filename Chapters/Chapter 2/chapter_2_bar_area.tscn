@@ -15,3 +15,5 @@ scale = Vector2(0.525, 0.525)
 
 [node name="Guide" parent="Characters" index="1" instance=ExtResource("4_d87kc")]
 position = Vector2(183, 165)
+
+[editable path="UICanvas/UIMenu"]

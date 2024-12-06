@@ -12,7 +12,6 @@ script/source = "extends Button
 
 @onready var hover_sound: AudioStreamWAV = load(\"res://Audio/sound-effects/shick-sound.wav\")
 @onready var pressed_sound: AudioStreamWAV = load(\"res://Audio/sound-effects/wood-block-sound.wav\")
-@onready var stream: AudioStreamPlayer2D = $\"../../../../../AudioStreamPlayer2D\"
 
 var chapter_scene = null
 
@@ -37,8 +36,8 @@ func go_to_scene():
 		for button in otherButtons:
 			button.disabled = true
 		get_tree().paused = true
-		var tween = get_tree().create_tween()
-		tween.tween_property(stream, \"volume_db\", -80, 0.9)
+		#GlobalAudio.tween_from_id(\"beep-theme\", -80, 0.9)
+		GlobalAudio.stop_stream_from_id(\"beep-theme\")
 		await Transition.show()
 		get_tree().paused = false
 		get_tree().change_scene_to_packed(chapter_scene)
