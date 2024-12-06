@@ -307,6 +307,18 @@ tracks/7/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("BoTb:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_33jgy"]
 _data = {
@@ -319,8 +331,7 @@ script = ExtResource("1_irc42")
 
 [node name="BoTb" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0)
-position = Vector2(7, 0)
-scale = Vector2(0.589711, 0.589711)
+scale = Vector2(0.600332, 0.600332)
 texture = ExtResource("2_t6lod")
 centered = false
 
@@ -354,13 +365,13 @@ scale = Vector2(0.369, 0.369)
 texture = ExtResource("7_l2e6r")
 
 [node name="Guy" type="Sprite2D" parent="."]
-modulate = Color(1, 1, 1, 0.366666)
+modulate = Color(1, 1, 1, 0)
 position = Vector2(184, 344)
-scale = Vector2(0.252375, 0.252375)
+scale = Vector2(0.255, 0.255)
 texture = ExtResource("8_3hcp7")
 
 [node name="Boss" type="Sprite2D" parent="."]
-position = Vector2(912, 320)
+position = Vector2(920, 344)
 scale = Vector2(0.291063, 0.291063)
 texture = ExtResource("9_s0ywd")
 
