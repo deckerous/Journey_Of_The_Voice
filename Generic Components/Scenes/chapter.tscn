@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cp4p4iaomvynx"]
+[gd_scene load_steps=6 format=3 uid="uid://cp4p4iaomvynx"]
 
 [ext_resource type="Script" path="res://Generic Components/Scripts/chapter.gd" id="1_o0kkc"]
+[ext_resource type="Texture2D" uid="uid://tcyflyvlnw44" path="res://Images/UI/continue.png" id="2_li8c2"]
 
 [sub_resource type="Animation" id="Animation_31g75"]
 length = 0.001
@@ -68,11 +69,19 @@ text = "[center]Chapter n"
 fit_content = true
 
 [node name="ContinueButton" type="Button" parent="CanvasLayer"]
-visible = false
-offset_left = -1.0
-offset_right = 78.0
-offset_bottom = 31.0
-text = "Continue"
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -188.0
+offset_top = -45.5
+offset_right = 188.0
+offset_bottom = 45.5
+grow_horizontal = 2
+grow_vertical = 2
+icon = ExtResource("2_li8c2")
+flat = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
