@@ -5,7 +5,13 @@
 	},
 	{
 	  "character": "Boss",
-	  "text": "Hi I am Boss I run the record label of your dreams! I started the label after my band Jet Set Pirate Radio rose waaay back. Maybe you've heard of them?"
+	  "text": "Hi I'm Boss, I run the record label of your dreams!"
+	},
+	{
+		"text": "I started the label after my band, Spaghetti Dumpster, rose to stardom waaay back."
+	},
+	{
+		"text": "Maybe you've heard of them?"
 	},
 	{
 	  "character": "You",
@@ -53,15 +59,15 @@
 	},
 	{
 	  "id": "Well",
-	  "text": "...",
+	  "text": "..."
 	},
 	{
 	  "id": "Actually",
-	  "text": "...",
+	  "text": "..."
 	},
 	{
 	  "id": "Erm",
-	  "text": "...",
+	  "text": "..."
 	},
 	{
 		"function": "end_dialogue"
