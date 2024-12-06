@@ -20,6 +20,8 @@ var save_path = TEST_SAVE_PATH
 # For when you want to this conversation to play on load
 @export var start_conversation_on_load: bool = false
 
+@export var end_anxiety_effect: bool
+
 # Controls whether another conversation should follow this one after it is done.
 @export var has_following_conversation: bool = false
 @export var following_conversation: PackedScene

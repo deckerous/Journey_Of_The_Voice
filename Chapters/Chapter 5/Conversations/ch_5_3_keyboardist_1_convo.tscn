@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cee0f16o8788r" path="res://Generic Components/Scenes/conversation.tscn" id="1_mx5xe"]
 [ext_resource type="PackedScene" uid="uid://gpq84yf1hx6v" path="res://Characters/Scenes/keebs.tscn" id="2_1uyjl"]
-[ext_resource type="PackedScene" uid="uid://deba3okt5gkhs" path="res://Chapters/Chapter 5/Conversations/ch_5_4_convo.tscn" id="2_21a2g"]
+[ext_resource type="PackedScene" uid="uid://bnxvcgy3n31mx" path="res://Anxiety Effects/Self Talk/self_talk_minigame.tscn" id="2_wsyqo"]
 
 [node name="Ch_5_3_Keyboardist_1_Convo" instance=ExtResource("1_mx5xe")]
 dialogue_file = "res://Chapters/Chapter 5/ch_5_3_keyboardist_1.json"
@@ -10,8 +10,9 @@ wants_to_talk = false
 starting_character_alone = false
 starting_convo_character_right = false
 start_conversation_on_load = true
-has_following_conversation = true
-following_conversation = ExtResource("2_21a2g")
+end_anxiety_effect = true
+has_following_minigame = true
+following_minigame = ExtResource("2_wsyqo")
 
 [node name="StartingCharacter" parent="ConversationCharacters" index="0"]
 position = Vector2(500, 228)

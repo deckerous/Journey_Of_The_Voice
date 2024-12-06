@@ -10,7 +10,8 @@
 		},
 		{
 			"character": "You",
-			"text": "Uh... hi... I’m, um... trying to start a band..."
+			"text": "Uh... hi... I’m, um... trying to start a band...",
+			"function": "start_self_talk"
 		},
 		{
 			"character": "Keyboardist",

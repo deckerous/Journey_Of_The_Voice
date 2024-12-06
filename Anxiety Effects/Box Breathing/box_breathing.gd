@@ -1,11 +1,14 @@
 extends Node2D
 
+@export var has_following_conversation: bool
+@export var following_conversation: PackedScene
+
 @onready var hit_marker = $"Hit Marker"
 @onready var bb_animation_player = $BBAnimationPlayer
 @onready var breathing_sound = load("res://Audio/songs/breathe/breathe-theme.wav")
 @onready var game_tutorial = $GameTutorial
 
-signal box_breathing_complete
+signal mini_game_complete
 signal box_breathing_started
 
 # Called when the node enters the scene tree for the first time.
