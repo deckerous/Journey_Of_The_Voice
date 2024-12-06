@@ -110,7 +110,7 @@ script = ExtResource("1_44oh5")
 
 [node name="Minigames" type="Node2D" parent="."]
 
-[node name="AnxietyEffect" type="Node2D" parent="."]
+[node name="AnxietyEffectRoot" type="Node2D" parent="."]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
