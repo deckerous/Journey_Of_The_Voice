@@ -23,7 +23,7 @@ var curr_effect = null
 @onready var anxiety_effects = {
 	"vignette": load("res://Anxiety Effects/Vignette/vignette.tscn"),
 	"self_talk": load("res://Anxiety Effects/Self Talk/self_talk_effect.tscn"),
-	"eye_contact": load("res://Anxiety Effects/Eye Contact/eye_contact.tscn")
+	"eye_contact": load("res://Anxiety Effects/Eye Contact/eye_contact_effect.tscn")
 }
 
 signal area_complete
@@ -112,8 +112,9 @@ func instance_anxiety_effect(anxiety_effect: String):
 	curr_effect = inst
 
 func remove_anxiety_effect():
-	curr_effect.animation_player.play("fade_out")
-	await curr_effect.animation_player.animation_finished
+	if curr_effect.has_node("AnimationPlayer"):
+		curr_effect.animation_player.play("fade_out")
+		await curr_effect.animation_player.animation_finished
 	curr_effect.queue_free()
 
 func remove_from_available_conversations(convo: Conversation):

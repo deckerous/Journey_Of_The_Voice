@@ -1,8 +1,5 @@
 extends Node2D
 
-signal failed_game
-signal succeeded_game
-
 @onready var cam = $Camera2D
 @onready var timer = $Timer
 
@@ -28,34 +25,25 @@ func _ready() -> void:
 	GlobalAudio.get_stream_from_id("eye_contact").volume_db = -80
 	GlobalAudio.tween_from_id("eye_contact", -15, 1.0)
 	
-	set_physics_process(false)
-	
-	var has_done_eye_contact = Player.save_file.get_value("player", "has_done_eye_contact") == null
-	if !has_done_eye_contact:
-		$GameTutorial.visible = false
-		_on_tutorial_end()
-	else:
-		# Check now exists for later instantiations of box breathing
-		Player.add_check("has_done_eye_contact")
+	generate_new_distract_dir()
 
 func _physics_process(delta: float) -> void:
-	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
-		speed = base_speed
-		var mouse_pos = get_viewport().get_mouse_position()
-		var reversed_pos = Vector2(get_viewport().size) - mouse_pos
-		
-		cam.position = cam.position.lerp(reversed_pos, delta)
-		generate_new_distract_dir()
-	else:
-		cam.position += distract_dir.normalized() * speed * delta
-		speed += 1
+	#if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
+		#speed = base_speed
+		#var mouse_pos = get_viewport().get_mouse_position()
+		#var reversed_pos = Vector2(get_viewport().size) - mouse_pos
+		#
+		#cam.position = cam.position.lerp(reversed_pos, delta)
+		#generate_new_distract_dir()
+	#else:
+	cam.position += distract_dir.normalized() * speed * delta
+	speed += 1
 	
 	var vector_from_start = cam.position - initial_pos
 	var dist_from_start = vector_from_start.length()
 	if (dist_from_start > leniency):
-		failed_game.emit()
-		cleanup()
-		
+		speed = 0
+
 func generate_new_distract_dir():
 	var rand = RandomNumberGenerator.new()
 	distract_dir = Vector2(rand.randf_range(-1, 1), rand.randf_range(-1, 1))
@@ -65,16 +53,3 @@ func cleanup():
 	GlobalAudio.tween_from_id(music_turndown_id, -20, 1.0)
 	
 	self.queue_free()
-
-func _on_timer_timeout() -> void:
-	succeeded_game.emit()
-	cleanup()
-
-func _on_tutorial_end() -> void:
-	timer.wait_time = duration
-	timer.start()
-	
-	base_speed = speed
-	generate_new_distract_dir()
-	
-	set_physics_process(true)

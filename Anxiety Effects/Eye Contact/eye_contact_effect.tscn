@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://c65fmosqx2wuq"]
+
+[ext_resource type="Script" path="res://Anxiety Effects/Eye Contact/eye_contact_effect.gd" id="1_ugllq"]
+[ext_resource type="Texture2D" uid="uid://burk8fd325m7p" path="res://Anxiety Effects/Eye Contact/visualization.jpg" id="2_72n3q"]
+
+[node name="EyeContactEffect" type="Node2D"]
+script = ExtResource("1_ugllq")
+leniency = 150
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(576, 324)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(570, 326)
+scale = Vector2(0.358333, 0.344444)
+texture = ExtResource("2_72n3q")
