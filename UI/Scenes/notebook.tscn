@@ -273,12 +273,11 @@ fit_content = true
 scroll_active = false
 autowrap_mode = 2
 
-[node name="eye_contact" type="Button" parent="Notebook/Container/Page2/LeftPageCont/VBoxContainer2"]
-unique_name_in_owner = true
+[node name="self_talk" type="Button" parent="Notebook/Container/Page2/LeftPageCont/VBoxContainer2"]
 layout_mode = 2
 theme = ExtResource("2_fwp36")
 theme_type_variation = &"FlatButton"
-theme_override_colors/font_hover_color = Color(0.472025, 0.472025, 0.472025, 1)
+theme_override_colors/font_hover_color = Color(0.470588, 0.470588, 0.470588, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Practice Skills"
 flat = true
@@ -306,11 +305,12 @@ fit_content = true
 scroll_active = false
 autowrap_mode = 2
 
-[node name="self_talk" type="Button" parent="Notebook/Container/Page2/RightPageCont2/VBoxContainer3"]
+[node name="eye_contact" type="Button" parent="Notebook/Container/Page2/RightPageCont2/VBoxContainer3"]
+unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("2_fwp36")
 theme_type_variation = &"FlatButton"
-theme_override_colors/font_hover_color = Color(0.470588, 0.470588, 0.470588, 1)
+theme_override_colors/font_hover_color = Color(0.472025, 0.472025, 0.472025, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Practice Skills"
 flat = true
@@ -350,8 +350,8 @@ texture_normal = ExtResource("6_d7wvd")
 
 [connection signal="pressed" from="Notebook/ButtonL" to="." method="_on_button_l_pressed"]
 [connection signal="pressed" from="Notebook/Container/Page2/LeftPageCont/VBoxContainer/box_breathing" to="." method="_on_box_breathing_pressed"]
-[connection signal="pressed" from="Notebook/Container/Page2/LeftPageCont/VBoxContainer2/eye_contact" to="." method="_on_eye_contact_pressed"]
-[connection signal="pressed" from="Notebook/Container/Page2/RightPageCont2/VBoxContainer3/self_talk" to="." method="_on_self_talk_pressed"]
+[connection signal="pressed" from="Notebook/Container/Page2/LeftPageCont/VBoxContainer2/self_talk" to="." method="_on_self_talk_pressed"]
+[connection signal="pressed" from="Notebook/Container/Page2/RightPageCont2/VBoxContainer3/eye_contact" to="." method="_on_eye_contact_pressed"]
 [connection signal="pressed" from="Notebook/ButtonR" to="." method="_on_button_r_pressed"]
 [connection signal="mouse_entered" from="ExitButton" to="." method="_on_exit_button_mouse_entered"]
 [connection signal="mouse_exited" from="ExitButton" to="." method="_on_exit_button_mouse_exited"]
