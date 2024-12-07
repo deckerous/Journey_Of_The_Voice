@@ -66,7 +66,8 @@ func go_to_next_monologue(monologue: PackedScene):
 
 func go_to_next_convo(conversation: PackedScene):
 	var inst = conversation.instantiate()
-	conversation_instances.add_child(inst)
+	#conversation_instances.add_child(inst)
+	conversation_instances.call_deferred("add_child", inst)
 	
 	inst.start_anxiety_effect.connect(instance_anxiety_effect)
 	if inst.end_anxiety_effect:

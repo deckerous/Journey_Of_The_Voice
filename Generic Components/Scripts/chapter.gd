@@ -28,5 +28,5 @@ func go_to_next_chapter():
 	# Alert other nodes that we're switching chapters
 	clicked.emit()
 	Player.update_chapter(chapter_number + 1)
-	Player.write_save(save_path)
+	Player.write_save()
 	get_tree().change_scene_to_packed(next_chapter)

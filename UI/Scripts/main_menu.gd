@@ -3,7 +3,7 @@ extends Node2D
 const SAVE_PATH = "user://save.cfg"
 const TEST_SAVE_PATH = "res://Globals/save.cfg"
 
-var save_path = TEST_SAVE_PATH
+@onready var save_path = TEST_SAVE_PATH
 
 @onready var start_button: Button = $"CanvasLayer/VBoxContainer/VBoxContainer/CenterContainer - Start/StartButton"
 @onready var continue_button: Button = $"CanvasLayer/VBoxContainer/VBoxContainer/CenterContainer - Load/ContinueButton"
@@ -37,7 +37,7 @@ func _ready():
 	stream.volume_db = -15
 
 func check_for_save():
-	Player.load_save(save_path)
+	Player.load_save()
 	
 	# If there exists a save file, retrieve the chapter for the load button
 	# to change the scene to when pressed and connect the new game button

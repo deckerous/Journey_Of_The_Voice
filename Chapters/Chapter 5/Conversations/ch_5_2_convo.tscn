@@ -14,4 +14,4 @@ has_following_conversation = true
 following_conversation = ExtResource("2_mnlit")
 
 [node name="Guide" parent="ConversationCharacters/StartingCharacter" index="2" instance=ExtResource("2_dau01")]
-position = Vector2(304, 202)
+position = Vector2(89, 168)
