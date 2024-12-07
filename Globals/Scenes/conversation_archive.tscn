@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://d1utlyqcpef0b" path="res://UI/Assets/archive.png" id="3_ryv0d"]
 
 [node name="ConversationArchive" type="Node2D"]
+process_mode = 3
 script = ExtResource("1_uoxmj")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
