@@ -1,23 +1,25 @@
 extends Node2D
 
+@export var has_following_conversation: bool
+@export var following_conversation: PackedScene
+
 @onready var hit_marker = $"Hit Marker"
 @onready var bb_animation_player = $BBAnimationPlayer
 @onready var breathing_sound = load("res://Audio/songs/breathe/breathe-theme.wav")
 @onready var game_tutorial = $GameTutorial
 
-signal box_breathing_complete
+signal mini_game_complete
 signal box_breathing_started
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# Access the player's save file and see if they have already seen the tutorial for box breathing.
 	# If that is the case, hide the tutorial from being shown.
-	var has_done_box_breathing = Player.save_file.get_value("Player", "has_done_box_breathing") == null
+	var has_done_box_breathing = Player.save_file.get_value("player", "has_done_box_breathing") == null
 	if !has_done_box_breathing:
 		game_tutorial.visible = false
 	else:
 		# Check now exists for later instantiations of box breathing
-		print("adding check")
 		Player.add_check("has_done_box_breathing")
 	
 	bb_animation_player.play("fade_in")
@@ -40,7 +42,7 @@ func _ready() -> void:
 	GlobalAudio.tween_from_id("breathing-theme", -15, 3.0)
 
 func end_box_breathing():
-	self.box_breathing_complete.emit()
+	self.mini_game_complete.emit()
 	bb_animation_player.play("fade_out")
 	GlobalAudio.tween_from_id("breathing-theme", -80.0, 0.5)
 	await bb_animation_player.animation_finished

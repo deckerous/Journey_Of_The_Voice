@@ -26,7 +26,7 @@ var speech_pitch: float
 signal disable_dialogue_input
 signal enable_dialogue_input
 
-signal anxiety_effect
+signal start_anxiety_effect(anxiety_effect: String)
 
 signal fade_out_character
 
@@ -51,7 +51,7 @@ func _process(delta: float) -> void:
 			var speech_wav: AudioStreamWAV = load("res://Audio/voices/"+char_talking+".wav")
 			speech_pitch = 1.0
 			speech_pitch += randf_range(-0.1, 0.1)
-			GlobalAudio.play_sound_id(speech_wav, "speech_audio", GlobalAudio.Bus.SFX, speech_pitch)		
+			GlobalAudio.play_sound_id(speech_wav, "speech_audio", GlobalAudio.Bus.SFX, speech_pitch)
 		
 
 func start_dialogue():
@@ -68,33 +68,32 @@ func handle_dialogue():
 	if dialogue_label.visible_ratio != 1.0:
 		# When the dialogue is still appearing and another 
 		# click comes in, skip to being fully visible
-		
 		dialogue_label.visible_ratio = 1.0
 	
 	elif conversation.dialogue_dictionary["dialogue"][dialogue_index].has("function"):
 		# Run any functions that the text has
-		
 		if conversation.dialogue_dictionary["dialogue"][dialogue_index]["function"] == "end_dialogue":
 			conversation.end_dialogue()
+			return
 		elif conversation.dialogue_dictionary["dialogue"][dialogue_index]["function"] == "branch_dialogue":
 			# Provide error message and end dialogue if there aren't options labeled for the dialogue branch
-			
 			if !conversation.dialogue_dictionary["dialogue"][dialogue_index].has("options"):
 				dialogue_label.text = "ERROR: No options? Make sure the .json file has an options string array field that corresponds to a dialogue id."
 				conversation.end_dialogue()
-			
 			# Continue to dialogue branching
 			branch_dialogue(conversation.dialogue_dictionary["dialogue"][dialogue_index]["options"])
-		elif conversation.dialogue_dictionary["dialogue"][dialogue_index]["function"] == "anxiety_effect":
-			dialogue_label.text = conversation.dialogue_dictionary["dialogue"][dialogue_index]["text"]
-			self.anxiety_effect.emit()
-			display_characters()
-			dialogue_index += 1
+		
+		elif conversation.dialogue_dictionary["dialogue"][dialogue_index]["function"] == "start_vignette":
+			self.start_anxiety_effect.emit("vignette")
+		elif conversation.dialogue_dictionary["dialogue"][dialogue_index]["function"] == "start_self_talk":
+			self.start_anxiety_effect.emit("self_talk")
+		elif conversation.dialogue_dictionary["dialogue"][dialogue_index]["function"] == "start_eye_contact":
+			self.start_anxiety_effect.emit("eye_contact")
 		elif conversation.dialogue_dictionary["dialogue"][dialogue_index]["function"] == "other_character_leaves":
-			dialogue_label.text = conversation.dialogue_dictionary["dialogue"][dialogue_index]["text"]
 			self.fade_out_character.emit()
-			display_characters()
-			dialogue_index += 1
+		dialogue_label.text = conversation.dialogue_dictionary["dialogue"][dialogue_index]["text"]
+		display_characters()
+		dialogue_index += 1
 	else:
 		dialogue_label.text = conversation.dialogue_dictionary["dialogue"][dialogue_index]["text"]
 		
