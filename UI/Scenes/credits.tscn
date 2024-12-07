@@ -1,17 +1,21 @@
-[gd_scene load_steps=12 format=3 uid="uid://bdlyds7b50cwh"]
+[gd_scene load_steps=16 format=3 uid="uid://bdlyds7b50cwh"]
 
 [ext_resource type="Theme" uid="uid://mrmpkimvequ6" path="res://Themes/credits_header.tres" id="1_85xxj"]
 [ext_resource type="Script" path="res://UI/Scenes/credits.gd" id="1_irc42"]
 [ext_resource type="Theme" uid="uid://dlpa8luwucobq" path="res://Themes/credits_names.tres" id="2_7g37u"]
-[ext_resource type="Texture2D" uid="uid://b5glcn74ddows" path="res://Characters/Assets/player.png" id="3_18r1b"]
-[ext_resource type="Texture2D" uid="uid://i2bhn5qixatq" path="res://Characters/Assets/kenshiro.png" id="4_kopb1"]
-[ext_resource type="Texture2D" uid="uid://c8h8s2c1uj1lm" path="res://Characters/Assets/keebs.png" id="5_5jlwd"]
-[ext_resource type="Texture2D" uid="uid://dotmro4tlsd0h" path="res://Characters/Assets/cy.png" id="5_dg47a"]
-[ext_resource type="Texture2D" uid="uid://iw1fcgn13127" path="res://Characters/Assets/donna.png" id="7_l2e6r"]
+[ext_resource type="Texture2D" uid="uid://bgi1cmpde7h6t" path="res://Characters/Assets/BoTB.png" id="2_t6lod"]
+[ext_resource type="Texture2D" uid="uid://cgomlxpyr5cas" path="res://Characters/Assets/player.png" id="3_18r1b"]
+[ext_resource type="Texture2D" uid="uid://cas716vgsh70m" path="res://Characters/Assets/kenshiro.png" id="4_kopb1"]
+[ext_resource type="Texture2D" uid="uid://japlrk2r01fn" path="res://Characters/Assets/keebs.png" id="5_5jlwd"]
+[ext_resource type="Texture2D" uid="uid://xhroofeex57n" path="res://Characters/Assets/cy.png" id="5_dg47a"]
+[ext_resource type="Texture2D" uid="uid://klhmfb4m04q7" path="res://Characters/Assets/donna.png" id="7_l2e6r"]
+[ext_resource type="Texture2D" uid="uid://dqn21gt14f0n0" path="res://Characters/Assets/guy_legs.png" id="8_3hcp7"]
+[ext_resource type="Texture2D" uid="uid://bu6tlij1rivi6" path="res://Characters/Assets/boss.png" id="9_s0ywd"]
+[ext_resource type="Theme" path="res://Themes/JoTV.tres" id="11_g3gd3"]
 
 [sub_resource type="Animation" id="Animation_2ycib"]
 resource_name = "Credit Scroll"
-length = 25.0
+length = 30.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -19,10 +23,10 @@ tracks/0/path = NodePath("CenterContainer:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 25),
+"times": PackedFloat32Array(4.2, 21.0667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(0, 661.35), Vector2(0, -2023.71)]
+"values": [Vector2(0, 314.445), Vector2(0, -2445.44)]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -31,7 +35,7 @@ tracks/1/path = NodePath("Player:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 2, 4),
+"times": PackedFloat32Array(4.53333, 6.53333, 8.53333),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -43,7 +47,7 @@ tracks/2/path = NodePath("Kenshiro:modulate")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(2.5, 4.5, 6.5),
+"times": PackedFloat32Array(7.03333, 9.03333, 11.0333),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -55,7 +59,7 @@ tracks/3/path = NodePath("Keebs:modulate")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(4.9, 6.9, 8.9),
+"times": PackedFloat32Array(9.43333, 11.4333, 13.4333),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -67,7 +71,7 @@ tracks/4/path = NodePath("Cy:modulate")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"times": PackedFloat32Array(7.26667, 9.26667, 11.2667),
+"times": PackedFloat32Array(11.8, 13.8, 15.8),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -79,7 +83,7 @@ tracks/5/path = NodePath("Donna:modulate")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(10.1, 12.1, 14.1),
+"times": PackedFloat32Array(14.6333, 16.6333, 18.6333),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
@@ -91,7 +95,7 @@ tracks/6/path = NodePath("Player:scale")
 tracks/6/interp = 1
 tracks/6/loop_wrap = true
 tracks/6/keys = {
-"times": PackedFloat32Array(0, 4.03333),
+"times": PackedFloat32Array(4.53333, 8.56666),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(0.174, 0.174), Vector2(0.199, 0.199)]
@@ -103,7 +107,7 @@ tracks/7/path = NodePath("Kenshiro:scale")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
-"times": PackedFloat32Array(2.43333, 6.5),
+"times": PackedFloat32Array(6.96666, 11.0333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(0.275, 0.275), Vector2(0.3, 0.3)]
@@ -115,7 +119,7 @@ tracks/8/path = NodePath("Keebs:scale")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
-"times": PackedFloat32Array(4.73333, 8.93333),
+"times": PackedFloat32Array(9.26666, 13.4667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(0.179, 0.179), Vector2(0.198, 0.198)]
@@ -127,7 +131,7 @@ tracks/9/path = NodePath("Cy:scale")
 tracks/9/interp = 1
 tracks/9/loop_wrap = true
 tracks/9/keys = {
-"times": PackedFloat32Array(7.26667, 11.3),
+"times": PackedFloat32Array(11.8, 15.8333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(0.224, 0.224), Vector2(0.248, 0.248)]
@@ -139,10 +143,70 @@ tracks/10/path = NodePath("Donna:scale")
 tracks/10/interp = 1
 tracks/10/loop_wrap = true
 tracks/10/keys = {
-"times": PackedFloat32Array(10.1333, 14.1),
+"times": PackedFloat32Array(14.6666, 18.6333),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Vector2(0.3, 0.3), Vector2(0.369, 0.369)]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("CenterContainer:modulate")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"update": 0,
+"values": []
+}
+tracks/12/type = "value"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("BoTb:modulate")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(0.0333333, 2.03333, 4, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/13/type = "value"
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/path = NodePath("Guy:modulate")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/keys = {
+"times": PackedFloat32Array(17.7333, 19.7333, 21.7333),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("Guy:scale")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(17.7, 21.7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.24, 0.24), Vector2(0.255, 0.255)]
+}
+tracks/15/type = "value"
+tracks/15/imported = false
+tracks/15/enabled = true
+tracks/15/path = NodePath("Boss:modulate")
+tracks/15/interp = 1
+tracks/15/loop_wrap = true
+tracks/15/keys = {
+"times": PackedFloat32Array(21.1, 22.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="Animation" id="Animation_jh7du"]
@@ -219,6 +283,42 @@ tracks/5/keys = {
 "update": 0,
 "values": [Vector2(0.224, 0.224)]
 }
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("CenterContainer:modulate")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Boss:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("BoTb:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_33jgy"]
 _data = {
@@ -229,38 +329,71 @@ _data = {
 [node name="Credits" type="Node2D"]
 script = ExtResource("1_irc42")
 
+[node name="BoTb" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+scale = Vector2(0.600332, 0.600332)
+texture = ExtResource("2_t6lod")
+centered = false
+
 [node name="Player" type="Sprite2D" parent="."]
-position = Vector2(808, 472)
+position = Vector2(976, 408)
 scale = Vector2(0.208642, 0.208642)
 texture = ExtResource("3_18r1b")
 
 [node name="Kenshiro" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0)
-position = Vector2(336, 440)
+position = Vector2(144, 376)
 scale = Vector2(0.275, 0.275)
 texture = ExtResource("4_kopb1")
 
 [node name="Keebs" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0)
-position = Vector2(872, 472)
+position = Vector2(968, 416)
 scale = Vector2(0.179, 0.179)
 texture = ExtResource("5_5jlwd")
 
 [node name="Cy" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0)
-position = Vector2(376, 424)
+position = Vector2(192, 360)
 scale = Vector2(0.224, 0.224)
 texture = ExtResource("5_dg47a")
 
 [node name="Donna" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0)
-position = Vector2(832, 448)
-scale = Vector2(0.3, 0.3)
+position = Vector2(944, 328)
+scale = Vector2(0.369, 0.369)
 texture = ExtResource("7_l2e6r")
+
+[node name="Guy" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+position = Vector2(184, 344)
+scale = Vector2(0.255, 0.255)
+texture = ExtResource("8_3hcp7")
+
+[node name="Boss" type="Sprite2D" parent="."]
+position = Vector2(920, 344)
+scale = Vector2(0.291063, 0.291063)
+texture = ExtResource("9_s0ywd")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Boss"]
+offset_left = -2638.61
+offset_top = -824.565
+offset_right = -688.608
+offset_bottom = -95.565
+theme = ExtResource("2_7g37u")
+theme_override_font_sizes/normal_font_size = 181
+text = "Wow, What a show! I don't usually
+go straight to offering a contract,
+but you guys absolutely ate. 
+Oh my gyatttt!
+"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 offset_right = 1152.0
-offset_bottom = 2113.0
+offset_bottom = 2592.0
 size_flags_vertical = 0
 size_flags_stretch_ratio = 0.0
 metadata/_edit_lock_ = true
@@ -270,7 +403,26 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 
-[node name="Credits" type="RichTextLabel" parent="CenterContainer/VBoxContainer"]
+[node name="Journey of the Voice" type="RichTextLabel" parent="CenterContainer/VBoxContainer"]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 4
+theme = ExtResource("11_g3gd3")
+text = "Journey of the Voice
+"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="SpacerThick8" type="BoxContainer" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="SpacerThick9" type="BoxContainer" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+
+[node name="Credits2" type="RichTextLabel" parent="CenterContainer/VBoxContainer"]
 clip_contents = false
 layout_mode = 2
 size_flags_horizontal = 4
@@ -348,6 +500,7 @@ layout_mode = 2
 clip_contents = false
 layout_mode = 2
 size_flags_horizontal = 4
+theme = ExtResource("1_85xxj")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 50
 text = "Music:
@@ -374,6 +527,7 @@ layout_mode = 2
 clip_contents = false
 layout_mode = 2
 size_flags_horizontal = 4
+theme = ExtResource("1_85xxj")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 50
 text = "Minigames:"
@@ -386,7 +540,7 @@ clip_contents = false
 layout_mode = 2
 size_flags_horizontal = 4
 theme = ExtResource("2_7g37u")
-text = "Mathhew Brosnon"
+text = "Matthew Brosnon"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
@@ -399,6 +553,7 @@ layout_mode = 2
 clip_contents = false
 layout_mode = 2
 size_flags_horizontal = 4
+theme = ExtResource("1_85xxj")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 50
 text = "Character Art:"
@@ -424,6 +579,7 @@ layout_mode = 2
 clip_contents = false
 layout_mode = 2
 size_flags_horizontal = 4
+theme = ExtResource("1_85xxj")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 50
 text = "Interface Design:"
@@ -449,6 +605,7 @@ layout_mode = 2
 clip_contents = false
 layout_mode = 2
 size_flags_horizontal = 4
+theme = ExtResource("1_85xxj")
 theme_override_colors/default_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/normal_font_size = 50
 text = "Writing:"

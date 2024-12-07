@@ -122,7 +122,8 @@ layout_mode = 2
 
 [node name="HBoxContainer4" type="HBoxContainer" parent="Notebook/Container/Page1/LeftPageCont"]
 layout_mode = 2
-size_flags_vertical = 3
+size_flags_vertical = 2
+size_flags_stretch_ratio = 0.0
 
 [node name="bio2" type="RichTextLabel" parent="Notebook/Container/Page1/LeftPageCont/HBoxContainer4"]
 unique_name_in_owner = true
@@ -300,7 +301,6 @@ clip_contents = false
 layout_mode = 2
 size_flags_vertical = 3
 fit_content = true
-scroll_active = false
 autowrap_mode = 2
 
 [node name="HBoxContainer5" type="HBoxContainer" parent="Notebook/Container/Page2/RightPageCont2"]
