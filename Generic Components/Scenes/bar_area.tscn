@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://3kgo3ypehagf" path="res://Generic Components/Scenes/area.tscn" id="1_tr6h4"]
 [ext_resource type="Script" path="res://Generic Components/Scripts/bar_area.gd" id="2_gxbyy"]
-[ext_resource type="Texture2D" uid="uid://dll6d7bc3xaj2" path="res://Area Backgrounds/bar_background.png" id="3_lalk0"]
+[ext_resource type="Texture2D" uid="uid://dracxj78t62hd" path="res://Area Backgrounds/bar_background.png" id="3_lalk0"]
 
 [node name="BarArea" instance=ExtResource("1_tr6h4")]
 script = ExtResource("2_gxbyy")
