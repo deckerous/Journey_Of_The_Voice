@@ -29,4 +29,5 @@ func go_to_next_chapter():
 	clicked.emit()
 	Player.update_chapter(chapter_number + 1)
 	Player.write_save(save_path)
+	ConversationArchive.clear_archive()
 	get_tree().change_scene_to_packed(next_chapter)

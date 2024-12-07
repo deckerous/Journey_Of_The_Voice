@@ -1,0 +1,42 @@
+[gd_scene load_steps=4 format=3 uid="uid://0onmmgr2j7hg"]
+
+[ext_resource type="Script" path="res://Globals/Scripts/conversation_archive.gd" id="1_uoxmj"]
+[ext_resource type="Theme" uid="uid://v3tjxnq7o5ny" path="res://Themes/notebook_text.tres" id="2_nr065"]
+[ext_resource type="Texture2D" uid="uid://d1utlyqcpef0b" path="res://UI/Assets/archive.png" id="3_ryv0d"]
+
+[node name="ConversationArchive" type="Node2D"]
+script = ExtResource("1_uoxmj")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 5
+visible = false
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer"]
+z_index = 1
+offset_left = 26.0
+offset_top = 21.0
+offset_right = 1130.0
+offset_bottom = 466.0
+mouse_filter = 2
+theme = ExtResource("2_nr065")
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+bbcode_enabled = true
+scroll_following = true
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+offset_left = -52.0
+offset_top = -45.0
+offset_right = 1204.0
+offset_bottom = 702.0
+mouse_filter = 2
+color = Color(0, 0, 0, 0.784314)
+
+[node name="ArchiveButtonExit" type="TextureButton" parent="CanvasLayer"]
+unique_name_in_owner = true
+z_index = 6
+offset_left = 1052.0
+offset_top = -1.0
+offset_right = 1152.0
+offset_bottom = 99.0
+mouse_filter = 2
+texture_normal = ExtResource("3_ryv0d")

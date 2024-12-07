@@ -58,6 +58,7 @@ func start_dialogue():
 	name_label.text = conversation.dialogue_dictionary["dialogue"][0]["character"]
 	char_talking = conversation.dialogue_dictionary["dialogue"][0]["character"]
 	dialogue_label.text = conversation.dialogue_dictionary["dialogue"][0]["text"]
+	ConversationArchive.add_to_archive(name_label.text, dialogue_label.text)
 	display_characters()
 
 func handle_dialogue():
@@ -87,11 +88,13 @@ func handle_dialogue():
 			branch_dialogue(conversation.dialogue_dictionary["dialogue"][dialogue_index]["options"])
 		elif conversation.dialogue_dictionary["dialogue"][dialogue_index]["function"] == "anxiety_effect":
 			dialogue_label.text = conversation.dialogue_dictionary["dialogue"][dialogue_index]["text"]
+			ConversationArchive.add_to_archive(name_label.text, dialogue_label.text)
 			self.anxiety_effect.emit()
 			display_characters()
 			dialogue_index += 1
 		elif conversation.dialogue_dictionary["dialogue"][dialogue_index]["function"] == "other_character_leaves":
 			dialogue_label.text = conversation.dialogue_dictionary["dialogue"][dialogue_index]["text"]
+			ConversationArchive.add_to_archive(name_label.text, dialogue_label.text)
 			self.fade_out_character.emit()
 			display_characters()
 			dialogue_index += 1
@@ -103,6 +106,8 @@ func handle_dialogue():
 			name_label.text = conversation.dialogue_dictionary["dialogue"][dialogue_index]["character"]
 			# Grab the name of the character whose talking. Used for the speech dialogue
 			char_talking = conversation.dialogue_dictionary["dialogue"][dialogue_index]["character"]
+		
+		ConversationArchive.add_to_archive(name_label.text, dialogue_label.text)
 		display_characters()
 		dialogue_index += 1
 
@@ -122,6 +127,7 @@ func branch_dialogue(options: Array):
 func change_dialogue_index(option: String):
 	for i in range(len(conversation.dialogue_dictionary["dialogue"])):
 		if conversation.dialogue_dictionary["dialogue"][i].has("id") and conversation.dialogue_dictionary["dialogue"][i]["id"] == option:
+			ConversationArchive.add_to_archive("You", option)
 			dialogue_index = i
 			for child in dialogue_choices.get_children():
 				child.queue_free()
