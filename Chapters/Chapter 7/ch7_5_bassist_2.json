@@ -36,7 +36,10 @@
       },
       {
         "character": "Cy",
-        "text": "Ah, Then you followed the bassline to me!"
+        "text": "Ah, Then you followed the bassline to me..."
+      },
+      {
+        "text": "Lets Jam!"
       },
       {
         "function": "end_dialogue"

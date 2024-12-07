@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cws7m5i6qkna3" path="res://Generic Components/Scenes/bar_area.tscn" id="1_ajl1j"]
 [ext_resource type="PackedScene" uid="uid://cym1xw41nikgc" path="res://Characters/Scenes/cy.tscn" id="2_aqnpk"]
 [ext_resource type="PackedScene" uid="uid://b06dnp0y2n8r1" path="res://Chapters/Chapter 7/Monologues/ch_7_0_mono.tscn" id="2_emnh7"]
-[ext_resource type="PackedScene" uid="uid://c0u1fdrgiinbp" path="res://Characters/Scenes/guide.tscn" id="3_6jjdb"]
+[ext_resource type="PackedScene" uid="uid://c0u1fdrgiinbp" path="res://Characters/Scenes/Guy.tscn" id="3_6jjdb"]
 
 [node name="Chapter7BarArea" instance=ExtResource("1_ajl1j")]
 start_with_monologue = true
@@ -16,7 +16,7 @@ scale = Vector2(0.11, 0.11)
 [node name="Sprite2D" parent="Characters/Cy" index="0"]
 flip_h = false
 
-[node name="Guide" parent="Characters" index="1" instance=ExtResource("3_6jjdb")]
+[node name="Guy" parent="Characters" index="1" instance=ExtResource("3_6jjdb")]
 position = Vector2(162, 167)
 
 [editable path="Characters/Cy"]

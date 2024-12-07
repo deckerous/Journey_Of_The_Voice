@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://02buyslchn8j"]
 
 [ext_resource type="PackedScene" uid="uid://cee0f16o8788r" path="res://Generic Components/Scenes/conversation.tscn" id="1_l4hk3"]
-[ext_resource type="PackedScene" uid="uid://c0u1fdrgiinbp" path="res://Characters/Scenes/guide.tscn" id="2_50jtn"]
+[ext_resource type="PackedScene" uid="uid://c0u1fdrgiinbp" path="res://Characters/Scenes/Guy.tscn" id="2_50jtn"]
 [ext_resource type="PackedScene" uid="uid://b3hivppemhhla" path="res://Chapters/Chapter 7/Conversations/ch_7_3_bassist_1_convo.tscn" id="2_vn3gx"]
 [ext_resource type="PackedScene" uid="uid://cym1xw41nikgc" path="res://Characters/Scenes/cy.tscn" id="3_h0vg4"]
 
@@ -17,7 +17,7 @@ following_conversation = ExtResource("2_vn3gx")
 [node name="StartingCharacter" parent="ConversationCharacters" index="0"]
 position = Vector2(162, 167)
 
-[node name="Guide" parent="ConversationCharacters/StartingCharacter" index="2" instance=ExtResource("2_50jtn")]
+[node name="Guy" parent="ConversationCharacters/StartingCharacter" index="2" instance=ExtResource("2_50jtn")]
 
 [node name="OtherCharacter" parent="ConversationCharacters" index="1"]
 position = Vector2(853, 310)

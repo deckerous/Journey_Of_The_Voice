@@ -16,4 +16,4 @@ following_conversation = ExtResource("2_oa10e")
 [node name="StartingCharacter" parent="ConversationCharacters" index="0"]
 position = Vector2(303, 204)
 
-[node name="Guide" parent="ConversationCharacters/StartingCharacter" index="2" instance=ExtResource("2_81byu")]
+[node name="Guy" parent="ConversationCharacters/StartingCharacter" index="2" instance=ExtResource("2_81byu")]

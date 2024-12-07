@@ -2,7 +2,7 @@
 	"monologue": [
 		{
 			"id": "Start",
-			"text": "You enter into the bar nervously, scanning the room for Guide."
+			"text": "You enter into the bar nervously, scanning the room for Guy."
 		},
 		{
 			"text": "The bar is bustling, and the energy of Open Mic night is contagious, if not overwhelming."
@@ -24,7 +24,7 @@
 			"text": "*If I slip up around that guy its curtains for me!*"
 		},
 		{
-			"character": "Guide",
+			"character": "Guy",
 			"text": "Hey! Over here! There’s someone I’ve been wanting you to meet."
 		},
 		{

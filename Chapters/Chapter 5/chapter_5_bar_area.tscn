@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cws7m5i6qkna3" path="res://Generic Components/Scenes/bar_area.tscn" id="1_auhuo"]
 [ext_resource type="PackedScene" uid="uid://cyhprogbleb67" path="res://Chapters/Chapter 5/Monologues/ch_5_1_mono.tscn" id="2_nvutw"]
 [ext_resource type="PackedScene" uid="uid://gpq84yf1hx6v" path="res://Characters/Scenes/keebs.tscn" id="3_x1oip"]
-[ext_resource type="PackedScene" uid="uid://c0u1fdrgiinbp" path="res://Characters/Scenes/guide.tscn" id="4_aliuq"]
+[ext_resource type="PackedScene" uid="uid://c0u1fdrgiinbp" path="res://Characters/Scenes/Guy.tscn" id="4_aliuq"]
 
 [node name="Chapter5BarArea" instance=ExtResource("1_auhuo")]
 start_with_monologue = true
@@ -13,5 +13,5 @@ starting_monologue = ExtResource("2_nvutw")
 position = Vector2(551, 321)
 scale = Vector2(0.11, 0.11)
 
-[node name="Guide" parent="Characters" index="1" instance=ExtResource("4_aliuq")]
+[node name="Guy" parent="Characters" index="1" instance=ExtResource("4_aliuq")]
 position = Vector2(89, 168)

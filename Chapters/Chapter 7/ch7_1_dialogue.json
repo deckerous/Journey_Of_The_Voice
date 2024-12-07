@@ -2,7 +2,7 @@
     "dialogue": [
       {
         "id": "Start",
-        "character": "Guide",
+        "character": "Guy",
         "text": "Hey! I'm glad you made it."
       },
       {
@@ -13,7 +13,7 @@
         "text": "Yeah, I noticed...that bassist-"
       },
       {
-        "character": "Guide",
+        "character": "Guy",
         "text": "Oh, did Cy catch your eye!"
       },
       {
