@@ -4,6 +4,11 @@ extends Node2D
 @onready var tutorial_2: RichTextLabel = %Tutorial2
 @onready var tutorial_3: RichTextLabel = %Tutorial3
 @onready var tutorial_4: RichTextLabel = %Tutorial4
+@onready var tutorial_1_container: VBoxContainer = %Tutorial1Container
+@onready var tutorial_2_container: VBoxContainer = %Tutorial2Container
+@onready var tutorial_3_container: VBoxContainer = %Tutorial3Container
+@onready var tutorial_4_container: VBoxContainer = %Tutorial4Container
+
 @onready var bio_1: RichTextLabel = %bio1
 @onready var bio_2: RichTextLabel = %bio2
 @onready var bio_3: RichTextLabel = %bio3
@@ -21,7 +26,7 @@ const SELF_TALK = preload("res://Anxiety Effects/Self Talk/self_talk_minigame.ts
 @onready var page_1: Control = %Page1
 @onready var page_flip_sound_effect: AudioStreamWAV = load("res://Audio/sound-effects/page-flip-2.wav")
 @onready var notebook_json_path: String = "res://UI/JSON/notebook_text.json"
-
+var game_tut
 
 signal exit_pressed
 
@@ -33,11 +38,10 @@ func _ready() -> void:
 	bio_3.visible = false
 	bio_4.visible = false
 	bio_5.visible = false
-	tutorial_4.visible = false
-	tutorial_1.visible = false
-	tutorial_2.visible = false
-	tutorial_3.visible = false
-	tutorial_4.visible = false
+	tutorial_1_container.visible = false
+	tutorial_2_container.visible = false
+	tutorial_3_container.visible = false
+	tutorial_4_container.visible = false
 	update_page()
 	load_tutorials()
 
@@ -65,11 +69,9 @@ func update_page():
 		bio_3.visible = Player.save_file.get_value("player", "chapter") > 5
 		bio_4.visible = Player.save_file.get_value("player", "chapter") > 7
 		bio_5.visible = Player.save_file.get_value("player", "chapter") > 9
-		tutorial_4.visible = Player.save_file.get_value("player", "chapter") > 9
-		tutorial_1.visible = Player.save_file.get_value("player", "chapter") > 3
-		tutorial_2.visible = Player.save_file.get_value("player", "chapter") > 5
-		tutorial_3.visible = Player.save_file.get_value("player", "chapter") > 7
-		tutorial_4.visible = Player.save_file.get_value("player", "chapter") > 9
+		tutorial_1_container.visible = Player.save_file.get_value("player", "has_done_box_breathing") != null
+		tutorial_2_container.visible = Player.save_file.get_value("player", "has_done_self_talk") != null
+		tutorial_3_container.visible = Player.save_file.get_value("player", "has_done_eye_contact") != null
 	match pg:
 		1:
 			page_1.visible = true
@@ -111,12 +113,21 @@ func _on_exit_button_mouse_exited() -> void:
 
 
 func _on_box_breathing_pressed() -> void:
-	add_child(BOX_BREATHING.instantiate())
+	game_tut = BOX_BREATHING.instantiate();
+	game_tut.mini_game_complete.connect(_on_mini_game_complete)
+	add_child(game_tut)
 
 
 func _on_eye_contact_pressed() -> void:
+	game_tut = EYE_CONTACT.instantiate()
+	game_tut.mini_game_complete.connect(_on_mini_game_complete)
 	add_child(EYE_CONTACT.instantiate())
 
 
 func _on_self_talk_pressed() -> void:
-	add_child(SELF_TALK.instantiate())
+	game_tut = SELF_TALK.instantiate()
+	game_tut.mini_game_complete.connect(_on_mini_game_complete)
+	add_child(game_tut)
+
+func _on_mini_game_complete() -> void:
+	game_tut.queue_free()
