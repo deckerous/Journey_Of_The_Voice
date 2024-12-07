@@ -11,6 +11,9 @@ extends Node2D
 @onready var bio_5: RichTextLabel = %bio5
 
 @onready var exit_button: TextureButton = %ExitButton
+const BOX_BREATHING = preload("res://Anxiety Effects/Box Breathing/box_breathing.tscn")
+const EYE_CONTACT = preload("res://Anxiety Effects/Eye Contact/eye_contact.tscn")
+const SELF_TALK = preload("res://Anxiety Effects/Self Talk/self_talk.tscn")
 
 @onready var button_r: TextureButton = %ButtonR
 @onready var button_l: TextureButton = %ButtonL
@@ -104,3 +107,16 @@ func _on_exit_button_mouse_entered() -> void:
 
 func _on_exit_button_mouse_exited() -> void:
 	exit_button.modulate.v = 1
+
+
+
+func _on_box_breathing_pressed() -> void:
+	add_child(BOX_BREATHING.instantiate())
+
+
+func _on_eye_contact_pressed() -> void:
+	add_child(EYE_CONTACT.instantiate())
+
+
+func _on_self_talk_pressed() -> void:
+	add_child(SELF_TALK.instantiate())
