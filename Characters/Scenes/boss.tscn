@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://b3nq0ij2pd5ks"]
 
 [ext_resource type="PackedScene" uid="uid://cfcuodb5inj3o" path="res://Generic Components/Scenes/character.tscn" id="1_kq3p3"]
-[ext_resource type="Texture2D" uid="uid://bu6tlij1rivi6" path="res://Characters/Assets/boss.png" id="2_yh40t"]
+[ext_resource type="Texture2D" uid="uid://cihgmm5g4r4gw" path="res://Characters/Assets/boss.png" id="2_yh40t"]
 
 [node name="Boss" instance=ExtResource("1_kq3p3")]
 

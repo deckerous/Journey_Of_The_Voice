@@ -1,14 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://d2chvft3tiotq"]
 
-<<<<<<< HEAD
-[ext_resource type="Texture2D" uid="uid://cimiabjsdeikh" path="res://Images/UI/pause_icon.png" id="1_b2kth"]
+[ext_resource type="Texture2D" uid="uid://b17n7riy1t31d" path="res://Images/UI/pause_icon.png" id="1_b2kth"]
 [ext_resource type="Script" path="res://UI/Scenes/ui_menu.gd" id="1_v1jh8"]
-[ext_resource type="Texture2D" uid="uid://c61u835ldmusx" path="res://Images/UI/notebook_icon.png" id="2_kh1iv"]
-=======
-[ext_resource type="Texture2D" uid="uid://id7ypbgp172b" path="res://Images/UI/pause_icon.png" id="1_b2kth"]
-[ext_resource type="Script" path="res://UI/Scenes/ui_menu.gd" id="1_v1jh8"]
-[ext_resource type="Texture2D" uid="uid://4dg70r5qepy6" path="res://Images/UI/notebook_icon.png" id="2_kh1iv"]
->>>>>>> 0490ef9e1cef440dba266ed00b47d08b845173cb
+[ext_resource type="Texture2D" uid="uid://ntf41bdbvbhg" path="res://Images/UI/notebook_icon.png" id="2_kh1iv"]
 [ext_resource type="PackedScene" uid="uid://c7366i15i2pl3" path="res://UI/Scenes/notebook.tscn" id="2_orhmw"]
 [ext_resource type="PackedScene" uid="uid://bqk024x3by5ou" path="res://UI/Scenes/settings.tscn" id="5_w5oyq"]
 
@@ -21,18 +15,12 @@ offset_bottom = 648.0
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.0
-<<<<<<< HEAD
 mouse_filter = 2
-=======
->>>>>>> 0490ef9e1cef440dba266ed00b47d08b845173cb
 
 [node name="HBoxContainer" type="HBoxContainer" parent="ButtonsContainer"]
 layout_mode = 2
 size_flags_horizontal = 8
-<<<<<<< HEAD
 mouse_filter = 2
-=======
->>>>>>> 0490ef9e1cef440dba266ed00b47d08b845173cb
 
 [node name="PauseButton" type="TextureButton" parent="ButtonsContainer/HBoxContainer"]
 unique_name_in_owner = true

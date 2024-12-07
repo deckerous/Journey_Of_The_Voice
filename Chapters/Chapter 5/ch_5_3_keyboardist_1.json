@@ -1,50 +1,23 @@
 {
 	"dialogue": [
-<<<<<<< HEAD
-=======
-	        {
-	            "id": "start"
-	        },
->>>>>>> 0490ef9e1cef440dba266ed00b47d08b845173cb
 		{
 			"id": "start",
 			"character": "Keyboardist",
 			"text": "Piacere, mi chiamo Alessandro Vincenzo DeLuca."
 		},
-<<<<<<< HEAD
 		{
 			"text": "But here, I am Keebs"
 		},
-=======
-	        {
-	        	"character": "Keyboardist",
-	        	"text": "But here, I am Keebs"
-	        },
->>>>>>> 0490ef9e1cef440dba266ed00b47d08b845173cb
 		{
 			"character": "You",
 			"text": "Uh... hi... I’m, um... trying to start a band..."
 		},
-<<<<<<< HEAD
-=======
-	        {
-			"function": "start_intrusive_thoughts"
-		},
-	        {
-	        	"function": "disable_cursor"
-		},
->>>>>>> 0490ef9e1cef440dba266ed00b47d08b845173cb
 		{
 			"character": "Keyboardist",
 			"text": "Hey, you alright?"
 		},
-<<<<<<< HEAD
 	    {
 			"character": "",
-=======
-	        {
-			"character": "Keyboardist",
->>>>>>> 0490ef9e1cef440dba266ed00b47d08b845173cb
 			"text": "It seems as though you’re stuck in your head."
 		},
 		{
@@ -55,7 +28,6 @@
 			"character": "Keyboardist",
 			"text": "No worries. Here’s a trick:"
 		},
-<<<<<<< HEAD
 	    {
 			"text": "Challege the noise your mind produces,"
 		},
@@ -70,30 +42,6 @@
 		},
 	    {
 	        "text": "Reframe the negative thought in your mind and click it away."
-=======
-	        {
-			"character": "Keyboardist",
-			"text": "Challege the noise your mind produces,"
-		},
-	        {
-			"character": "Keyboardist",
-			"text": "When the melody of negative self-talk fills your mind,"
-		},
-	        {
-			"character": "Keyboardist",
-			"text": "Don't just loop the sample,"
-		},
-	        {
-			"character": "Keyboardist",
-			"text": "Shift the pitch up, and layer in a positve counter example."
-		},
-	        {
-			"function": "enable_cursor",
-	        	"text": "Reframe the negative thought in your mind and click it away."
-		},
-		{
-			"function": "start_minigame_clear_thoughts"
->>>>>>> 0490ef9e1cef440dba266ed00b47d08b845173cb
 		},
 		{
 			"function": "end_dialogue"
