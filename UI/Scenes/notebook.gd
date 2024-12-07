@@ -13,7 +13,7 @@ extends Node2D
 @onready var exit_button: TextureButton = %ExitButton
 const BOX_BREATHING = preload("res://Anxiety Effects/Box Breathing/box_breathing.tscn")
 const EYE_CONTACT = preload("res://Anxiety Effects/Eye Contact/eye_contact.tscn")
-const SELF_TALK = preload("res://Anxiety Effects/Self Talk/self_talk.tscn")
+const SELF_TALK = preload("res://Anxiety Effects/Self Talk/self_talk_minigame.tscn")
 
 @onready var button_r: TextureButton = %ButtonR
 @onready var button_l: TextureButton = %ButtonL
