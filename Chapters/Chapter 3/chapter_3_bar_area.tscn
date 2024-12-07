@@ -1,11 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://cytkowxct06e2"]
+[gd_scene load_steps=8 format=3 uid="uid://cytkowxct06e2"]
 
 [ext_resource type="PackedScene" uid="uid://3kgo3ypehagf" path="res://Generic Components/Scenes/area.tscn" id="1_ogb4d"]
-[ext_resource type="Texture2D" uid="uid://b8dcx1b1emqbg" path="res://Area Backgrounds/bar_background.png" id="2_j52db"]
+[ext_resource type="Texture2D" uid="uid://c6s6d1vl8ujkc" path="res://Area Backgrounds/bar_background.png" id="2_j52db"]
 [ext_resource type="PackedScene" uid="uid://bxvi2sf2kfitm" path="res://Chapters/Chapter 3/Monologues/ch_3_0_mono.tscn" id="2_se6rg"]
 [ext_resource type="PackedScene" uid="uid://cexou3rp8qi88" path="res://Chapters/Chapter 3/Conversations/ch_3_5_drummer_2.tscn" id="3_cccoc"]
 [ext_resource type="PackedScene" uid="uid://c0u1fdrgiinbp" path="res://Characters/Scenes/guide.tscn" id="3_og506"]
 [ext_resource type="PackedScene" uid="uid://pie5vurh8eoo" path="res://Characters/Scenes/drummer.tscn" id="4_egn52"]
+[ext_resource type="PackedScene" uid="uid://2r0sape7i2ct" path="res://UI/Scenes/poster.tscn" id="6_ng5la"]
 
 [node name="Chapter3BarArea" instance=ExtResource("1_ogb4d")]
 start_with_monologue = true
@@ -22,6 +23,8 @@ position = Vector2(162, 167)
 [node name="Drummer" parent="Characters" index="1" instance=ExtResource("4_egn52")]
 position = Vector2(1024, 330)
 scale = Vector2(0.22, 0.22)
+
+[node name="Poster" parent="Interactables" index="0" instance=ExtResource("6_ng5la")]
 
 [node name="CanvasLayer" parent="." index="5"]
 layer = -2
