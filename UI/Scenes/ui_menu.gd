@@ -23,12 +23,14 @@ func _on_notebook_button_pressed() -> void:
 	# Show the notebook
 	notebook_wrapper.visible = true
 	buttons_container.visible = false
+	get_tree().paused = true
 
 
 func _on_notebook_exit_pressed() -> void:
 	# Hide the notebook
 	notebook_wrapper.visible = false
 	buttons_container.visible = true
+	get_tree().paused = false
 
 
 func _on_notebook_button_mouse_entered() -> void:
@@ -45,6 +47,7 @@ func _on_pause_button_pressed() -> void:
 	# Show settings page
 	settings_wrapper.visible = true
 	buttons_container.visible = false
+	get_tree().paused = true
 
 
 func _on_pause_button_mouse_entered() -> void:
@@ -61,3 +64,4 @@ func _on_settings_exit_pressed() -> void:
 	# Hide settings menu
 	settings_wrapper.visible = false
 	buttons_container.visible = true
+	get_tree().paused = false

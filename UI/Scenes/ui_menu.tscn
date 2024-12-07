@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bqk024x3by5ou" path="res://UI/Scenes/settings.tscn" id="5_w5oyq"]
 
 [node name="UIMenu" type="Node2D"]
+process_mode = 3
 script = ExtResource("1_v1jh8")
 
 [node name="ButtonsContainer" type="VBoxContainer" parent="."]

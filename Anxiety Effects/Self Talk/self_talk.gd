@@ -2,6 +2,7 @@ extends Node2D
 
 @export var music_turndown_id: String = ""
 @export var num_to_win: int
+@export var show_tutorial = false
 
 #TODO: change to self_talk music
 @onready var minigame_music = load("res://Audio/songs/wave/wave-theme.wav")
@@ -30,8 +31,9 @@ func _ready() -> void:
 	
 	var has_done_box_breathing = Player.save_file.get_value("Player", "has_done_self_talk") == null
 	if !has_done_box_breathing:
-		$GameTutorial.visible = false
-		_on_game_tutorial_finished_tutorial()
+		if !show_tutorial:
+			$GameTutorial.visible = false
+			_on_game_tutorial_finished_tutorial()
 	else:
 		# Check now exists for later instantiations of box breathing
 		print("adding check")

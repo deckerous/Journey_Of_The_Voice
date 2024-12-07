@@ -1,5 +1,7 @@
 extends Node2D
 
+@export var show_tutorial = false
+
 @onready var hit_marker = $"Hit Marker"
 @onready var bb_animation_player = $BBAnimationPlayer
 @onready var breathing_sound = load("res://Audio/songs/breathe/breathe-theme.wav")
@@ -19,6 +21,9 @@ func _ready() -> void:
 		# Check now exists for later instantiations of box breathing
 		print("adding check")
 		Player.add_check("has_done_box_breathing")
+	
+	if show_tutorial:
+		game_tutorial.visible = true
 	
 	bb_animation_player.play("fade_in")
 	
