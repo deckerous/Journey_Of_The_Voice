@@ -1,12 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://d2chvft3tiotq"]
+[gd_scene load_steps=7 format=3 uid="uid://d2chvft3tiotq"]
 
 [ext_resource type="Texture2D" uid="uid://b17n7riy1t31d" path="res://Images/UI/pause_icon.png" id="1_b2kth"]
 [ext_resource type="Script" path="res://UI/Scenes/ui_menu.gd" id="1_v1jh8"]
 [ext_resource type="Texture2D" uid="uid://ntf41bdbvbhg" path="res://Images/UI/notebook_icon.png" id="2_kh1iv"]
 [ext_resource type="PackedScene" uid="uid://c7366i15i2pl3" path="res://UI/Scenes/notebook.tscn" id="2_orhmw"]
+[ext_resource type="Texture2D" uid="uid://d1utlyqcpef0b" path="res://UI/Assets/archive.png" id="2_s1ogt"]
 [ext_resource type="PackedScene" uid="uid://bqk024x3by5ou" path="res://UI/Scenes/settings.tscn" id="5_w5oyq"]
 
 [node name="UIMenu" type="Node2D"]
+process_mode = 3
 script = ExtResource("1_v1jh8")
 
 [node name="ButtonsContainer" type="VBoxContainer" parent="."]
@@ -21,6 +23,11 @@ mouse_filter = 2
 layout_mode = 2
 size_flags_horizontal = 8
 mouse_filter = 2
+
+[node name="ArchiveButton" type="TextureButton" parent="ButtonsContainer/HBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+texture_normal = ExtResource("2_s1ogt")
 
 [node name="PauseButton" type="TextureButton" parent="ButtonsContainer/HBoxContainer"]
 unique_name_in_owner = true
@@ -50,6 +57,26 @@ offset_bottom = 40.0
 
 [node name="Settings" parent="Settings_Wrapper" instance=ExtResource("5_w5oyq")]
 
+[node name="Archive_Wrapper" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ArchiveButtonExit" type="TextureButton" parent="Archive_Wrapper"]
+unique_name_in_owner = true
+z_index = 6
+layout_mode = 2
+offset_left = 1052.0
+offset_top = -1.0
+offset_right = 1152.0
+offset_bottom = 99.0
+texture_normal = ExtResource("2_s1ogt")
+
+[connection signal="mouse_entered" from="ButtonsContainer/HBoxContainer/ArchiveButton" to="." method="_on_archive_button_entered"]
+[connection signal="mouse_exited" from="ButtonsContainer/HBoxContainer/ArchiveButton" to="." method="_on_archive_button_exited"]
+[connection signal="pressed" from="ButtonsContainer/HBoxContainer/ArchiveButton" to="." method="_on_archive_button_pressed"]
 [connection signal="mouse_entered" from="ButtonsContainer/HBoxContainer/PauseButton" to="." method="_on_pause_button_mouse_entered"]
 [connection signal="mouse_exited" from="ButtonsContainer/HBoxContainer/PauseButton" to="." method="_on_pause_button_mouse_exited"]
 [connection signal="pressed" from="ButtonsContainer/HBoxContainer/PauseButton" to="." method="_on_pause_button_pressed"]
@@ -58,3 +85,4 @@ offset_bottom = 40.0
 [connection signal="pressed" from="ButtonsContainer/HBoxContainer/NotebookButton" to="." method="_on_notebook_button_pressed"]
 [connection signal="exit_pressed" from="Notebook_Wrapper/Notebook" to="." method="_on_notebook_exit_pressed"]
 [connection signal="exit_pressed" from="Settings_Wrapper/Settings" to="." method="_on_settings_exit_pressed"]
+[connection signal="pressed" from="Archive_Wrapper/ArchiveButtonExit" to="." method="_on_archive_exit_pressed"]

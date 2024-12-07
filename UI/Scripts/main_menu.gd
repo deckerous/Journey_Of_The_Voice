@@ -69,6 +69,7 @@ func overwrite_confirmed():
 	if dir.file_exists(save_path):
 		dir.remove(save_path)
 		create_save()
+		GlobalAudio.stop_stream_from_id("beep-theme")
 		get_tree().change_scene_to_packed(chapters.get(1))
 	else:
 		print("ERROR: Save file doesn't exist when trying to overwrite with New Game")

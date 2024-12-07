@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Anxiety Effects/Eye Contact/eye_contact.gd" id="1_ryo6m"]
 [ext_resource type="Texture2D" uid="uid://bysv8dp2mkvx2" path="res://Anxiety Effects/Eye Contact/visualization.jpg" id="2_qovll"]
-[ext_resource type="PackedScene" uid="uid://ds8c1rlw6rdhm" path="res://UI/Scenes/game_tutorial_self_talk.tscn" id="3_4tqd5"]
+[ext_resource type="PackedScene" uid="uid://b561r3n76f56b" path="res://UI/Scenes/game_tutorial_eye_contact.tscn" id="3_mb0kl"]
 
 [node name="EyeContact" type="Node2D"]
 script = ExtResource("1_ryo6m")
@@ -18,7 +18,7 @@ texture = ExtResource("2_qovll")
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 
-[node name="GameTutorial" parent="." instance=ExtResource("3_4tqd5")]
+[node name="GameTutorial2" parent="." instance=ExtResource("3_mb0kl")]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="finished_tutorial" from="GameTutorial" to="." method="_on_tutorial_end"]
+[connection signal="finished_tutorial" from="GameTutorial2" to="." method="_on_tutorial_end"]
