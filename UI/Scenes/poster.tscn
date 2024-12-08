@@ -1,0 +1,117 @@
+[gd_scene load_steps=7 format=3 uid="uid://2r0sape7i2ct"]
+
+[ext_resource type="Script" path="res://UI/Scenes/poster.gd" id="1_iq0ty"]
+[ext_resource type="Texture2D" uid="uid://cogtayffvth83" path="res://Area Backgrounds/poster.png" id="1_mi81n"]
+[ext_resource type="Texture2D" uid="uid://bepst3xq1hg31" path="res://Images/UI/arrow_l.png" id="2_fuhdx"]
+
+[sub_resource type="Animation" id="Animation_05jxj"]
+resource_name = "modulate"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.0333333, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.486275), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_jw6vh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_kp5pv"]
+_data = {
+"RESET": SubResource("Animation_jw6vh"),
+"modulate": SubResource("Animation_05jxj")
+}
+
+[node name="Poster" type="Node2D"]
+script = ExtResource("1_iq0ty")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = -1
+follow_viewport_enabled = true
+
+[node name="PosterButton" type="TextureButton" parent="CanvasLayer"]
+offset_left = 825.0
+offset_top = 212.0
+offset_right = 865.0
+offset_bottom = 267.0
+scale = Vector2(1.75, 1.75)
+mouse_default_cursor_shape = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/PosterButton"]
+position = Vector2(20, 27.5)
+scale = Vector2(0.025, 0.025)
+texture = ExtResource("1_mi81n")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/PosterButton"]
+libraries = {
+"": SubResource("AnimationLibrary_kp5pv")
+}
+
+[node name="Background" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+color = Color(0.237539, 0.237539, 0.237539, 0.266667)
+
+[node name="Poster" type="HBoxContainer" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Control" type="Control" parent="CanvasLayer/Poster"]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 1
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Poster"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("1_mi81n")
+expand_mode = 3
+
+[node name="Control2" type="Control" parent="CanvasLayer/Poster"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BackButton" type="TextureButton" parent="CanvasLayer"]
+offset_left = -1.0
+offset_top = 4.0
+offset_right = 96.0
+offset_bottom = 52.0
+scale = Vector2(1.75, 1.75)
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/BackButton"]
+position = Vector2(47.8214, 24.1428)
+scale = Vector2(0.798136, 0.895605)
+texture = ExtResource("2_fuhdx")
+
+[connection signal="mouse_entered" from="CanvasLayer/PosterButton" to="." method="_on_poster_button_mouse_entered"]
+[connection signal="pressed" from="CanvasLayer/PosterButton" to="." method="_on_poster_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/BackButton" to="." method="_on_back_button_pressed"]

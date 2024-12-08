@@ -6,11 +6,11 @@
 		},
 		{
 			"character": "You",
-			"text": "Uh, uh, nice tat too...",
+			"text": "Uh, uh, nice tat too..."
 		},
 		{
 			"text": "uh, meet you.",
-			"function": "anxiety_effect"
+			"function": "start_vignette"
 		},
 		{
 			"character": "You",

@@ -13,7 +13,6 @@ texture = ExtResource("2_m6cpt")
 
 [node name="page_1" type="Node2D" parent="."]
 unique_name_in_owner = true
-visible = false
 
 [node name="RichTextLabel" type="RichTextLabel" parent="page_1"]
 offset_left = 328.0
@@ -29,6 +28,7 @@ shortcut_keys_enabled = false
 
 [node name="page_2" type="Node2D" parent="."]
 unique_name_in_owner = true
+visible = false
 
 [node name="RichTextLabel" type="RichTextLabel" parent="page_2"]
 offset_left = 328.0

@@ -2,13 +2,13 @@
 
 [ext_resource type="Script" path="res://Anxiety Effects/Vignette/vignette_handler.gd" id="1_bj5vg"]
 [ext_resource type="Script" path="res://Anxiety Effects/Vignette/vignette_anim.gd" id="2_l7jst"]
-[ext_resource type="Texture2D" uid="uid://sun72b5v0mmk" path="res://Anxiety Effects/Vignette/vignette_border.webp" id="2_rtmlt"]
+[ext_resource type="Texture2D" uid="uid://rntsbgnl0mud" path="res://Anxiety Effects/Vignette/vignette_border.webp" id="2_rtmlt"]
 
 [sub_resource type="Animation" id="Animation_8siau"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
-tracks/0/enabled = true
+tracks/0/enabled = false
 tracks/0/path = NodePath("Vignette:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
@@ -33,7 +33,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Vignette/Sprite2D:flip_h")
+tracks/2/path = NodePath("Vignette/CanvasLayer/Sprite2D:flip_h")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -45,7 +45,7 @@ tracks/2/keys = {
 tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("Vignette/Sprite2D:flip_v")
+tracks/3/path = NodePath("Vignette/CanvasLayer/Sprite2D:flip_v")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
@@ -54,13 +54,37 @@ tracks/3/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Vignette/CanvasLayer:scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(5, 5)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Vignette/CanvasLayer/Sprite2D:modulate")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_vugl5"]
 resource_name = "fade_out"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Vignette/Sprite2D:modulate")
+tracks/0/path = NodePath("Vignette/CanvasLayer/Sprite2D:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -75,7 +99,7 @@ resource_name = "vignette_constriction"
 length = 1.5
 tracks/0/type = "value"
 tracks/0/imported = false
-tracks/0/enabled = true
+tracks/0/enabled = false
 tracks/0/path = NodePath("Vignette:scale")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
@@ -87,7 +111,7 @@ tracks/0/keys = {
 }
 tracks/1/type = "value"
 tracks/1/imported = false
-tracks/1/enabled = true
+tracks/1/enabled = false
 tracks/1/path = NodePath("Vignette:modulate")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
@@ -97,6 +121,30 @@ tracks/1/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0.784314)]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Vignette/CanvasLayer:scale")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(5, 5), Vector2(3.9, 3.9)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Vignette/CanvasLayer/Sprite2D:modulate")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_4vhh6"]
 resource_name = "vignette_idle"
@@ -104,7 +152,7 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Vignette/Sprite2D:flip_h")
+tracks/0/path = NodePath("Vignette/CanvasLayer/Sprite2D:flip_h")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -116,7 +164,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Vignette/Sprite2D:flip_v")
+tracks/1/path = NodePath("Vignette/CanvasLayer/Sprite2D:flip_v")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -140,7 +188,6 @@ scale = Vector2(1.25, 1.25)
 script = ExtResource("1_bj5vg")
 
 [node name="Vignette" type="Node2D" parent="."]
-scale = Vector2(1.2, 1.2)
 
 [node name="VignetteLeft" type="Polygon2D" parent="Vignette"]
 visible = false
@@ -163,9 +210,12 @@ visible = false
 position = Vector2(-576, -324)
 polygon = PackedVector2Array(1152, 648, 1088, 584, 64, 584, 0, 648)
 
-[node name="Sprite2D" type="Sprite2D" parent="Vignette"]
-position = Vector2(-1.52588e-05, 7.62939e-06)
-scale = Vector2(3.84, 3.24)
+[node name="CanvasLayer" type="CanvasLayer" parent="Vignette"]
+scale = Vector2(5, 5)
+transform = Transform2D(5, 0, 0, 5, 0, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Vignette/CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
 texture = ExtResource("2_rtmlt")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

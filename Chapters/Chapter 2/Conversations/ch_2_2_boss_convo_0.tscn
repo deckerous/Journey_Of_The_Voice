@@ -11,6 +11,7 @@ wants_to_talk = false
 starting_character_alone = false
 starting_convo_character_right = false
 start_conversation_after_monologue = true
+end_anxiety_effect = true
 has_following_conversation = true
 following_conversation = ExtResource("2_poxqc")
 

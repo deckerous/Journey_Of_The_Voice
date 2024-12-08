@@ -8,7 +8,8 @@
 	},
 	{
 	  "character": "You",
-	  "text": "…uhhh…"
+	  "text": "…uhhh…",
+		"function": "start_vignette"
 	},
 	{
 	  "character": "Guy",
@@ -19,7 +20,9 @@
 	  "text": "We got some tips that there are some seriously talented artists in this town, Guy says you may be one of them."
 	},
 	{
-	  "text": "…me? No way, I'm horrible…"
+		"character": "You",
+	  "text": "…me? No way, I'm horrible…",
+		"function": "start_self_talk"
 	},
 	{
 	  "character": "Guy",
@@ -31,7 +34,8 @@
 	},
 	{
 	  "character": "You",
-	  "text": "…I…I HAVE A BAND!…"
+	  "text": "…I…I HAVE A BAND!…",
+		"function": "start_eye_contact"
 	},
 	{
 	  "character": "Guy",

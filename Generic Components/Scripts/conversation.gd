@@ -20,6 +20,8 @@ var save_path = TEST_SAVE_PATH
 # For when you want to this conversation to play on load
 @export var start_conversation_on_load: bool = false
 
+@export var end_anxiety_effect: bool
+
 # Controls whether another conversation should follow this one after it is done.
 @export var has_following_conversation: bool = false
 @export var following_conversation: PackedScene
@@ -58,7 +60,7 @@ var start_displaying = false
 signal started_conversation
 signal finished_conversation
 
-signal start_anxiety_effect
+signal start_anxiety_effect(anxiety_effect: String)
 
 signal faded_out_characters
 
@@ -83,7 +85,8 @@ func _ready():
 	# When loaded in to the chapter disable collision for continuing dialogue 
 	dialogue_collision_shape_2d.disabled = true
 	
-	conversation_ui.anxiety_effect.connect(instance_anxiety_effect)
+	# Connect up the signal that passes on which anxiety effect to play
+	conversation_ui.start_anxiety_effect.connect(instance_anxiety_effect)
 	
 	conversation_ui.fade_out_character.connect(fade_out_character)
 	conversation_characters.started_conversation.connect(move_charcters)
@@ -122,8 +125,8 @@ func end_dialogue():
 	await conversation_animation_player.animation_finished
 	self.queue_free()
 
-func instance_anxiety_effect():
-	start_anxiety_effect.emit()
+func instance_anxiety_effect(anxiety_effect: String):
+	start_anxiety_effect.emit(anxiety_effect)
 
 func fade_out_convo():
 	conversation_animation_player.play("fade_out")

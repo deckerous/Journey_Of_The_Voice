@@ -16,9 +16,3 @@ scale = Vector2(0.525, 0.525)
 [node name="Guy" parent="Characters" index="1" instance=ExtResource("4_d87kc")]
 position = Vector2(404, 451)
 scale = Vector2(0.62068, 0.62068)
-
-[node name="UICanvas" parent="." index="7"]
-visible = false
-
-[node name="UIMenu" parent="UICanvas" index="0"]
-position = Vector2(0, -1)

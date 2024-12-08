@@ -10,14 +10,21 @@ extends Node2D
 var available_conversations = null
 var current_conversation = null
 
-@onready var anxiety_effect = $AnxietyEffect
+@onready var anxiety_effect_root = $AnxietyEffectRoot
 var curr_effect = null
 
+@onready var conversation_instances = $ConversationInstances
 @onready var minigames = $Minigames
 
 @onready var area_animation_player = $AreaAnimationPlayer
 
 @onready var vignette = preload("res://Anxiety Effects/Vignette/vignette.tscn")
+
+@onready var anxiety_effects = {
+	"vignette": load("res://Anxiety Effects/Vignette/vignette.tscn"),
+	"self_talk": load("res://Anxiety Effects/Self Talk/self_talk_effect.tscn"),
+	"eye_contact": load("res://Anxiety Effects/Eye Contact/eye_contact_effect.tscn")
+}
 
 signal area_complete
 
@@ -59,8 +66,12 @@ func go_to_next_monologue(monologue: PackedScene):
 
 func go_to_next_convo(conversation: PackedScene):
 	var inst = conversation.instantiate()
-	self.add_child(inst)
+	#conversation_instances.add_child(inst)
+	conversation_instances.call_deferred("add_child", inst)
+	
 	inst.start_anxiety_effect.connect(instance_anxiety_effect)
+	if inst.end_anxiety_effect:
+		inst.finished_conversation.connect(remove_anxiety_effect)
 	
 	if inst.end_of_chapter:
 		# When a conversation has this check, unhide button to go to next chapter
@@ -85,19 +96,29 @@ func go_to_next_convo(conversation: PackedScene):
 
 func go_to_next_minigame(minigame: PackedScene):
 	var inst = minigame.instantiate()
-	self.add_child(inst)
-	remove_anxiety_effect()
-	inst.box_breathing_complete.connect(fade_in_clickable_conversations)
+	minigames.add_child(inst)
+	if len(anxiety_effect_root.get_children()) > 0:
+		remove_anxiety_effect()
+	
+	if inst.has_following_conversation:
+		inst.mini_game_complete.connect(go_to_convo_after_minigame_outcome.bind(inst))
+	else:
+		inst.mini_game_complete.connect(fade_in_clickable_conversations)
 
-func instance_anxiety_effect():
-	var inst = vignette.instantiate()
-	anxiety_effect.add_child(inst)
-	curr_effect = inst
+func go_to_convo_after_minigame_outcome(minigame):
+	go_to_next_convo(minigame.following_conversation)
+
+func instance_anxiety_effect(anxiety_effect: String):
+	var anxiety_effect_scene = anxiety_effects.get(anxiety_effect)
+	var inst = anxiety_effect_scene.instantiate()
+	anxiety_effect_root.add_child(inst)
 
 func remove_anxiety_effect():
-	curr_effect.anim.play("fade_out")
-	await curr_effect.anim.animation_finished
-	curr_effect.queue_free()
+	for effect in anxiety_effect_root.get_children():
+		if effect.has_node("AnimationPlayer"):
+			effect.animation_player.play("fade_out")
+			await effect.animation_player.animation_finished
+		effect.queue_free()
 
 func remove_from_available_conversations(convo: Conversation):
 	var index = available_conversations.find(convo)
@@ -126,7 +147,6 @@ func fade_out_clickable_conversaitons(clicked_convo: Conversation = null):
 
 func start_clickable_conversation(convo: Conversation):
 	if convo.end_of_chapter:
-		print("can continue")
 		# When a conversation has this check, unhide button to go to next chapter
 		convo.finished_conversation.connect(allow_traversal_to_next_chapter)
 	

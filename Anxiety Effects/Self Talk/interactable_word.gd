@@ -4,9 +4,11 @@ extends Node2D
 @export var word_scale = 1.5
 @export var collision_box: Area2D
 @export var word = "temp"
+@export var clickable: bool = true
 
 @onready var text = $RichTextLabel
 @onready var collision: Area2D = $Area2D
+@onready var collision_shape_2d = $Area2D/CollisionShape2D
 @onready var animator = $AnimationPlayer
 
 const SPEED = 150
@@ -15,6 +17,7 @@ const SPEED = 150
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	collision_shape_2d.disabled = !clickable
 	var rng = RandomNumberGenerator.new()
 	rotation = deg_to_rad(rng.randf_range(-30, 30))
 	var scale_num = word_scale * rng.randf_range(0.9, 1.1)
@@ -25,7 +28,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("click") && has_mouse && !cease:
-		global_position = global_position.lerp(get_global_mouse_position(), SPEED * delta)
+		global_position = get_global_mouse_position()
 	elif cease:
 		animator.play("fade_out")
 		await animator.animation_finished

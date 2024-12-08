@@ -20,3 +20,4 @@ flip_h = false
 position = Vector2(162, 167)
 
 [editable path="Characters/Cy"]
+[editable path="UICanvas/UIMenu"]

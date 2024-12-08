@@ -1,0 +1,15 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://8kiqv6kckpfr"]
+
+[ext_resource type="FontFile" uid="uid://b88fqf4a68rq3" path="res://Fonts/karmina.ttf" id="1_d2yk4"]
+[ext_resource type="FontFile" uid="uid://cgvesp3vjh4op" path="res://Fonts/skippy.ttf" id="1_p8hhx"]
+
+[resource]
+default_font = ExtResource("1_d2yk4")
+default_font_size = 55
+RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
+RichTextLabel/colors/font_shadow_color = Color(1, 1, 1, 1)
+RichTextLabel/constants/shadow_offset_x = -1
+RichTextLabel/constants/shadow_offset_y = 3
+RichTextLabel/constants/shadow_outline_size = 15
+RichTextLabel/font_sizes/normal_font_size = 122
+RichTextLabel/fonts/normal_font = ExtResource("1_p8hhx")

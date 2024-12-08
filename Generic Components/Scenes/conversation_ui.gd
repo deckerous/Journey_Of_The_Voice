@@ -26,7 +26,7 @@ var speech_pitch: float
 signal disable_dialogue_input
 signal enable_dialogue_input
 
-signal anxiety_effect
+signal start_anxiety_effect(anxiety_effect: String)
 
 signal fade_out_character
 
@@ -51,13 +51,14 @@ func _process(delta: float) -> void:
 			var speech_wav: AudioStreamWAV = load("res://Audio/voices/"+char_talking+".wav")
 			speech_pitch = 1.0
 			speech_pitch += randf_range(-0.1, 0.1)
-			GlobalAudio.play_sound_id(speech_wav, "speech_audio", GlobalAudio.Bus.SFX, speech_pitch)		
+			GlobalAudio.play_sound_id(speech_wav, "speech_audio", GlobalAudio.Bus.SFX, speech_pitch)
 		
 
 func start_dialogue():
 	name_label.text = conversation.dialogue_dictionary["dialogue"][0]["character"]
 	char_talking = conversation.dialogue_dictionary["dialogue"][0]["character"]
 	dialogue_label.text = conversation.dialogue_dictionary["dialogue"][0]["text"]
+	ConversationArchive.add_to_archive(name_label.text, dialogue_label.text)
 	display_characters()
 
 func handle_dialogue():
@@ -68,41 +69,42 @@ func handle_dialogue():
 	if dialogue_label.visible_ratio != 1.0:
 		# When the dialogue is still appearing and another 
 		# click comes in, skip to being fully visible
-		
 		dialogue_label.visible_ratio = 1.0
-	
 	elif conversation.dialogue_dictionary["dialogue"][dialogue_index].has("function"):
 		# Run any functions that the text has
-		
 		if conversation.dialogue_dictionary["dialogue"][dialogue_index]["function"] == "end_dialogue":
 			conversation.end_dialogue()
+			return
 		elif conversation.dialogue_dictionary["dialogue"][dialogue_index]["function"] == "branch_dialogue":
 			# Provide error message and end dialogue if there aren't options labeled for the dialogue branch
-			
 			if !conversation.dialogue_dictionary["dialogue"][dialogue_index].has("options"):
 				dialogue_label.text = "ERROR: No options? Make sure the .json file has an options string array field that corresponds to a dialogue id."
 				conversation.end_dialogue()
-			
+				return
 			# Continue to dialogue branching
 			branch_dialogue(conversation.dialogue_dictionary["dialogue"][dialogue_index]["options"])
-		elif conversation.dialogue_dictionary["dialogue"][dialogue_index]["function"] == "anxiety_effect":
-			dialogue_label.text = conversation.dialogue_dictionary["dialogue"][dialogue_index]["text"]
-			self.anxiety_effect.emit()
-			display_characters()
-			dialogue_index += 1
+		elif conversation.dialogue_dictionary["dialogue"][dialogue_index]["function"] == "start_vignette":
+			self.start_anxiety_effect.emit("vignette")
+		elif conversation.dialogue_dictionary["dialogue"][dialogue_index]["function"] == "start_self_talk":
+			self.start_anxiety_effect.emit("self_talk")
+		elif conversation.dialogue_dictionary["dialogue"][dialogue_index]["function"] == "start_eye_contact":
+			self.start_anxiety_effect.emit("eye_contact")
 		elif conversation.dialogue_dictionary["dialogue"][dialogue_index]["function"] == "other_character_leaves":
-			dialogue_label.text = conversation.dialogue_dictionary["dialogue"][dialogue_index]["text"]
 			self.fade_out_character.emit()
-			display_characters()
-			dialogue_index += 1
-	else:
-		dialogue_label.text = conversation.dialogue_dictionary["dialogue"][dialogue_index]["text"]
 		
-		# change displayed name to character's name
+		update_text_and_name()
+	else:
+		update_text_and_name()
+
+func update_text_and_name():
+	# change displayed name to character's name
 		if conversation.dialogue_dictionary["dialogue"][dialogue_index].has("character"):
 			name_label.text = conversation.dialogue_dictionary["dialogue"][dialogue_index]["character"]
 			# Grab the name of the character whose talking. Used for the speech dialogue
 			char_talking = conversation.dialogue_dictionary["dialogue"][dialogue_index]["character"]
+		dialogue_label.text = conversation.dialogue_dictionary["dialogue"][dialogue_index]["text"]
+		
+		ConversationArchive.add_to_archive(name_label.text, dialogue_label.text)
 		display_characters()
 		dialogue_index += 1
 
@@ -122,6 +124,7 @@ func branch_dialogue(options: Array):
 func change_dialogue_index(option: String):
 	for i in range(len(conversation.dialogue_dictionary["dialogue"])):
 		if conversation.dialogue_dictionary["dialogue"][i].has("id") and conversation.dialogue_dictionary["dialogue"][i]["id"] == option:
+			ConversationArchive.add_to_archive("You", option)
 			dialogue_index = i
 			for child in dialogue_choices.get_children():
 				child.queue_free()
