@@ -58,7 +58,6 @@ func go_to_next_monologue(monologue: PackedScene):
 		inst.finished_monologue.connect(go_to_next_convo.bind(inst.following_conversation))
 
 func go_to_next_convo(conversation: PackedScene):
-	print("entered go_to_next_convo")
 	var inst = conversation.instantiate()
 	self.add_child(inst)
 	inst.start_anxiety_effect.connect(instance_anxiety_effect)

@@ -122,7 +122,6 @@ func load_dialogue():
 		dialogue_collision_shape_2d.disabled = false
 
 func end_dialogue():
-	print("entered end_dialogue")
 	ended_dialogue = true
 	disable_dialogue_click_collision()
 	#if has_following_monologue or has_following_conversation:
