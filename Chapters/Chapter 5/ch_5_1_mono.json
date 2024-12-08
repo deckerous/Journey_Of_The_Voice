@@ -2,7 +2,7 @@
     "monologue": [
         {
             "id": "Start",
-            "text": "*You return to the bar, nervous and filled with self doubt.*"
+            "text": "*You return to the bar, again feeling nervous and filled with self doubt.*"
         },
         {
             "function": "end_monologue"
