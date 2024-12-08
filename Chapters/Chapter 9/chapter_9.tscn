@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cp4p4iaomvynx" path="res://Generic Components/Scenes/chapter.tscn" id="1_42jhu"]
 [ext_resource type="PackedScene" uid="uid://cpyhwsgsi0o23" path="res://Chapters/Chapter 10/chapter_10.tscn" id="2_jrng7"]
-[ext_resource type="PackedScene" uid="uid://bn8xyx58hq2uo" path="res://Chapters/Chapter 9/chapter_9_bar_area.tscn" id="3_0qmso"]
+[ext_resource type="PackedScene" path="res://Chapters/Chapter 9/chapter_9_bar_area.tscn" id="3_0qmso"]
 
 [node name="Chapter9" node_paths=PackedStringArray("area") instance=ExtResource("1_42jhu")]
 chapter_number = 9

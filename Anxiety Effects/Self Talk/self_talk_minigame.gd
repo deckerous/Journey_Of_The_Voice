@@ -35,16 +35,15 @@ func _ready() -> void:
 	music.volume_db = -80
 	GlobalAudio.tween_from_id("self_talk", -15, 1.0)
 	
-	var has_done_box_breathing = Player.save_file.get_value("Player", "has_done_self_talk") == null
-	if !has_done_box_breathing:
+	var has_done_self_talk = Player.save_file.get_value("player", "has_done_self_talk") == null
+	if !has_done_self_talk:
 		if !show_tutorial:
 			$GameTutorial.visible = false
 			_on_game_tutorial_finished_tutorial()
-	else:
-		# Check now exists for later instantiations of self_talk
-		Player.add_check("has_done_self_talk")
 
 func _end_self_talk():
+	# Check now exists for later instantiations of self_talk
+	Player.add_check("has_done_self_talk")
 	self.mini_game_complete.emit()
 	GlobalAudio.tween_from_id(music_turndown_id, -15.0, 1.0)
 	self.queue_free()

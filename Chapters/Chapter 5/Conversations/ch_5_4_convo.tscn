@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cee0f16o8788r" path="res://Generic Components/Scenes/conversation.tscn" id="1_tydcu"]
 [ext_resource type="PackedScene" uid="uid://gpq84yf1hx6v" path="res://Characters/Scenes/keebs.tscn" id="2_s740m"]
-[ext_resource type="PackedScene" uid="uid://c0u1fdrgiinbp" path="res://Characters/Scenes/guide.tscn" id="3_cvnn4"]
+[ext_resource type="PackedScene" uid="uid://c0u1fdrgiinbp" path="res://Characters/Scenes/guy.tscn" id="3_cvnn4"]
 
 [node name="Ch_5_4_Convo" instance=ExtResource("1_tydcu")]
 dialogue_file = "res://Chapters/Chapter 5/ch_5_4_dialogue.json"
@@ -20,4 +20,4 @@ position = Vector2(593, 365)
 [node name="OtherCharacter" parent="ConversationCharacters" index="1"]
 position = Vector2(89, 168)
 
-[node name="Guide" parent="ConversationCharacters/OtherCharacter" index="1" instance=ExtResource("3_cvnn4")]
+[node name="Guy" parent="ConversationCharacters/OtherCharacter" index="1" instance=ExtResource("3_cvnn4")]

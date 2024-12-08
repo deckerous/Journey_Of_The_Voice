@@ -2,7 +2,7 @@
     "dialogue": [
       {
         "id": "Start",
-        "character": "Guide",
+        "character": "Guy",
         "text": "Look at that! Three for Three."
       },
       {
@@ -10,7 +10,7 @@
         "text": "Yeah, the band is really starting to come together."
       },
       {
-        "character": "Guide",
+        "character": "Guy",
         "text": "You know, there's this guitarist that's been going from town to town,"
       },
       {

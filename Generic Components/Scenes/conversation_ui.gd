@@ -70,20 +70,23 @@ func handle_dialogue():
 		# When the dialogue is still appearing and another
 		# click comes in, skip to being fully visible
 		dialogue_label.visible_ratio = 1.0
-
 	elif conversation.dialogue_dictionary["dialogue"][dialogue_index].has("function"):
 		# Run any functions that the text has
 		if conversation.dialogue_dictionary["dialogue"][dialogue_index]["function"] == "end_dialogue":
 			conversation.end_dialogue()
+			return
 
 		elif conversation.dialogue_dictionary["dialogue"][dialogue_index]["function"] == "fail_dialogue":
 			# For when you want to chain a whole new convo scene after failing the current convo
 			conversation.fail_dialogue()
+			return
+
 		elif conversation.dialogue_dictionary["dialogue"][dialogue_index]["function"] == "branch_dialogue":
 			# Provide error message and end dialogue if there aren't options labeled for the dialogue branch
 			if !conversation.dialogue_dictionary["dialogue"][dialogue_index].has("options"):
 				dialogue_label.text = "ERROR: No options? Make sure the .json file has an options string array field that corresponds to a dialogue id."
 				conversation.end_dialogue()
+				return
 			# Continue to dialogue branching
 			branch_dialogue(conversation.dialogue_dictionary["dialogue"][dialogue_index]["options"])
 		elif conversation.dialogue_dictionary["dialogue"][dialogue_index]["function"] == "start_vignette":
@@ -94,18 +97,18 @@ func handle_dialogue():
 			self.start_anxiety_effect.emit("eye_contact")
 		elif conversation.dialogue_dictionary["dialogue"][dialogue_index]["function"] == "other_character_leaves":
 			self.fade_out_character.emit()
-			dialogue_label.text = conversation.dialogue_dictionary["dialogue"][dialogue_index]["text"]
-			ConversationArchive.add_to_archive(name_label.text, dialogue_label.text)
-			display_characters()
-			dialogue_index += 1
-	else:
-		dialogue_label.text = conversation.dialogue_dictionary["dialogue"][dialogue_index]["text"]
 
-		# change displayed name to character's name
+		update_text_and_name()
+	else:
+		update_text_and_name()
+
+func update_text_and_name():
+	# change displayed name to character's name
 		if conversation.dialogue_dictionary["dialogue"][dialogue_index].has("character"):
 			name_label.text = conversation.dialogue_dictionary["dialogue"][dialogue_index]["character"]
 			# Grab the name of the character whose talking. Used for the speech dialogue
 			char_talking = conversation.dialogue_dictionary["dialogue"][dialogue_index]["character"]
+		dialogue_label.text = conversation.dialogue_dictionary["dialogue"][dialogue_index]["text"]
 
 		ConversationArchive.add_to_archive(name_label.text, dialogue_label.text)
 		display_characters()
