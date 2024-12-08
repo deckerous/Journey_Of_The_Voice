@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://cee0f16o8788r" path="res://Generic Components/Scenes/conversation.tscn" id="1_h4gx5"]
 [ext_resource type="PackedScene" uid="uid://v2r4jwck0vko" path="res://Chapters/Chapter 3/Monologues/ch_3_2_mono.tscn" id="2_m27vf"]
-[ext_resource type="PackedScene" uid="uid://c0u1fdrgiinbp" path="res://Characters/Scenes/Guy.tscn" id="2_wpnks"]
+[ext_resource type="PackedScene" uid="uid://c0u1fdrgiinbp" path="res://Characters/Scenes/guy.tscn" id="2_wpnks"]
 
 [node name="Ch_3_1_Convo" instance=ExtResource("1_h4gx5")]
 dialogue_file = "res://Chapters/Chapter 3/ch3_1.json"

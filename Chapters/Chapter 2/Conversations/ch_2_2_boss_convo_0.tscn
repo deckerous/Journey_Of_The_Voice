@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cee0f16o8788r" path="res://Generic Components/Scenes/conversation.tscn" id="1_lwj0r"]
 [ext_resource type="PackedScene" uid="uid://bhpnhjgkksvrp" path="res://Chapters/Chapter 2/Conversations/ch_2_3_convo.tscn" id="2_poxqc"]
 [ext_resource type="PackedScene" uid="uid://b3nq0ij2pd5ks" path="res://Characters/Scenes/boss.tscn" id="2_taibx"]
-[ext_resource type="PackedScene" uid="uid://c0u1fdrgiinbp" path="res://Characters/Scenes/Guy.tscn" id="3_7yyj1"]
+[ext_resource type="PackedScene" uid="uid://c0u1fdrgiinbp" path="res://Characters/Scenes/guy.tscn" id="3_7yyj1"]
 
 [node name="Ch_2_2_Boss_Convo_0" instance=ExtResource("1_lwj0r")]
 dialogue_file = "res://Chapters/Chapter 2/chapter2_2_boss_0.json"
@@ -23,3 +23,5 @@ position = Vector2(790, 332)
 position = Vector2(268, 182)
 
 [node name="Guy" parent="ConversationCharacters/OtherCharacter" index="1" instance=ExtResource("3_7yyj1")]
+position = Vector2(52, 144)
+scale = Vector2(0.528563, 0.528563)
