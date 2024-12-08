@@ -6,5 +6,5 @@
 [node name="Guy" instance=ExtResource("1_mu2oh")]
 
 [node name="Sprite2D" parent="." index="0"]
-scale = Vector2(0.555611, 0.555611)
+scale = Vector2(0.249183, 0.249183)
 texture = ExtResource("2_x7a6o")

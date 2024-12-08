@@ -23,4 +23,4 @@ position = Vector2(162, 167)
 
 [node name="Guy" parent="ConversationCharacters/OtherCharacter" index="1" instance=ExtResource("4_rp0m0")]
 position = Vector2(166, 225)
-scale = Vector2(0.565566, 0.565566)
+scale = Vector2(1.25995, 1.25995)

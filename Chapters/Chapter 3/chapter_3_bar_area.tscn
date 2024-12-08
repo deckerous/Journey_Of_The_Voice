@@ -29,7 +29,7 @@ scale = Vector2(0.188931, 0.188931)
 
 [node name="Guy" parent="Characters" index="1" instance=ExtResource("3_og506")]
 position = Vector2(239.464, 573.888)
-scale = Vector2(0.802592, 0.802592)
+scale = Vector2(1.75, 1.75)
 
 [node name="Drummer" parent="Characters" index="2" instance=ExtResource("4_egn52")]
 position = Vector2(1753.32, 366.077)
@@ -50,5 +50,8 @@ offset_bottom = 171.0
 mouse_filter = 2
 texture = ExtResource("2_j52db")
 expand_mode = 5
+
+[node name="UICanvas" parent="." index="8"]
+visible = false
 
 [editable path="ConversationsRoot/Ch3_5_Drummer_2"]
