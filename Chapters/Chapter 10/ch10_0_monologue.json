@@ -24,9 +24,6 @@
       "text": "They've all taught me something I'll never forget."
     },
     {
-      "function": "journal_available"
-    },
-    {
       "function": "end_monologue"
     }
   ]

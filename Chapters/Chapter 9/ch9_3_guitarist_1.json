@@ -55,7 +55,7 @@
         "options": [
           "*take the empty glass*",
           "...",
-          "Actually..."
+          "Well..."
         ]
       },
       {
@@ -73,7 +73,7 @@
         "function": "end_dialogue"
       },
       {
-        "id": "Actually...",
+        "id": "Well...",
         "character": "You",
         "text": "I am putting together a group of incredible musicians."
       },
