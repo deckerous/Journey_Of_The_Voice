@@ -55,7 +55,7 @@
         "options": [
           "*take the empty glass*",
           "...",
-          "Well..."
+          "Actually..."
         ]
       },
       {
@@ -73,7 +73,7 @@
         "function": "end_dialogue"
       },
       {
-        "id": "Well...",
+        "id": "Actually...",
         "character": "You",
         "text": "I am putting together a group of incredible musicians."
       },
@@ -165,10 +165,10 @@
         "text": "Alright, I'll bite."
       },
       {
-        "text": " But if I join, we're doing this all the way."
+        "text": "But if I join, we're doing this all the way."
       },
       {
-        "text": "No half-measures"
+        "text": "No half-measures."
       },
       {
         "function": "end_dialogue"

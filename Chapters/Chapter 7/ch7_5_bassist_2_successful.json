@@ -21,7 +21,7 @@
       },
       {
         "character": "You",
-        "text": "Uh...no..."
+        "text": "Uh... no..."
       },
       {
         "text": "Well, not tonight at least."
@@ -32,14 +32,14 @@
       },
       {
         "character": "You",
-        "text": "Uh, yeah. I actually want to put together a band for the battle coming up."
+        "text": "Uh, yeah. I actually want to put together a band for the Battle of the Bands coming up."
       },
       {
         "character": "Cy",
-        "text": "Ah, Then you followed the bassline to me..."
+        "text": "Ah, then you followed the bassline to me..."
       },
       {
-        "text": "Lets Jam!"
+        "text": "Let's Jam!"
       },
       {
         "function": "end_dialogue"

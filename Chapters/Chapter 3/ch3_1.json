@@ -2,7 +2,7 @@
 	"dialogue": [
 		{
 			"character": "Guy",
-			"text": "You are looking a lot less...twitchy today."
+			"text": "You are looking a lot less... twitchy today."
 		},
 		{
 			"character": "You",
@@ -10,19 +10,19 @@
 		},
 		{
 			"character": "You",
-			"text": "This is quite the crowd today..."
+			"text": "This is quite the crowd..."
 		},
 		{
 			"character": "You",
-			"text": "You realize that you have some..."
+			"text": "You realize you have some..."
 		},
 		{
 			"character": "You",
-			"text": "Shady looking individuals here today right? I mean, tell me the guy with the swords isn't out here for blood!"
+			"text": "...shady looking individuals here today right?"
 		},
 		{
 			"character": "You",
-			"text": "I mean, tell me the guy with the swords isn't out here for blood!"
+			"text": "I mean, tell me the one with the swords isn't out for blood!"
 		},
 		{
 			"character": "Guy",
@@ -38,7 +38,7 @@
 		},
 		{
 			"character": "Guy",
-			"text": "Don't worry, this guy is super chill."
+			"text": "Don't worry, he's super chill."
 		},
 		{
 			"character": "Guy",
@@ -46,7 +46,7 @@
 		},
 		{
 			"character": "You",
-			"text": "You are making it sound like thats who you want me to meet...."
+			"text": "You're making it sound like that's who you want me to meet..."
 		},
 		{
 			"character": "Guy",
@@ -58,11 +58,11 @@
 		},
 		{
 			"character": "Guy",
-			"text": "This is my friend I was telling you about."
+			"text": "This is my friend who I was telling you about."
 		},
 		{
 			"character": "Guy",
-			"text": "You know, the one trying to start a band!"
+			"text": "The one trying to start a band!"
 		},
 		{
 			"function": "end_dialogue"
