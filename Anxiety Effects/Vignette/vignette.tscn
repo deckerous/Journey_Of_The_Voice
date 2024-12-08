@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Anxiety Effects/Vignette/vignette_handler.gd" id="1_bj5vg"]
 [ext_resource type="Script" path="res://Anxiety Effects/Vignette/vignette_anim.gd" id="2_l7jst"]
-[ext_resource type="Texture2D" uid="uid://sun72b5v0mmk" path="res://Anxiety Effects/Vignette/vignette_border.webp" id="2_rtmlt"]
+[ext_resource type="Texture2D" uid="uid://ccrigy5gte3i" path="res://Anxiety Effects/Vignette/vignette_border.webp" id="2_rtmlt"]
 
 [sub_resource type="Animation" id="Animation_8siau"]
 length = 0.001

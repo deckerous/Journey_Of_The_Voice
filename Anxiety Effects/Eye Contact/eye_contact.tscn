@@ -1,24 +1,34 @@
 [gd_scene load_steps=4 format=3 uid="uid://o1myb1obems7"]
 
 [ext_resource type="Script" path="res://Anxiety Effects/Eye Contact/eye_contact.gd" id="1_ryo6m"]
-[ext_resource type="Texture2D" uid="uid://bysv8dp2mkvx2" path="res://Anxiety Effects/Eye Contact/visualization.jpg" id="2_qovll"]
-[ext_resource type="PackedScene" uid="uid://ds8c1rlw6rdhm" path="res://UI/Scenes/game_tutorial_self_talk.tscn" id="3_4tqd5"]
+[ext_resource type="Texture2D" uid="uid://dts8xv1jwjgbb" path="res://Characters/Assets/guy.png" id="3_jk3ty"]
+[ext_resource type="PackedScene" uid="uid://b561r3n76f56b" path="res://UI/Scenes/game_tutorial_eye_contact.tscn" id="3_mb0kl"]
 
 [node name="EyeContact" type="Node2D"]
 script = ExtResource("1_ryo6m")
 
+[node name="TheBGs" type="ColorRect" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.784314)
+z_as_relative = false
+offset_right = 2000.0
+offset_bottom = 2000.0
+mouse_filter = 1
+color = Color(0, 0, 0, 0.784314)
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 324)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Character" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(570, 326)
 scale = Vector2(0.358333, 0.344444)
-texture = ExtResource("2_qovll")
+texture = ExtResource("3_jk3ty")
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 
-[node name="GameTutorial" parent="." instance=ExtResource("3_4tqd5")]
+[node name="GameTutorial2" parent="." instance=ExtResource("3_mb0kl")]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="finished_tutorial" from="GameTutorial" to="." method="_on_tutorial_end"]
+[connection signal="finished_tutorial" from="GameTutorial2" to="." method="_on_tutorial_end"]

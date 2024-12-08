@@ -14,10 +14,6 @@ func _ready() -> void:
 	page_2.visible = false
 	tutorial_button.text = "Next Page" 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
-
 func _on_tutorial_button_pressed() -> void:
 	if pg == 1:
 		pg = 2

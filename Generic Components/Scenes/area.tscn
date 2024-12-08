@@ -104,13 +104,15 @@ script = ExtResource("1_44oh5")
 
 [node name="ConversationsRoot" type="Node2D" parent="."]
 
+[node name="ConversationInstances" type="Node2D" parent="."]
+
 [node name="Characters" type="Node2D" parent="."]
 
 [node name="Interactables" type="Node2D" parent="."]
 
 [node name="Minigames" type="Node2D" parent="."]
 
-[node name="AnxietyEffect" type="Node2D" parent="."]
+[node name="AnxietyEffectRoot" type="Node2D" parent="."]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
@@ -128,6 +130,6 @@ libraries = {
 }
 
 [node name="UICanvas" type="CanvasLayer" parent="."]
-layer = 4
+layer = 6
 
 [node name="UIMenu" parent="UICanvas" instance=ExtResource("2_ut1x2")]

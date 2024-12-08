@@ -32,6 +32,7 @@ func _process(delta: float) -> void:
 # Starts up the json file reading from the first index
 func start_monologue():
 	dialogue_label.text = "[center]" + monologue.monologue_dictionary["monologue"][0]["text"] + "[/center]"
+	ConversationArchive.monologue_to_archive(monologue.monologue_dictionary["monologue"][0]["text"])
 	display_characters()
 
 # Updates the dialogue appearing on screen and effects when the player clicks the screen
@@ -49,6 +50,7 @@ func handle_monologue():
 		
 	else:
 		dialogue_label.text = "[center]" + monologue.monologue_dictionary["monologue"][dialogue_index]["text"] + "[/center]"
+		ConversationArchive.monologue_to_archive(monologue.monologue_dictionary["monologue"][dialogue_index]["text"])
 		display_characters()
 		dialogue_index += 1
 

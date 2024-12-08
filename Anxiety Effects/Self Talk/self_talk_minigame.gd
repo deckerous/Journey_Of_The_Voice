@@ -2,14 +2,19 @@ extends Node2D
 
 @export var music_turndown_id: String = ""
 @export var num_to_win: int
+@export var show_tutorial = false
+@export var has_following_conversation: bool
+@export var following_conversation: PackedScene
+@export var game_background = false
 
 #TODO: change to self_talk music
+@onready var the_b_gs: ColorRect = $TheBGs
 @onready var minigame_music = load("res://Audio/songs/wave/wave-theme.wav")
 @onready var word_scene = "res://Anxiety Effects/Self Talk/interactable_word.tscn"
 @onready var centerX = get_viewport_rect().size.x / 2
 @onready var centerY = get_viewport_rect().size.y / 2
 
-signal self_talk_complete
+signal mini_game_complete
 
 const num_words_on_screen = 6
 const possible_phrases = ["I don't belong here......", "What did I just say?", "They must be annoyed...", "I'm a nuisance",
@@ -19,6 +24,8 @@ const possible_phrases = ["I don't belong here......", "What did I just say?", "
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if game_background:
+		the_b_gs.visible = true
 	position = Vector2(centerX, centerY)
 	
 	# tweening manually to avoid the await
@@ -30,17 +37,16 @@ func _ready() -> void:
 	
 	var has_done_box_breathing = Player.save_file.get_value("Player", "has_done_self_talk") == null
 	if !has_done_box_breathing:
-		$GameTutorial.visible = false
-		_on_game_tutorial_finished_tutorial()
+		if !show_tutorial:
+			$GameTutorial.visible = false
+			_on_game_tutorial_finished_tutorial()
 	else:
-		# Check now exists for later instantiations of box breathing
-		print("adding check")
+		# Check now exists for later instantiations of self_talk
 		Player.add_check("has_done_self_talk")
-	
+
 func _end_self_talk():
-	self.self_talk_complete.emit()
+	self.mini_game_complete.emit()
 	GlobalAudio.tween_from_id(music_turndown_id, -15.0, 1.0)
-	
 	self.queue_free()
 
 func _summon_word():
@@ -49,6 +55,7 @@ func _summon_word():
 	var posX = random.randf_range(-(centerX - 200), centerX - 200) 
 	var posY = random.randf_range(-(centerY - 100), centerY - 100)
 	var word = load(word_scene).instantiate()
+	
 	word.position = Vector2(posX, posY)
 	word.collision_box = $Area2D
 	word.word = possible_phrases[random.randi_range(0, possible_phrases.size() - 1)]
@@ -59,7 +66,6 @@ func _on_area_2d_area_shape_entered(area_rid: RID, area: Area2D, area_shape_inde
 		_summon_word()
 	else:
 		_end_self_talk()
-
 
 func _on_game_tutorial_finished_tutorial() -> void:
 	if num_to_win == -1:
