@@ -3,19 +3,19 @@
 [ext_resource type="Theme" uid="uid://mrmpkimvequ6" path="res://Themes/credits_header.tres" id="1_85xxj"]
 [ext_resource type="Script" path="res://UI/Scenes/credits.gd" id="1_irc42"]
 [ext_resource type="Theme" uid="uid://dlpa8luwucobq" path="res://Themes/credits_names.tres" id="2_7g37u"]
-[ext_resource type="Texture2D" uid="uid://bl65vtik7ujte" path="res://Characters/Assets/BoTB.png" id="2_t6lod"]
-[ext_resource type="Texture2D" uid="uid://c0u7ac1jr0rlq" path="res://Characters/Assets/player.png" id="3_18r1b"]
-[ext_resource type="Texture2D" uid="uid://cedxx2alfducw" path="res://Characters/Assets/kenshiro.png" id="4_kopb1"]
-[ext_resource type="Texture2D" uid="uid://d0yem1vsd232l" path="res://Characters/Assets/keebs.png" id="5_5jlwd"]
-[ext_resource type="Texture2D" uid="uid://dwrf6oaomgyha" path="res://Characters/Assets/cy.png" id="5_dg47a"]
-[ext_resource type="Texture2D" uid="uid://v0frb23prknp" path="res://Characters/Assets/donna.png" id="7_l2e6r"]
-[ext_resource type="Texture2D" uid="uid://6c2t0efd64gr" path="res://Characters/Assets/guy_legs.png" id="8_3hcp7"]
-[ext_resource type="Texture2D" uid="uid://ed3b7x4q3bot" path="res://Characters/Assets/boss.png" id="9_s0ywd"]
+[ext_resource type="Texture2D" uid="uid://dugrtpcnh62pw" path="res://Characters/Assets/BoTB.png" id="2_t6lod"]
+[ext_resource type="Texture2D" uid="uid://d0ympmwoj7ert" path="res://Characters/Assets/player.png" id="3_18r1b"]
+[ext_resource type="Texture2D" uid="uid://brpvxb8yuecu1" path="res://Characters/Assets/kenshiro.png" id="4_kopb1"]
+[ext_resource type="Texture2D" uid="uid://sb882ds1atog" path="res://Characters/Assets/keebs.png" id="5_5jlwd"]
+[ext_resource type="Texture2D" uid="uid://btsdgagbeo4qn" path="res://Characters/Assets/cy.png" id="5_dg47a"]
+[ext_resource type="Texture2D" uid="uid://c8wtxywpni3cg" path="res://Characters/Assets/donna.png" id="7_l2e6r"]
+[ext_resource type="Texture2D" uid="uid://b1sd5mtvti45y" path="res://Characters/Assets/guy_legs.png" id="8_3hcp7"]
+[ext_resource type="Texture2D" uid="uid://ctdl3fsajkq2n" path="res://Characters/Assets/boss.png" id="9_s0ywd"]
 [ext_resource type="Theme" uid="uid://8kiqv6kckpfr" path="res://Themes/JoTV.tres" id="11_g3gd3"]
 
 [sub_resource type="Animation" id="Animation_2ycib"]
 resource_name = "Credit Scroll"
-length = 30.0
+length = 50.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -199,14 +199,57 @@ tracks/14/keys = {
 tracks/15/type = "value"
 tracks/15/imported = false
 tracks/15/enabled = true
-tracks/15/path = NodePath("Boss:modulate")
+tracks/15/path = NodePath("LastConvo:modulate")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
-"times": PackedFloat32Array(21.1, 22.1),
+"times": PackedFloat32Array(21.7333, 22.1667),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/16/type = "value"
+tracks/16/imported = false
+tracks/16/enabled = true
+tracks/16/path = NodePath("LastConvo/PlayerContainer/PlayerText:text")
+tracks/16/interp = 1
+tracks/16/loop_wrap = true
+tracks/16/keys = {
+"times": PackedFloat32Array(21.7333, 28.5, 30.1667, 36.2001, 37.8, 38.8667, 40.9667, 43.8667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["
+
+", "Thank you... It means a lot, coming from you.
+", "", "Wait... are you saying...
+", "
+", "
+", "[rainbow freq=1.0 sat=0.8 val=0.8]We're in. Absolutely, we're in![/rainbow]", ""]
+}
+tracks/17/type = "value"
+tracks/17/imported = false
+tracks/17/enabled = true
+tracks/17/path = NodePath("LastConvo/BossContainer/BossText:text")
+tracks/17/interp = 1
+tracks/17/loop_wrap = true
+tracks/17/keys = {
+"times": PackedFloat32Array(21.7, 23, 26.9, 28.5, 30.1667, 36.2, 37.8, 38.9333, 40.9667, 43.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["
+", "Well, look at you. Against all odds, you actually did it... You and your band managed to take the crowd by storm.
+
+", "I have to admit, you impressed me.
+", "
+", "Don't get too comfortable. This is just the beginning. But you’ve got heart, persistence, and the guts to put yourself out there, even when things get tough.
+And I think that’s something worth investing in.
+", "
+", "[right]Yes.[/right]
+", "I'm offering you a record contract. Your band has earned it.
+", "
+", "Good. I expect nothing less than everything you've got. We're aiming for the biggest stages, the brightest lights.
+Don't let me down.
+"]
 }
 
 [sub_resource type="Animation" id="Animation_jh7du"]
@@ -298,26 +341,56 @@ tracks/6/keys = {
 tracks/7/type = "value"
 tracks/7/imported = false
 tracks/7/enabled = true
-tracks/7/path = NodePath("Boss:modulate")
+tracks/7/path = NodePath("BoTb:modulate")
 tracks/7/interp = 1
 tracks/7/loop_wrap = true
 tracks/7/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 0)]
 }
 tracks/8/type = "value"
 tracks/8/imported = false
 tracks/8/enabled = true
-tracks/8/path = NodePath("BoTb:modulate")
+tracks/8/path = NodePath("LastConvo:modulate")
 tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
-"values": [Color(1, 1, 1, 0)]
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("LastConvo/PlayerContainer/PlayerText:text")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Good. I expect nothing less than everything you've got.
+We're aiming for the biggest stages, the brightest lights.
+Don't let me down.\"
+"]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("LastConvo/BossContainer/BossText:text")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["Good. I expect nothing less than everything you've got.
+We're aiming for the biggest stages, the brightest lights.
+Don't let me down.\"
+"]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_33jgy"]
@@ -370,26 +443,58 @@ position = Vector2(184, 344)
 scale = Vector2(0.255, 0.255)
 texture = ExtResource("8_3hcp7")
 
-[node name="Boss" type="Sprite2D" parent="."]
-position = Vector2(920, 344)
-scale = Vector2(0.291063, 0.291063)
-texture = ExtResource("9_s0ywd")
+[node name="LastConvo" type="Node2D" parent="."]
 
-[node name="RichTextLabel" type="RichTextLabel" parent="Boss"]
-offset_left = -2638.61
-offset_top = -824.565
-offset_right = -688.608
-offset_bottom = -95.565
+[node name="PlayerContainer" type="Node2D" parent="LastConvo"]
+
+[node name="PlayerText" type="RichTextLabel" parent="LastConvo/PlayerContainer"]
+offset_left = 296.0
+offset_top = 216.0
+offset_right = 790.87
+offset_bottom = 551.0
 theme = ExtResource("2_7g37u")
-theme_override_font_sizes/normal_font_size = 181
-text = "Wow, What a show! I don't usually
-go straight to offering a contract,
-but you guys absolutely ate. 
-Oh my gyatttt!
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "Good. I expect nothing less than everything you've got.
+We're aiming for the biggest stages, the brightest lights.
+Don't let me down.\"
 "
 fit_content = true
 scroll_active = false
-autowrap_mode = 0
+autowrap_mode = 2
+
+[node name="Player2" type="Sprite2D" parent="LastConvo/PlayerContainer"]
+position = Vector2(208, 424)
+rotation = 3.14159
+scale = Vector2(0.209, -0.209)
+texture = ExtResource("3_18r1b")
+
+[node name="BossContainer" type="Node2D" parent="LastConvo"]
+
+[node name="BossText" type="RichTextLabel" parent="LastConvo/BossContainer"]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 323.245
+offset_top = 56.0
+offset_right = 775.86
+offset_bottom = 793.0
+grow_horizontal = 0
+theme = ExtResource("2_7g37u")
+theme_override_font_sizes/normal_font_size = 30
+bbcode_enabled = true
+text = "Good. I expect nothing less than everything you've got.
+We're aiming for the biggest stages, the brightest lights.
+Don't let me down.\"
+"
+fit_content = true
+scroll_active = false
+autowrap_mode = 2
+
+[node name="Boss" type="Sprite2D" parent="LastConvo/BossContainer"]
+position = Vector2(920, 344)
+scale = Vector2(0.291063, 0.291063)
+texture = ExtResource("9_s0ywd")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 offset_right = 1152.0
@@ -429,33 +534,6 @@ size_flags_horizontal = 4
 theme = ExtResource("1_85xxj")
 text = "Credits (in no particular order)
 "
-fit_content = true
-scroll_active = false
-autowrap_mode = 0
-
-[node name="SpacerThin" type="BoxContainer" parent="CenterContainer/VBoxContainer"]
-custom_minimum_size = Vector2(50, 50)
-layout_mode = 2
-
-[node name="Concept" type="RichTextLabel" parent="CenterContainer/VBoxContainer"]
-clip_contents = false
-layout_mode = 2
-size_flags_horizontal = 4
-theme = ExtResource("1_85xxj")
-theme_override_colors/default_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/normal_font_size = 55
-text = "Concept:
-"
-fit_content = true
-scroll_active = false
-autowrap_mode = 0
-
-[node name="Names" type="RichTextLabel" parent="CenterContainer/VBoxContainer"]
-clip_contents = false
-layout_mode = 2
-size_flags_horizontal = 4
-theme = ExtResource("2_7g37u")
-text = "Josh Chernetsky"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0

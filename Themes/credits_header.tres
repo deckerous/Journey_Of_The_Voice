@@ -1,6 +1,6 @@
 [gd_resource type="Theme" load_steps=2 format=3 uid="uid://mrmpkimvequ6"]
 
-[ext_resource type="FontFile" uid="uid://b88fqf4a68rq3" path="res://Fonts/karmina.ttf" id="1_aytmq"]
+[ext_resource type="FontFile" uid="uid://15qjrt2nl0p" path="res://Fonts/karmina.ttf" id="1_aytmq"]
 
 [resource]
 default_font = ExtResource("1_aytmq")
