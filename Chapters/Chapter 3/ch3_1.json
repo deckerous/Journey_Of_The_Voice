@@ -18,23 +18,19 @@
 		},
 		{
 			"character": "You",
-			"text": "Shady looking individuals here today right? I mean, tell me the guy with the swords isn't out here for blood!"
+			"text": "Shady looking individuals here today right?"
 		},
 		{
 			"character": "You",
-			"text": "I mean, tell me the guy with the swords isn't out here for blood!"
+			"text": "I mean, tell me the guy with the ink isn't out here for blood!"
 		},
 		{
 			"character": "Guy",
-			"text": "Swords? What are you..."
+			"text": "OH! You mean the drummer with the sick dragon tattoo?"
 		},
 		{
 			"character": "Guy",
-			"text": "OH! You mean the taiko drummer with the sick dragon tattoo?"
-		},
-		{
-			"character": "Guy",
-			"text": "That's Drummer-San!"
+			"text": "That's Kenshiro!"
 		},
 		{
 			"character": "Guy",
@@ -54,7 +50,7 @@
 		},
 		{
 			"character": "Guy",
-			"text": "Oi, Drummer-San!"
+			"text": "Oi, Kenshiro!"
 		},
 		{
 			"character": "Guy",

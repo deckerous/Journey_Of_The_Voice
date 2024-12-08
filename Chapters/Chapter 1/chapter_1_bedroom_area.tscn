@@ -1,8 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://c2rjr35opcgc"]
+[gd_scene load_steps=5 format=3 uid="uid://c2rjr35opcgc"]
 
 [ext_resource type="PackedScene" uid="uid://daapn4kvhq3fe" path="res://Generic Components/Scenes/bedroom_area.tscn" id="1_8uw0h"]
 [ext_resource type="PackedScene" uid="uid://bkjj25su42kio" path="res://Chapters/Chapter 1/Conversations/ch_1_convo.tscn" id="2_xmso0"]
+[ext_resource type="Script" path="res://Generic Components/Scripts/character.gd" id="3_8mnlt"]
+[ext_resource type="Texture2D" uid="uid://b5glcn74ddows" path="res://Characters/Assets/player.png" id="4_br4er"]
 
 [node name="Chapter1BedroomArea" instance=ExtResource("1_8uw0h")]
 start_with_conversation = true
 starting_conversation = ExtResource("2_xmso0")
+
+[node name="Player" type="Node2D" parent="Characters" index="0"]
+script = ExtResource("3_8mnlt")
+
+[node name="Sprite2D" type="Sprite2D" parent="Characters/Player" index="0"]
+position = Vector2(572, 439)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("4_br4er")

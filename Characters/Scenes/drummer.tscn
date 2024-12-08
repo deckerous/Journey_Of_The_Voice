@@ -1,11 +1,11 @@
 [gd_scene load_steps=3 format=3 uid="uid://pie5vurh8eoo"]
 
 [ext_resource type="PackedScene" uid="uid://cfcuodb5inj3o" path="res://Generic Components/Scenes/character.tscn" id="1_67384"]
-[ext_resource type="Texture2D" uid="uid://dq563bqcuqwd5" path="res://Characters/Assets/kenshiro.png" id="2_m2ii8"]
+[ext_resource type="Texture2D" uid="uid://i2bhn5qixatq" path="res://Characters/Assets/kenshiro.png" id="2_m2ii8"]
 
 [node name="Drummer" instance=ExtResource("1_67384")]
 scale = Vector2(0.3, 0.3)
 
 [node name="Sprite2D" parent="." index="0"]
+position = Vector2(13.3333, -13.3333)
 texture = ExtResource("2_m2ii8")
-flip_h = true
