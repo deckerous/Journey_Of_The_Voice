@@ -15,4 +15,7 @@ following_monologue = ExtResource("2_m27vf")
 position = Vector2(162, 167)
 
 [node name="Guy" parent="ConversationCharacters/StartingCharacter" index="2" instance=ExtResource("2_wpnks")]
-position = Vector2(280, 450)
+position = Vector2(422, 433)
+
+[node name="DialogueChoices" parent="ConversationUI/Dialogue/Control" index="2"]
+visible = true

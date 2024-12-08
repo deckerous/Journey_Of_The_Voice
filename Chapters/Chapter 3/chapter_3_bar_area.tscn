@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://3iuv2p5c8kel" path="res://UI/Scenes/poster.tscn" id="6_ng5la"]
 
 [node name="Chapter3BarArea" instance=ExtResource("1_ogb4d")]
+position = Vector2(100, 15)
+scale = Vector2(0.726623, 0.726623)
 start_with_monologue = true
 starting_monologue = ExtResource("2_se6rg")
 
@@ -22,15 +24,15 @@ position = Vector2(1041, 375)
 visible = true
 
 [node name="Drummer2" parent="Characters" index="0" instance=ExtResource("4_fprkc")]
-position = Vector2(549, 336)
-scale = Vector2(0.109592, 0.109592)
+position = Vector2(606.917, 407.364)
+scale = Vector2(0.188931, 0.188931)
 
 [node name="Guy" parent="Characters" index="1" instance=ExtResource("3_og506")]
-position = Vector2(300, 500)
-scale = Vector2(0.7, 0.7)
+position = Vector2(239.464, 573.888)
+scale = Vector2(0.802592, 0.802592)
 
 [node name="Drummer" parent="Characters" index="2" instance=ExtResource("4_egn52")]
-position = Vector2(1508, 352)
+position = Vector2(1753.32, 366.077)
 scale = Vector2(0.22, 0.22)
 
 [node name="Poster" parent="Interactables" index="0" instance=ExtResource("6_ng5la")]
@@ -41,13 +43,12 @@ layer = -2
 
 [node name="TextureRect" parent="CanvasLayer" index="0"]
 z_index = -2
+offset_left = -146.0
 offset_top = -126.0
-offset_bottom = 171.231
+offset_right = 146.0
+offset_bottom = 171.0
 mouse_filter = 2
 texture = ExtResource("2_j52db")
 expand_mode = 5
-
-[node name="UICanvas" parent="." index="8"]
-visible = false
 
 [editable path="ConversationsRoot/Ch3_5_Drummer_2"]

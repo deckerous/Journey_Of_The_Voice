@@ -14,3 +14,8 @@ following_conversation = ExtResource("2_vrqal")
 position = Vector2(576, 324)
 
 [node name="Drummer" parent="ConversationCharacters/StartingCharacter" index="2" instance=ExtResource("2_4lwj7")]
+position = Vector2(0, 86)
+scale = Vector2(0.483977, 0.483977)
+
+[node name="DialogueChoices" parent="ConversationUI/Dialogue/Control" index="2"]
+visible = true
