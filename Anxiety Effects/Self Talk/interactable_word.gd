@@ -28,7 +28,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("click") && has_mouse && !cease:
-		global_position = global_position.lerp(get_global_mouse_position(), SPEED * delta)
+		global_position = get_global_mouse_position()
 	elif cease:
 		animator.play("fade_out")
 		await animator.animation_finished

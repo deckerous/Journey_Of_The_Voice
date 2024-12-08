@@ -100,10 +100,14 @@ func go_to_next_minigame(minigame: PackedScene):
 	if curr_effect != null:
 		remove_anxiety_effect()
 	
-	if inst.has_following_conversation and inst.following_conversation != null:
-		inst.mini_game_complete.connect(go_to_next_convo.bind(inst.following_conversation))
+	if inst.has_following_conversation:
+		inst.mini_game_complete.connect(go_to_convo_after_minigame_outcome.bind(inst))
 	else:
 		inst.mini_game_complete.connect(fade_in_clickable_conversations)
+
+func go_to_convo_after_minigame_outcome(minigame):
+	print(minigame.following_conversation)
+	go_to_next_convo(minigame.following_conversation)
 
 func instance_anxiety_effect(anxiety_effect: String):
 	var anxiety_effect_scene = anxiety_effects.get(anxiety_effect)
