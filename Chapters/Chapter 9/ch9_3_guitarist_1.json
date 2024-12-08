@@ -23,7 +23,7 @@
         "text": "I'll let the bartender know..."
       },
       {
-        "function": "end_dialogue"
+        "function": "fail_dialogue"
       },
       {
         "id": "...",

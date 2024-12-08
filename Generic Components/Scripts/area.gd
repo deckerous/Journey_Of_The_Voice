@@ -80,6 +80,10 @@ func go_to_next_convo(conversation: PackedScene):
 			# When this conversation is finished, instantiate the following failure convo if there is one
 			inst.failed_conversation.connect(go_to_next_convo.bind(inst.failure_conversation))
 		
+	elif inst.has_following_conversation and inst.following_conversation_path != null:
+		var convo_inst = load(inst.following_conversation_path)
+		inst.finished_conversation.connect(go_to_next_convo.bind(convo_inst))
+	
 	elif inst.has_following_monologue and inst.following_monologue != null:
 		# When this conversation is finished, instantiate next provided monologue
 		inst.finished_conversation.connect(go_to_next_monologue.bind(inst.following_monologue))
