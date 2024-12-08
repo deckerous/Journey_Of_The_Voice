@@ -2,7 +2,7 @@
     "dialogue": [
       {
         "id": "Start",
-        "character": "Guide",
+        "character": "Guy",
         "text": "Oof..."
       },
       {
@@ -13,7 +13,7 @@
         "text": "Yeah..."
       },
       {
-        "character": "Guide",
+        "character": "Guy",
         "text": "Take a moment and sit with this feeling."
       },
       {

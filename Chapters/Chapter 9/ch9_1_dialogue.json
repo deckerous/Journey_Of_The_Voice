@@ -2,7 +2,7 @@
     "dialogue": [
       {
         "id": "Start",
-        "character": "Guide",
+        "character": "Guy",
         "text": "Bout time you got here!"
       },
       {
@@ -16,7 +16,7 @@
         "text": "Wait, you mean that there is a guitarist here tonight?"
       },
       {
-        "character": "Guide",
+        "character": "Guy",
         "text": "Yeah, I'd say!"
       },
       {

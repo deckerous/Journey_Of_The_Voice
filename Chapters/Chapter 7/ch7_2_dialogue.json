@@ -2,7 +2,7 @@
     "dialogue": [
       {
         "id": "Start",
-        "character": "Guide",
+        "character": "Guy",
         "text": "Oh my, Cy, the Mechanical Eye!"
       },
       {
@@ -22,7 +22,7 @@
         "text": "Who's the shifty eyed ball of angst next to you?"
       },
       {
-        "character": "Guide",
+        "character": "Guy",
         "text": "See. Insanely perceptive. "
       },
       {

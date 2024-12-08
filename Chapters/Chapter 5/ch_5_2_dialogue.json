@@ -2,7 +2,7 @@
     "dialogue": [
         {
 			"id": "Start",
-			"character": "Guide",
+			"character": "Guy",
 			"text": "There you are!"
 		},
 		{
@@ -19,19 +19,19 @@
 			"text": "He looks so cool, he won't want to talk to me..."
 		},
 		{
-			"character": "Guide",
+			"character": "Guy",
 			"text": "Jeez, you're always beating yourself up..."
 		},	
 		{
-			"character": "Guide",
+			"character": "Guy",
 			"text": "Come on now, you gotta make that band somehow!"
 		},
 		{
 			"character": "",
-			"text": "*Guide leads you toward the stage, where a short, stylish figure is adjusting the knobs on a keyboard.*"
+			"text": "*Guy leads you toward the stage, where a short, stylish figure is adjusting the knobs on a keyboard.*"
 		},
 		{
-			"character": "Guide",
+			"character": "Guy",
 			"text": "Hey, Keebs! Key-Blur! The Mini Midi Master!"
 		},
 		{

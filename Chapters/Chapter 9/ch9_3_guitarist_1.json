@@ -76,7 +76,7 @@
       },
       {
         "id": "I'm friends with the bartender?",
-        "text": "I don't think guide would like you tearing up his bar...",
+        "text": "I don't think Guy would like you tearing up his bar...",
         "function": "end_dialogue"
       },
       {

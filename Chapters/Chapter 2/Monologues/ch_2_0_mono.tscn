@@ -8,3 +8,9 @@ monologue_file = "res://Chapters/Chapter 2/chapter2_0_mono.json"
 has_following_conversation = true
 following_conversation = ExtResource("2_dibw7")
 hide_characters_after = true
+
+[node name="GreyFilter" parent="MonologueUI" index="0"]
+color = Color(0.211765, 0.211765, 0.211765, 0.662745)
+
+[node name="RadialGradient" parent="MonologueUI/Monologue/Control" index="0"]
+modulate = Color(1, 1, 1, 1)

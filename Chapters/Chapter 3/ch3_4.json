@@ -1,19 +1,19 @@
 {
 	"dialogue": [
 		{
-			"character": "Guide",
+			"character": "Guy",
 			"text": "Oh jeez, sorry about them."
 		},
 		{
 			"character": "Drummer",
-			"text": "Hmmm... Give us a moment, would ya guide?"
+			"text": "Hmmm... Give us a moment, would ya Guy?"
 		},
 		{
 			"character": "You",
 			"text": "[shake rate=20.0 level=5 connected=1]*gasp*[/shake]"
 		},
 		{
-			"character": "Guide",
+			"character": "Guy",
 			"text": "They're all yours, Drummer-San!"
 		},
 		{
