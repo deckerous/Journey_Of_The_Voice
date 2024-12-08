@@ -2,8 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://3kgo3ypehagf" path="res://Generic Components/Scenes/area.tscn" id="1_tr6h4"]
 [ext_resource type="Script" path="res://Generic Components/Scripts/bar_area.gd" id="2_gxbyy"]
-
-[ext_resource type="Texture2D" uid="uid://c6s6d1vl8ujkc" path="res://Area Backgrounds/bar_background.png" id="3_lalk0"]
+[ext_resource type="Texture2D" uid="uid://b5sxlvywhtgug" path="res://Area Backgrounds/bar_background.png" id="3_lalk0"]
 [ext_resource type="PackedScene" uid="uid://2r0sape7i2ct" path="res://UI/Scenes/poster.tscn" id="3_lm7aa"]
 
 [node name="BarArea" instance=ExtResource("1_tr6h4")]
@@ -11,16 +10,17 @@ script = ExtResource("2_gxbyy")
 
 [node name="Poster" parent="Interactables" index="0" instance=ExtResource("3_lm7aa")]
 
-[node name="CanvasLayer" parent="." index="5"]
+[node name="CanvasLayer" parent="." index="6"]
 layer = -2
+follow_viewport_enabled = true
 
 [node name="TextureRect" parent="CanvasLayer" index="0"]
+offset_left = -146.0
 offset_top = -126.0
-offset_bottom = 171.231
+offset_right = 146.0
+offset_bottom = 171.0
 texture = ExtResource("3_lalk0")
 expand_mode = 5
-
-[node name="UICanvas" parent="." index="8"]
-layer = 6
+stretch_mode = 6
 
 [editable path="UICanvas/UIMenu"]

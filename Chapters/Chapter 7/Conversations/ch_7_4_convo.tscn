@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://xigytmlkeadk"]
 
 [ext_resource type="PackedScene" uid="uid://cee0f16o8788r" path="res://Generic Components/Scenes/conversation.tscn" id="1_b7rb7"]
-[ext_resource type="PackedScene" uid="uid://bveq2m7cfs22i" path="res://Chapters/Chapter 7/Conversations/ch_7_5_bassist_2_convo.tscn" id="2_nqgxl"]
 [ext_resource type="PackedScene" uid="uid://cym1xw41nikgc" path="res://Characters/Scenes/cy.tscn" id="3_einch"]
+[ext_resource type="PackedScene" uid="uid://o1myb1obems7" path="res://Anxiety Effects/Eye Contact/eye_contact.tscn" id="3_q2pq6"]
 [ext_resource type="PackedScene" uid="uid://c0u1fdrgiinbp" path="res://Characters/Scenes/guide.tscn" id="4_xu34x"]
 
 [node name="Ch_7_4_Convo" instance=ExtResource("1_b7rb7")]
@@ -11,8 +11,8 @@ wants_to_talk = false
 starting_character_alone = false
 starting_convo_character_right = false
 start_conversation_on_load = true
-has_following_conversation = true
-following_conversation = ExtResource("2_nqgxl")
+has_following_minigame = true
+following_minigame = ExtResource("3_q2pq6")
 
 [node name="StartingCharacter" parent="ConversationCharacters" index="0"]
 position = Vector2(816, 324)

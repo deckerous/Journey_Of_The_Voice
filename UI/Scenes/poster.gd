@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var poster_button: TextureButton = $PosterButton
+@onready var poster_button: TextureButton = $CanvasLayer/PosterButton
 @onready var background: ColorRect = $CanvasLayer/Background
 @onready var poster: HBoxContainer = $CanvasLayer/Poster
 @onready var back_button: TextureButton = $CanvasLayer/BackButton
