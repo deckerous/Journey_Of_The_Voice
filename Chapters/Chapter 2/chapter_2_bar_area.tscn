@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cws7m5i6qkna3" path="res://Generic Components/Scenes/bar_area.tscn" id="1_msa61"]
 [ext_resource type="PackedScene" uid="uid://cspkkmyyir4t0" path="res://Chapters/Chapter 2/Monologues/ch_2_0_mono.tscn" id="2_f40xx"]
 [ext_resource type="PackedScene" uid="uid://b3nq0ij2pd5ks" path="res://Characters/Scenes/boss.tscn" id="3_ikbiy"]
-[ext_resource type="PackedScene" uid="uid://c0u1fdrgiinbp" path="res://Characters/Scenes/Guy.tscn" id="4_d87kc"]
+[ext_resource type="PackedScene" uid="uid://c0u1fdrgiinbp" path="res://Characters/Scenes/guide.tscn" id="4_d87kc"]
 
 [node name="Chapter2BarArea" instance=ExtResource("1_msa61")]
 start_with_monologue = true
@@ -14,4 +14,11 @@ position = Vector2(941, 351)
 scale = Vector2(0.525, 0.525)
 
 [node name="Guy" parent="Characters" index="1" instance=ExtResource("4_d87kc")]
-position = Vector2(183, 165)
+position = Vector2(750, 438)
+scale = Vector2(0.821044, 0.821044)
+
+[node name="UICanvas" parent="." index="7"]
+visible = false
+
+[node name="UIMenu" parent="UICanvas" index="0"]
+position = Vector2(0, -1)
