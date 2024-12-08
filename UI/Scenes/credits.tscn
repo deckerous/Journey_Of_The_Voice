@@ -215,7 +215,7 @@ tracks/16/path = NodePath("LastConvo/PlayerContainer/PlayerText:text")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
-"times": PackedFloat32Array(21.7333, 28.5, 30.1667, 36.2001, 37.8, 38.8667, 40.9667, 43.8667),
+"times": PackedFloat32Array(21.7333, 28.7, 30.7, 36.7334, 38.3334, 39.4, 41.5, 44.4),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": ["
@@ -233,13 +233,13 @@ tracks/17/path = NodePath("LastConvo/BossContainer/BossText:text")
 tracks/17/interp = 1
 tracks/17/loop_wrap = true
 tracks/17/keys = {
-"times": PackedFloat32Array(21.7, 23, 26.9, 28.5, 30.1667, 36.2, 37.8, 38.9333, 40.9667, 43.9),
+"times": PackedFloat32Array(21.7, 23, 26.9, 28.7, 30.7, 36.7334, 38.3334, 39.4667, 41.5, 44.4333),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": ["
 ", "Well, look at you. Against all odds, you actually did it... You and your band managed to take the crowd by storm.
 
-", "I have to admit, you impressed me.
+", "[right]I have to admit, you impressed me.[/right]
 ", "
 ", "Don't get too comfortable. This is just the beginning. But you’ve got heart, persistence, and the guts to put yourself out there, even when things get tough.
 And I think that’s something worth investing in.
