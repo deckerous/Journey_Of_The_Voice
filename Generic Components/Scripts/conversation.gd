@@ -26,6 +26,13 @@ var save_path = TEST_SAVE_PATH
 @export var has_following_conversation: bool = false
 @export var following_conversation: PackedScene
 
+@export var following_conversation_path: String
+
+# Controls whether a failure conversation should follow this one after it is done.
+# Something like the Guide saying "Wow you really flubbed that!"
+@export var has_failure_conversation: bool = false
+@export var failure_conversation: PackedScene
+
 @export var has_following_monologue: bool = false
 @export var following_monologue: PackedScene
 
@@ -59,6 +66,7 @@ var start_displaying = false
 
 signal started_conversation
 signal finished_conversation
+signal failed_conversation
 
 signal start_anxiety_effect(anxiety_effect: String)
 
@@ -68,29 +76,29 @@ func _ready():
 	# Connect signal from conversation_characters in order to unhide conversations in area.
 	# Uses lambda function to avoid new function decleration for "forwarding" signal updwards.
 	conversation_characters.started_conversation.connect(func(): self.started_conversation.emit())
-	
+
 	# Connect signal for handling dialogue with click
 	dialogue_click_area.input_event.connect(on_dialogue_click)
-	
+
 	# Show dialogue_ui when starting conversation
 	conversation_characters.started_conversation.connect(conversation_ui.show)
 	# If this is a conversation the player clicked on, wait to load and start dialogue
 	# until characters have been moved to the correct place
 	if wants_to_talk:
 		self.faded_out_characters.connect(load_dialogue)
-	
+
 	conversation_ui.disable_dialogue_input.connect(disable_dialogue_click_collision)
 	conversation_ui.enable_dialogue_input.connect(enable_dialogue_click_collision)
-	
-	# When loaded in to the chapter disable collision for continuing dialogue 
+
+	# When loaded in to the chapter disable collision for continuing dialogue
 	dialogue_collision_shape_2d.disabled = true
-	
+
 	# Connect up the signal that passes on which anxiety effect to play
 	conversation_ui.start_anxiety_effect.connect(instance_anxiety_effect)
-	
+
 	conversation_ui.fade_out_character.connect(fade_out_character)
 	conversation_characters.started_conversation.connect(move_charcters)
-	
+
 	if start_conversation_after_monologue or start_conversation_on_load:
 		conversation_ui.show()
 		conversation_animation_player.play("fade_in")
@@ -125,8 +133,24 @@ func end_dialogue():
 	await conversation_animation_player.animation_finished
 	self.queue_free()
 
-func instance_anxiety_effect(anxiety_effect: String):
-	start_anxiety_effect.emit(anxiety_effect)
+# Simply emits a signal letting the scene know that we failed this conversation
+# Intended to be used for when you want to choose between two different convo
+# scenes following this one depending on whether you failed or not
+# I frikking hate that I'm copy and pasting most of the above function but the
+# alternative is making a new function with a better name and potentially messing
+# up everything that uses end_dialogue
+func fail_dialogue():
+	self.failed_conversation.emit()
+	ended_dialogue = true
+	disable_dialogue_click_collision()
+	#if has_following_monologue or has_following_conversation:
+	conversation_animation_player.play("fade_out")
+	await conversation_animation_player.animation_finished
+	self.queue_free()
+
+
+func instance_anxiety_effect():
+	start_anxiety_effect.emit()
 
 func fade_out_convo():
 	conversation_animation_player.play("fade_out")

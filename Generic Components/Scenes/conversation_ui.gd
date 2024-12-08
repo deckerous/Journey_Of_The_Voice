@@ -31,7 +31,7 @@ signal start_anxiety_effect(anxiety_effect: String)
 signal fade_out_character
 
 func _ready():
-	# When loaded in to the chapter, hide the conversation_ui and collision for continuing dialogue 
+	# When loaded in to the chapter, hide the conversation_ui and collision for continuing dialogue
 	self.visible = false
 	dialogue_choices.visible = false
 	speech_pitch = 1.0
@@ -52,7 +52,7 @@ func _process(delta: float) -> void:
 			speech_pitch = 1.0
 			speech_pitch += randf_range(-0.1, 0.1)
 			GlobalAudio.play_sound_id(speech_wav, "speech_audio", GlobalAudio.Bus.SFX, speech_pitch)
-		
+
 
 func start_dialogue():
 	name_label.text = conversation.dialogue_dictionary["dialogue"][0]["character"]
@@ -65,9 +65,9 @@ func handle_dialogue():
 	character_dialogue.visible = true
 	dialogue_choices.visible = false
 	enable_dialogue_input.emit()
-	
+
 	if dialogue_label.visible_ratio != 1.0:
-		# When the dialogue is still appearing and another 
+		# When the dialogue is still appearing and another
 		# click comes in, skip to being fully visible
 		dialogue_label.visible_ratio = 1.0
 	elif conversation.dialogue_dictionary["dialogue"][dialogue_index].has("function"):
@@ -75,6 +75,12 @@ func handle_dialogue():
 		if conversation.dialogue_dictionary["dialogue"][dialogue_index]["function"] == "end_dialogue":
 			conversation.end_dialogue()
 			return
+
+		elif conversation.dialogue_dictionary["dialogue"][dialogue_index]["function"] == "fail_dialogue":
+			# For when you want to chain a whole new convo scene after failing the current convo
+			conversation.fail_dialogue()
+			return
+
 		elif conversation.dialogue_dictionary["dialogue"][dialogue_index]["function"] == "branch_dialogue":
 			# Provide error message and end dialogue if there aren't options labeled for the dialogue branch
 			if !conversation.dialogue_dictionary["dialogue"][dialogue_index].has("options"):
@@ -91,7 +97,7 @@ func handle_dialogue():
 			self.start_anxiety_effect.emit("eye_contact")
 		elif conversation.dialogue_dictionary["dialogue"][dialogue_index]["function"] == "other_character_leaves":
 			self.fade_out_character.emit()
-		
+
 		update_text_and_name()
 	else:
 		update_text_and_name()
@@ -103,18 +109,18 @@ func update_text_and_name():
 			# Grab the name of the character whose talking. Used for the speech dialogue
 			char_talking = conversation.dialogue_dictionary["dialogue"][dialogue_index]["character"]
 		dialogue_label.text = conversation.dialogue_dictionary["dialogue"][dialogue_index]["text"]
-		
+
 		ConversationArchive.add_to_archive(name_label.text, dialogue_label.text)
 		display_characters()
 		dialogue_index += 1
 
 func branch_dialogue(options: Array):
-	# instantiate the number of buttons to the number of options the text option has, 
+	# instantiate the number of buttons to the number of options the text option has,
 	# and have them return an id based on the text
 	character_dialogue.visible = false
 	dialogue_choices.visible = true
 	disable_dialogue_input.emit()
-	
+
 	for option in options:
 		var choice = dialogue_choice_button.instantiate()
 		choice.text = option

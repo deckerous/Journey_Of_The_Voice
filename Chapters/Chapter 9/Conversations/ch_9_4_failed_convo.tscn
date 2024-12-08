@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1bmgjf0x8l6t"]
+
+[ext_resource type="PackedScene" uid="uid://cee0f16o8788r" path="res://Generic Components/Scenes/conversation.tscn" id="1_1hfho"]
+[ext_resource type="PackedScene" uid="uid://c0u1fdrgiinbp" path="res://Characters/Scenes/guide.tscn" id="2_na3yc"]
+
+[node name="Ch9_4FailedConvo" instance=ExtResource("1_1hfho")]
+dialogue_file = "res://Chapters/Chapter 9/ch9_4_failed.json"
+wants_to_talk = false
+starting_character_alone = false
+starting_convo_character_right = false
+start_conversation_on_load = true
+has_following_conversation = true
+following_conversation_path = "res://Chapters/Chapter 9/Conversations/ch_9_3_guitarist_1_convo.tscn"
+
+[node name="Guide" parent="ConversationCharacters/StartingCharacter" index="2" instance=ExtResource("2_na3yc")]
+position = Vector2(179, 184)
