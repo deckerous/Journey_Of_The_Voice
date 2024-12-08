@@ -1,7 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://c0u1fdrgiinbp"]
+[gd_scene load_steps=3 format=3 uid="uid://5ylb4d0474qn"]
 
 [ext_resource type="PackedScene" uid="uid://cfcuodb5inj3o" path="res://Generic Components/Scenes/character.tscn" id="1_mu2oh"]
-[ext_resource type="Texture2D" uid="uid://c2dhp83ojt0mf" path="res://Characters/Assets/guy.png" id="2_x7a6o"]
+[ext_resource type="Texture2D" uid="uid://dts8xv1jwjgbb" path="res://Characters/Assets/guy.png" id="2_x7a6o"]
 
 [node name="Guy" instance=ExtResource("1_mu2oh")]
 
