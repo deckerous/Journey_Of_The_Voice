@@ -5,7 +5,7 @@ signal succeeded_game
 
 @onready var cam = $Camera2D
 @onready var timer = $Timer
-@onready var the_b_gs: Button = $TheBGs
+@onready var the_b_gs: ColorRect = $TheBGs
 
 #TODO: Attach eye contact minigame music
 @onready var minigame_music = load("res://Audio/songs/wave/wave-theme.wav")

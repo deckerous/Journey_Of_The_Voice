@@ -8,7 +8,7 @@ extends Node2D
 @export var game_background = false
 
 #TODO: change to self_talk music
-@onready var the_b_gs: Button = $TheBGs
+@onready var the_b_gs: ColorRect = $TheBGs
 @onready var minigame_music = load("res://Audio/songs/wave/wave-theme.wav")
 @onready var word_scene = "res://Anxiety Effects/Self Talk/interactable_word.tscn"
 @onready var centerX = get_viewport_rect().size.x / 2

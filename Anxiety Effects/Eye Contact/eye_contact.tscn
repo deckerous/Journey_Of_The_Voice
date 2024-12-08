@@ -1,28 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://o1myb1obems7"]
+[gd_scene load_steps=4 format=3 uid="uid://o1myb1obems7"]
 
 [ext_resource type="Script" path="res://Anxiety Effects/Eye Contact/eye_contact.gd" id="1_ryo6m"]
-[ext_resource type="Texture2D" uid="uid://bqxefnolumkj" path="res://Images/UI/solidblack.png" id="2_y4ibk"]
 [ext_resource type="Texture2D" uid="uid://dts8xv1jwjgbb" path="res://Characters/Assets/guy.png" id="3_jk3ty"]
 [ext_resource type="PackedScene" uid="uid://b561r3n76f56b" path="res://UI/Scenes/game_tutorial_eye_contact.tscn" id="3_mb0kl"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6b3yb"]
-bg_color = Color(1, 1, 1, 0.72549)
 
 [node name="EyeContact" type="Node2D"]
 script = ExtResource("1_ryo6m")
 
-[node name="TheBGs" type="Button" parent="."]
+[node name="TheBGs" type="ColorRect" parent="."]
 visible = false
 modulate = Color(1, 1, 1, 0.784314)
 z_as_relative = false
 offset_right = 2000.0
 offset_bottom = 2000.0
 mouse_filter = 1
-theme_override_styles/normal = SubResource("StyleBoxFlat_6b3yb")
-icon = ExtResource("2_y4ibk")
-flat = true
-icon_alignment = 1
-expand_icon = true
+color = Color(0, 0, 0, 0.784314)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 324)

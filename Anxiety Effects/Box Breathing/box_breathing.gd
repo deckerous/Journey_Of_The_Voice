@@ -10,7 +10,7 @@ extends Node2D
 @onready var bb_animation_player = $BBAnimationPlayer
 @onready var breathing_sound = load("res://Audio/songs/breathe/breathe-theme.wav")
 @onready var game_tutorial = $GameTutorial
-@onready var the_b_gs: Button = $TheBGs
+@onready var the_b_gs: ColorRect = $TheBGs
 
 
 signal mini_game_complete

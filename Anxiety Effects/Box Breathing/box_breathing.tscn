@@ -1,13 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://bfv6gxyo50n2o"]
+[gd_scene load_steps=14 format=3 uid="uid://bfv6gxyo50n2o"]
 
 [ext_resource type="Script" path="res://Anxiety Effects/Box Breathing/box_breathing.gd" id="1_thdss"]
 [ext_resource type="Script" path="res://Anxiety Effects/Box Breathing/draw_circle.gd" id="1_vvqqq"]
-[ext_resource type="Texture2D" uid="uid://bqxefnolumkj" path="res://Images/UI/solidblack.png" id="2_cjdeo"]
 [ext_resource type="Script" path="res://Anxiety Effects/Box Breathing/hit_marker.gd" id="2_t1i2k"]
 [ext_resource type="PackedScene" uid="uid://b45cj1t6je1f2" path="res://UI/Scenes/game_tutorial.tscn" id="4_ecpk2"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e2nyr"]
-bg_color = Color(1, 1, 1, 0.72549)
 
 [sub_resource type="Animation" id="Animation_p8twe"]
 length = 0.001
@@ -194,7 +190,7 @@ modulate = Color(1, 1, 1, 0)
 z_index = 7
 script = ExtResource("1_thdss")
 
-[node name="TheBGs" type="Button" parent="."]
+[node name="TheBGs" type="ColorRect" parent="."]
 visible = false
 modulate = Color(1, 1, 1, 0.784314)
 z_as_relative = false
@@ -210,11 +206,7 @@ offset_bottom = 1676.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
-theme_override_styles/normal = SubResource("StyleBoxFlat_e2nyr")
-icon = ExtResource("2_cjdeo")
-flat = true
-icon_alignment = 1
-expand_icon = true
+color = Color(0, 0, 0, 0.784314)
 
 [node name="Button" type="Node2D" parent="."]
 z_index = 1
