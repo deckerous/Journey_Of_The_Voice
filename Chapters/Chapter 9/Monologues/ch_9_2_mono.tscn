@@ -1,10 +1,10 @@
 [gd_scene load_steps=3 format=3 uid="uid://d3p575hagfw45"]
 
 [ext_resource type="PackedScene" uid="uid://cpcee510pqlxr" path="res://Generic Components/Scenes/monologue.tscn" id="1_d2deo"]
-[ext_resource type="PackedScene" uid="uid://d2o6m483yhdt6" path="res://Chapters/Chapter 9/Conversations/f_ch_9_3_guitarist_1_convo.tscn" id="2_l255m"]
+[ext_resource type="PackedScene" uid="uid://b6wxh507d86j2" path="res://Chapters/Chapter 9/Conversations/ch_9_3_guitarist_1_convo.tscn" id="2_3x0kg"]
 
 [node name="Ch9_2Mono" instance=ExtResource("1_d2deo")]
 monologue_file = "res://Chapters/Chapter 9/ch9_2_monologue.json"
 has_following_conversation = true
-following_conversation = ExtResource("2_l255m")
+following_conversation = ExtResource("2_3x0kg")
 hide_characters_after = true
