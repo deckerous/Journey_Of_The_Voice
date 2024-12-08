@@ -31,6 +31,10 @@
         "text": "..."
       },
       {
+        "character": "Donna",
+        "text": "...?"
+      },
+      {
         "function": "fail_dialogue"
       },
       {
@@ -89,10 +93,14 @@
       {
         "id": "I'm friends with the bartender?",
         "character": "You",
-        "text": "I don't think guide would like you tearing up his bar..."
+        "text": "I don't think guide would like you sitting on his bar..."
       },
       {
-        "function": "end_dialogue"
+        "character": "Donna",
+        "text": "Well excuuuse me princess"
+      },
+      {
+        "function": "fail_dialogue"
       },
       {
         "id": "...",
@@ -123,11 +131,16 @@
         ]
       },
       {
-        "id": "Because we want to be famous.",
+        "id": "Because we want to tear up every stage!",
+        "character": "You",
         "text": "We want to play on the biggest stages...just like you?"
       },
       {
-        "function": "end_dialogue"
+        "character": "Donna",
+        "text": "I don't know, sounds a little vain to me..."
+      },
+      {
+        "function": "fail_dialogue"
       },
       {
         "id": "...",
