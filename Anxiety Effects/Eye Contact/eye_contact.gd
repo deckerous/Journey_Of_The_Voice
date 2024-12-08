@@ -5,14 +5,18 @@ signal succeeded_game
 
 @onready var cam = $Camera2D
 @onready var timer = $Timer
+@onready var the_b_gs: ColorRect = $TheBGs
 
 #TODO: Attach eye contact minigame music
 @onready var minigame_music = load("res://Audio/songs/wave/wave-theme.wav")
+@onready var character: Sprite2D = $Character
 
 @export var music_turndown_id: String
 @export var duration = 10
 @export var speed = 75
 @export var leniency = 200
+@export var show_tutorial = false
+@export var game_background = false
 var base_speed
 
 var distract_dir: Vector2
@@ -20,6 +24,10 @@ var initial_pos: Vector2
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if game_background:
+		the_b_gs.visible = true
+		character.visible = true
+		
 	self.position = Vector2(0, 0)
 	initial_pos = cam.position
 	
@@ -32,8 +40,9 @@ func _ready() -> void:
 	
 	var has_done_box_breathing = Player.save_file.get_value("Player", "has_done_eye_contact") == null
 	if !has_done_box_breathing:
-		$GameTutorial.visible = false
-		_on_tutorial_end()
+		if !show_tutorial:
+			$GameTutorial.visible = false
+			_on_tutorial_end()
 	else:
 		# Check now exists for later instantiations of box breathing
 		print("adding check")

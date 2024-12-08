@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://e2x7gep6lcdt"]
+[gd_scene load_steps=8 format=3 uid="uid://e2x7gep6lcdt"]
 
 [ext_resource type="Script" path="res://Anxiety Effects/Self Talk/interactable_word.gd" id="1_nxtku"]
+[ext_resource type="Theme" uid="uid://v3tjxnq7o5ny" path="res://Themes/notebook_text.tres" id="2_eko3v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wp74p"]
 size = Vector2(145, 35)
@@ -64,14 +65,19 @@ modulate = Color(1, 1, 1, 0)
 script = ExtResource("1_nxtku")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-modulate = Color(0, 0, 0, 1)
 offset_left = -73.0
 offset_top = -18.0
 offset_right = 73.0
 offset_bottom = 17.0
+scale = Vector2(1.00096, 1)
 mouse_filter = 2
+theme = ExtResource("2_eko3v")
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
 bbcode_enabled = true
 text = "[center][shake rate=20.0 level=1.0 connected=1]I don't belong here............[/shake][/center]"
+fit_content = true
 scroll_active = false
 
 [node name="Area2D" type="Area2D" parent="."]

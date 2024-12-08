@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var node = $Vignette
-@onready var anim = $AnimationPlayer
+@onready var animation_player = $AnimationPlayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
