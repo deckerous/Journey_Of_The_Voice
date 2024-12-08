@@ -1,59 +1,59 @@
 {
-    "dialogue": [
-      {
-        "id": "Start",
-        "character": "Boss",
-        "text": "Well, look at you. Against all odds, you actually did it."
-      },
-      {
-        "character": "Boss",
-        "text": "You and your band managed to take the crowd by storm."
-      },
-      {
-        "text": "I have to admit, you impressed me."
-      },
-      {
-        "character": "You",
-        "text": "Thank you... It means a lot, coming from you."
-      },
-      {
-        "character": "Boss",
-        "text": "Don't get too comfortable. This is just the beginning."
-      },
-      {
-        "text": "But you’ve got heart, persistence, and the guts to put yourself out there, even when things get tough."
-      },
-      {
-        "text": "And I think that’s something worth investing in."
-      },
-      {
-        "character": "You",
-        "text": "Wait... are you saying..."
-      },
-      {
-        "character": "Boss",
-        "text": "Yes..."
-      },
-      {
-        "text": "I'm offering you a record contract. Your band has earned it."
-      },
-      {
-        "character": "You",
-        "text": "[rainbow freq=1.0 sat=0.8 val=0.8]We're in. Absolutely, we're in![/rainbow]"
-      },
-      {
-        "character": "Boss",
-        "text": "Good. I expect nothing less than everything you've got."
-      },
-      {
-        "text": "We're aiming for the biggest stages, the brightest lights."
-      },
-      {
-        "text": "Don't let me down."
-      },
-      {
-        "function": "end_dialogue"
-      }
-    ]
+	"dialogue": [
+	  {
+		"id": "Start",
+		"character": "Boss",
+		"text": "Well, look at you. Against all odds, you actually did it."
+	  },
+	  {
+		"character": "Boss",
+		"text": "You and your band managed to take the crowd by storm."
+	  },
+	  {
+		"text": "I have to admit, you impressed me."
+	  },
+	  {
+		"character": "You",
+		"text": "Thank you... It means a lot, coming from you."
+	  },
+	  {
+		"character": "Boss",
+		"text": "Don't get too comfortable. This is just the beginning."
+	  },
+	  {
+		"text": "But you’ve got heart, persistence, and the guts to put yourself out there, even when things get tough."
+	  },
+	  {
+		"text": "And I think that’s something worth investing in."
+	  },
+	  {
+		"character": "You",
+		"text": "Wait... are you saying..."
+	  },
+	  {
+		"character": "Boss",
+		"text": "Yes..."
+	  },
+	  {
+		"text": "I'm offering you a record contract. Your band has earned it."
+	  },
+	  {
+		"character": "You",
+		"text": "[rainbow freq=1.0 sat=0.8 val=0.8]We're in. Absolutely, we're in![/rainbow]"
+	  },
+	  {
+		"character": "Boss",
+		"text": "Good. I expect nothing less than everything you've got."
+	  },
+	  {
+		"text": "We're aiming for the biggest stages, the brightest lights."
+	  },
+	  {
+		"text": "Don't let me down."
+	  },
+	  {
+		"function": "end_dialogue"
+	  }
+	]
   }
   

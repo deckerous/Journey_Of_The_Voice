@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 Transition="*res://Generic Components/Scenes/transition.tscn"
 GlobalAudio="*res://Generic Components/Scenes/global_audio.tscn"
 Player="*res://Globals/Scenes/player.tscn"
+ConversationArchive="*res://Globals/Scenes/conversation_archive.tscn"
 
 [display]
 

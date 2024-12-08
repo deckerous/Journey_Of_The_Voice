@@ -1,7 +1,7 @@
 [gd_resource type="Theme" load_steps=3 format=3 uid="uid://8kiqv6kckpfr"]
 
-[ext_resource type="FontFile" uid="uid://b88fqf4a68rq3" path="res://Fonts/karmina.ttf" id="1_d2yk4"]
-[ext_resource type="FontFile" uid="uid://cgvesp3vjh4op" path="res://Fonts/skippy.ttf" id="1_p8hhx"]
+[ext_resource type="FontFile" uid="uid://15qjrt2nl0p" path="res://Fonts/karmina.ttf" id="1_d2yk4"]
+[ext_resource type="FontFile" uid="uid://dkh0u252q1anj" path="res://Fonts/skippy.ttf" id="1_p8hhx"]
 
 [resource]
 default_font = ExtResource("1_d2yk4")

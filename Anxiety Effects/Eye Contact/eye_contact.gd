@@ -13,6 +13,7 @@ signal succeeded_game
 @export var duration = 10
 @export var speed = 75
 @export var leniency = 200
+@export var show_tutorial = false
 var base_speed
 
 var distract_dir: Vector2
@@ -32,8 +33,9 @@ func _ready() -> void:
 	
 	var has_done_box_breathing = Player.save_file.get_value("Player", "has_done_eye_contact") == null
 	if !has_done_box_breathing:
-		$GameTutorial.visible = false
-		_on_tutorial_end()
+		if !show_tutorial:
+			$GameTutorial.visible = false
+			_on_tutorial_end()
 	else:
 		# Check now exists for later instantiations of box breathing
 		print("adding check")
