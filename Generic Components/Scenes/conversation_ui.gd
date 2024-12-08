@@ -94,10 +94,10 @@ func handle_dialogue():
 			self.start_anxiety_effect.emit("eye_contact")
 		elif conversation.dialogue_dictionary["dialogue"][dialogue_index]["function"] == "other_character_leaves":
 			self.fade_out_character.emit()
-		dialogue_label.text = conversation.dialogue_dictionary["dialogue"][dialogue_index]["text"]
-		ConversationArchive.add_to_archive(name_label.text, dialogue_label.text)
-		display_characters()
-		dialogue_index += 1
+			dialogue_label.text = conversation.dialogue_dictionary["dialogue"][dialogue_index]["text"]
+			ConversationArchive.add_to_archive(name_label.text, dialogue_label.text)
+			display_characters()
+			dialogue_index += 1
 	else:
 		dialogue_label.text = conversation.dialogue_dictionary["dialogue"][dialogue_index]["text"]
 
