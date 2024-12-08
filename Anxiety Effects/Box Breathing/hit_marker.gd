@@ -14,6 +14,7 @@ func _ready() -> void:
 	$AnimationPlayer.speed_scale = speed
 	$"../Button".buttonDown.connect(_on_buttonDown)
 	$"../Button".buttonReleased.connect(_on_buttonRelease)
+	$"../RichTextLabel".text = "[center]Click and hold to inhale[/center]"
 
 # Uses two arcs to create a hollow circle instead of a sprite for maximum pixels
 func _draw() -> void:
@@ -29,7 +30,15 @@ func _draw() -> void:
 	
 # When button held down, start animation & make self visible
 func _on_buttonDown() -> void:
-	$"../RichTextLabel".text = "[center]Breathing intensifies[/center]"
+	match(num_successes%4):
+		0:
+			$"../RichTextLabel".text = "[center]Inhaling...[/center]"
+		1:
+			$"../RichTextLabel".text = "[center]Holding...[/center]"
+		2:
+			$"../RichTextLabel".text = "[center]Exhaling...[/center]"
+		3:
+			$"../RichTextLabel".text = "[center]Holding...[/center]"
 	visible = true
 	$"AnimationPlayer".queue("scale_down")
 	
@@ -37,12 +46,20 @@ func _on_buttonDown() -> void:
 func _on_buttonRelease() -> void:
 	if abs(scale.x - 1.0) < 0.3:
 		# success state
-		$"../RichTextLabel".text = "[center]Success![/center]"
 		num_successes += 1
+		match(num_successes%4):
+			1:
+				$"../RichTextLabel".text = "[center]Now hold your breath[/center]"
+			2:
+				$"../RichTextLabel".text = "[center]Exhale[/center]"
+			3:
+				$"../RichTextLabel".text = "[center]Hold your breath[/center]"
+			4:
+				$"../RichTextLabel".text = "[center]Inhale again[/center]"
 		if num_successes == success_number:
 			success_number_reached.emit()
 	else:
 		# failure state
-		$"../RichTextLabel".text = "[center]Failure[/center]"
+		$"../RichTextLabel".text = "[center]Try again...[/center]"
 	$"AnimationPlayer".play("disappear")
 	

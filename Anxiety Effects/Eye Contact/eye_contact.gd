@@ -5,9 +5,11 @@ signal succeeded_game
 
 @onready var cam = $Camera2D
 @onready var timer = $Timer
+@onready var the_b_gs: ColorRect = $TheBGs
 
 #TODO: Attach eye contact minigame music
 @onready var minigame_music = load("res://Audio/songs/wave/wave-theme.wav")
+@onready var character: Sprite2D = $Character
 
 @onready var successful_convo: PackedScene = load("res://Chapters/Chapter 7/Conversations/ch_7_5_bassist_2_successful_convo.tscn")
 @onready var failed_convo: PackedScene = load("res://Chapters/Chapter 7/Conversations/ch_7_5_bassist_2_failed_convo.tscn")
@@ -19,6 +21,8 @@ signal succeeded_game
 @export var duration = 10
 @export var speed = 75
 @export var leniency = 200
+@export var show_tutorial = false
+@export var game_background = false
 var base_speed
 
 @export var max_zoom: Vector2 = Vector2(1.3, 1.3)
@@ -31,6 +35,10 @@ signal mini_game_complete
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if game_background:
+		the_b_gs.visible = true
+		character.visible = true
+		
 	self.position = Vector2(0, 0)
 	initial_pos = cam.position
 	

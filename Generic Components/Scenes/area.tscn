@@ -130,6 +130,6 @@ libraries = {
 }
 
 [node name="UICanvas" type="CanvasLayer" parent="."]
-layer = 4
+layer = 6
 
 [node name="UIMenu" parent="UICanvas" instance=ExtResource("2_ut1x2")]

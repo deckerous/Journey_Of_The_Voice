@@ -58,6 +58,7 @@ func start_dialogue():
 	name_label.text = conversation.dialogue_dictionary["dialogue"][0]["character"]
 	char_talking = conversation.dialogue_dictionary["dialogue"][0]["character"]
 	dialogue_label.text = conversation.dialogue_dictionary["dialogue"][0]["text"]
+	ConversationArchive.add_to_archive(name_label.text, dialogue_label.text)
 	display_characters()
 
 func handle_dialogue():
@@ -82,7 +83,6 @@ func handle_dialogue():
 				return
 			# Continue to dialogue branching
 			branch_dialogue(conversation.dialogue_dictionary["dialogue"][dialogue_index]["options"])
-		
 		elif conversation.dialogue_dictionary["dialogue"][dialogue_index]["function"] == "start_vignette":
 			self.start_anxiety_effect.emit("vignette")
 		elif conversation.dialogue_dictionary["dialogue"][dialogue_index]["function"] == "start_self_talk":
@@ -103,6 +103,8 @@ func update_text_and_name():
 			# Grab the name of the character whose talking. Used for the speech dialogue
 			char_talking = conversation.dialogue_dictionary["dialogue"][dialogue_index]["character"]
 		dialogue_label.text = conversation.dialogue_dictionary["dialogue"][dialogue_index]["text"]
+		
+		ConversationArchive.add_to_archive(name_label.text, dialogue_label.text)
 		display_characters()
 		dialogue_index += 1
 
@@ -122,6 +124,7 @@ func branch_dialogue(options: Array):
 func change_dialogue_index(option: String):
 	for i in range(len(conversation.dialogue_dictionary["dialogue"])):
 		if conversation.dialogue_dictionary["dialogue"][i].has("id") and conversation.dialogue_dictionary["dialogue"][i]["id"] == option:
+			ConversationArchive.add_to_archive("You", option)
 			dialogue_index = i
 			for child in dialogue_choices.get_children():
 				child.queue_free()

@@ -2,10 +2,13 @@ extends Node2D
 
 @export var music_turndown_id: String = ""
 @export var num_to_win: int
+@export var show_tutorial = false
 @export var has_following_conversation: bool
 @export var following_conversation: PackedScene
+@export var game_background = false
 
 #TODO: change to self_talk music
+@onready var the_b_gs: ColorRect = $TheBGs
 @onready var minigame_music = load("res://Audio/songs/wave/wave-theme.wav")
 @onready var word_scene = "res://Anxiety Effects/Self Talk/interactable_word.tscn"
 @onready var centerX = get_viewport_rect().size.x / 2
@@ -21,6 +24,8 @@ const possible_phrases = ["I don't belong here......", "What did I just say?", "
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if game_background:
+		the_b_gs.visible = true
 	position = Vector2(centerX, centerY)
 	
 	# tweening manually to avoid the await
@@ -32,13 +37,13 @@ func _ready() -> void:
 	
 	var has_done_self_talk = Player.save_file.get_value("player", "has_done_self_talk") == null
 	if !has_done_self_talk:
-		$GameTutorial.visible = false
-		_on_game_tutorial_finished_tutorial()
-	else:
-		# Check now exists for later instantiations of self_talk
-		Player.add_check("has_done_self_talk")
+		if !show_tutorial:
+			$GameTutorial.visible = false
+			_on_game_tutorial_finished_tutorial()
 
 func _end_self_talk():
+	# Check now exists for later instantiations of self_talk
+	Player.add_check("has_done_self_talk")
 	self.mini_game_complete.emit()
 	GlobalAudio.tween_from_id(music_turndown_id, -15.0, 1.0)
 	self.queue_free()

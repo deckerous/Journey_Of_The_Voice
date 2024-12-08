@@ -3,7 +3,7 @@ extends Node2D
 const SAVE_PATH = "user://save.cfg"
 const TEST_SAVE_PATH = "res://Globals/save.cfg"
 
-@onready var save_path = TEST_SAVE_PATH
+var save_path = TEST_SAVE_PATH
 
 @onready var start_button: Button = $"CanvasLayer/VBoxContainer/VBoxContainer/CenterContainer - Start/StartButton"
 @onready var continue_button: Button = $"CanvasLayer/VBoxContainer/VBoxContainer/CenterContainer - Load/ContinueButton"
@@ -37,7 +37,7 @@ func _ready():
 	stream.volume_db = -15
 
 func check_for_save():
-	Player.load_save()
+	Player.load_save(save_path)
 	
 	# If there exists a save file, retrieve the chapter for the load button
 	# to change the scene to when pressed and connect the new game button
@@ -69,6 +69,7 @@ func overwrite_confirmed():
 	if dir.file_exists(save_path):
 		dir.remove(save_path)
 		create_save()
+		GlobalAudio.stop_stream_from_id("beep-theme")
 		get_tree().change_scene_to_packed(chapters.get(1))
 	else:
 		print("ERROR: Save file doesn't exist when trying to overwrite with New Game")
