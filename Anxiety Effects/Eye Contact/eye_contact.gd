@@ -18,7 +18,6 @@ signal succeeded_game
 @export var has_following_conversation: bool
 @onready var following_conversation: PackedScene
 
-@export var music_turndown_id: String
 @export var duration = 10
 @export var speed = 75
 @export var leniency = 200
@@ -32,6 +31,8 @@ var base_speed
 var distract_dir: Vector2
 var initial_pos: Vector2
 
+var curr_music
+
 signal mini_game_complete
 
 # Called when the node enters the scene tree for the first time.
@@ -43,16 +44,16 @@ func _ready() -> void:
 	self.position = Vector2(0, 0)
 	initial_pos = cam.position
 	
-	GlobalAudio.tween_from_id(music_turndown_id, -80, 1.0)
-	GlobalAudio.play_sound_id(minigame_music, "eye_contact", GlobalAudio.Bus.MUSIC)
-	GlobalAudio.get_stream_from_id("eye_contact").volume_db = -80
+	curr_music = GlobalAudio.get_music_stream().stream
+	var music: AudioStreamPlayer = GlobalAudio.play_sound_id(minigame_music, "eye_contact", GlobalAudio.Bus.MUSIC)
+	music.volume_db = -80
 	GlobalAudio.tween_from_id("eye_contact", -15, 1.0)
 	
 	set_physics_process(false)
 	
 	var has_done_eye_contact = Player.save_file.get_value("player", "has_done_eye_contact") == null
 	if !has_done_eye_contact:
-		$GameTutorial.visible = false
+		$GameTutorial2.visible = false
 		_on_tutorial_end()
 
 func _physics_process(delta: float) -> void:
@@ -83,8 +84,10 @@ func generate_new_distract_dir():
 
 func cleanup():
 	mini_game_complete.emit()
-	GlobalAudio.tween_from_id("eye_contact", -80, 1.0)
-	GlobalAudio.tween_from_id(music_turndown_id, -20, 1.0)
+	var player = GlobalAudio.play_sound_id(curr_music, "music", GlobalAudio.Bus.MUSIC)
+	player.volume_db = -80
+	GlobalAudio.stop_stream_from_id("eye_contact")
+	GlobalAudio.tween_from_id("music", -15, 1.0)
 	self.queue_free()
 
 func _on_timer_timeout() -> void:
