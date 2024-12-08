@@ -1,9 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://cpyhwsgsi0o23"]
+[gd_scene load_steps=4 format=3 uid="uid://cpyhwsgsi0o23"]
 
 [ext_resource type="PackedScene" uid="uid://cp4p4iaomvynx" path="res://Generic Components/Scenes/chapter.tscn" id="1_jh1f0"]
+[ext_resource type="PackedScene" uid="uid://cs7sh6528i1lh" path="res://Chapters/Chapter 10/chapter_10_bedroom_area.tscn" id="2_ur072"]
+[ext_resource type="PackedScene" uid="uid://mhwd0wcot3ad" path="res://Chapters/Chapter 10/Monologues/ch_10_0_mono.tscn" id="3_fn2ky"]
 
-[node name="Chapter10" instance=ExtResource("1_jh1f0")]
+[node name="Chapter10" node_paths=PackedStringArray("area") instance=ExtResource("1_jh1f0")]
 chapter_number = 10
+area = NodePath("Chapter10BedroomArea")
+
+[node name="Chapter10BedroomArea" parent="." index="0" instance=ExtResource("2_ur072")]
+start_with_monologue = true
+starting_monologue = ExtResource("3_fn2ky")
 
 [node name="Chapter" parent="CanvasLayer/ColorRect" index="0"]
 text = "[center]Chapter 10"

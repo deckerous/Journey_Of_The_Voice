@@ -6,7 +6,7 @@
         "text": "Great timing!"
       },
       {
-        "text": "I'll take another"
+        "text": "I'll take another one of these"
       },
       {
         "text": "Light ice this time.",
@@ -19,16 +19,27 @@
       },
       {
         "id": "*take the empty glass*",
-        "text": "I'll let the bartender know...",
-        "function": "end_dialogue"
+        "character": "You",
+        "text": "I'll let the bartender know..."
+      },
+      {
+        "function": "fail_dialogue"
       },
       {
         "id": "...",
-        "text": "...",
-        "function": "end_dialogue"
+        "character": "You",
+        "text": "..."
+      },
+      {
+        "character": "Donna",
+        "text": "...?"
+      },
+      {
+        "function": "fail_dialogue"
       },
       {
         "id": "Actually...",
+        "character": "You",
         "text": "I'm not part of the staff..."
       },
       {
@@ -44,21 +55,26 @@
         "options": [
           "*take the empty glass*",
           "...",
-          "Actually..."
+          "Well..."
         ]
       },
       {
         "id": "*take the empty glass*",
-        "text": "I'll let the bartender know...",
+        "text": "I'll let the bartender know..."
+      },
+      {
         "function": "end_dialogue"
       },
       {
         "id": "...",
-        "text": "...",
+        "text": "..."
+      },
+      {
         "function": "end_dialogue"
       },
       {
-        "id": "Actually...",
+        "id": "Well...",
+        "character": "You",
         "text": "I am putting together a group of incredible musicians."
       },
       {
@@ -76,20 +92,29 @@
       },
       {
         "id": "I'm friends with the bartender?",
-        "text": "I don't think Guy would like you tearing up his bar...",
-        "function": "end_dialogue"
+        "character": "You",
+        "text": "I don't think Guy would like you sitting on his bar..."
+      },
+      {
+        "character": "Donna",
+        "text": "Well excuuuse me princess"
+      },
+      {
+        "function": "fail_dialogue"
       },
       {
         "id": "...",
-        "text": "...",
+        "text": "..."
+      },
+      {
         "function": "end_dialogue"
       },
       {
         "id": "I've been on a journey",
+        "character": "You",
         "text": "I'm building something real..."
       },
       {
-        "character": "You",
         "text": "A band that's about overcoming challenges and being there for each other."
       },
       {
@@ -106,21 +131,30 @@
         ]
       },
       {
-        "id": "Because we want to be famous.",
-        "text": "We want to play on the biggest stages...just like you?",
-        "function": "end_dialogue"
+        "id": "Because we want to tear up every stage!",
+        "character": "You",
+        "text": "We want to play on the biggest stages... just like you?"
+      },
+      {
+        "character": "Donna",
+        "text": "I don't know, sounds a little vain to me..."
+      },
+      {
+        "function": "fail_dialogue"
       },
       {
         "id": "...",
-        "text": "...",
+        "text": "..."
+      },
+      {
         "function": "end_dialogue"
       },
       {
-        "id": "Because we won't give up.",
+        "id": "Because we won't give up!",
+        "character": "You",
         "text": "We've all faced our own struggles, but together, we support each other."
       },
       {
-        "character": "You",
         "text": "Because no matter how hard it gets, we keep moving forward."
       },
       {

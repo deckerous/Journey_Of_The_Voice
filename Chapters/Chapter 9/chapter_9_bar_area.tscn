@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://bn8xyx58hq2uo"]
+
+[ext_resource type="PackedScene" uid="uid://cws7m5i6qkna3" path="res://Generic Components/Scenes/bar_area.tscn" id="1_fp02h"]
+[ext_resource type="PackedScene" uid="uid://b6i7fp7cug14e" path="res://Chapters/Chapter 9/Monologues/ch_9_0_mono.tscn" id="2_fukgy"]
+[ext_resource type="PackedScene" uid="uid://oiqru1q6tm14" path="res://Characters/Scenes/donna.tscn" id="3_cqg1l"]
+[ext_resource type="PackedScene" uid="uid://c0u1fdrgiinbp" path="res://Characters/Scenes/guide.tscn" id="4_skmb4"]
+
+[node name="Chapter9BarArea" instance=ExtResource("1_fp02h")]
+start_with_monologue = true
+starting_monologue = ExtResource("2_fukgy")
+
+[node name="Donna" parent="Characters" index="0" instance=ExtResource("3_cqg1l")]
+position = Vector2(687, 373)
+scale = Vector2(0.7, 0.7)
+
+[node name="Sprite2D" parent="Characters/Donna" index="0"]
+position = Vector2(107.143, 12.8571)
+flip_h = true
+
+[node name="Guide" parent="Characters" index="1" instance=ExtResource("4_skmb4")]
+position = Vector2(179, 184)
+scale = Vector2(0.9, 0.9)
+
+[node name="UIMenu" parent="UICanvas" index="0"]
+visible = false
+
+[editable path="Characters/Donna"]
