@@ -10,6 +10,8 @@
       },
       {
         "text": "Light ice this time.",
+      },
+      {
         "function": "branch_dialogue",
         "options": [
           "*take the empty glass*",
@@ -50,7 +52,9 @@
         "text": "A fan?"
       },
       {
-        "text": "Don't tell me you want to jam...",
+        "text": "Don't tell me you want to jam..."
+      },
+      {
         "function": "branch_dialogue",
         "options": [
           "*take the empty glass*",
