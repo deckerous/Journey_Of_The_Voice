@@ -5,8 +5,10 @@ extends Node2D
 @export var show_tutorial = false
 @export var has_following_conversation: bool
 @export var following_conversation: PackedScene
+@export var game_background = false
 
 #TODO: change to self_talk music
+@onready var the_b_gs: Button = $TheBGs
 @onready var minigame_music = load("res://Audio/songs/wave/wave-theme.wav")
 @onready var word_scene = "res://Anxiety Effects/Self Talk/interactable_word.tscn"
 @onready var centerX = get_viewport_rect().size.x / 2
@@ -22,6 +24,8 @@ const possible_phrases = ["I don't belong here......", "What did I just say?", "
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	if game_background:
+		the_b_gs.visible = true
 	position = Vector2(centerX, centerY)
 	
 	# tweening manually to avoid the await

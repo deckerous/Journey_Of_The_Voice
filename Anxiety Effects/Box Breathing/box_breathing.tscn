@@ -1,9 +1,13 @@
-[gd_scene load_steps=14 format=3 uid="uid://bfv6gxyo50n2o"]
+[gd_scene load_steps=16 format=3 uid="uid://bfv6gxyo50n2o"]
 
 [ext_resource type="Script" path="res://Anxiety Effects/Box Breathing/box_breathing.gd" id="1_thdss"]
 [ext_resource type="Script" path="res://Anxiety Effects/Box Breathing/draw_circle.gd" id="1_vvqqq"]
+[ext_resource type="Texture2D" uid="uid://bqxefnolumkj" path="res://Images/UI/solidblack.png" id="2_cjdeo"]
 [ext_resource type="Script" path="res://Anxiety Effects/Box Breathing/hit_marker.gd" id="2_t1i2k"]
 [ext_resource type="PackedScene" uid="uid://b45cj1t6je1f2" path="res://UI/Scenes/game_tutorial.tscn" id="4_ecpk2"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e2nyr"]
+bg_color = Color(1, 1, 1, 0.72549)
 
 [sub_resource type="Animation" id="Animation_p8twe"]
 length = 0.001
@@ -190,7 +194,30 @@ modulate = Color(1, 1, 1, 0)
 z_index = 7
 script = ExtResource("1_thdss")
 
+[node name="TheBGs" type="Button" parent="."]
+visible = false
+modulate = Color(1, 1, 1, 0.784314)
+z_as_relative = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 1424.0
+offset_bottom = 1676.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme_override_styles/normal = SubResource("StyleBoxFlat_e2nyr")
+icon = ExtResource("2_cjdeo")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
 [node name="Button" type="Node2D" parent="."]
+z_index = 1
 script = ExtResource("1_vvqqq")
 
 [node name="Hit Marker" type="Node2D" parent="."]
@@ -203,6 +230,7 @@ libraries = {
 }
 
 [node name="Interactable" type="Node2D" parent="."]
+z_index = 1
 
 [node name="Area2D" type="Area2D" parent="Interactable"]
 monitorable = false
@@ -212,7 +240,7 @@ shape = SubResource("CircleShape2D_1owfr")
 debug_color = Color(0, 0.6, 0.701961, 0.368627)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-z_index = -1
+z_index = 1
 offset_left = -80.0
 offset_top = -80.0
 offset_right = 80.0
@@ -240,6 +268,7 @@ mouse_filter = 2
 color = Color(0, 0, 0, 0.6)
 
 [node name="GameTutorial" parent="." instance=ExtResource("4_ecpk2")]
+z_index = 5
 
 [connection signal="input_event" from="Interactable/Area2D" to="Button" method="interactable_input"]
 [connection signal="mouse_exited" from="Interactable/Area2D" to="Button" method="_on_interactable_mouse_exited"]
