@@ -47,6 +47,7 @@ script = ExtResource("1_iq0ty")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
+follow_viewport_enabled = true
 
 [node name="PosterButton" type="TextureButton" parent="CanvasLayer"]
 offset_left = 825.0

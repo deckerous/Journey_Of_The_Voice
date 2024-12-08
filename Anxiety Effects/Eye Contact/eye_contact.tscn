@@ -1,11 +1,12 @@
 [gd_scene load_steps=4 format=3 uid="uid://o1myb1obems7"]
 
 [ext_resource type="Script" path="res://Anxiety Effects/Eye Contact/eye_contact.gd" id="1_ryo6m"]
-[ext_resource type="Texture2D" uid="uid://dts8xv1jwjgbb" path="res://Characters/Assets/guy.png" id="3_jk3ty"]
+[ext_resource type="Texture2D" uid="uid://dotmro4tlsd0h" path="res://Characters/Assets/cy.png" id="2_pl15a"]
 [ext_resource type="PackedScene" uid="uid://b561r3n76f56b" path="res://UI/Scenes/game_tutorial_eye_contact.tscn" id="3_mb0kl"]
 
 [node name="EyeContact" type="Node2D"]
 script = ExtResource("1_ryo6m")
+has_following_conversation = true
 
 [node name="TheBGs" type="ColorRect" parent="."]
 visible = false
@@ -20,10 +21,10 @@ color = Color(0, 0, 0, 0.784314)
 position = Vector2(576, 324)
 
 [node name="Character" type="Sprite2D" parent="."]
-visible = false
 position = Vector2(570, 326)
-scale = Vector2(0.358333, 0.344444)
-texture = ExtResource("3_jk3ty")
+scale = Vector2(0.25, 0.24)
+texture = ExtResource("2_pl15a")
+flip_h = true
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true

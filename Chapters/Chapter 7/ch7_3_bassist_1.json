@@ -10,7 +10,8 @@
       },
       {
         "character": "You",
-        "text": "Wha...what?"
+        "text": "Wha...what?",
+        "function": "start_eye_contact"
       },
       {
         "character": "Cy",
