@@ -11,6 +11,9 @@ dialogue_file = "res://Chapters/Chapter 3/ch3_5_drummer_2.json"
 starting_convo_character_right = false
 end_of_chapter = true
 
+[node name="ConversationCharacters" parent="." index="0"]
+position = Vector2(-25, 43)
+
 [node name="StartingCharacter" parent="ConversationCharacters" index="0"]
 position = Vector2(617, 181)
 scale = Vector2(4.36612, 4.36612)

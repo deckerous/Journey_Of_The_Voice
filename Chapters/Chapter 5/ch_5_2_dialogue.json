@@ -1,6 +1,6 @@
 {
-    "dialogue": [
-        {
+	"dialogue": [
+		{
 			"id": "Start",
 			"character": "Guy",
 			"text": "There you are!"
@@ -37,5 +37,5 @@
 		{
 			"function": "end_dialogue"
 		}
-    ]
+	]
 }

@@ -15,4 +15,5 @@ end_of_chapter = true
 position = Vector2(304, 202)
 
 [node name="Guy" parent="ConversationCharacters/StartingCharacter" index="2" instance=ExtResource("2_t36t0")]
-position = Vector2(280, 400)
+position = Vector2(280, 264)
+scale = Vector2(1.58481, 1.58481)

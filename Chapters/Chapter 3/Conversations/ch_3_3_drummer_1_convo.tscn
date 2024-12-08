@@ -6,6 +6,8 @@
 
 [node name="Ch_3_3_Drummer_1_Convo" instance=ExtResource("1_xkegs")]
 dialogue_file = "res://Chapters/Chapter 3/ch3_3_drummer_1.json"
+starting_character_alone = false
+starting_convo_character_right = false
 start_conversation_after_monologue = true
 has_following_conversation = true
 following_conversation = ExtResource("2_vrqal")
