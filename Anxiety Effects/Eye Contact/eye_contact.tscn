@@ -12,6 +12,7 @@ bg_color = Color(1, 1, 1, 0.72549)
 script = ExtResource("1_ryo6m")
 
 [node name="TheBGs" type="Button" parent="."]
+visible = false
 modulate = Color(1, 1, 1, 0.784314)
 z_as_relative = false
 offset_right = 2000.0
