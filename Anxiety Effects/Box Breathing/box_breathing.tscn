@@ -1,9 +1,10 @@
-[gd_scene load_steps=14 format=3 uid="uid://bfv6gxyo50n2o"]
+[gd_scene load_steps=15 format=3 uid="uid://bfv6gxyo50n2o"]
 
 [ext_resource type="Script" path="res://Anxiety Effects/Box Breathing/box_breathing.gd" id="1_thdss"]
 [ext_resource type="Script" path="res://Anxiety Effects/Box Breathing/draw_circle.gd" id="1_vvqqq"]
 [ext_resource type="Script" path="res://Anxiety Effects/Box Breathing/hit_marker.gd" id="2_t1i2k"]
 [ext_resource type="PackedScene" uid="uid://b45cj1t6je1f2" path="res://UI/Scenes/game_tutorial.tscn" id="4_ecpk2"]
+[ext_resource type="Theme" uid="uid://v3tjxnq7o5ny" path="res://Themes/notebook_text.tres" id="4_x27jt"]
 
 [sub_resource type="Animation" id="Animation_p8twe"]
 length = 0.001
@@ -233,12 +234,19 @@ debug_color = Color(0, 0.6, 0.701961, 0.368627)
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 z_index = 1
+clip_contents = false
 offset_left = -80.0
 offset_top = -80.0
 offset_right = 80.0
 offset_bottom = -40.0
 mouse_filter = 2
+theme = ExtResource("4_x27jt")
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 14
 bbcode_enabled = true
+fit_content = true
+autowrap_mode = 0
 
 [node name="BBAnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
