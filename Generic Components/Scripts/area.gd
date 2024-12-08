@@ -97,7 +97,7 @@ func go_to_next_convo(conversation: PackedScene):
 func go_to_next_minigame(minigame: PackedScene):
 	var inst = minigame.instantiate()
 	minigames.add_child(inst)
-	if curr_effect != null:
+	if len(anxiety_effect_root.get_children()) > 0:
 		remove_anxiety_effect()
 	
 	if inst.has_following_conversation:
@@ -112,13 +112,13 @@ func instance_anxiety_effect(anxiety_effect: String):
 	var anxiety_effect_scene = anxiety_effects.get(anxiety_effect)
 	var inst = anxiety_effect_scene.instantiate()
 	anxiety_effect_root.add_child(inst)
-	curr_effect = inst
 
 func remove_anxiety_effect():
-	if curr_effect.has_node("AnimationPlayer"):
-		curr_effect.animation_player.play("fade_out")
-		await curr_effect.animation_player.animation_finished
-	curr_effect.queue_free()
+	for effect in anxiety_effect_root.get_children():
+		if effect.has_node("AnimationPlayer"):
+			effect.animation_player.play("fade_out")
+			await effect.animation_player.animation_finished
+		effect.queue_free()
 
 func remove_from_available_conversations(convo: Conversation):
 	var index = available_conversations.find(convo)
