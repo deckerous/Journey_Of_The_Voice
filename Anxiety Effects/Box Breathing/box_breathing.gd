@@ -4,11 +4,14 @@ extends Node2D
 @export var following_conversation: PackedScene
 
 @export var show_tutorial = false
+@export var game_background = false
 
 @onready var hit_marker = $"Hit Marker"
 @onready var bb_animation_player = $BBAnimationPlayer
 @onready var breathing_sound = load("res://Audio/songs/breathe/breathe-theme.wav")
 @onready var game_tutorial = $GameTutorial
+@onready var the_b_gs: ColorRect = $TheBGs
+
 
 signal mini_game_complete
 signal box_breathing_started
@@ -24,6 +27,10 @@ func _ready() -> void:
 		# Check now exists for later instantiations of box breathing
 		Player.add_check("has_done_box_breathing")
 	
+	if game_background:
+		the_b_gs.visible = true
+	
+	# Flag which forces the tutorial, used for access from notebook
 	if show_tutorial:
 		game_tutorial.visible = true
 	

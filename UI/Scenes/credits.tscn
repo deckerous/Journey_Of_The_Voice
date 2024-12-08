@@ -3,14 +3,14 @@
 [ext_resource type="Theme" uid="uid://mrmpkimvequ6" path="res://Themes/credits_header.tres" id="1_85xxj"]
 [ext_resource type="Script" path="res://UI/Scenes/credits.gd" id="1_irc42"]
 [ext_resource type="Theme" uid="uid://dlpa8luwucobq" path="res://Themes/credits_names.tres" id="2_7g37u"]
-[ext_resource type="Texture2D" uid="uid://dugrtpcnh62pw" path="res://Characters/Assets/BoTB.png" id="2_t6lod"]
-[ext_resource type="Texture2D" uid="uid://d0ympmwoj7ert" path="res://Characters/Assets/player.png" id="3_18r1b"]
-[ext_resource type="Texture2D" uid="uid://brpvxb8yuecu1" path="res://Characters/Assets/kenshiro.png" id="4_kopb1"]
-[ext_resource type="Texture2D" uid="uid://sb882ds1atog" path="res://Characters/Assets/keebs.png" id="5_5jlwd"]
-[ext_resource type="Texture2D" uid="uid://btsdgagbeo4qn" path="res://Characters/Assets/cy.png" id="5_dg47a"]
-[ext_resource type="Texture2D" uid="uid://c8wtxywpni3cg" path="res://Characters/Assets/donna.png" id="7_l2e6r"]
-[ext_resource type="Texture2D" uid="uid://b1sd5mtvti45y" path="res://Characters/Assets/guy_legs.png" id="8_3hcp7"]
-[ext_resource type="Texture2D" uid="uid://ctdl3fsajkq2n" path="res://Characters/Assets/boss.png" id="9_s0ywd"]
+[ext_resource type="Texture2D" uid="uid://bvqoyfjl6bsgv" path="res://Characters/Assets/BoTB.png" id="2_t6lod"]
+[ext_resource type="Texture2D" uid="uid://b5glcn74ddows" path="res://Characters/Assets/player.png" id="3_18r1b"]
+[ext_resource type="Texture2D" uid="uid://i2bhn5qixatq" path="res://Characters/Assets/kenshiro.png" id="4_kopb1"]
+[ext_resource type="Texture2D" uid="uid://c8h8s2c1uj1lm" path="res://Characters/Assets/keebs.png" id="5_5jlwd"]
+[ext_resource type="Texture2D" uid="uid://dotmro4tlsd0h" path="res://Characters/Assets/cy.png" id="5_dg47a"]
+[ext_resource type="Texture2D" uid="uid://iw1fcgn13127" path="res://Characters/Assets/donna.png" id="7_l2e6r"]
+[ext_resource type="Texture2D" uid="uid://bvfn31ah6rmf7" path="res://Characters/Assets/guy_legs.png" id="8_3hcp7"]
+[ext_resource type="Texture2D" uid="uid://c2luojliucird" path="res://Characters/Assets/boss.png" id="9_s0ywd"]
 [ext_resource type="Theme" uid="uid://8kiqv6kckpfr" path="res://Themes/JoTV.tres" id="11_g3gd3"]
 
 [sub_resource type="Animation" id="Animation_2ycib"]
@@ -434,13 +434,13 @@ texture = ExtResource("5_dg47a")
 [node name="Donna" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(944, 328)
-scale = Vector2(0.369, 0.369)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("7_l2e6r")
 
 [node name="Guy" type="Sprite2D" parent="."]
 modulate = Color(1, 1, 1, 0)
 position = Vector2(184, 344)
-scale = Vector2(0.255, 0.255)
+scale = Vector2(0.24, 0.24)
 texture = ExtResource("8_3hcp7")
 
 [node name="LastConvo" type="Node2D" parent="."]
@@ -497,8 +497,9 @@ scale = Vector2(0.291063, 0.291063)
 texture = ExtResource("9_s0ywd")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
+offset_top = 314.445
 offset_right = 1152.0
-offset_bottom = 2592.0
+offset_bottom = 2906.45
 size_flags_vertical = 0
 size_flags_stretch_ratio = 0.0
 metadata/_edit_lock_ = true

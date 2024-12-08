@@ -16,9 +16,6 @@ extends Node2D
 @onready var bio_5: RichTextLabel = %bio5
 
 @onready var exit_button: TextureButton = %ExitButton
-const BOX_BREATHING = preload("res://Anxiety Effects/Box Breathing/box_breathing.tscn")
-const EYE_CONTACT = preload("res://Anxiety Effects/Eye Contact/eye_contact.tscn")
-const SELF_TALK = preload("res://Anxiety Effects/Self Talk/self_talk_minigame.tscn")
 
 @onready var button_r: TextureButton = %ButtonR
 @onready var button_l: TextureButton = %ButtonL
@@ -26,6 +23,13 @@ const SELF_TALK = preload("res://Anxiety Effects/Self Talk/self_talk_minigame.ts
 @onready var page_1: Control = %Page1
 @onready var page_flip_sound_effect: AudioStreamWAV = load("res://Audio/sound-effects/page-flip-2.wav")
 @onready var notebook_json_path: String = "res://UI/JSON/notebook_text.json"
+
+const BOX_BREATHING = preload("res://Anxiety Effects/Box Breathing/box_breathing.tscn")
+const EYE_CONTACT = preload("res://Anxiety Effects/Eye Contact/eye_contact.tscn")
+const SELF_TALK = preload("res://Anxiety Effects/Self Talk/self_talk_minigame.tscn")
+
+@export var showAll = false
+
 var game_tut
 
 signal exit_pressed
@@ -64,14 +68,24 @@ func _process(_delta: float) -> void:
 	pass
 	
 func update_page():
-	if (Player.save_file.get_value("player", "chapter") != null):
-		bio_2.visible = Player.save_file.get_value("player", "chapter") > 3
-		bio_3.visible = Player.save_file.get_value("player", "chapter") > 5
-		bio_4.visible = Player.save_file.get_value("player", "chapter") > 7
-		bio_5.visible = Player.save_file.get_value("player", "chapter") > 9
-		tutorial_1_container.visible = Player.save_file.get_value("player", "has_done_box_breathing") != null
-		tutorial_2_container.visible = Player.save_file.get_value("player", "has_done_self_talk") != null
-		tutorial_3_container.visible = Player.save_file.get_value("player", "has_done_eye_contact") != null
+	if (showAll == false):
+		if (Player.save_file.get_value("player", "chapter") != null):
+			bio_2.visible = Player.save_file.get_value("player", "chapter") > 3
+			bio_3.visible = Player.save_file.get_value("player", "chapter") > 5
+			bio_4.visible = Player.save_file.get_value("player", "chapter") > 7
+			bio_5.visible = Player.save_file.get_value("player", "chapter") > 9
+			tutorial_1_container.visible = Player.save_file.get_value("player", "has_done_box_breathing") != null
+			tutorial_2_container.visible = Player.save_file.get_value("player", "has_done_self_talk") != null
+			tutorial_3_container.visible = Player.save_file.get_value("player", "has_done_eye_contact") != null
+	else:
+		bio_2.visible = true
+		bio_3.visible = true
+		bio_4.visible = true
+		bio_5.visible = true
+		tutorial_1_container.visible = true
+		tutorial_2_container.visible = true
+		tutorial_3_container.visible = true
+		
 	match pg:
 		1:
 			page_1.visible = true
@@ -114,20 +128,20 @@ func _on_exit_button_mouse_exited() -> void:
 
 func _on_box_breathing_pressed() -> void:
 	game_tut = BOX_BREATHING.instantiate();
-	game_tut.mini_game_complete.connect(_on_mini_game_complete)
+	game_tut.show_tutorial = true
+	game_tut.game_background = true
 	add_child(game_tut)
 
 
 func _on_eye_contact_pressed() -> void:
 	game_tut = EYE_CONTACT.instantiate()
-	game_tut.mini_game_complete.connect(_on_mini_game_complete)
-	add_child(EYE_CONTACT.instantiate())
+	game_tut.show_tutorial = true
+	game_tut.game_background = true
+	add_child(game_tut)
 
 
 func _on_self_talk_pressed() -> void:
 	game_tut = SELF_TALK.instantiate()
-	game_tut.mini_game_complete.connect(_on_mini_game_complete)
+	game_tut.show_tutorial = true
+	game_tut.game_background = true
 	add_child(game_tut)
-
-func _on_mini_game_complete() -> void:
-	game_tut.queue_free()

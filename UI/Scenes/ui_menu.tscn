@@ -1,10 +1,10 @@
 [gd_scene load_steps=7 format=3 uid="uid://d2chvft3tiotq"]
 
-[ext_resource type="Texture2D" uid="uid://b17n7riy1t31d" path="res://Images/UI/pause_icon.png" id="1_b2kth"]
+[ext_resource type="Texture2D" uid="uid://id7ypbgp172b" path="res://Images/UI/pause_icon.png" id="1_b2kth"]
 [ext_resource type="Script" path="res://UI/Scenes/ui_menu.gd" id="1_v1jh8"]
-[ext_resource type="Texture2D" uid="uid://ntf41bdbvbhg" path="res://Images/UI/notebook_icon.png" id="2_kh1iv"]
+[ext_resource type="Texture2D" uid="uid://4dg70r5qepy6" path="res://Images/UI/notebook_icon.png" id="2_kh1iv"]
 [ext_resource type="PackedScene" uid="uid://c7366i15i2pl3" path="res://UI/Scenes/notebook.tscn" id="2_orhmw"]
-[ext_resource type="Texture2D" uid="uid://d1utlyqcpef0b" path="res://UI/Assets/archive.png" id="2_s1ogt"]
+[ext_resource type="Texture2D" uid="uid://c2gdksw0jjae" path="res://UI/Assets/archive.png" id="2_s1ogt"]
 [ext_resource type="PackedScene" uid="uid://bqk024x3by5ou" path="res://UI/Scenes/settings.tscn" id="5_w5oyq"]
 
 [node name="UIMenu" type="Node2D"]
@@ -45,6 +45,7 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 1
 
 [node name="Notebook" parent="Notebook_Wrapper" instance=ExtResource("2_orhmw")]
 

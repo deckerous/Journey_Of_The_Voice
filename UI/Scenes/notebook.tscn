@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://4dg70r5qepy6" path="res://Images/UI/notebook_icon.png" id="6_d7wvd"]
 
 [node name="Notebook" type="Node2D"]
+process_mode = 3
 script = ExtResource("1_pjd0k")
 
 [node name="Notebook" type="BoxContainer" parent="."]
