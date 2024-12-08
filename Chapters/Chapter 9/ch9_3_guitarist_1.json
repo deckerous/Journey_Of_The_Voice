@@ -31,7 +31,7 @@
         "text": "..."
       },
       {
-        "function": "end_dialogue"
+        "function": "fail_dialogue"
       },
       {
         "id": "Actually...",

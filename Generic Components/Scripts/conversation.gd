@@ -24,6 +24,11 @@ var save_path = TEST_SAVE_PATH
 @export var has_following_conversation: bool = false
 @export var following_conversation: PackedScene
 
+# Controls whether a failure conversation should follow this one after it is done.
+# Something like the Guide saying "Wow you really flubbed that!"
+@export var has_failure_conversation: bool = false
+@export var failure_conversation: PackedScene
+
 @export var has_following_monologue: bool = false
 @export var following_monologue: PackedScene
 
@@ -57,6 +62,7 @@ var start_displaying = false
 
 signal started_conversation
 signal finished_conversation
+signal failed_conversation
 
 signal start_anxiety_effect
 
@@ -114,6 +120,7 @@ func load_dialogue():
 		dialogue_collision_shape_2d.disabled = false
 
 func end_dialogue():
+	print("entered end_dialogue")
 	ended_dialogue = true
 	disable_dialogue_click_collision()
 	#if has_following_monologue or has_following_conversation:
@@ -121,6 +128,22 @@ func end_dialogue():
 	conversation_animation_player.play("fade_out")
 	await conversation_animation_player.animation_finished
 	self.queue_free()
+
+# Simply emits a signal letting the scene know that we failed this conversation
+# Intended to be used for when you want to choose between two different convo
+# scenes following this one depending on whether you failed or not
+# I frikking hate that I'm copy and pasting most of the above function but the
+# alternative is making a new function with a better name and potentially messing
+# up everything that uses end_dialogue
+func fail_dialogue():
+	self.failed_conversation.emit()
+	ended_dialogue = true
+	disable_dialogue_click_collision()
+	#if has_following_monologue or has_following_conversation:
+	conversation_animation_player.play("fade_out")
+	await conversation_animation_player.animation_finished
+	self.queue_free()
+
 
 func instance_anxiety_effect():
 	start_anxiety_effect.emit()

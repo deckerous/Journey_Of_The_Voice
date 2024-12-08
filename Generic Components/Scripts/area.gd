@@ -58,6 +58,7 @@ func go_to_next_monologue(monologue: PackedScene):
 		inst.finished_monologue.connect(go_to_next_convo.bind(inst.following_conversation))
 
 func go_to_next_convo(conversation: PackedScene):
+	print("entered go_to_next_convo")
 	var inst = conversation.instantiate()
 	self.add_child(inst)
 	inst.start_anxiety_effect.connect(instance_anxiety_effect)
@@ -69,10 +70,15 @@ func go_to_next_convo(conversation: PackedScene):
 	if inst.has_following_minigame and inst.following_minigame != null:
 		# When this conversation is finsihed, instantiate next provided minigame
 		inst.finished_conversation.connect(go_to_next_minigame.bind(inst.following_minigame))
-		
+	
 	elif inst.has_following_conversation and inst.following_conversation != null:
 		# When this conversation is finished, instantiate next provided conversation
 		inst.finished_conversation.connect(go_to_next_convo.bind(inst.following_conversation))
+		
+		# Also connect the failure conversation if there is one
+		if inst.has_failure_conversation and inst.failure_conversation != null:
+			# When this conversation is finished, instantiate the following failure convo if there is one
+			inst.failed_conversation.connect(go_to_next_convo.bind(inst.failure_conversation))
 		
 	elif inst.has_following_monologue and inst.following_monologue != null:
 		# When this conversation is finished, instantiate next provided monologue

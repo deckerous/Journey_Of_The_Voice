@@ -76,6 +76,10 @@ func handle_dialogue():
 		
 		if conversation.dialogue_dictionary["dialogue"][dialogue_index]["function"] == "end_dialogue":
 			conversation.end_dialogue()
+	
+		elif conversation.dialogue_dictionary["dialogue"][dialogue_index]["function"] == "fail_dialogue":
+			# For when you want to chain a whole new convo scene after failing the current convo
+			conversation.fail_dialogue()
 		elif conversation.dialogue_dictionary["dialogue"][dialogue_index]["function"] == "branch_dialogue":
 			# Provide error message and end dialogue if there aren't options labeled for the dialogue branch
 			
