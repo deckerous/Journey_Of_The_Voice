@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bhf4eu5tjw47e"]
+
+[ext_resource type="PackedScene" uid="uid://cee0f16o8788r" path="res://Generic Components/Scenes/conversation.tscn" id="1_qc0bu"]
+[ext_resource type="PackedScene" uid="uid://bnxvcgy3n31mx" path="res://Anxiety Effects/Self Talk/self_talk_minigame.tscn" id="2_ju2lr"]
+[ext_resource type="PackedScene" uid="uid://gpq84yf1hx6v" path="res://Characters/Scenes/keebs.tscn" id="3_w476e"]
+
+[node name="Ch_5_3_Keebs_1_Convo" instance=ExtResource("1_qc0bu")]
+dialogue_file = "res://Chapters/Chapter 5/ch_5_3_Keebs_1.json"
+wants_to_talk = false
+starting_character_alone = false
+starting_convo_character_right = false
+end_anxiety_effect = true
+has_following_minigame = true
+following_minigame = ExtResource("2_ju2lr")
+
+[node name="StartingCharacter" parent="ConversationCharacters" index="0"]
+position = Vector2(593, 365)
+
+[node name="Keebs" parent="ConversationCharacters/StartingCharacter" index="2" instance=ExtResource("3_w476e")]
+scale = Vector2(0.201054, 0.201054)
