@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://5ylb4d0474qn" path="res://Characters/Scenes/guy.tscn" id="3_og506"]
 [ext_resource type="PackedScene" uid="uid://pie5vurh8eoo" path="res://Characters/Scenes/drummer.tscn" id="4_egn52"]
 [ext_resource type="PackedScene" uid="uid://biplfy6u8ldfl" path="res://Characters/Scenes/drummer-instrument.tscn" id="4_fprkc"]
-[ext_resource type="PackedScene" uid="uid://3iuv2p5c8kel" path="res://UI/Scenes/poster.tscn" id="6_ng5la"]
+[ext_resource type="PackedScene" uid="uid://2r0sape7i2ct" path="res://UI/Scenes/poster.tscn" id="6_ng5la"]
 
 [node name="Chapter3BarArea" instance=ExtResource("1_ogb4d")]
 position = Vector2(100, 15)
@@ -50,8 +50,5 @@ offset_bottom = 171.0
 mouse_filter = 2
 texture = ExtResource("2_j52db")
 expand_mode = 5
-
-[node name="UICanvas" parent="." index="8"]
-visible = false
 
 [editable path="ConversationsRoot/Ch3_5_Drummer_2"]
