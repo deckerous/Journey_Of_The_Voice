@@ -10,12 +10,14 @@ start_with_monologue = true
 starting_monologue = ExtResource("2_fukgy")
 
 [node name="Donna" parent="Characters" index="0" instance=ExtResource("3_cqg1l")]
-position = Vector2(512, 260)
-scale = Vector2(0.7, 0.7)
+position = Vector2(672, 322)
+rotation = -0.178024
+scale = Vector2(0.75, 0.75)
 
 [node name="Sprite2D" parent="Characters/Donna" index="0"]
 position = Vector2(51.4285, 57.1429)
 scale = Vector2(0.203976, 0.203976)
+flip_h = true
 
 [node name="Guide" parent="Characters" index="1" instance=ExtResource("4_skmb4")]
 position = Vector2(166, 474)
