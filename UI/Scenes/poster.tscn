@@ -48,6 +48,7 @@ script = ExtResource("1_iq0ty")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
+visible = false
 follow_viewport_enabled = true
 
 [node name="PosterButton" type="TextureButton" parent="CanvasLayer"]

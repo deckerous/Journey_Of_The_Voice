@@ -1,0 +1,57 @@
+[gd_scene load_steps=9 format=3 uid="uid://eco14jt7bdh0"]
+
+[ext_resource type="PackedScene" uid="uid://cee0f16o8788r" path="res://Generic Components/Scenes/conversation.tscn" id="1_gb43r"]
+[ext_resource type="PackedScene" uid="uid://gbuftqctlfwa" path="res://Chapters/Chapter 11/Conversations/ch_11_4_boss_convo_1.tscn" id="2_1m6nf"]
+[ext_resource type="PackedScene" uid="uid://b3nq0ij2pd5ks" path="res://Characters/Scenes/boss.tscn" id="3_kobxe"]
+[ext_resource type="PackedScene" uid="uid://cym1xw41nikgc" path="res://Characters/Scenes/cy.tscn" id="4_0pp2j"]
+[ext_resource type="PackedScene" uid="uid://oiqru1q6tm14" path="res://Characters/Scenes/donna.tscn" id="5_g7b2n"]
+[ext_resource type="PackedScene" uid="uid://pie5vurh8eoo" path="res://Characters/Scenes/drummer.tscn" id="6_ev0dc"]
+[ext_resource type="PackedScene" uid="uid://c0u1fdrgiinbp" path="res://Characters/Scenes/guy.tscn" id="7_yswwg"]
+[ext_resource type="PackedScene" uid="uid://gpq84yf1hx6v" path="res://Characters/Scenes/keebs.tscn" id="8_d11ac"]
+
+[node name="Ch_11_3_Convo" instance=ExtResource("1_gb43r")]
+dialogue_file = "res://Chapters/Chapter 11/ch11_3_dialogue.json"
+wants_to_talk = false
+starting_character_alone = false
+starting_convo_character_right = false
+has_following_conversation = true
+following_conversation = ExtResource("2_1m6nf")
+
+[node name="Boss" parent="ConversationCharacters/StartingCharacter" index="2" instance=ExtResource("3_kobxe")]
+position = Vector2(562, 302)
+scale = Vector2(0.42, 0.42)
+
+[node name="Sprite2D" parent="ConversationCharacters/StartingCharacter/Boss" index="0"]
+position = Vector2(-21.9782, 15.3846)
+flip_h = true
+
+[node name="Keebs" parent="ConversationCharacters/StartingCharacter" index="3" instance=ExtResource("8_d11ac")]
+position = Vector2(662, 427)
+scale = Vector2(0.181752, 0.181752)
+
+[node name="Sprite2D" parent="ConversationCharacters/StartingCharacter/Keebs" index="0"]
+position = Vector2(40, -6.66667)
+flip_h = true
+
+[node name="Cy" parent="ConversationCharacters/StartingCharacter" index="4" instance=ExtResource("4_0pp2j")]
+position = Vector2(874, 343)
+scale = Vector2(0.239398, 0.239398)
+
+[node name="Donna" parent="ConversationCharacters/StartingCharacter" index="5" instance=ExtResource("5_g7b2n")]
+position = Vector2(916, 379)
+
+[node name="Sprite2D" parent="ConversationCharacters/StartingCharacter/Donna" index="0"]
+position = Vector2(-585, -97)
+flip_h = true
+
+[node name="Drummer" parent="ConversationCharacters/StartingCharacter" index="6" instance=ExtResource("6_ev0dc")]
+position = Vector2(1057, 368)
+scale = Vector2(0.324636, 0.324636)
+
+[node name="Guy" parent="ConversationCharacters/StartingCharacter" index="7" instance=ExtResource("7_yswwg")]
+position = Vector2(121, 450)
+scale = Vector2(0.66, 0.66)
+
+[editable path="ConversationCharacters/StartingCharacter/Boss"]
+[editable path="ConversationCharacters/StartingCharacter/Keebs"]
+[editable path="ConversationCharacters/StartingCharacter/Donna"]

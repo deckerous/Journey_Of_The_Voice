@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://b4j01ipykx1xm"]
+
+[ext_resource type="PackedScene" uid="uid://cee0f16o8788r" path="res://Generic Components/Scenes/conversation.tscn" id="1_2eoow"]
+[ext_resource type="PackedScene" uid="uid://bq6pqb3dkyckx" path="res://Chapters/Chapter 11/Minigames/ch_11_eye_contact.tscn" id="2_p7y1n"]
+[ext_resource type="PackedScene" uid="uid://cxqoi8x7j4adk" path="res://Chapters/Chapter 11/Conversations/ch_11_failed_convo.tscn" id="2_ydcc7"]
+[ext_resource type="PackedScene" uid="uid://b3nq0ij2pd5ks" path="res://Characters/Scenes/boss.tscn" id="3_8y4r8"]
+
+[node name="Ch_11_5_Boss_Convo_2" instance=ExtResource("1_2eoow")]
+dialogue_file = "res://Chapters/Chapter 11/ch11_5_boss_2.json"
+wants_to_talk = false
+starting_character_alone = false
+starting_convo_character_right = false
+end_anxiety_effect = true
+has_failure_conversation = true
+failure_conversation = ExtResource("2_ydcc7")
+has_following_minigame = true
+following_minigame = ExtResource("2_p7y1n")
+
+[node name="Boss" parent="ConversationCharacters/StartingCharacter" index="2" instance=ExtResource("3_8y4r8")]
+position = Vector2(576, 456)
+scale = Vector2(1.39657, 1.39657)

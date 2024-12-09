@@ -1,0 +1,97 @@
+{
+  "dialogue": [
+      {
+          "id": "Start",
+          "character": "You",
+          "text": "*I've got this... Stay calm. Breathe.*"
+      },
+      {
+          "character": "Boss",
+          "text": "So, tell me. What makes you think you're ready to take the stage and win tonight?"
+      },
+      {
+        "function": "branch_dialogue",
+        "options": [
+            "We've been through so much as a band",
+            "Spaghetti Dumpster",
+            "..."
+        ]
+      },
+
+      
+      {
+          "id": "...",
+          "character": "You",
+          "text": "..."
+      },
+      {
+          "character": "Boss",
+          "text": "Still speechless, I see. If you want the big stage, you better learn to speak up."
+      },
+      {
+          "function": "fail_dialogue"
+      },
+
+
+      {
+          "id": "Spaghetti Dumpster",
+          "character": "You",
+          "text": "I'm am a huge fan of your old band Spaghetti Dumpster."
+      },
+      {
+          "character": "Boss",
+          "text": "Old? Choose your next words wisely, fanboy."
+      },
+      {
+          "text": "This industry is not always kind."
+      },
+      {
+          "text": "You can have all the heart in the world and still get no where."   
+      },
+      {
+          "text": "So, what is it that sets your band apart?"
+      },
+      {
+          "text": "Why should I care about you more than any other group that plays tonight?",
+          "function": "start_eye_contact"
+      },
+      {
+          "character": "You",
+          "text": "*He is so intimidating, he can see right through me...*"
+      },
+      {
+          "function": "end_dialogue"
+      },
+
+
+      {
+          "id": "We've been through so much as a band",
+          "character": "You",
+          "text": "We've faced setbacks, had doubts, and moments that nearly broke us. But we won't quit."
+      },
+      {
+          "character": "Boss",
+          "text": "What are you a self-help group that plays music?"
+      },
+      {
+          "text": "This industry is not always kind."
+      },
+      {
+          "text": "You can have all the heart in the world and still get no where."   
+      },
+      {
+          "text": "So, what is it that sets your band apart?"
+      },
+      {
+          "text": "Why should I care about you more than any other group that plays tonight?",
+          "function": "start_eye_contact"
+      },
+      {
+          "character": "You",
+          "text": "*He is so intimidating, he can see right through me...*"
+      },
+      {
+          "function": "end_dialogue"
+      }
+  ]
+}

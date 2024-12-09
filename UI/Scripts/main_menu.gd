@@ -39,6 +39,13 @@ func _ready():
 func check_for_save():
 	Player.load_save(save_path)
 	
+	# When the player makes it to the end of the game wipe their save file.
+	if Player.save_file.get_value("player", "chapter") == 12:
+		var dir = DirAccess.open("res://")
+		if dir.file_exists(save_path):
+			dir.remove(save_path)
+			Player.save_file = ConfigFile.new()
+	
 	# If there exists a save file, retrieve the chapter for the load button
 	# to change the scene to when pressed and connect the new game button
 	# to check if the user wants to overwrite their save.

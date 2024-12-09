@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bq6pqb3dkyckx"]
+
+[ext_resource type="PackedScene" uid="uid://o1myb1obems7" path="res://Anxiety Effects/Eye Contact/eye_contact.tscn" id="1_eim0u"]
+[ext_resource type="Texture2D" uid="uid://c2luojliucird" path="res://Characters/Assets/boss.png" id="2_toe0m"]
+
+[node name="Ch11EyeContact" instance=ExtResource("1_eim0u")]
+successful_convo_path = "res://Chapters/Chapter 11/Conversations/ch_11_6_boss_convo_3.tscn"
+failed_convo_path = "res://Chapters/Chapter 11/Conversations/ch_11_failed_convo.tscn"
+
+[node name="Character" parent="." index="2"]
+position = Vector2(576, 514)
+scale = Vector2(0.462585, 0.444082)
+texture = ExtResource("2_toe0m")
+flip_h = false

@@ -91,28 +91,31 @@ func handle_dialogue():
 			branch_dialogue(conversation.dialogue_dictionary["dialogue"][dialogue_index]["options"])
 		elif conversation.dialogue_dictionary["dialogue"][dialogue_index]["function"] == "start_vignette":
 			self.start_anxiety_effect.emit("vignette")
+			update_text_and_name()
 		elif conversation.dialogue_dictionary["dialogue"][dialogue_index]["function"] == "start_self_talk":
 			self.start_anxiety_effect.emit("self_talk")
+			update_text_and_name()
 		elif conversation.dialogue_dictionary["dialogue"][dialogue_index]["function"] == "start_eye_contact":
 			self.start_anxiety_effect.emit("eye_contact")
+			update_text_and_name()
 		elif conversation.dialogue_dictionary["dialogue"][dialogue_index]["function"] == "other_character_leaves":
 			self.fade_out_character.emit()
-
-		update_text_and_name()
+			update_text_and_name()
+		
 	else:
 		update_text_and_name()
 
 func update_text_and_name():
 	# change displayed name to character's name
-		if conversation.dialogue_dictionary["dialogue"][dialogue_index].has("character"):
-			name_label.text = conversation.dialogue_dictionary["dialogue"][dialogue_index]["character"]
-			# Grab the name of the character whose talking. Used for the speech dialogue
-			char_talking = conversation.dialogue_dictionary["dialogue"][dialogue_index]["character"]
-		dialogue_label.text = conversation.dialogue_dictionary["dialogue"][dialogue_index]["text"]
-
-		ConversationArchive.add_to_archive(name_label.text, dialogue_label.text)
-		display_characters()
-		dialogue_index += 1
+	if conversation.dialogue_dictionary["dialogue"][dialogue_index].has("character"):
+		name_label.text = conversation.dialogue_dictionary["dialogue"][dialogue_index]["character"]
+		# Grab the name of the character whose talking. Used for the speech dialogue
+		char_talking = conversation.dialogue_dictionary["dialogue"][dialogue_index]["character"]
+	dialogue_label.text = conversation.dialogue_dictionary["dialogue"][dialogue_index]["text"]
+	
+	ConversationArchive.add_to_archive(name_label.text, dialogue_label.text)
+	display_characters()
+	dialogue_index += 1
 
 func branch_dialogue(options: Array):
 	# instantiate the number of buttons to the number of options the text option has,
