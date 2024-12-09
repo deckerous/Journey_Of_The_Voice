@@ -10,8 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://2r0sape7i2ct" path="res://UI/Scenes/poster.tscn" id="6_ng5la"]
 
 [node name="Chapter3BarArea" instance=ExtResource("1_ogb4d")]
-position = Vector2(100, 15)
-scale = Vector2(0.726623, 0.726623)
 start_with_monologue = true
 starting_monologue = ExtResource("2_se6rg")
 
@@ -43,10 +41,6 @@ layer = -2
 
 [node name="TextureRect" parent="CanvasLayer" index="0"]
 z_index = -2
-offset_left = -146.0
-offset_top = -126.0
-offset_right = 146.0
-offset_bottom = 171.0
 mouse_filter = 2
 texture = ExtResource("2_j52db")
 expand_mode = 5

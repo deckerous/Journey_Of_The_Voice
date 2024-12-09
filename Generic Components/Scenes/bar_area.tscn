@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://2r0sape7i2ct" path="res://UI/Scenes/poster.tscn" id="3_lm7aa"]
 [ext_resource type="Texture2D" uid="uid://k6n4q6ks8gc7" path="res://Area Backgrounds/bar_front.png" id="5_rbi4e"]
 
+
 [node name="BarArea" instance=ExtResource("1_tr6h4")]
 script = ExtResource("2_gxbyy")
 
@@ -16,13 +17,8 @@ layer = -2
 follow_viewport_enabled = true
 
 [node name="TextureRect" parent="CanvasLayer" index="0"]
-offset_left = -146.0
-offset_top = -126.0
-offset_right = 146.0
-offset_bottom = 171.0
 texture = ExtResource("3_lalk0")
 expand_mode = 5
-stretch_mode = 6
 
 [node name="TextureRectFront" type="TextureRect" parent="CanvasLayer" index="1"]
 anchors_preset = 15
