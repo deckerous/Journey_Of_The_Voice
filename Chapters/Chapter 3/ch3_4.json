@@ -1,19 +1,19 @@
 {
 	"dialogue": [
 		{
-			"character": "Guide",
+			"character": "Guy",
 			"text": "Oh jeez, sorry about them."
 		},
 		{
 			"character": "Drummer",
-			"text": "Hmmm... Give us a moment, would ya guide?"
+			"text": "Hmmm... Give us a moment, would ya, Guy?"
 		},
 		{
 			"character": "You",
 			"text": "[shake rate=20.0 level=5 connected=1]*gasp*[/shake]"
 		},
 		{
-			"character": "Guide",
+			"character": "Guy",
 			"text": "They're all yours, Drummer-San!"
 		},
 		{
@@ -23,10 +23,10 @@
 		},
 		{
 			"character": "",
-			"text": "Kenshiro settles into their stance, feet as firm as the roots of a mountain."
+			"text": "Kenshiro settles into his stance, feet as firm as the roots of a mountain."
 		},
 		{
-			"text": "You look down, feeling a wave of shame, hands trembling slightly, breath shallow."
+			"text": "You look down, feeling a wave of shame, hands trembling slightly, breathing shallowly."
 		},
 		{
 			"text": "[shake rate=20.0 level=5 connected=1]The imposing drummer notices.[/shake]"
@@ -41,11 +41,11 @@
 		},
 		{
 			"character": "Drummer",
-			"text": "It is called box breathing."
+			"text": "It is called box breathing. As you do it, imagine each step is the side of a box you're moving around"
 		},
 		{
 			"character": "Drummer",
-			"text": "Breath in for four counts..."
+			"text": "Breathe in for four counts..."
 		},
 		{
 			"character": "Drummer",
@@ -69,7 +69,7 @@
 		},
 		{
 			"character": "Drummer",
-			"text": "Woah ok... I'll let you try it on your own. I'll go over there and once you're ready to talk again I'll answer any questions."
+			"text": "Woah, ok... I'll let you try it on your own. I'll go over there, and once you're ready to talk again, I'll answer any questions."
 		},
 		{
 			"function": "end_dialogue"

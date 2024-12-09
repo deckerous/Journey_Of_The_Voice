@@ -6,18 +6,18 @@
 	},
 	{
 	  "character": "You",
-	  "text": "Looks like my friend Guide is calling me!"
+	  "text": "Looks like my friend Guy is calling me!"
 	},
 	{
-	  "character": "Guide",
-	  "text": "We are hosting open mic nights before the big Battle Of The bands. You know the one put on by the record lable scout Boss. I know that it is your dream to form a band and share your art with the world, so I signed you up!"
+	  "character": "Guy",
+	  "text": "We are hosting some open mic nights before the big Battle of the Bands. You know, the contest put on by the record label scout, Boss. I know that it is your dream to form a band and share your art with the world, so I signed you up!"
 	},
 	{
 	  "character": "You",
 	  "text": "WHAT?! I can’t do that! You know that I will just freeze up and choke…"
 	},
 	{
-	  "character": "Guide",
+	  "character": "Guy",
 	  "text": "Relax, I know that you struggle with social anxiety. There are a few folks that have been performing the last few weeks that you may be able to learn from."
 	},
 	{
@@ -25,16 +25,16 @@
 	  "text": "…I don’t really have a choice do I?"
 	},
 	{
-	  "character": "Guide",
+	  "character": "Guy",
 	  "text": "Nope. Come to the bar, there is someone you have to meet…" 
 	},
 	{
-	  "character": "Guide",
+	  "character": "Guy",
 	  "text": "*click*" 
 	},
 	{
 	  "character":"You",
-	  "text": "Time to stop at Caffeine Central Coffee and get a quad-shot, 5-pump caramel redeye and chase my dream! Or fail miserably, embarrass myself and Guide, never use my voice again, and live the rest of my life as a rock…."
+	  "text": "Time to stop at Caffeine Central Coffee and get a quad-shot, 5-pump caramel redeye and chase my dream! Or fail miserably, embarrass myself and Guy, never use my voice again, and live the rest of my life as a rock…"
 	},
 	{
 	  "function": "end_dialogue"

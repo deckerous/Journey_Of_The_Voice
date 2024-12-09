@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://biplfy6u8ldfl"]
+
+[ext_resource type="PackedScene" uid="uid://cfcuodb5inj3o" path="res://Generic Components/Scenes/character.tscn" id="1_j3gev"]
+[ext_resource type="Texture2D" uid="uid://dnn0ydohbhny4" path="res://Characters/Assets/kenshiroDrum.png" id="2_h4g0r"]
+
+[node name="Drummer" instance=ExtResource("1_j3gev")]
+scale = Vector2(0.3, 0.3)
+
+[node name="Sprite2D" parent="." index="0"]
+texture = ExtResource("2_h4g0r")
+flip_h = true

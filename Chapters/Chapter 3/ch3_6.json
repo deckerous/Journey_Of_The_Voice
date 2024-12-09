@@ -4,12 +4,12 @@
 			"id": "Start"
 		},
 		{
-			"character": "Guide",
-			"text": "Its great to see you two really jamming together!"
+			"character": "Guy",
+			"text": "It's great to see you two talking together,"
 		},
 		{
-			"character": "Guide",
-			"text": "Most folks have to beat that story out of him!"
+			"character": "Guy",
+			"text": "most folks have to beat that story out of him!"
 		},
 		{
 			"character": "You",
@@ -28,8 +28,8 @@
 			"text": "Don't sell yourself short, I admire the courage it takes to put yourself out there and get to know someone."
 		},
 		{
-			"character": "Guide",
-			"text": "So, does that mean you've found a drummer?"
+			"character": "Guy",
+			"text": "Does that mean you've found a drummer?"
 		},
 		{
 			"character": "You",

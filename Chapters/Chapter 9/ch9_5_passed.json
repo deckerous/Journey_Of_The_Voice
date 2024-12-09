@@ -2,7 +2,7 @@
   "dialogue": [
     {
       "id": "Start",
-       "character": "Guide",
+       "character": "Guy",
       "text": "Look at you!"
     },
     {
@@ -16,18 +16,18 @@
       "text": "I can't believe she said yes."
     },
     {
-      "character": "Guide",
+      "character": "Guy",
       "text": "Told you she was the real deal."
     },
     {
       "character": "You",
-      "text": "Thanks, Guide."
+      "text": "Thanks, Guy."
     },
     {
       "text": "Couldn't have done it without you..."
     },
     {
-      "character": "Guide",
+      "character": "Guy",
       "text": "Now that you have a full band..."
     },
     {

@@ -2,36 +2,41 @@
   "dialogue": [
 	{
 	  "id": "start",
-	  "character": "Guide",
-	  "text": "Hey, are you alright? You totally shut down during your conversation"
+	  "character": "Guy",
+	  "text": "Hey, are you alright? You totally shut down during that conversation."
 	},
 	{
 	  "character": "You",
-	  "text": "I know…I’m so stupid, I should just go…this was a terrible idea, I made you look like a fool…I’m so sorry."
+	  "text": "I know... I’m so stupid, I should just go. This was a terrible idea, I made you look like a fool... I’m so sorry."
 	},
 	{
-	  "character": "Guide",
+	  "character": "Guy",
 	  "text": "Whoa, whoa, whoa, it’s okay! Didn’t you hear what Boss had to say? They can make your dreams come true!"
 	},
 	{
 	  "character": "You",
-	  "text": "…I just don’t know what to do. I always freeze up when I try to talk to anyone…How am I even going to sing!…Wait…Did I say that I already have a band?"
+	  "text": "...I just don’t know what to do. I always freeze up when I try to talk to anyone... How am I even going to sing?"
 	},
 	{
-	  "character": "Guide",
-	  "text": "Yeah, you kind of did…."
+	  "character": "You",
+	  "text": "Wait... Did I say that I already have a band?"
+	},
+
+	{
+	  "character": "Guy",
+	  "text": "Yeah, you kind of did..."
 	},
 	{
 	  "character": "You",
 	  "text": "I'm cooked..."
 	},
 	{
-	  "character": "Guide",
-	  "text": "Let’s just focus on one thing at a time…firstly, no more crazy caffeinated, overly sweetened coffee. Try this instead…"
+	  "character": "Guy",
+	  "text": "Let’s just focus on one thing at a time. Firstly, no more crazy-caffeinated, overly-sweetened coffee. Try this instead..."
 	},
 	{
-		"character": "",
-		"text": "*gives you a herbal tea*"
+		"character": "Guy",
+		"text": "*gives you an herbal tea*"
 	},
 	{
 	  "function": "end_dialogue"

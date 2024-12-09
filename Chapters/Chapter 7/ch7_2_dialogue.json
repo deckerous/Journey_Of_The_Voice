@@ -2,7 +2,7 @@
     "dialogue": [
       {
         "id": "Start",
-        "character": "Guide",
+        "character": "Guy",
         "text": "Oh my, Cy, the Mechanical Eye!"
       },
       {
@@ -13,16 +13,18 @@
         "text": "Ah, robot jokes. You must be running out of material."
       },
       {
+        "character": "Guy",
         "text": "Jeez, its like you can [wave amp=50.0 freq=5.0 connected=1]SEE[/wave] right through me!"
       },
       {
+        "character": "Cy",
         "text": "Stop that. Anyway..."
       },
       {
-        "text": "Who's the shifty eyed ball of angst next to you?"
+        "text": "who's the shifty-eyed ball of angst next to you?"
       },
       {
-        "character": "Guide",
+        "character": "Guy",
         "text": "See. Insanely perceptive. "
       },
       {

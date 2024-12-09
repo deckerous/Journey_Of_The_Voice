@@ -23,7 +23,7 @@ var curr_effect = null
 @onready var anxiety_effects = {
 	"vignette": load("res://Anxiety Effects/Vignette/vignette.tscn"),
 	"self_talk": load("res://Anxiety Effects/Self Talk/self_talk_effect.tscn"),
-	"eye_contact": load("res://Anxiety Effects/Eye Contact/eye_contact.tscn")
+	"eye_contact": load("res://Anxiety Effects/Eye Contact/eye_contact_effect.tscn")
 }
 
 signal area_complete
@@ -54,6 +54,9 @@ func go_to_next_monologue(monologue: PackedScene):
 	var inst = monologue.instantiate()
 	self.add_child(inst)
 	
+	$UICanvas/UIMenu.menu_entered.connect(inst.disable_monologue_click_collision)
+	$UICanvas/UIMenu.menu_exited.connect(inst.enable_monologue_click_collision)
+	
 	if inst.hide_characters_after:
 		inst.finished_monologue.connect(hide_characters)
 	
@@ -69,6 +72,9 @@ func go_to_next_convo(conversation: PackedScene):
 	#conversation_instances.add_child(inst)
 	conversation_instances.call_deferred("add_child", inst)
 	
+	$UICanvas/UIMenu.menu_entered.connect(inst.disable_dialogue_click_collision)
+	$UICanvas/UIMenu.menu_exited.connect(inst.enable_dialogue_click_collision)
+	
 	inst.start_anxiety_effect.connect(instance_anxiety_effect)
 	if inst.end_anxiety_effect:
 		inst.finished_conversation.connect(remove_anxiety_effect)
@@ -80,11 +86,20 @@ func go_to_next_convo(conversation: PackedScene):
 	if inst.has_following_minigame and inst.following_minigame != null:
 		# When this conversation is finsihed, instantiate next provided minigame
 		inst.finished_conversation.connect(go_to_next_minigame.bind(inst.following_minigame))
-		
+	
 	elif inst.has_following_conversation and inst.following_conversation != null:
 		# When this conversation is finished, instantiate next provided conversation
 		inst.finished_conversation.connect(go_to_next_convo.bind(inst.following_conversation))
 		
+		# Also connect the failure conversation if there is one
+		if inst.has_failure_conversation and inst.failure_conversation != null:
+			# When this conversation is finished, instantiate the following failure convo if there is one
+			inst.failed_conversation.connect(go_to_next_convo.bind(inst.failure_conversation))
+		
+	elif inst.has_following_conversation and inst.following_conversation_path != null:
+		var convo_inst = load(inst.following_conversation_path)
+		inst.finished_conversation.connect(go_to_next_convo.bind(convo_inst))
+	
 	elif inst.has_following_monologue and inst.following_monologue != null:
 		# When this conversation is finished, instantiate next provided monologue
 		inst.finished_conversation.connect(go_to_next_monologue.bind(inst.following_monologue))
@@ -97,24 +112,28 @@ func go_to_next_convo(conversation: PackedScene):
 func go_to_next_minigame(minigame: PackedScene):
 	var inst = minigame.instantiate()
 	minigames.add_child(inst)
-	if curr_effect != null:
+	if len(anxiety_effect_root.get_children()) > 0:
 		remove_anxiety_effect()
 	
-	if inst.has_following_conversation and inst.following_conversation != null:
-		inst.mini_game_complete.connect(go_to_next_convo.bind(inst.following_conversation))
+	if inst.has_following_conversation:
+		inst.mini_game_complete.connect(go_to_convo_after_minigame_outcome.bind(inst))
 	else:
 		inst.mini_game_complete.connect(fade_in_clickable_conversations)
+
+func go_to_convo_after_minigame_outcome(minigame):
+	go_to_next_convo(minigame.following_conversation)
 
 func instance_anxiety_effect(anxiety_effect: String):
 	var anxiety_effect_scene = anxiety_effects.get(anxiety_effect)
 	var inst = anxiety_effect_scene.instantiate()
 	anxiety_effect_root.add_child(inst)
-	curr_effect = inst
 
 func remove_anxiety_effect():
-	curr_effect.animation_player.play("fade_out")
-	await curr_effect.animation_player.animation_finished
-	curr_effect.queue_free()
+	for effect in anxiety_effect_root.get_children():
+		if effect.has_node("AnimationPlayer"):
+			effect.animation_player.play("fade_out")
+			await effect.animation_player.animation_finished
+		effect.queue_free()
 
 func remove_from_available_conversations(convo: Conversation):
 	var index = available_conversations.find(convo)

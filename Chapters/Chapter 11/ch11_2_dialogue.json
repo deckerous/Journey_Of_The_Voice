@@ -2,7 +2,7 @@
     "dialogue": [
         {
             "id": "Start",
-            "character": "Guide",
+            "character": "Guy",
             "text": "You sounded great during rehersal!"
         },
         {
@@ -19,7 +19,7 @@
             "text": "...[shake rate=20.0 level=5 connected=1]like I shouldn't be here[/shake]..."
         },
         {
-            "character": "Guide",
+            "character": "Guy",
             "text": "Yeah, I had a feeling you might be struggling."
         },
         {

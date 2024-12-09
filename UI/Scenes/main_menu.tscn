@@ -1,11 +1,13 @@
-[gd_scene load_steps=9 format=3 uid="uid://cpp2n27xhy763"]
+[gd_scene load_steps=11 format=3 uid="uid://cpp2n27xhy763"]
 
 [ext_resource type="Theme" uid="uid://v3tjxnq7o5ny" path="res://Themes/notebook_text.tres" id="1_3bxdf"]
 [ext_resource type="Script" path="res://UI/Scripts/main_menu.gd" id="1_yxa7y"]
-[ext_resource type="PackedScene" uid="uid://buulbpdh08bqu" path="res://UI/Scenes/start_button.tscn" id="2_iqoyb"]
+[ext_resource type="Texture2D" uid="uid://cpse5yc8t3lcl" path="res://Characters/Assets/BlancTitle.png" id="2_cknc5"]
+[ext_resource type="PackedScene" path="res://UI/Scenes/start_button.tscn" id="2_iqoyb"]
 [ext_resource type="Script" path="res://UI/Scenes/v_box_container.gd" id="2_q0xt6"]
+[ext_resource type="Texture2D" uid="uid://c357xmd7lwfty" path="res://Characters/Assets/title.png" id="3_6yols"]
 [ext_resource type="PackedScene" uid="uid://w6k5cj8hiag4" path="res://UI/Scenes/continue_button.tscn" id="3_c1jdp"]
-[ext_resource type="PackedScene" uid="uid://bws8j61yk4oht" path="res://UI/Scenes/quit_button.tscn" id="6_ggr35"]
+[ext_resource type="PackedScene" path="res://UI/Scenes/quit_button.tscn" id="6_ggr35"]
 [ext_resource type="Script" path="res://UI/Scripts/exit_button.gd" id="7_v2h25"]
 [ext_resource type="Script" path="res://UI/Scripts/confirm_button.gd" id="8_2am03"]
 
@@ -15,12 +17,22 @@ script = ExtResource("1_yxa7y")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="Background" type="ColorRect" parent="CanvasLayer"]
-anchors_preset = 15
-anchor_right = 1.0
+anchors_preset = 9
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 1)
+
+[node name="BlancTitle" type="Sprite2D" parent="CanvasLayer/Background"]
+position = Vector2(624, 400)
+scale = Vector2(0.76476, 0.743061)
+texture = ExtResource("2_cknc5")
+
+[node name="Title" type="Sprite2D" parent="CanvasLayer/Background"]
+position = Vector2(456, 280)
+scale = Vector2(0.709769, 0.709769)
+texture = ExtResource("3_6yols")
+offset = Vector2(256, 160)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
 layout_direction = 2
@@ -87,6 +99,7 @@ layout_mode = 2
 size_flags_vertical = 3
 
 [node name="ContinueButton" parent="CanvasLayer/VBoxContainer/VBoxContainer/CenterContainer - Load" node_paths=PackedStringArray("otherButtons") instance=ExtResource("3_c1jdp")]
+custom_minimum_size = Vector2(153.465, 64)
 layout_mode = 2
 focus_neighbor_left = NodePath("../../CenterContainer - Start/StartButton")
 text = "Continue"
@@ -140,7 +153,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/normal_font_size = 32
 bbcode_enabled = true
-text = "[center]Starting a new game will overwrite your save. 
+text = "[center]Starting a new game will overwrite your save.
 Are you sure you want to go through with this?"
 fit_content = true
 

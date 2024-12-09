@@ -16,19 +16,19 @@
         "text": "You seem to be struggling with maintaining eye contact."
       },
       {
-        "character": "Guide",
-        "text": "You would think it would be easy...seeing as how they only have one. Ha!"
+        "character": "Guy",
+        "text": "You would think it would be easy... seeing as how they only have one. Ha!"
       },
       {
         "character": "Cy",
-        "text": "Many struggle to make eye contact during conversations."
+        "text": "Many struggle to maintain eye contact during conversations."
       },
       {
         "text": "It's a known bug. Resolveable."
       }, 
       {
         "character": "You",
-        "text": "Can...you help me then?"
+        "text": "Can... you help me then?"
       },
       {
         "character": "Cy",
@@ -46,16 +46,16 @@
       },
       {
         "character": "Cy",
-        "text": "Relax, just try to focus on the side of my head."
+        "text": "I'm kidding, just try to focus on the side of my head."
       },
       {
         "text": "And when you feel your glance slipping,"
       },
       {
-        "text": "Gently remind yourself to refocus."
+        "text": "gently remind yourself to refocus."
       },
       {
-        "text": "Just like clicking a cursor back on target!"
+        "text": "Just like dragging a cursor back on target!"
       },
       {
         "function": "end_dialogue"
