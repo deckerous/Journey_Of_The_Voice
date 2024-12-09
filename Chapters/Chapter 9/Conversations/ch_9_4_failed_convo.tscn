@@ -12,4 +12,5 @@ has_following_conversation = true
 following_conversation_path = "res://Chapters/Chapter 9/Conversations/ch_9_3_guitarist_1_convo.tscn"
 
 [node name="Guide" parent="ConversationCharacters/StartingCharacter" index="2" instance=ExtResource("2_na3yc")]
-position = Vector2(179, 184)
+position = Vector2(389, 414)
+scale = Vector2(1.36962, 1.36962)
