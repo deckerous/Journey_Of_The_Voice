@@ -1,19 +1,29 @@
-[gd_scene load_steps=5 format=3 uid="uid://cjghj1516c7au"]
+[gd_scene load_steps=6 format=3 uid="uid://cjghj1516c7au"]
 
 [ext_resource type="PackedScene" uid="uid://cws7m5i6qkna3" path="res://Generic Components/Scenes/bar_area.tscn" id="1_auhuo"]
 [ext_resource type="PackedScene" uid="uid://cyhprogbleb67" path="res://Chapters/Chapter 5/Monologues/ch_5_1_mono.tscn" id="2_nvutw"]
+[ext_resource type="PackedScene" uid="uid://bypwvmrjaqyje" path="res://Characters/Scenes/keebs-instrument.tscn" id="3_g4i3e"]
 [ext_resource type="PackedScene" uid="uid://gpq84yf1hx6v" path="res://Characters/Scenes/keebs.tscn" id="3_x1oip"]
-[ext_resource type="PackedScene" uid="uid://c0u1fdrgiinbp" path="res://Characters/Scenes/guy.tscn" id="4_aliuq"]
+[ext_resource type="PackedScene" uid="uid://5ylb4d0474qn" path="res://Characters/Scenes/guy.tscn" id="4_aliuq"]
 
 [node name="Chapter5BarArea" instance=ExtResource("1_auhuo")]
 start_with_monologue = true
 starting_monologue = ExtResource("2_nvutw")
 
-[node name="Keebs" parent="Characters" index="0" instance=ExtResource("3_x1oip")]
+[node name="Keebs2" parent="Characters" index="0" instance=ExtResource("3_g4i3e")]
+position = Vector2(585, 325)
+scale = Vector2(0.125851, 0.125851)
+
+[node name="Keebs" parent="Characters" index="1" instance=ExtResource("3_x1oip")]
+visible = false
 position = Vector2(551, 321)
 scale = Vector2(0.11, 0.11)
 
-[node name="Guy" parent="Characters" index="1" instance=ExtResource("4_aliuq")]
-position = Vector2(89, 168)
+[node name="Guy" parent="Characters" index="2" instance=ExtResource("4_aliuq")]
+position = Vector2(285, 461)
+scale = Vector2(1.46746, 1.46746)
+
+[node name="UIMenu" parent="UICanvas" index="0"]
+unique_name_in_owner = true
 
 [editable path="UICanvas/UIMenu"]

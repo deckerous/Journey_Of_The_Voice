@@ -10,6 +10,7 @@ extends Node2D
 
 signal menu_entered
 signal menu_exited
+const UI_BLOOP_SELECT = preload("res://Audio/sound-effects/ui-bloop-select.wav")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -25,6 +26,8 @@ func _process(_delta: float) -> void:
 
 
 func _on_notebook_button_pressed() -> void:
+	# Play the UI bloop select sound
+	GlobalAudio.play_sound_id(UI_BLOOP_SELECT, "bloop-select", GlobalAudio.Bus.SFX, 1.0)
 	# Show the notebook
 	notebook_wrapper.visible = true
 	buttons_container.visible = false
@@ -33,6 +36,8 @@ func _on_notebook_button_pressed() -> void:
 
 
 func _on_notebook_exit_pressed() -> void:
+	# Play the UI bloop select sound
+	GlobalAudio.play_sound_id(UI_BLOOP_SELECT, "bloop-select", GlobalAudio.Bus.SFX, 1.0)
 	# Hide the notebook
 	notebook_wrapper.visible = false
 	buttons_container.visible = true
@@ -51,6 +56,8 @@ func _on_notebook_button_mouse_exited() -> void:
 
 
 func _on_pause_button_pressed() -> void:
+	# Play the UI bloop select sound
+	GlobalAudio.play_sound_id(UI_BLOOP_SELECT, "bloop-select", GlobalAudio.Bus.SFX, 1.0)
 	# Show settings page
 	settings_wrapper.visible = true
 	buttons_container.visible = false
@@ -68,6 +75,8 @@ func _on_pause_button_mouse_exited() -> void:
 
 
 func _on_settings_exit_pressed() -> void:
+	# Play the UI bloop select sound
+	GlobalAudio.play_sound_id(UI_BLOOP_SELECT, "bloop-select", GlobalAudio.Bus.SFX, 1.0)
 	# Hide settings menu
 	settings_wrapper.visible = false
 	buttons_container.visible = true
@@ -80,6 +89,8 @@ func _on_archive_button_exited() -> void:
 	archive_button.modulate.v = 1
 
 func _on_archive_button_pressed() -> void:
+	# Play the UI bloop select sound
+	GlobalAudio.play_sound_id(UI_BLOOP_SELECT, "bloop-select", GlobalAudio.Bus.SFX, 1.0)
 	# Show settings page
 	ConversationArchive.visible(true)
 	archive_wrapper.visible = true
@@ -87,6 +98,8 @@ func _on_archive_button_pressed() -> void:
 	get_tree().paused = true
 	
 func _on_archive_exit_pressed() -> void:
+	# Play the UI bloop select sound
+	GlobalAudio.play_sound_id(UI_BLOOP_SELECT, "bloop-select", GlobalAudio.Bus.SFX, 1.0)
 	ConversationArchive.visible(false)
 	archive_wrapper.visible = false
 	buttons_container.visible = true

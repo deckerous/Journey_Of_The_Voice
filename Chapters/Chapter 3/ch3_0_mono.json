@@ -2,10 +2,10 @@
 	"monologue": [
 		{
 			"id": "Start",
-			"text": "You enter into the bar nervously, scanning the room for Guy."
+			"text": "You enter the bar nervously, scanning the room for Guy."
 		},
 		{
-			"text": "The bar is bustling, and the energy of Open Mic night is contagious, if not overwhelming."
+			"text": "The bar is bustling, and the energy of Open Mic Night is contagious, if not overwhelming."
 		},
 		{
 			"character": "You",
@@ -17,11 +17,11 @@
 		},
 		{
 			"character": "You",
-			"text": "*I mean look at that guy with, what are those?! Wood swords and irezumi tattoo!*"
+			"text": "*I mean, look at that person with... what are those?! Wood swords? And irezumi tattoo!*"
 		},
 		{
 			"character": "You",
-			"text": "*If I slip up around that guy its curtains for me!*"
+			"text": "*If I slip up around that dude, it's curtains for me!*"
 		},
 		{
 			"character": "Guy",

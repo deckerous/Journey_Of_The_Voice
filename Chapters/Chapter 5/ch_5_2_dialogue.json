@@ -6,33 +6,33 @@
 			"text": "There you are!"
 		},
 		{
-			"text": "A pal of mine just finished his set."
+			"text": "A pal of mine just finished his set,"
 		},
 		{
-			"text": "Let's go say hi."
+			"text": "let's go say hi."
 		},
 		{
 			"character": "You",
-			"text": "Uh... do I really have to?"
+			"text": "Uh... do I have to?"
 		},
 		{
 			"text": "He looks so cool, he won't want to talk to me..."
 		},
 		{
 			"character": "Guy",
-			"text": "Jeez, you're always beating yourself up..."
+			"text": "Jeez, you're always beating yourself up."
 		},	
 		{
 			"character": "Guy",
-			"text": "Come on now, you gotta make that band somehow!"
+			"text": "Come on, you gotta make that band somehow!"
 		},
 		{
 			"character": "",
-			"text": "*Guy leads you toward the stage, where a short, stylish figure is adjusting the knobs on a keyboard.*"
+			"text": "*Guy leads you toward the stage, where a short, stylish figure is twiddling the knobs on a keyboard.*"
 		},
 		{
 			"character": "Guy",
-			"text": "Hey, Keebs! Key-Blur! The Mini Midi Master!"
+			"text": "Hey, Keebs! Key-Blur! My Mini Midi Master!"
 		},
 		{
 			"function": "end_dialogue"

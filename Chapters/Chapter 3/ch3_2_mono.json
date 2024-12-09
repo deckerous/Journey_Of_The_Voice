@@ -2,10 +2,10 @@
 	"monologue": [
 		{
 			"id": "Start",
-			"text": "You find yourself face to face with a large, imposing figure."
+			"text": "You find yourself face to face with a huge, imposing figure."
 		},
 		{
-			"text":"The Drummer’s eyes are closed in a moment of serenity, as if nothing could faze him."
+			"text":"His eyes are closed in a moment of serenity, as if nothing could faze him."
 		},
 		{
 			"text":"He’s got a calmness that seems almost impossible in such a chaotic setting."
@@ -17,10 +17,10 @@
 			"text":"He looks as if he’s just come down from meditating under a waterfall,"
 		},
 		{
-			"text":"Which, unbeknownst to you,"
+			"text":"which, unbeknownst to you,"
 		},
 		{
-			"text":"He literally has."
+			"text":"he literally has."
 		},
 		{
 			"function": "end_monologue"

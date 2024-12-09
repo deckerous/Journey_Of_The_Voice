@@ -1,8 +1,18 @@
-[gd_scene load_steps=3 format=3 uid="uid://cg7otrc66cwbs"]
+[gd_scene load_steps=5 format=3 uid="uid://cg7otrc66cwbs"]
 
 [ext_resource type="PackedScene" uid="uid://daapn4kvhq3fe" path="res://Generic Components/Scenes/bedroom_area.tscn" id="1_33usu"]
 [ext_resource type="PackedScene" uid="uid://c4kgbl3j0sql3" path="res://Chapters/Chapter 6/Monologues/ch_6_0_mono.tscn" id="2_aw55p"]
+[ext_resource type="Script" path="res://Generic Components/Scripts/character.gd" id="3_g3abt"]
+[ext_resource type="Texture2D" uid="uid://b5glcn74ddows" path="res://Characters/Assets/player.png" id="4_1wrap"]
 
 [node name="Chapter6BedroomArea" instance=ExtResource("1_33usu")]
 start_with_monologue = true
 starting_monologue = ExtResource("2_aw55p")
+
+[node name="Player" type="Node2D" parent="Characters" index="0"]
+script = ExtResource("3_g3abt")
+
+[node name="Sprite2D" type="Sprite2D" parent="Characters/Player" index="0"]
+position = Vector2(572, 439)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("4_1wrap")

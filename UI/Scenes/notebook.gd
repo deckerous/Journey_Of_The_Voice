@@ -58,6 +58,7 @@ func load_tutorials() -> void:
 		bio_2.text = notebook_json["bio2_text"]
 		bio_3.text = notebook_json["bio3_text"]
 		bio_4.text = notebook_json["bio4_text"]
+		bio_5.text = notebook_json["bio5_text"]
 		tutorial_1.text = notebook_json["tut1_text"]
 		tutorial_2.text = notebook_json["tut2_text"]
 		tutorial_3.text = notebook_json["tut3_text"]

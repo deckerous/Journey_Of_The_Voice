@@ -5,7 +5,7 @@
 	  },
 	  {
 		"character": "You",
-		"text": "*Maybe I should practice a self-soothing techniques...*",
+		"text": "*Maybe I should practice that self-soothing technique*",
 		"function": "branch_dialogue",
 		"options": [
 		  "Practice Bcx Breathing?"

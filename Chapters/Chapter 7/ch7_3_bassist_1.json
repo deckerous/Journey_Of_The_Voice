@@ -10,7 +10,7 @@
       },
       {
         "character": "You",
-        "text": "Wha...what?",
+        "text": "Wha... what?",
         "function": "start_eye_contact"
       },
       {
@@ -22,14 +22,14 @@
       },
       {
         "character": "You",
-        "text": "Uh...no..."
+        "text": "Uh... no..."
       },
       {
         "character": "Cy",
         "text": "Eye tracking lost..."
       },
       {
-        "text": "What are you looking over there for?"
+        "text": "Hey, my eye's up here."
       },
       {
         "function": "end_dialogue"

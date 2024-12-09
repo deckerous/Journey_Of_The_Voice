@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://oiqru1q6tm14"]
 
 [ext_resource type="PackedScene" uid="uid://cfcuodb5inj3o" path="res://Generic Components/Scenes/character.tscn" id="1_j4t6y"]
-[ext_resource type="Texture2D" uid="uid://20upreu1j36p" path="res://Characters/Assets/donna.png" id="2_qg1n0"]
+[ext_resource type="Texture2D" uid="uid://iw1fcgn13127" path="res://Characters/Assets/donna.png" id="2_qg1n0"]
 
 [node name="Donna" instance=ExtResource("1_j4t6y")]
 
