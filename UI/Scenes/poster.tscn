@@ -4,6 +4,21 @@
 [ext_resource type="Texture2D" uid="uid://cogtayffvth83" path="res://Area Backgrounds/poster.png" id="1_mi81n"]
 [ext_resource type="Texture2D" uid="uid://bepst3xq1hg31" path="res://Images/UI/arrow_l.png" id="2_fuhdx"]
 
+[sub_resource type="Animation" id="Animation_jw6vh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_05jxj"]
 resource_name = "modulate"
 length = 2.0
@@ -21,21 +36,6 @@ tracks/0/keys = {
 "values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.486275), Color(1, 1, 1, 1)]
 }
 
-[sub_resource type="Animation" id="Animation_jw6vh"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(1, 1, 1, 1)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kp5pv"]
 _data = {
 "RESET": SubResource("Animation_jw6vh"),
@@ -47,6 +47,7 @@ script = ExtResource("1_iq0ty")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = -1
+visible = false
 follow_viewport_enabled = true
 
 [node name="PosterButton" type="TextureButton" parent="CanvasLayer"]

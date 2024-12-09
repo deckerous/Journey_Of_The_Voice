@@ -1,0 +1,87 @@
+{
+  "dialogue": [
+      {
+          "id": "Start",
+          "character": "You",
+          "text": "*No, I am capable of doing this!*"
+      },
+      {
+          "character": "Boss",
+          "text": "I said..."
+      },
+      {
+          "text": "Why should I care about you more than any other group that plays tonight?"
+      },
+      {
+        "function": "branch_dialogue",
+          "options": [
+              "You don't have to",
+              "Our guitarist shreds better than anyone.",
+              "..."
+          ]
+      },
+
+
+      {
+          "id": "...",
+          "character": "You",
+          "text": "..."
+      },
+      {
+          "character": "Boss",
+          "text": "You've got to do better than that. Come on, show me something real."
+      },
+      {
+          "function": "fail_dialogue"
+      },
+
+
+      {
+          "id": "You don't have to",
+          "character": "You",
+          "text": "Because no matter what happens, we won't give up. "
+      },
+      {
+          "text": "We've pushed each other, supported each other, and we're not afraid of failing."
+      },
+      {
+          "character": "Boss",
+          "text": "Persistence, huh? We'll see if that persistence pays off."
+      },
+      {
+          "text": "Alright then. You've talked the talk."
+      },
+      {
+          "text": "Now it's time to see if you can walk the walk."
+      },
+      {
+          "text": "Get ready to take the stage."
+      },
+      {
+          "function": "end_dialogue"
+      },
+
+
+      {
+          "id": "Our guitarist shreds better than anyone.",
+          "character": "You",
+          "text": "Our guitarist is the best there is. She can shred like no one else."
+      },
+      {
+          "character": "Boss",
+          "text": "A flashy guitarist is good, but music is about more than one person..."
+      },
+      {
+          "text": "Alright then. You've talked the talk."
+      },
+      {
+          "text": "Now it's time to see if you can walk the walk."
+      },
+      {
+          "text": "Get ready to take the stage."
+      },
+      {
+          "function": "end_dialogue"
+      }
+  ]
+}

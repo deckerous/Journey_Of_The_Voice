@@ -73,6 +73,9 @@ func go_to_next_convo(conversation: PackedScene):
 	if inst.end_anxiety_effect:
 		inst.finished_conversation.connect(remove_anxiety_effect)
 	
+	if inst.hide_characters_after:
+		inst.finished_conversation.connect(hide_characters)
+	
 	if inst.end_of_chapter:
 		# When a conversation has this check, unhide button to go to next chapter
 		inst.finished_conversation.connect(allow_traversal_to_next_chapter)

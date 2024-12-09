@@ -12,10 +12,11 @@ signal succeeded_game
 @onready var minigame_music = load("res://Audio/songs/wave/wave-theme.wav")
 @onready var character: Sprite2D = $Character
 
-@onready var successful_convo: PackedScene = load("res://Chapters/Chapter 7/Conversations/ch_7_5_bassist_2_successful_convo.tscn")
-@onready var failed_convo: PackedScene = load("res://Chapters/Chapter 7/Conversations/ch_7_5_bassist_2_failed_convo.tscn")
-
 @export var has_following_conversation: bool
+@export var successful_convo_path: String
+@export var failed_convo_path: String
+@onready var successful_convo: PackedScene = load(successful_convo_path)
+@onready var failed_convo: PackedScene = load(failed_convo_path)
 @onready var following_conversation: PackedScene
 
 @export var music_turndown_id: String

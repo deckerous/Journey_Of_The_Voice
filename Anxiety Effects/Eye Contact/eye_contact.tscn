@@ -43,6 +43,8 @@ _data = {
 [node name="EyeContact" type="Node2D"]
 script = ExtResource("1_ryo6m")
 has_following_conversation = true
+successful_convo_path = "res://Chapters/Chapter 7/Conversations/ch_7_5_bassist_2_successful_convo.tscn"
+failed_convo_path = "res://Chapters/Chapter 11/Conversations/ch_11_4_boss_convo_1.tscn"
 
 [node name="TheBGs" type="ColorRect" parent="."]
 visible = false

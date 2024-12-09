@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxxbqnkt2x3d5"]
+
+[ext_resource type="PackedScene" uid="uid://cee0f16o8788r" path="res://Generic Components/Scenes/conversation.tscn" id="1_jxm3q"]
+[ext_resource type="PackedScene" uid="uid://c1kc1ixfb6otx" path="res://Chapters/Chapter 11/Minigames/ch_11_box_breathing.tscn" id="2_p6lju"]
+
+[node name="Ch_11_2_Convo" instance=ExtResource("1_jxm3q")]
+dialogue_file = "res://Chapters/Chapter 11/ch11_2_dialogue.json"
+wants_to_talk = false
+starting_character_alone = false
+starting_convo_character_right = false
+has_following_minigame = true
+following_minigame = ExtResource("2_p6lju")
+hide_characters_after = true
