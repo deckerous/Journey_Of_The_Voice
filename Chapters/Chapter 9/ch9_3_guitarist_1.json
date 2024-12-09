@@ -9,9 +9,10 @@
 		"text": "I'll take another one of these"
 	  },
 	  {
-		"text": "Light ice this time.",
+		"text": "Light ice this time."
 	  },
 	  {
+		"text": "...",
 		"function": "branch_dialogue",
 		"options": [
 		  "*take the empty glass*",
@@ -55,9 +56,11 @@
 		"text": "Don't tell me you want to jam..."
 	  },
 	  {
+	  "text": "...",
+
 		"function": "branch_dialogue",
 		"options": [
-		  "*take the empty glass*",
+		  "*take her glass anyway*",
 		  "...",
 		  "Well..."
 		]
@@ -87,6 +90,10 @@
 	  },
 	  {
 		"text": "What makes you so special?",
+		"text": "What makes you so special?"
+	  },
+	  {
+	  "text": "...",
 		"function": "branch_dialogue",
 		"options": [
 		  "I'm friends with the bartender?",
@@ -127,6 +134,11 @@
 	  },
 	  {
 		"text": "Everyone's on a journey. What makes yours worth my time?",
+	"text": "Everyone's on a journey. What makes yours worth my time?"
+	},
+	{
+		"text": "...",
+
 		"function": "branch_dialogue",
 		"options": [
 		  "Because we want to tear up every stage!",
