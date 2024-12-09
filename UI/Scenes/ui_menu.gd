@@ -8,7 +8,8 @@ extends Node2D
 @onready var settings_wrapper: Control = %Settings_Wrapper
 @onready var archive_wrapper: Control = %Archive_Wrapper
 
-
+signal menu_entered
+signal menu_exited
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -27,14 +28,16 @@ func _on_notebook_button_pressed() -> void:
 	# Show the notebook
 	notebook_wrapper.visible = true
 	buttons_container.visible = false
-	get_tree().paused = true
+	menu_entered.emit()
+	# get_tree().paused = true
 
 
 func _on_notebook_exit_pressed() -> void:
 	# Hide the notebook
 	notebook_wrapper.visible = false
 	buttons_container.visible = true
-	get_tree().paused = false
+	menu_exited.emit()
+	# get_tree().paused = false
 
 
 func _on_notebook_button_mouse_entered() -> void:

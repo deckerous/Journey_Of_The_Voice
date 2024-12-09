@@ -61,6 +61,7 @@ _data = {
 }
 
 [node name="InteractableWord" type="Node2D"]
+process_mode = 3
 modulate = Color(1, 1, 1, 0)
 script = ExtResource("1_nxtku")
 

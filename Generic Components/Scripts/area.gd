@@ -54,6 +54,9 @@ func go_to_next_monologue(monologue: PackedScene):
 	var inst = monologue.instantiate()
 	self.add_child(inst)
 	
+	$UICanvas/UIMenu.menu_entered.connect(inst.disable_monologue_click_collision)
+	$UICanvas/UIMenu.menu_exited.connect(inst.enable_monologue_click_collision)
+	
 	if inst.hide_characters_after:
 		inst.finished_monologue.connect(hide_characters)
 	
@@ -68,6 +71,9 @@ func go_to_next_convo(conversation: PackedScene):
 	var inst = conversation.instantiate()
 	#conversation_instances.add_child(inst)
 	conversation_instances.call_deferred("add_child", inst)
+	
+	$UICanvas/UIMenu.menu_entered.connect(inst.disable_dialogue_click_collision)
+	$UICanvas/UIMenu.menu_exited.connect(inst.enable_dialogue_click_collision)
 	
 	inst.start_anxiety_effect.connect(instance_anxiety_effect)
 	if inst.end_anxiety_effect:

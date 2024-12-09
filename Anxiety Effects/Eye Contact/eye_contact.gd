@@ -52,7 +52,7 @@ func _ready() -> void:
 	set_physics_process(false)
 	
 	var has_done_eye_contact = Player.save_file.get_value("player", "has_done_eye_contact") == null
-	if !has_done_eye_contact:
+	if !has_done_eye_contact and !show_tutorial:
 		$GameTutorial2.visible = false
 		_on_tutorial_end()
 

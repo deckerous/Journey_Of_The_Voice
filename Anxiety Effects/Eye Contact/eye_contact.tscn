@@ -48,8 +48,10 @@ has_following_conversation = true
 visible = false
 modulate = Color(1, 1, 1, 0.784314)
 z_as_relative = false
-offset_right = 2000.0
-offset_bottom = 2000.0
+offset_left = -400.0
+offset_top = -680.0
+offset_right = 1600.0
+offset_bottom = 1320.0
 mouse_filter = 1
 color = Color(0, 0, 0, 0.784314)
 

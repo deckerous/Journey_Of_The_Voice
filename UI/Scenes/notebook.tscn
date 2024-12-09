@@ -277,6 +277,7 @@ scroll_active = false
 autowrap_mode = 2
 
 [node name="self_talk" type="Button" parent="Notebook/Container/Page2/LeftPageCont/Tutorial2Container"]
+unique_name_in_owner = true
 layout_mode = 2
 theme = ExtResource("2_fwp36")
 theme_type_variation = &"FlatButton"

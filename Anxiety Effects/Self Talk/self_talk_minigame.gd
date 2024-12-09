@@ -30,7 +30,8 @@ func _ready() -> void:
 	position = Vector2(centerX, centerY)
 	
 	# tweening manually to avoid the await
-	curr_music = GlobalAudio.get_music_stream().stream
+	if GlobalAudio.get_music_stream() != null:
+		curr_music = GlobalAudio.get_music_stream().stream
 	var music: AudioStreamPlayer = GlobalAudio.play_sound_id(minigame_music, "self_talk", GlobalAudio.Bus.MUSIC)
 	music.volume_db = -80
 	GlobalAudio.tween_from_id("self_talk", -15, 1.0)
