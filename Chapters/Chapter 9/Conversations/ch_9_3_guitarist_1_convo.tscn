@@ -23,6 +23,7 @@ position = Vector2(351, 270)
 scale = Vector2(1.2, 1.2)
 
 [node name="Sprite2D" parent="ConversationCharacters/StartingCharacter/Donna" index="0"]
-flip_h = true
+position = Vector2(141.667, 13.3333)
+scale = Vector2(0.344949, 0.344949)
 
 [editable path="ConversationCharacters/StartingCharacter/Donna"]

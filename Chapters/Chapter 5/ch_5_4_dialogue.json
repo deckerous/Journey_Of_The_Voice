@@ -1,28 +1,28 @@
 {
   "dialogue":  [
-    {
-      "id": "Start",
-      "character": "You",
-      "text": "I... think that helped. Thanks."
-    },
-    {
-      "character": "Keebs",
-      "text": "No prob! Everyone’s got noise in their head."
-    },
-    {
-      "character": "You",
-      "text": "So, uh... would you maybe want to join my band?"
-    },
-    {
-      "character": "Keebs",
-      "text": "Join your band? Sure, why not? Let’s make some noise together."
-    },
-    {
-      "character": "Guy",
-      "text": "Man, Keebs is so cool..."
-    },
-    {
-      "function": "end_dialogue"
-    }
+	{
+	  "id": "Start",
+	  "character": "You",
+	  "text": "I... think that helped. Thanks."
+	},
+	{
+	  "character": "Keebs",
+	  "text": "No prob! Everyone’s got noise in their head."
+	},
+	{
+	  "character": "You",
+	  "text": "So, uh... would you maybe want to join my band?"
+	},
+	{
+	  "character": "Keebs",
+	  "text": "Join your band? Sure, why not? Let’s make some noise together."
+	},
+	{
+	  "character": "Guy",
+	  "text": "Man, Keebs is so cool..."
+	},
+	{
+	  "function": "end_dialogue"
+	}
   ]
 }

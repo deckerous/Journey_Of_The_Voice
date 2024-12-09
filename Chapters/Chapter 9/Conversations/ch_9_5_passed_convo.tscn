@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cnbsfhvb8f2be"]
 
 [ext_resource type="PackedScene" uid="uid://cee0f16o8788r" path="res://Generic Components/Scenes/conversation.tscn" id="1_7yt8r"]
-[ext_resource type="PackedScene" uid="uid://c0u1fdrgiinbp" path="res://Characters/Scenes/guide.tscn" id="2_ylpuf"]
+[ext_resource type="PackedScene" uid="uid://5ylb4d0474qn" path="res://Characters/Scenes/guy.tscn" id="2_ylpuf"]
 
 [node name="Ch9_5PassedConvo" instance=ExtResource("1_7yt8r")]
 dialogue_file = "res://Chapters/Chapter 9/ch9_5_passed.json"
@@ -12,4 +12,5 @@ start_conversation_on_load = true
 end_of_chapter = true
 
 [node name="Guide" parent="ConversationCharacters/StartingCharacter" index="2" instance=ExtResource("2_ylpuf")]
-position = Vector2(179, 184)
+position = Vector2(465, 408)
+scale = Vector2(1.41433, 1.41433)
