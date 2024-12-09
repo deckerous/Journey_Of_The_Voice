@@ -12,11 +12,8 @@ extends Node2D
 @onready var game_tutorial = $GameTutorial
 @onready var the_b_gs: ColorRect = $TheBGs
 
-<<<<<<< HEAD
-=======
 var curr_music
 
->>>>>>> origin/main
 signal mini_game_complete
 signal box_breathing_started
 
