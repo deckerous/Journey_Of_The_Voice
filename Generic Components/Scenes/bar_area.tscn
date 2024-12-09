@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://cws7m5i6qkna3"]
+[gd_scene load_steps=6 format=3 uid="uid://cws7m5i6qkna3"]
 
 [ext_resource type="PackedScene" uid="uid://3kgo3ypehagf" path="res://Generic Components/Scenes/area.tscn" id="1_tr6h4"]
 [ext_resource type="Script" path="res://Generic Components/Scripts/bar_area.gd" id="2_gxbyy"]
 [ext_resource type="Texture2D" uid="uid://b5sxlvywhtgug" path="res://Area Backgrounds/bar_background.png" id="3_lalk0"]
-[ext_resource type="PackedScene" path="res://UI/Scenes/poster.tscn" id="3_lm7aa"]
+[ext_resource type="PackedScene" uid="uid://2r0sape7i2ct" path="res://UI/Scenes/poster.tscn" id="3_lm7aa"]
+[ext_resource type="Texture2D" uid="uid://k6n4q6ks8gc7" path="res://Area Backgrounds/bar_front.png" id="5_rbi4e"]
 
 [node name="BarArea" instance=ExtResource("1_tr6h4")]
 script = ExtResource("2_gxbyy")
@@ -22,5 +23,20 @@ offset_bottom = 171.0
 texture = ExtResource("3_lalk0")
 expand_mode = 5
 stretch_mode = 6
+
+[node name="TextureRectFront" type="TextureRect" parent="CanvasLayer" index="1"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -120.0
+offset_right = 408.0
+offset_bottom = 512.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.739959, 0.731076)
+texture = ExtResource("5_rbi4e")
+
+[node name="UICanvas" parent="." index="8"]
+visible = false
 
 [editable path="UICanvas/UIMenu"]
