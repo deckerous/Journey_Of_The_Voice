@@ -34,7 +34,7 @@ func play_sound(audio_stream: AudioStream, bus: Bus = Bus.SFX, pitch_scale: floa
 			temp_stream.bus = &"SFX"
 		Bus.MUSIC:
 			if current_music_stream != null:
-				current_music_stream.volume_db = -80
+				stop_stream_from_id(current_music_stream.name)
 			current_music_stream = temp_stream
 			temp_stream.bus = &"Music"
 	temp_stream.pitch_scale = pitch_scale

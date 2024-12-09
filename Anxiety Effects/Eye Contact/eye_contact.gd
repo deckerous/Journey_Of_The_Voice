@@ -44,7 +44,7 @@ func _ready() -> void:
 	self.position = Vector2(0, 0)
 	initial_pos = cam.position
 	
-	curr_music = GlobalAudio.get_music_stream().stream
+	curr_music = GlobalAudio.get_music_stream()
 	var music: AudioStreamPlayer = GlobalAudio.play_sound_id(minigame_music, "eye_contact", GlobalAudio.Bus.MUSIC)
 	music.volume_db = -80
 	GlobalAudio.tween_from_id("eye_contact", -15, 1.0)
@@ -84,7 +84,7 @@ func generate_new_distract_dir():
 
 func cleanup():
 	mini_game_complete.emit()
-	var player = GlobalAudio.play_sound_id(curr_music, "music", GlobalAudio.Bus.MUSIC)
+	var player = GlobalAudio.play_sound_id(curr_music.stream, "music", GlobalAudio.Bus.MUSIC)
 	player.volume_db = -80
 	GlobalAudio.stop_stream_from_id("eye_contact")
 	GlobalAudio.tween_from_id("music", -15, 1.0)
