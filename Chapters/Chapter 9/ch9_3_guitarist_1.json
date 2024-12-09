@@ -56,7 +56,7 @@
 		"text": "Don't tell me you want to jam..."
 	  },
 	  {
-	"text": "Don't tell me you want to jam...",
+	  "text": "Don't tell me you want to jam...",
 		"function": "branch_dialogue",
 		"options": [
 		  "*take the empty glass*",
@@ -89,9 +89,9 @@
 	  },
 	  {
 		"text": "What makes you so special?",
-	},
-	{
-	"text": "Don't tell me you want to jam...",
+	  },
+	  {
+	  "text": "Don't tell me you want to jam...",
 		"function": "branch_dialogue",
 		"options": [
 		  "I'm friends with the bartender?",
@@ -131,6 +131,9 @@
 		"text": "A journey, huh?"
 	  },
 	  {
+    "text": "Everyone's on a journey. What makes yours worth my time?",
+    },
+    {
 		"text": "Everyone's on a journey. What makes yours worth my time?",
 		"function": "branch_dialogue",
 		"options": [
