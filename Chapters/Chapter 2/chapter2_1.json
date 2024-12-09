@@ -7,23 +7,23 @@
 	},
 	{
 	  "character": "You",
-	  "text": "…oh hi, yeah, thanks…"
+	  "text": "...oh hi, yeah, thanks..."
 	},
 	{
 	  "character": "Guy",
-	  "text": "What are you drinking? Don’t tell me you're drinking that liquid heart attack you call a coffee order…"
+	  "text": "What are you drinking? Don’t tell me you're drinking that liquid heart attack you call a coffee order..."
 	},
 	{
 	  "character": "You",
-	  "text": "…"
+	  "text": "..."
 	},
 	{
 	  "character": "Guy",
-	  "text": "Oh! Here comes the record label scout, Boss. They are sponsoring open mic nights over the next few weeks leading up to the Battle of the Bands."
+	  "text": "Oh! Here comes the record label scout, Boss. They're sponsoring some open mic nights over the next few weeks leading up to the Battle of the Bands."
 	},
 	{
 	  "character": "You",
-	  "text": "… *heartbeat intensifies*"
+	  "text": "... *heartbeat intensifies*"
 	},
 	{
 	  "function": "end_dialogue"
