@@ -1,14 +1,17 @@
-[gd_scene load_steps=8 format=3 uid="uid://cytkowxct06e2"]
+[gd_scene load_steps=9 format=3 uid="uid://cytkowxct06e2"]
 
 [ext_resource type="PackedScene" uid="uid://3kgo3ypehagf" path="res://Generic Components/Scenes/area.tscn" id="1_ogb4d"]
 [ext_resource type="Texture2D" uid="uid://b5sxlvywhtgug" path="res://Area Backgrounds/bar_background.png" id="2_j52db"]
 [ext_resource type="PackedScene" uid="uid://bxvi2sf2kfitm" path="res://Chapters/Chapter 3/Monologues/ch_3_0_mono.tscn" id="2_se6rg"]
 [ext_resource type="PackedScene" uid="uid://cexou3rp8qi88" path="res://Chapters/Chapter 3/Conversations/ch_3_5_drummer_2.tscn" id="3_cccoc"]
-[ext_resource type="PackedScene" uid="uid://c0u1fdrgiinbp" path="res://Characters/Scenes/guy.tscn" id="3_og506"]
+[ext_resource type="PackedScene" uid="uid://5ylb4d0474qn" path="res://Characters/Scenes/guy.tscn" id="3_og506"]
 [ext_resource type="PackedScene" uid="uid://pie5vurh8eoo" path="res://Characters/Scenes/drummer.tscn" id="4_egn52"]
+[ext_resource type="PackedScene" uid="uid://biplfy6u8ldfl" path="res://Characters/Scenes/drummer-instrument.tscn" id="4_fprkc"]
 [ext_resource type="PackedScene" uid="uid://2r0sape7i2ct" path="res://UI/Scenes/poster.tscn" id="6_ng5la"]
 
 [node name="Chapter3BarArea" instance=ExtResource("1_ogb4d")]
+position = Vector2(100, 15)
+scale = Vector2(0.726623, 0.726623)
 start_with_monologue = true
 starting_monologue = ExtResource("2_se6rg")
 
@@ -17,14 +20,23 @@ starting_monologue = ExtResource("2_se6rg")
 [node name="StartingCharacter" parent="ConversationsRoot/Ch3_5_Drummer_2/ConversationCharacters" index="0"]
 position = Vector2(1041, 375)
 
-[node name="Guy" parent="Characters" index="0" instance=ExtResource("3_og506")]
-position = Vector2(162, 167)
+[node name="DialogueChoices" parent="ConversationsRoot/Ch3_5_Drummer_2/ConversationUI/Dialogue/Control" index="2"]
+visible = true
 
-[node name="Drummer" parent="Characters" index="1" instance=ExtResource("4_egn52")]
-position = Vector2(1024, 330)
+[node name="Drummer2" parent="Characters" index="0" instance=ExtResource("4_fprkc")]
+position = Vector2(606.917, 407.364)
+scale = Vector2(0.188931, 0.188931)
+
+[node name="Guy" parent="Characters" index="1" instance=ExtResource("3_og506")]
+position = Vector2(239.464, 573.888)
+scale = Vector2(1.75, 1.75)
+
+[node name="Drummer" parent="Characters" index="2" instance=ExtResource("4_egn52")]
+position = Vector2(1753.32, 366.077)
 scale = Vector2(0.22, 0.22)
 
 [node name="Poster" parent="Interactables" index="0" instance=ExtResource("6_ng5la")]
+visible = false
 
 [node name="CanvasLayer" parent="." index="6"]
 layer = -2

@@ -8,6 +8,7 @@ enum Bus {
 var master_vol = 100
 var sfx_vol = 100
 var music_vol = 100
+var current_music_stream = null
 
 func set_master_vol(level: int):
 	master_vol = level
@@ -32,6 +33,9 @@ func play_sound(audio_stream: AudioStream, bus: Bus = Bus.SFX, pitch_scale: floa
 		Bus.SFX:
 			temp_stream.bus = &"SFX"
 		Bus.MUSIC:
+			if current_music_stream != null:
+				stop_stream_from_id(current_music_stream.name)
+			current_music_stream = temp_stream
 			temp_stream.bus = &"Music"
 	temp_stream.pitch_scale = pitch_scale
 	temp_stream.autoplay = true
@@ -52,11 +56,15 @@ func get_stream_from_id(id: String) -> AudioStreamPlayer:
 func stop_stream_from_id(id: String):
 	remove_child(get_stream_from_id(id))
 
+func get_music_stream() -> AudioStreamPlayer:
+	return current_music_stream
+
 func tween_from_id(id: String, value: float, duration: float):
 	var audio = get_stream_from_id(id)
 	if audio != null:
-		var tweener = get_tree().create_tween()
+		var tweener: Tween = create_tween()
 		tweener.tween_property(audio, "volume_db", value, duration)
+		print(tweener.get_loops_left())
 
 func finished():
 	for audio in get_children():

@@ -6,10 +6,10 @@
 		},
 		{
 			"character": "You",
-			"text": "Uh, uh, nice tat too..."
+			"text": "Uh, uh, nice to tat too..."
 		},
 		{
-			"text": "uh, meet you.",
+			"text": "err, to meet you.",
 			"function": "start_vignette"
 		},
 		{

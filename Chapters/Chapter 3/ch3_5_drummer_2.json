@@ -6,11 +6,11 @@
 		},
 		{
 			"character": "You",
-			"text": "Uh... So you are a drummer? Sorry, that wasn't really a question.."
+			"text": "So you're a drummer? Sorry, that wasn't really a question.."
 		},
 		{
 			"character": "Drummer",
-			"text": "Yes, I am a drummer. What of it?"
+			"text": "Yes, I am a drummer."
 		},
 		{
 			"character": "You",
@@ -18,11 +18,11 @@
 		},
 		{
 			"character": "You",
-			"text": "*oh no I'm going to choke*"
+			"text": "*Oh no, I'm going to choke*"
 		},
 		{
 			"character": "Drummer",
-			"text": "Don't forget to breath, friend."
+			"text": "Don't forget to breathe, friend."
 		},
 		{
 			"character": "You",
@@ -34,15 +34,15 @@
 		},
 		{
 			"character": "You",
-			"text": "*WHAT DOES THAT EVEN MEAN*"
+			"text": "*WHAT DOES THAT EVEN MEAN???*"
 		},
 		{
 			"character": "Drummer",
-			"text": "Life was... chaotic, loud, violent and I was full of anger."
+			"text": "Life was... chaotic, loud, violent, and I was full of anger."
 		},
 		{
 			"character": "Drummer",
-			"text": "One day my nerves got the better of me and I failed to the play the bosses favorite song correctly."
+			"text": "One day my nerves got the better of me, and I failed to the play the bosses favorite song correctly."
 		},
 		{
 			"character": "Drummer",
@@ -50,11 +50,11 @@
 		},
 		{
 			"character": "You",
-			"text": "What does a banish yakuza drummer even do after that?"
+			"text": "What does a banished yakuza drummer even do after that?"
 		},
 		{
 			"character": "You",
-			"text": "*Is this really a conversation that I am having or did I pass out again*"
+			"text": "*Is this really a conversation that I am having or did I pass out*"
 		},
 		{
 			"character": "Drummer",
@@ -66,23 +66,19 @@
 		},
 		{
 			"character": "You",
-			"text": "*Doesn't he realize that its much easier to just beat yourself up in your head?*"
+			"text": "*Does he realize it's much easier to just beat yourself up in your head?*"
 		},
 		{
 			"character": "Drummer",
-			"text": "I found myself struggling to breath as the cold deluge of water cascaded over me."
+			"text": "I found myself struggling to breathe as the cold deluge cascaded over me."
 		},
 		{
 			"character": "Drummer",
-			"text": "Something about it"
+			"text": "I was forced to focus on my breathing."
 		},
 		{
 			"character": "Drummer",
-			"text": "The way I was forced to focus on my breathing"
-		},
-		{
-			"character": "Drummer",
-			"text": "It washed away all the noise from my head."
+			"text": "The freezing water washed all the noise from my head."
 		},
 		{
 			"character": "Drummer",
@@ -101,15 +97,15 @@
 		},
 		{
 			"character": "Drummer",
-			"text": "Its about finding a rhythm that calms-or ignites-your spirit."
+			"text": "It's about finding a rhythm that calms - or ignites - your spirit."
 		},
 		{
 			"character": "Drummer",
-			"text": "That is what my music means to me."
+			"text": "That's what my music means to me."
 		},
 		{
 			"character": "You",
-			"text": "*He's right... Maybe music can help me find peace, too.*"
+			"text": "*Maybe music can help me find peace, too.*"
 		},
 		{
 			"function": "end_dialogue"

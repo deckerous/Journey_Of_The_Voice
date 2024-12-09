@@ -12,6 +12,11 @@ extends Node2D
 @onready var game_tutorial = $GameTutorial
 @onready var the_b_gs: ColorRect = $TheBGs
 
+<<<<<<< HEAD
+=======
+var curr_music
+
+>>>>>>> origin/main
 signal mini_game_complete
 signal box_breathing_started
 
@@ -36,7 +41,7 @@ func _ready() -> void:
 	bb_animation_player.play("fade_in")
 	
 	var tweener = get_tree().create_tween()
-	var bar_audio = GlobalAudio.get_stream_from_id("bar-theme")
+	curr_music = GlobalAudio.get_music_stream().stream
 	
 	# Position button in screen center
 	var centerX = get_viewport_rect().size.x / 2
@@ -48,16 +53,15 @@ func _ready() -> void:
 	hit_marker.success_number_reached.connect(end_box_breathing)
 	
 	# tweening manually to avoid the await
-	await tweener.tween_property(bar_audio, "volume_db", -80, 2.0)
-	var player = GlobalAudio.play_sound_id(breathing_sound, "breathing-theme")
-	GlobalAudio.tween_from_id("breathing-theme", -15, 3.0)
+	var player = GlobalAudio.play_sound_id(breathing_sound, "breathing-theme", GlobalAudio.Bus.MUSIC)
+	player.volume_db = -15
 
 func end_box_breathing():
 	self.mini_game_complete.emit()
 	bb_animation_player.play("fade_out")
-	GlobalAudio.tween_from_id("breathing-theme", -80.0, 0.5)
+	var player = GlobalAudio.play_sound_id(curr_music, "music", GlobalAudio.Bus.MUSIC)
+	player.volume_db = -80
+	GlobalAudio.stop_stream_from_id("breathing-theme")
+	GlobalAudio.tween_from_id("music", -15, 1.0)
 	await bb_animation_player.animation_finished
-	GlobalAudio.stop_stream_from_id("breathing_sound")
-	GlobalAudio.tween_from_id("bar-theme", -15.0, 1.0)
-	
 	self.queue_free()

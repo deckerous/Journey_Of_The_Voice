@@ -2,10 +2,10 @@
   "monologue": [
     {
       "id": "Start",
-      "text": "Time has passed since the night Donna joined the band."
+      "text": "It's been 2 weeks since the night Donna joined the band."
     },
     {
-      "text": "Every waking moment since has been spent practicing, pushing each other to be better, to become the band we always knew we could be."
+      "text": "Every waking moment since then has been spent practicing, pushing each other to be better, to become the band we always knew we could be."
     },
     {
       "text": "You return home after another long night of practice, exhaustion and pride mixing as you step into your room."
@@ -21,10 +21,7 @@
       "text": "*Everyone's been through so much...*"
     },
     {
-      "text": " They've all taught me something I'll never forget."
-    },
-    {
-      "function": "journal_available"
+      "text": "They've all taught me something I'll never forget."
     },
     {
       "function": "end_monologue"

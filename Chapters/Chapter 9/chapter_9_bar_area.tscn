@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cws7m5i6qkna3" path="res://Generic Components/Scenes/bar_area.tscn" id="1_fp02h"]
 [ext_resource type="PackedScene" uid="uid://b6i7fp7cug14e" path="res://Chapters/Chapter 9/Monologues/ch_9_0_mono.tscn" id="2_fukgy"]
 [ext_resource type="PackedScene" uid="uid://oiqru1q6tm14" path="res://Characters/Scenes/donna.tscn" id="3_cqg1l"]
-[ext_resource type="PackedScene" uid="uid://c0u1fdrgiinbp" path="res://Characters/Scenes/guide.tscn" id="4_skmb4"]
+[ext_resource type="PackedScene" uid="uid://c0u1fdrgiinbp" path="res://Characters/Scenes/guy.tscn" id="4_skmb4"]
 
 [node name="Chapter9BarArea" instance=ExtResource("1_fp02h")]
 start_with_monologue = true
