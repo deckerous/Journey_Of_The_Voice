@@ -25,13 +25,13 @@ var save_path = TEST_SAVE_PATH
 # Controls whether another conversation should follow this one after it is done.
 @export var has_following_conversation: bool = false
 @export var following_conversation: PackedScene
-
 @export var following_conversation_path: String
 
 # Controls whether a failure conversation should follow this one after it is done.
 # Something like the Guide saying "Wow you really flubbed that!"
 @export var has_failure_conversation: bool = false
 @export var failure_conversation: PackedScene
+@export var following_failed_conversation_path: String
 
 @export var has_following_monologue: bool = false
 @export var following_monologue: PackedScene

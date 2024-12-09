@@ -1,35 +1,35 @@
 {
   "dialogue": [
-    {
-      "id": "Start",
-      "character": "Guy",
-      "text": "Oof..."
-    },
-    {
-      "text": "You crashed and burned..."
-    },
-    {
-      "character": "You",
-      "text": "Yeah..."
-    },
-    {
-      "character": "Guy",
-      "text": "Take a moment and sit with this feeling."
-    },
-    {
-      "text": "But then kick it out, like a bad patron."
-    },
-    {
-      "text": "You haven't come this far by quitting when things got uncomfortable"
-    },
-    {
-      "text": "Don't let this feeling stand in your way."
-    },
-    {
-      "text": "Give it another try."
-    },
-    {
-      "function": "end_dialogue"
-    }
+	{
+	  "id": "Start",
+	  "character": "Guy",
+	  "text": "Oof..."
+	},
+	{
+	  "text": "You crashed and burned..."
+	},
+	{
+	  "character": "You",
+	  "text": "Yeah..."
+	},
+	{
+	  "character": "Guy",
+	  "text": "Take a moment and sit with this feeling."
+	},
+	{
+	  "text": "But then kick it out, like a bad patron."
+	},
+	{
+	  "text": "You haven't come this far by quitting when things got uncomfortable"
+	},
+	{
+	  "text": "Don't let this feeling stand in your way."
+	},
+	{
+	  "text": "Give it another try."
+	},
+	{
+	  "function": "end_dialogue"
+	}
   ]
 }

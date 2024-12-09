@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://cxqoi8x7j4adk"]
+[gd_scene load_steps=3 format=3 uid="uid://cxqoi8x7j4adk"]
 
 [ext_resource type="PackedScene" uid="uid://cee0f16o8788r" path="res://Generic Components/Scenes/conversation.tscn" id="1_1acg8"]
-[ext_resource type="PackedScene" uid="uid://gbuftqctlfwa" path="res://Chapters/Chapter 11/Conversations/ch_11_4_boss_convo_1.tscn" id="2_soimr"]
-[ext_resource type="PackedScene" uid="uid://c0u1fdrgiinbp" path="res://Characters/Scenes/guy.tscn" id="3_xjwx1"]
+[ext_resource type="PackedScene" uid="uid://5ylb4d0474qn" path="res://Characters/Scenes/guy.tscn" id="3_xjwx1"]
 
 [node name="Ch11FailedConvo" instance=ExtResource("1_1acg8")]
 dialogue_file = "res://Chapters/Chapter 11/ch11_failed.json"
@@ -10,7 +9,7 @@ wants_to_talk = false
 starting_character_alone = false
 starting_convo_character_right = false
 has_following_conversation = true
-following_conversation = ExtResource("2_soimr")
+following_conversation_path = "res://Chapters/Chapter 11/Conversations/ch_11_4_boss_convo_1.tscn"
 
 [node name="Guy" parent="ConversationCharacters/StartingCharacter" index="2" instance=ExtResource("3_xjwx1")]
 position = Vector2(576, 629)
