@@ -18,7 +18,7 @@
 			"text": "Hey, you alright?"
 		},
 		{
-			"character": "",
+			"character": "Keyboardist",
 			"text": "It seems as though you’re stuck in your head."
 		},
 		{
@@ -30,19 +30,19 @@
 			"text": "No worries. Here’s a trick:"
 		},
 	  {
-			"text": "Challege the noise your mind produces,"
+			"text": "Challege the noise your mind produces."
 		},
 	  {
 			"text": "When the melody of negative self-talk fills your mind,"
 		},
 	  {
-			"text": "Don't just loop the sample,"
+			"text": "don't just loop the sample,"
 		},
 	  {
-			"text": "Shift the pitch up, and layer in a positve counter example."
+			"text": "shift the pitch up, and layer in a positve counter example."
 		},
 	  {
-	    "text": "Reframe the negative thought in your mind and click it away."
+	    "text": "Reframe the negative thought in your mind and send them away."
 		},
 		{
 			"function": "end_dialogue"
