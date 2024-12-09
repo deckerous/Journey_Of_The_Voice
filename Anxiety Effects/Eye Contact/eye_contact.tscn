@@ -44,7 +44,7 @@ _data = {
 script = ExtResource("1_ryo6m")
 has_following_conversation = true
 successful_convo_path = "res://Chapters/Chapter 7/Conversations/ch_7_5_bassist_2_successful_convo.tscn"
-failed_convo_path = "res://Chapters/Chapter 11/Conversations/ch_11_4_boss_convo_1.tscn"
+failed_convo_path = "res://Chapters/Chapter 7/Conversations/ch_7_5_bassist_2_failed_convo.tscn"
 
 [node name="TheBGs" type="ColorRect" parent="."]
 visible = false
@@ -61,8 +61,8 @@ color = Color(0, 0, 0, 0.784314)
 position = Vector2(576, 324)
 
 [node name="Character" type="Sprite2D" parent="."]
-position = Vector2(570, 326)
-scale = Vector2(0.25, 0.24)
+position = Vector2(576, 443)
+scale = Vector2(0.39, 0.374)
 texture = ExtResource("2_pl15a")
 flip_h = true
 
