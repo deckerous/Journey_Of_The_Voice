@@ -51,15 +51,15 @@ layer = -1
 follow_viewport_enabled = true
 
 [node name="PosterButton" type="TextureButton" parent="CanvasLayer"]
-offset_left = 825.0
-offset_top = 212.0
-offset_right = 865.0
-offset_bottom = 267.0
+offset_left = 828.0
+offset_top = 208.0
+offset_right = 868.0
+offset_bottom = 263.0
 scale = Vector2(1.75, 1.75)
 mouse_default_cursor_shape = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/PosterButton"]
-position = Vector2(60, 14.2857)
+position = Vector2(18.8571, 25.7143)
 scale = Vector2(0.0314671, 0.0314671)
 texture = ExtResource("1_mi81n")
 
