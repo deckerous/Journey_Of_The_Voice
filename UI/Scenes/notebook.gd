@@ -135,14 +135,23 @@ func _on_box_breathing_pressed() -> void:
 
 
 func _on_eye_contact_pressed() -> void:
+	var canvas = CanvasLayer.new()
+	canvas.follow_viewport_enabled = true
+	canvas.layer = 10
+	add_child(canvas)
 	game_tut = EYE_CONTACT.instantiate()
 	game_tut.show_tutorial = true
 	game_tut.game_background = true
-	add_child(game_tut)
+	canvas.add_child(game_tut)
 
 
 func _on_self_talk_pressed() -> void:
 	game_tut = SELF_TALK.instantiate()
 	game_tut.show_tutorial = true
 	game_tut.game_background = true
+	game_tut.mini_game_complete.connect(_on_self_talk_finished)
+	$Notebook.visible = false
 	add_child(game_tut)
+
+func _on_self_talk_finished() -> void:
+	$Notebook.visible = true
