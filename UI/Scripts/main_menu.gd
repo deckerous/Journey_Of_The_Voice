@@ -24,7 +24,9 @@ var save_path = TEST_SAVE_PATH
 	7: load("res://Chapters/Chapter 7/chapter_7.tscn"),
 	8: load("res://Chapters/Chapter 8/chapter_8.tscn"),
 	9: load("res://Chapters/Chapter 9/chapter_9.tscn"),
-	10: load("res://Chapters/Chapter 10/chapter_10.tscn")
+	10: load("res://Chapters/Chapter 10/chapter_10.tscn"),
+	11: load("res://Chapters/Chapter 11/chapter_11.tscn")
+
 }
 
 func _ready():
