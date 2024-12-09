@@ -9,6 +9,7 @@ size = Vector2(226, 570)
 [node name="Ch3_5_Drummer_2" instance=ExtResource("1_blb08")]
 dialogue_file = "res://Chapters/Chapter 3/ch3_5_drummer_2.json"
 starting_convo_character_right = false
+start_conversation_on_load = false
 end_of_chapter = true
 
 [node name="ConversationCharacters" parent="." index="0"]
