@@ -13,6 +13,3 @@ area = NodePath("Chapter7BarArea")
 
 [node name="Chapter" parent="CanvasLayer/ColorRect" index="0"]
 text = "[center]Chapter 7"
-
-[node name="ContinueButton" parent="CanvasLayer" index="1"]
-visible = true
