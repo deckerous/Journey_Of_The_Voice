@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://bdlyds7b50cwh"]
+[gd_scene load_steps=18 format=3 uid="uid://bdlyds7b50cwh"]
 
 [ext_resource type="Theme" uid="uid://mrmpkimvequ6" path="res://Themes/credits_header.tres" id="1_85xxj"]
 [ext_resource type="Script" path="res://UI/Scenes/credits.gd" id="1_irc42"]
@@ -11,7 +11,9 @@
 [ext_resource type="Texture2D" uid="uid://iw1fcgn13127" path="res://Characters/Assets/donna.png" id="7_l2e6r"]
 [ext_resource type="Texture2D" uid="uid://bvfn31ah6rmf7" path="res://Characters/Assets/guy_legs.png" id="8_3hcp7"]
 [ext_resource type="Texture2D" uid="uid://c2luojliucird" path="res://Characters/Assets/boss.png" id="9_s0ywd"]
+[ext_resource type="PackedScene" uid="uid://w6k5cj8hiag4" path="res://UI/Scenes/continue_button.tscn" id="11_36uqw"]
 [ext_resource type="Theme" uid="uid://8kiqv6kckpfr" path="res://Themes/JoTV.tres" id="11_g3gd3"]
+[ext_resource type="Texture2D" uid="uid://tcyflyvlnw44" path="res://Images/UI/continue.png" id="12_mkffb"]
 
 [sub_resource type="Animation" id="Animation_2ycib"]
 resource_name = "Credit Scroll"
@@ -251,6 +253,18 @@ And I think that’s something worth investing in.
 Don't let me down.
 "]
 }
+tracks/18/type = "value"
+tracks/18/imported = false
+tracks/18/enabled = true
+tracks/18/path = NodePath("ButtonContainer/Control/ContinueButton:visible")
+tracks/18/interp = 1
+tracks/18/loop_wrap = true
+tracks/18/keys = {
+"times": PackedFloat32Array(0, 46.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
 
 [sub_resource type="Animation" id="Animation_jh7du"]
 length = 0.001
@@ -392,6 +406,18 @@ We're aiming for the biggest stages, the brightest lights.
 Don't let me down.\"
 "]
 }
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("ButtonContainer/Control/ContinueButton:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_33jgy"]
 _data = {
@@ -496,10 +522,35 @@ position = Vector2(920, 344)
 scale = Vector2(0.291063, 0.291063)
 texture = ExtResource("9_s0ywd")
 
+[node name="ButtonContainer" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="ButtonContainer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ContinueButton" parent="ButtonContainer/Control" instance=ExtResource("11_36uqw")]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -64.0
+offset_right = 64.0
+offset_bottom = 0.0
+grow_horizontal = 2
+grow_vertical = 0
+icon = ExtResource("12_mkffb")
+
 [node name="CenterContainer" type="CenterContainer" parent="."]
-offset_top = 314.445
 offset_right = 1152.0
-offset_bottom = 2906.45
+offset_bottom = 2592.0
 size_flags_vertical = 0
 size_flags_stretch_ratio = 0.0
 metadata/_edit_lock_ = true

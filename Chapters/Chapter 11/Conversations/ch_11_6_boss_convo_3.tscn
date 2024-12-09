@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://coqis5ggiidd4"]
+
+[ext_resource type="PackedScene" uid="uid://cee0f16o8788r" path="res://Generic Components/Scenes/conversation.tscn" id="1_vn1ai"]
+[ext_resource type="PackedScene" uid="uid://cxqoi8x7j4adk" path="res://Chapters/Chapter 11/Conversations/ch_11_failed_convo.tscn" id="2_ctdqy"]
+[ext_resource type="PackedScene" uid="uid://b3nq0ij2pd5ks" path="res://Characters/Scenes/boss.tscn" id="2_v7v6l"]
+
+[node name="Ch_11_6_Boss_Convo_3" instance=ExtResource("1_vn1ai")]
+dialogue_file = "res://Chapters/Chapter 11/ch11_6_boss_3.json"
+wants_to_talk = false
+starting_character_alone = false
+starting_convo_character_right = false
+has_failure_conversation = true
+failure_conversation = ExtResource("2_ctdqy")
+end_of_chapter = true
+
+[node name="Boss" parent="ConversationCharacters/StartingCharacter" index="2" instance=ExtResource("2_v7v6l")]
+position = Vector2(576, 456)
+scale = Vector2(1.39657, 1.39657)

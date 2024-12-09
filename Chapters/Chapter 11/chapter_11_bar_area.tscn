@@ -1,0 +1,57 @@
+[gd_scene load_steps=9 format=3 uid="uid://ba1shx7a15ss4"]
+
+[ext_resource type="PackedScene" uid="uid://cws7m5i6qkna3" path="res://Generic Components/Scenes/bar_area.tscn" id="1_ixjlu"]
+[ext_resource type="PackedScene" uid="uid://xo4csgwkevev" path="res://Chapters/Chapter 11/Monologues/ch_11_0_mono.tscn" id="2_yyowi"]
+[ext_resource type="PackedScene" uid="uid://b3nq0ij2pd5ks" path="res://Characters/Scenes/boss.tscn" id="3_ljdef"]
+[ext_resource type="PackedScene" uid="uid://cym1xw41nikgc" path="res://Characters/Scenes/cy.tscn" id="4_vw7kt"]
+[ext_resource type="PackedScene" uid="uid://oiqru1q6tm14" path="res://Characters/Scenes/donna.tscn" id="5_tbqx1"]
+[ext_resource type="PackedScene" uid="uid://pie5vurh8eoo" path="res://Characters/Scenes/drummer.tscn" id="6_mf5a7"]
+[ext_resource type="PackedScene" uid="uid://c0u1fdrgiinbp" path="res://Characters/Scenes/guy.tscn" id="7_qg5ps"]
+[ext_resource type="PackedScene" uid="uid://gpq84yf1hx6v" path="res://Characters/Scenes/keebs.tscn" id="8_wx2y6"]
+
+[node name="Chapter11BarArea" instance=ExtResource("1_ixjlu")]
+start_with_monologue = true
+starting_monologue = ExtResource("2_yyowi")
+
+[node name="Boss" parent="Characters" index="0" instance=ExtResource("3_ljdef")]
+position = Vector2(562, 302)
+scale = Vector2(0.42, 0.42)
+
+[node name="Sprite2D" parent="Characters/Boss" index="0"]
+position = Vector2(-21.9782, 15.3846)
+flip_h = true
+
+[node name="Keebs" parent="Characters" index="1" instance=ExtResource("8_wx2y6")]
+position = Vector2(662, 427)
+scale = Vector2(0.181752, 0.181752)
+
+[node name="Sprite2D" parent="Characters/Keebs" index="0"]
+position = Vector2(40, -6.66667)
+flip_h = true
+
+[node name="Cy" parent="Characters" index="2" instance=ExtResource("4_vw7kt")]
+position = Vector2(874, 343)
+scale = Vector2(0.239398, 0.239398)
+
+[node name="Donna" parent="Characters" index="3" instance=ExtResource("5_tbqx1")]
+position = Vector2(916, 379)
+
+[node name="Sprite2D" parent="Characters/Donna" index="0"]
+position = Vector2(-585, -97)
+flip_h = true
+
+[node name="Drummer" parent="Characters" index="4" instance=ExtResource("6_mf5a7")]
+position = Vector2(1057, 368)
+scale = Vector2(0.324636, 0.324636)
+
+[node name="Guy" parent="Characters" index="5" instance=ExtResource("7_qg5ps")]
+position = Vector2(121, 450)
+scale = Vector2(0.66, 0.66)
+
+[node name="UICanvas" parent="." index="8"]
+visible = false
+
+[editable path="Characters/Boss"]
+[editable path="Characters/Keebs"]
+[editable path="Characters/Donna"]
+[editable path="UICanvas/UIMenu"]

@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://dp4sslhfbqhiy"]
+
+[ext_resource type="PackedScene" uid="uid://cee0f16o8788r" path="res://Generic Components/Scenes/conversation.tscn" id="1_tpg8o"]
+[ext_resource type="PackedScene" uid="uid://dxxbqnkt2x3d5" path="res://Chapters/Chapter 11/Conversations/ch_11_2_convo.tscn" id="2_hptk8"]
+
+[node name="Ch_11_1_Boss_Convo_0" instance=ExtResource("1_tpg8o")]
+dialogue_file = "res://Chapters/Chapter 11/ch11_1_boss_0.json"
+wants_to_talk = false
+starting_character_alone = false
+starting_convo_character_right = false
+has_following_conversation = true
+following_conversation = ExtResource("2_hptk8")

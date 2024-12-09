@@ -39,6 +39,8 @@ var save_path = TEST_SAVE_PATH
 @export var has_following_minigame: bool = false
 @export var following_minigame: PackedScene
 
+@export var hide_characters_after: bool
+
 @export var end_of_chapter: bool
 
 # Reference to parent node for handling character positioning and animation
@@ -149,8 +151,8 @@ func fail_dialogue():
 	self.queue_free()
 
 
-func instance_anxiety_effect():
-	start_anxiety_effect.emit()
+func instance_anxiety_effect(effect: String):
+	start_anxiety_effect.emit(effect)
 
 func fade_out_convo():
 	conversation_animation_player.play("fade_out")

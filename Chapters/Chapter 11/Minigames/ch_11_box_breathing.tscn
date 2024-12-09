@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://c1kc1ixfb6otx"]
+
+[ext_resource type="PackedScene" uid="uid://bfv6gxyo50n2o" path="res://Anxiety Effects/Box Breathing/box_breathing.tscn" id="1_gb4hi"]
+[ext_resource type="PackedScene" uid="uid://eco14jt7bdh0" path="res://Chapters/Chapter 11/Conversations/ch_11_3_convo.tscn" id="2_qx2tx"]
+
+[node name="Ch11BoxBreathing" instance=ExtResource("1_gb4hi")]
+has_following_conversation = true
+following_conversation = ExtResource("2_qx2tx")

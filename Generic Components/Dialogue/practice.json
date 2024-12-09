@@ -21,10 +21,12 @@
 			"text": "4. Update the dialogue with click input."
 		},
 		{
-			"text": "5. You're as good as done baby!",
+			"text": "5. You're as good as done baby!"
 		},
 		{
-			"text": "Are you picking up what I'm putting down so far?",
+			"text": "Are you picking up what I'm putting down so far?"
+		},
+		{
 			"function": "branch_dialogue",
 			"options": [
 				"Yes",
@@ -33,10 +35,10 @@
 		},
 		{
 			"id": "Yes",
-			"text": "That's what I'm talking about!",
+			"text": "That's what I'm talking about!"
 		},
 		{
-			"text": "Lets have a [wave amp=50.0 fequency=100.0]celebration[/wave].",
+			"text": "Lets have a [wave amp=50.0 fequency=100.0]celebration[/wave]."
 		},
 		{
 			"character": "You",
@@ -47,10 +49,10 @@
 		},
 		{
 			"id": "No",
-			"text": "Oof, ok let me go over this again.",
+			"text": "Oof, ok let me go over this again."
 		},
 		{
-			"text": "Don't worry about getting it all right when you first hear about how to do it.",
+			"text": "Don't worry about getting it all right when you first hear about how to do it."
 		},
 		{
 			"function": "end_dialogue"
