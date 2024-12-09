@@ -10,7 +10,7 @@ var save_path = TEST_SAVE_PATH
 @export var next_chapter: PackedScene
 @export var area: Area
 
-@onready var continue_button: Button = $CanvasLayer/ContinueButton
+@onready var continue_button: TextureButton = $CanvasLayer/ContinueButton
 
 # Alerts other nodes when we're changing chapters
 signal clicked
