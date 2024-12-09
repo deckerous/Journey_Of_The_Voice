@@ -17,7 +17,4 @@ scale = Vector2(0.525, 0.525)
 position = Vector2(326, 419)
 scale = Vector2(1.44485, 1.44485)
 
-[node name="UIMenu" parent="UICanvas" index="0"]
-visible = false
-
 [editable path="UICanvas/UIMenu"]
