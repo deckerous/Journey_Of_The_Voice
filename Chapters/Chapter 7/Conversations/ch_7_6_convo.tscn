@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dnt57q3b1hl32"]
 
 [ext_resource type="PackedScene" uid="uid://cee0f16o8788r" path="res://Generic Components/Scenes/conversation.tscn" id="1_ke7cy"]
-[ext_resource type="PackedScene" uid="uid://c0u1fdrgiinbp" path="res://Characters/Scenes/guy.tscn" id="2_ljy8p"]
+[ext_resource type="PackedScene" uid="uid://5ylb4d0474qn" path="res://Characters/Scenes/guy.tscn" id="2_ljy8p"]
 
 [node name="Ch_7_6_Convo" instance=ExtResource("1_ke7cy")]
 dialogue_file = "res://Chapters/Chapter 7/ch7_6_dialogue.json"
@@ -15,3 +15,5 @@ end_of_chapter = true
 position = Vector2(162, 167)
 
 [node name="Guy" parent="ConversationCharacters/StartingCharacter" index="2" instance=ExtResource("2_ljy8p")]
+position = Vector2(404, 228)
+scale = Vector2(1.15463, 1.15463)

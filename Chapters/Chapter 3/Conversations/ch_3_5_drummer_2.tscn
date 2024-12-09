@@ -11,8 +11,16 @@ dialogue_file = "res://Chapters/Chapter 3/ch3_5_drummer_2.json"
 starting_convo_character_right = false
 end_of_chapter = true
 
+[node name="ConversationCharacters" parent="." index="0"]
+position = Vector2(-25, 43)
+
+[node name="StartingCharacter" parent="ConversationCharacters" index="0"]
+position = Vector2(617, 181)
+scale = Vector2(4.36612, 4.36612)
+
 [node name="CharacterCollisionShape2D" parent="ConversationCharacters/StartingCharacter/CharacterClickArea" index="0"]
 shape = SubResource("RectangleShape2D_sdgvy")
 
 [node name="Drummer" parent="ConversationCharacters/StartingCharacter" index="2" instance=ExtResource("2_wmra5")]
-position = Vector2(0, 29)
+position = Vector2(-6, 82)
+scale = Vector2(0.139565, 0.139565)
