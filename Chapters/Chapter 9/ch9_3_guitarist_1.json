@@ -131,9 +131,9 @@
 		"text": "A journey, huh?"
 	  },
 	  {
-    "text": "Everyone's on a journey. What makes yours worth my time?",
-    },
-    {
+	"text": "Everyone's on a journey. What makes yours worth my time?",
+	},
+	{
 		"text": "Everyone's on a journey. What makes yours worth my time?",
 		"function": "branch_dialogue",
 		"options": [
