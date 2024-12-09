@@ -43,6 +43,7 @@ _data = {
 }
 
 [node name="Poster" type="Node2D"]
+position = Vector2(39, 0)
 script = ExtResource("1_iq0ty")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -59,8 +60,8 @@ scale = Vector2(1.75, 1.75)
 mouse_default_cursor_shape = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/PosterButton"]
-position = Vector2(20, 27.5)
-scale = Vector2(0.025, 0.025)
+position = Vector2(60, 14.2857)
+scale = Vector2(0.0314671, 0.0314671)
 texture = ExtResource("1_mi81n")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/PosterButton"]
