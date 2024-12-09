@@ -2,7 +2,7 @@
 	"dialogue": [
 		{
 			"id": "start",
-			"character": "Keyboardist",
+			"character": "Keebs",
 			"text": "Piacere, mi chiamo Alessandro Vincenzo DeLuca."
 		},
 		{
@@ -14,11 +14,11 @@
 			"function": "start_self_talk"
 		},
 		{
-			"character": "Keyboardist",
+			"character": "Keebs",
 			"text": "Hey, you alright?"
 		},
 		{
-			"character": "Keyboardist",
+			"character": "Keebs",
 			"text": "It seems as though you’re stuck in your head."
 		},
 		{
@@ -26,7 +26,7 @@
 			"text": "Uh... sorry, I... Yeah,I’m struggling a little..."
 		},
 		{
-			"character": "Keyboardist",
+			"character": "Keebs",
 			"text": "No worries. Here’s a trick:"
 		},
 	  {

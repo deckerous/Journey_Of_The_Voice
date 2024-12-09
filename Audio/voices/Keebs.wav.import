@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://dbwc3ck3j4bob"
-path="res://.godot/imported/Keyboardist.wav-0c0f43650af371fba6899e921f2518e6.sample"
+path="res://.godot/imported/Keebs.wav-187ff539f12cc6ee3cd0de373eb9e328.sample"
 
 [deps]
 
-source_file="res://Audio/voices/Keyboardist.wav"
-dest_files=["res://.godot/imported/Keyboardist.wav-0c0f43650af371fba6899e921f2518e6.sample"]
+source_file="res://Audio/voices/Keebs.wav"
+dest_files=["res://.godot/imported/Keebs.wav-187ff539f12cc6ee3cd0de373eb9e328.sample"]
 
 [params]
 

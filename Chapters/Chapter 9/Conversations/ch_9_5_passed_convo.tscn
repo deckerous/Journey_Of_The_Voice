@@ -12,4 +12,5 @@ start_conversation_on_load = true
 end_of_chapter = true
 
 [node name="Guide" parent="ConversationCharacters/StartingCharacter" index="2" instance=ExtResource("2_ylpuf")]
-position = Vector2(179, 184)
+position = Vector2(465, 408)
+scale = Vector2(1.41433, 1.41433)

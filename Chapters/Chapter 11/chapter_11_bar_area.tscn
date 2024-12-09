@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cym1xw41nikgc" path="res://Characters/Scenes/cy.tscn" id="4_vw7kt"]
 [ext_resource type="PackedScene" uid="uid://oiqru1q6tm14" path="res://Characters/Scenes/donna.tscn" id="5_tbqx1"]
 [ext_resource type="PackedScene" uid="uid://pie5vurh8eoo" path="res://Characters/Scenes/drummer.tscn" id="6_mf5a7"]
-[ext_resource type="PackedScene" uid="uid://c0u1fdrgiinbp" path="res://Characters/Scenes/guy.tscn" id="7_qg5ps"]
+[ext_resource type="PackedScene" uid="uid://5ylb4d0474qn" path="res://Characters/Scenes/guy.tscn" id="7_qg5ps"]
 [ext_resource type="PackedScene" uid="uid://gpq84yf1hx6v" path="res://Characters/Scenes/keebs.tscn" id="8_wx2y6"]
 
 [node name="Chapter11BarArea" instance=ExtResource("1_ixjlu")]
@@ -46,10 +46,7 @@ scale = Vector2(0.324636, 0.324636)
 
 [node name="Guy" parent="Characters" index="5" instance=ExtResource("7_qg5ps")]
 position = Vector2(121, 450)
-scale = Vector2(0.66, 0.66)
-
-[node name="UICanvas" parent="." index="8"]
-visible = false
+scale = Vector2(1.52066, 1.52066)
 
 [editable path="Characters/Boss"]
 [editable path="Characters/Keebs"]

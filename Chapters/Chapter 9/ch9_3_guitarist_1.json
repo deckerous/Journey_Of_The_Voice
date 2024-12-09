@@ -57,6 +57,7 @@
 	  },
 	  {
 	  "text": "...",
+
 		"function": "branch_dialogue",
 		"options": [
 		  "*take her glass anyway*",
@@ -88,6 +89,7 @@
 		"text": "Yeah, you and everyone at every venue I've torn through."
 	  },
 	  {
+		"text": "What makes you so special?",
 		"text": "What makes you so special?"
 	  },
 	  {
@@ -131,10 +133,12 @@
 		"text": "A journey, huh?"
 	  },
 	  {
+		"text": "Everyone's on a journey. What makes yours worth my time?",
 	"text": "Everyone's on a journey. What makes yours worth my time?"
 	},
 	{
 		"text": "...",
+
 		"function": "branch_dialogue",
 		"options": [
 		  "Because we want to tear up every stage!",
@@ -187,3 +191,4 @@
 	  }
 	]
   }
+
