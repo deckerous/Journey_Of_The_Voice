@@ -1,10 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://5ylb4d0474qn"]
+[gd_scene load_steps=4 format=3 uid="uid://5ylb4d0474qn"]
 
 [ext_resource type="PackedScene" uid="uid://cfcuodb5inj3o" path="res://Generic Components/Scenes/character.tscn" id="1_mu2oh"]
 [ext_resource type="Texture2D" uid="uid://dts8xv1jwjgbb" path="res://Characters/Assets/guy.png" id="2_x7a6o"]
+[ext_resource type="Texture2D" uid="uid://k6n4q6ks8gc7" path="res://Area Backgrounds/bar_front.png" id="3_vfmyd"]
 
 [node name="Guy" instance=ExtResource("1_mu2oh")]
 
 [node name="Sprite2D" parent="." index="0"]
-scale = Vector2(0.249183, 0.249183)
+scale = Vector2(0.255, 0.255)
 texture = ExtResource("2_x7a6o")
+
+[node name="Bar" type="Sprite2D" parent="." index="1"]
+visible = false
+position = Vector2(387, -5.92)
+scale = Vector2(0.745, 0.745)
+texture = ExtResource("3_vfmyd")

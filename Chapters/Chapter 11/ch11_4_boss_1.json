@@ -1,22 +1,22 @@
 {
   "dialogue": [
-      {
-          "id": "Start",
-          "character": "Boss",
-          "text": "Guy told me this group has something special..."
-      },
-      {
-          "text": "What a suprise!"
-      },
-      {
-          "text": "The singer without a voice.",
-          "function": "start_self_talk"
-      },
-      {
-          "text": "I am not in the business of giving out free rides you know."
-      },
-      {
-          "function": "end_dialogue"
-      }
+	  {
+		  "id": "Start",
+		  "character": "Boss",
+		  "text": "Guy told me this group has something special..."
+	  },
+	  {
+		  "text": "What a suprise!"
+	  },
+	  {
+		  "text": "The singer without a voice.",
+		  "function": "start_self_talk"
+	  },
+	  {
+		  "text": "I am not in the business of giving out free rides you know."
+	  },
+	  {
+		  "function": "end_dialogue"
+	  }
   ]
 }

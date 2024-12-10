@@ -15,10 +15,10 @@ scale = Vector2(0.525, 0.525)
 
 [node name="Guy" parent="Characters" index="1" instance=ExtResource("4_d87kc")]
 show_behind_parent = true
-position = Vector2(178, 381)
-scale = Vector2(1.44485, 1.44485)
+position = Vector2(190, 329)
 
-[node name="UICanvas" parent="." index="8"]
+[node name="Bar" parent="Characters/Guy" index="1"]
 visible = true
 
+[editable path="Characters/Guy"]
 [editable path="UICanvas/UIMenu"]
