@@ -30,6 +30,7 @@ var curr_effect = null
 	"eye_contact": load("res://Anxiety Effects/Eye Contact/eye_contact_effect.tscn")
 }
 
+@onready var interactables_exist = false
 signal interactable_now_visible
 signal interactable_now_invisible
 
@@ -60,6 +61,7 @@ func _ready():
 	# Interactables in this scene, save reference to them when enabling them when
 	# the player is out of a convo, mono, or minigame.
 	if len(interactables.get_children()) > 0:
+		interactables_exist = true
 		interactable_insts = interactables.get_children()
 		for i in interactable_insts:
 			i.now_visible.connect(func(): interactable_now_visible.emit())
@@ -84,7 +86,8 @@ func go_to_next_monologue(monologue: PackedScene):
 	else:
 		# No following conversation or monologue, go to base area scene
 		inst.finished_monologue.connect(fade_in_clickable_conversations)
-		inst.finished_monologue.connect(enable_interactables)
+		if interactables_exist:
+			inst.finished_monologue.connect(enable_interactables)
 
 func go_to_next_convo(conversation: PackedScene):
 	var inst = conversation.instantiate()
@@ -129,8 +132,8 @@ func go_to_next_convo(conversation: PackedScene):
 	else:
 		# No following conversation or monologue, go to base area scene
 		inst.finished_conversation.connect(fade_in_clickable_conversations)
-		inst.finished_conversation.connect(enable_interactables)
-		
+		if interactables_exist:
+			inst.finished_conversation.connect(enable_interactables)
 
 func go_to_next_minigame(minigame: PackedScene):
 	var inst = minigame.instantiate()
@@ -142,7 +145,8 @@ func go_to_next_minigame(minigame: PackedScene):
 		inst.mini_game_complete.connect(go_to_convo_after_minigame_outcome.bind(inst))
 	else:
 		inst.mini_game_complete.connect(fade_in_clickable_conversations)
-		inst.mini_game_complete.connect(enable_interactables)
+		if interactables_exist:
+			inst.mini_game_complete.connect(enable_interactables)
 
 func go_to_convo_after_minigame_outcome(minigame):
 	go_to_next_convo(minigame.following_conversation)
