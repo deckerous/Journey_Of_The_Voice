@@ -27,4 +27,7 @@ scale = Vector2(1.44485, 1.44485)
 [node name="TextureRectFront" parent="CanvasLayer" index="1"]
 visibility_layer = 3
 
+[node name="UICanvas" parent="." index="8"]
+visible = true
+
 [editable path="UICanvas/UIMenu"]
