@@ -20,6 +20,12 @@ func _ready() -> void:
 	if area != null:
 		area.area_complete.connect(unhide_continue_button)
 		continue_button.pressed.connect(go_to_next_chapter)
+	
+	area.interactable_now_visible.connect(hide_continue_button)
+	area.interactable_now_invisible.connect(unhide_continue_button)
+
+func hide_continue_button():
+	continue_button.visible = false
 
 func unhide_continue_button():
 	continue_button.visible = true
