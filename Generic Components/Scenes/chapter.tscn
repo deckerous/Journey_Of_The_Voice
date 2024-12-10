@@ -46,6 +46,21 @@ script = ExtResource("1_o0kkc")
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 layer = 5
 
+[node name="ContinueButton" type="TextureButton" parent="CanvasLayer"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -158.0
+offset_top = -48.0
+offset_right = 158.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+texture_normal = ExtResource("2_li8c2")
+texture_hover = ExtResource("3_biysh")
+
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
 anchors_preset = 15
 anchor_right = 1.0
@@ -68,21 +83,6 @@ theme_override_font_sizes/normal_font_size = 64
 bbcode_enabled = true
 text = "[center]Chapter n"
 fit_content = true
-
-[node name="ContinueButton" type="TextureButton" parent="CanvasLayer"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -137.5
-offset_top = -42.5
-offset_right = 137.5
-offset_bottom = 42.5
-grow_horizontal = 2
-grow_vertical = 2
-texture_normal = ExtResource("2_li8c2")
-texture_hover = ExtResource("3_biysh")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

@@ -1,15 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://2r0sape7i2ct"]
+[gd_scene load_steps=8 format=3 uid="uid://2r0sape7i2ct"]
 
 [ext_resource type="Script" path="res://UI/Scenes/poster.gd" id="1_iq0ty"]
 [ext_resource type="Texture2D" uid="uid://cogtayffvth83" path="res://Area Backgrounds/poster.png" id="1_mi81n"]
 [ext_resource type="Texture2D" uid="uid://bepst3xq1hg31" path="res://Images/UI/arrow_l.png" id="2_fuhdx"]
+[ext_resource type="Texture2D" uid="uid://hgujef3cdad1" path="res://Area Backgrounds/poster_h.png" id="3_yn2kt"]
 
 [sub_resource type="Animation" id="Animation_jw6vh"]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:modulate")
+tracks/0/path = NodePath(".:modulate")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -26,14 +27,14 @@ loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Sprite2D:modulate")
-tracks/0/interp = 1
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 2
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.0333333, 1, 2),
+"times": PackedFloat32Array(0, 1, 2),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.486275), Color(1, 1, 1, 1)]
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0.72549), Color(1, 1, 1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_kp5pv"]
@@ -51,17 +52,16 @@ layer = -1
 follow_viewport_enabled = true
 
 [node name="PosterButton" type="TextureButton" parent="CanvasLayer"]
-offset_left = 828.0
-offset_top = 208.0
-offset_right = 868.0
-offset_bottom = 263.0
+offset_left = 941.0
+offset_top = 193.0
+offset_right = 988.0
+offset_bottom = 257.0
 scale = Vector2(1.75, 1.75)
 mouse_default_cursor_shape = 2
-
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/PosterButton"]
-position = Vector2(18.8571, 25.7143)
-scale = Vector2(0.0314671, 0.0314671)
-texture = ExtResource("1_mi81n")
+texture_normal = ExtResource("1_mi81n")
+texture_hover = ExtResource("3_yn2kt")
+ignore_texture_size = true
+stretch_mode = 0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/PosterButton"]
 libraries = {
@@ -78,6 +78,7 @@ mouse_filter = 1
 color = Color(0.237539, 0.237539, 0.237539, 0.266667)
 
 [node name="Poster" type="HBoxContainer" parent="CanvasLayer"]
+visible = false
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

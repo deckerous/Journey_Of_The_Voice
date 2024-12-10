@@ -16,6 +16,10 @@ var curr_effect = null
 @onready var conversation_instances = $ConversationInstances
 @onready var minigames = $Minigames
 
+@onready var interactables = $Interactables
+@onready var interactable_insts
+@onready var interables_available = false
+
 @onready var area_animation_player = $AreaAnimationPlayer
 
 @onready var vignette = preload("res://Anxiety Effects/Vignette/vignette.tscn")
@@ -25,6 +29,9 @@ var curr_effect = null
 	"self_talk": load("res://Anxiety Effects/Self Talk/self_talk_effect.tscn"),
 	"eye_contact": load("res://Anxiety Effects/Eye Contact/eye_contact_effect.tscn")
 }
+
+signal interactable_now_visible
+signal interactable_now_invisible
 
 signal area_complete
 
@@ -49,6 +56,14 @@ func _ready():
 		await get_tree().create_timer(2.0).timeout
 		go_to_next_convo(starting_conversation)
 		get_tree().paused = false
+	
+	# Interactables in this scene, save reference to them when enabling them when
+	# the player is out of a convo, mono, or minigame.
+	if len(interactables.get_children()) > 0:
+		interactable_insts = interactables.get_children()
+		for i in interactable_insts:
+			i.now_visible.connect(func(): interactable_now_visible.emit())
+			i.now_invisible.connect(func(): interactable_now_invisible.emit())
 
 func go_to_next_monologue(monologue: PackedScene):
 	var inst = monologue.instantiate()
@@ -66,6 +81,10 @@ func go_to_next_monologue(monologue: PackedScene):
 	
 	if inst.has_following_conversation and inst.following_conversation != null:
 		inst.finished_monologue.connect(go_to_next_convo.bind(inst.following_conversation))
+	else:
+		# No following conversation or monologue, go to base area scene
+		inst.finished_monologue.connect(fade_in_clickable_conversations)
+		inst.finished_monologue.connect(enable_interactables)
 
 func go_to_next_convo(conversation: PackedScene):
 	var inst = conversation.instantiate()
@@ -109,8 +128,9 @@ func go_to_next_convo(conversation: PackedScene):
 		
 	else:
 		# No following conversation or monologue, go to base area scene
-		# inst.finished_conversation.connect(unhide_characters)
 		inst.finished_conversation.connect(fade_in_clickable_conversations)
+		inst.finished_conversation.connect(enable_interactables)
+		
 
 func go_to_next_minigame(minigame: PackedScene):
 	var inst = minigame.instantiate()
@@ -122,6 +142,7 @@ func go_to_next_minigame(minigame: PackedScene):
 		inst.mini_game_complete.connect(go_to_convo_after_minigame_outcome.bind(inst))
 	else:
 		inst.mini_game_complete.connect(fade_in_clickable_conversations)
+		inst.mini_game_complete.connect(enable_interactables)
 
 func go_to_convo_after_minigame_outcome(minigame):
 	go_to_next_convo(minigame.following_conversation)
@@ -147,6 +168,16 @@ func hide_characters():
 
 func unhide_characters():
 	area_animation_player.play("fade_in_characters")
+
+# Enable available interactables for the player to click.
+func enable_interactables():
+	for i in interactable_insts:
+		i.enable_button()
+
+# Disable available interactables for the player to click.
+func disable_interactables():
+	for i in interactable_insts:
+		i.disable_button()
 
 # Unhide all clickable conversations available to the player in the area.
 func fade_in_clickable_conversations():
