@@ -9,10 +9,10 @@ dialogue_file = "res://Chapters/Chapter 7/ch7_5_bassist_2_failed.json"
 wants_to_talk = false
 starting_character_alone = false
 starting_convo_character_right = false
-start_conversation_on_load = true
 end_anxiety_effect = true
 has_following_minigame = true
 following_minigame = ExtResource("2_h3hfp")
 
 [node name="Cy" parent="ConversationCharacters/StartingCharacter" index="2" instance=ExtResource("2_xviia")]
-position = Vector2(576, 324)
+position = Vector2(568, 405)
+scale = Vector2(0.35, 0.35)

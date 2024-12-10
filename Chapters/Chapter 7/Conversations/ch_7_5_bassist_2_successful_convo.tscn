@@ -9,11 +9,9 @@ dialogue_file = "res://Chapters/Chapter 7/ch7_5_bassist_2_successful.json"
 wants_to_talk = false
 starting_character_alone = false
 starting_convo_character_right = false
-start_conversation_on_load = true
 has_following_conversation = true
 following_conversation = ExtResource("2_esj4o")
 
-[node name="StartingCharacter" parent="ConversationCharacters" index="0"]
-position = Vector2(576, 324)
-
 [node name="Cy" parent="ConversationCharacters/StartingCharacter" index="2" instance=ExtResource("3_1tv30")]
+position = Vector2(568, 405)
+scale = Vector2(0.35, 0.35)

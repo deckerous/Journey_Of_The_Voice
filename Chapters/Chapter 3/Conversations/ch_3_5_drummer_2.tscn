@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://pie5vurh8eoo" path="res://Characters/Scenes/drummer.tscn" id="2_wmra5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sdgvy"]
-size = Vector2(226, 570)
+size = Vector2(92.5306, 238.198)
 
 [node name="Ch3_5_Drummer_2" instance=ExtResource("1_blb08")]
 dialogue_file = "res://Chapters/Chapter 3/ch3_5_drummer_2.json"
@@ -16,12 +16,16 @@ end_of_chapter = true
 position = Vector2(-25, 43)
 
 [node name="StartingCharacter" parent="ConversationCharacters" index="0"]
-position = Vector2(617, 181)
-scale = Vector2(4.36612, 4.36612)
+position = Vector2(25, -43)
+scale = Vector2(2.96978, 2.96978)
+
+[node name="CharacterClickArea" parent="ConversationCharacters/StartingCharacter" index="0"]
+position = Vector2(0, 27.2748)
 
 [node name="CharacterCollisionShape2D" parent="ConversationCharacters/StartingCharacter/CharacterClickArea" index="0"]
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_sdgvy")
 
 [node name="Drummer" parent="ConversationCharacters/StartingCharacter" index="2" instance=ExtResource("2_wmra5")]
-position = Vector2(-6, 82)
+position = Vector2(0, 27.2748)
 scale = Vector2(0.139565, 0.139565)

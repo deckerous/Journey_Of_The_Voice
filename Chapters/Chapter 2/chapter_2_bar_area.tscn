@@ -20,5 +20,8 @@ position = Vector2(190, 329)
 [node name="Bar" parent="Characters/Guy" index="1"]
 visible = true
 
+[node name="UICanvas" parent="." index="8"]
+visible = true
+
 [editable path="Characters/Guy"]
 [editable path="UICanvas/UIMenu"]

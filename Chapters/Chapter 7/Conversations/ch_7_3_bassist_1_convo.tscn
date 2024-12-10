@@ -9,7 +9,6 @@ dialogue_file = "res://Chapters/Chapter 7/ch7_3_bassist_1.json"
 wants_to_talk = false
 starting_character_alone = false
 starting_convo_character_right = false
-start_conversation_on_load = true
 end_anxiety_effect = true
 has_following_conversation = true
 following_conversation = ExtResource("2_frfbm")
@@ -18,3 +17,5 @@ following_conversation = ExtResource("2_frfbm")
 position = Vector2(576, 324)
 
 [node name="Cy" parent="ConversationCharacters/StartingCharacter" index="2" instance=ExtResource("3_n143r")]
+position = Vector2(-21, 87)
+scale = Vector2(0.35, 0.35)

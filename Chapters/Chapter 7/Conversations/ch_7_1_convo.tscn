@@ -10,7 +10,6 @@ wants_to_talk = false
 starting_character_alone = false
 starting_convo_character_right = false
 start_conversation_after_monologue = true
-start_conversation_on_load = true
 has_following_conversation = true
 following_conversation = ExtResource("2_ngacy")
 
@@ -18,5 +17,5 @@ following_conversation = ExtResource("2_ngacy")
 position = Vector2(162, 167)
 
 [node name="Guy" parent="ConversationCharacters/StartingCharacter" index="2" instance=ExtResource("2_a3pty")]
-position = Vector2(170, 218)
-scale = Vector2(1.28841, 1.28841)
+position = Vector2(414, 328)
+scale = Vector2(1.64, 1.64)

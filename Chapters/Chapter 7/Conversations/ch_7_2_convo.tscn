@@ -10,7 +10,6 @@ dialogue_file = "res://Chapters/Chapter 7/ch7_2_dialogue.json"
 wants_to_talk = false
 starting_character_alone = false
 starting_convo_character_right = false
-start_conversation_on_load = true
 has_following_conversation = true
 following_conversation = ExtResource("2_vn3gx")
 
@@ -18,10 +17,12 @@ following_conversation = ExtResource("2_vn3gx")
 position = Vector2(162, 167)
 
 [node name="Guy" parent="ConversationCharacters/StartingCharacter" index="2" instance=ExtResource("2_50jtn")]
-position = Vector2(99, 163)
-scale = Vector2(1.10015, 1.10015)
+position = Vector2(45, 330)
+scale = Vector2(1.54, 1.54)
 
 [node name="OtherCharacter" parent="ConversationCharacters" index="1"]
 position = Vector2(853, 310)
 
 [node name="Cy" parent="ConversationCharacters/OtherCharacter" index="1" instance=ExtResource("3_h0vg4")]
+position = Vector2(-22, 102)
+scale = Vector2(0.35, 0.35)

@@ -8,12 +8,11 @@ dialogue_file = "res://Chapters/Chapter 7/ch7_6_dialogue.json"
 wants_to_talk = false
 starting_character_alone = false
 starting_convo_character_right = false
-start_conversation_on_load = true
 end_of_chapter = true
 
 [node name="StartingCharacter" parent="ConversationCharacters" index="0"]
 position = Vector2(162, 167)
 
 [node name="Guy" parent="ConversationCharacters/StartingCharacter" index="2" instance=ExtResource("2_ljy8p")]
-position = Vector2(404, 228)
-scale = Vector2(1.15463, 1.15463)
+position = Vector2(414, 327)
+scale = Vector2(1.64, 1.64)

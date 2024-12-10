@@ -16,9 +16,9 @@ has_failure_conversation = true
 failure_conversation = ExtResource("3_aq0q1")
 
 [node name="StartingCharacter" parent="ConversationCharacters" index="0"]
-position = Vector2(242, 236)
+position = Vector2(200, 230)
 rotation = -0.10472
-scale = Vector2(0.95, 0.95)
+scale = Vector2(0.825, 0.825)
 
 [node name="Donna" parent="ConversationCharacters/StartingCharacter" index="2" instance=ExtResource("2_qpk41")]
 scale = Vector2(1.2, 1.2)

@@ -12,5 +12,5 @@ has_following_conversation = true
 following_conversation_path = "res://Chapters/Chapter 11/Conversations/ch_11_4_boss_convo_1.tscn"
 
 [node name="Guy" parent="ConversationCharacters/StartingCharacter" index="2" instance=ExtResource("3_xjwx1")]
-position = Vector2(576, 629)
-scale = Vector2(1.03226, 1.03226)
+position = Vector2(576, 485)
+scale = Vector2(1.64, 1.64)

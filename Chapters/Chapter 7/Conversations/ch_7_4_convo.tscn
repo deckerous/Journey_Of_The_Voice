@@ -10,7 +10,6 @@ dialogue_file = "res://Chapters/Chapter 7/ch7_4_dialogue.json"
 wants_to_talk = false
 starting_character_alone = false
 starting_convo_character_right = false
-start_conversation_on_load = true
 has_following_minigame = true
 following_minigame = ExtResource("3_q2pq6")
 
@@ -18,10 +17,12 @@ following_minigame = ExtResource("3_q2pq6")
 position = Vector2(816, 324)
 
 [node name="Cy" parent="ConversationCharacters/StartingCharacter" index="2" instance=ExtResource("3_einch")]
+position = Vector2(-22, 102)
+scale = Vector2(0.35, 0.35)
 
 [node name="OtherCharacter" parent="ConversationCharacters" index="1"]
 position = Vector2(162, 167)
 
 [node name="Guy" parent="ConversationCharacters/OtherCharacter" index="1" instance=ExtResource("4_xu34x")]
-position = Vector2(99, 164)
-scale = Vector2(1.0842, 1.0842)
+position = Vector2(45, 330)
+scale = Vector2(1.54, 1.54)

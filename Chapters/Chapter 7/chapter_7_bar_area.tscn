@@ -10,18 +10,21 @@ start_with_monologue = true
 starting_monologue = ExtResource("2_emnh7")
 
 [node name="Cy" parent="Characters" index="0" instance=ExtResource("2_aqnpk")]
-position = Vector2(559, 302)
-scale = Vector2(0.11, 0.11)
+position = Vector2(565, 274)
+scale = Vector2(0.115, 0.115)
 
 [node name="Sprite2D" parent="Characters/Cy" index="0"]
 flip_h = false
 
 [node name="Guy" parent="Characters" index="1" instance=ExtResource("3_6jjdb")]
-position = Vector2(327, 485)
-scale = Vector2(1.56228, 1.56228)
+position = Vector2(190, 329)
+
+[node name="Bar" parent="Characters/Guy" index="1"]
+visible = true
 
 [node name="UICanvas" parent="." index="8"]
 visible = true
 
 [editable path="Characters/Cy"]
+[editable path="Characters/Guy"]
 [editable path="UICanvas/UIMenu"]

@@ -17,4 +17,5 @@ following_minigame = ExtResource("2_ju2lr")
 position = Vector2(593, 365)
 
 [node name="Keebs" parent="ConversationCharacters/StartingCharacter" index="2" instance=ExtResource("3_w476e")]
-scale = Vector2(0.201054, 0.201054)
+position = Vector2(-73, 0)
+scale = Vector2(0.25, 0.25)

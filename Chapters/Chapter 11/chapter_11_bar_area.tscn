@@ -49,6 +49,9 @@ scale = Vector2(0.324636, 0.324636)
 position = Vector2(106, 453)
 scale = Vector2(1.52066, 1.52066)
 
+[node name="UICanvas" parent="." index="8"]
+visible = true
+
 [editable path="Characters/Boss"]
 [editable path="Characters/Keebs"]
 [editable path="Characters/Donna"]
