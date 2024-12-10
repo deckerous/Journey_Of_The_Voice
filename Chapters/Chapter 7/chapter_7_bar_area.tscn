@@ -20,5 +20,8 @@ flip_h = false
 position = Vector2(327, 485)
 scale = Vector2(1.56228, 1.56228)
 
+[node name="UICanvas" parent="." index="8"]
+visible = true
+
 [editable path="Characters/Cy"]
 [editable path="UICanvas/UIMenu"]

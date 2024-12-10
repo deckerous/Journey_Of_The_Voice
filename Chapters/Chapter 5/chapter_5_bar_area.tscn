@@ -23,6 +23,9 @@ scale = Vector2(0.11, 0.11)
 position = Vector2(285, 461)
 scale = Vector2(1.46746, 1.46746)
 
+[node name="UICanvas" parent="." index="8"]
+visible = true
+
 [node name="UIMenu" parent="UICanvas" index="0"]
 unique_name_in_owner = true
 
