@@ -20,11 +20,14 @@ scale = Vector2(0.203976, 0.203976)
 flip_h = true
 
 [node name="Guide" parent="Characters" index="1" instance=ExtResource("4_skmb4")]
-position = Vector2(166, 474)
-scale = Vector2(1.74489, 1.74489)
+position = Vector2(169, 518)
+scale = Vector2(1.64, 1.64)
 
 [node name="UICanvas" parent="." index="8"]
 visible = true
+
+[node name="UIMenu" parent="UICanvas" index="0"]
+visible = false
 
 [editable path="Characters/Donna"]
 [editable path="UICanvas/UIMenu"]

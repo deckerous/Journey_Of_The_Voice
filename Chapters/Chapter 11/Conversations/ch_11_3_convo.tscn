@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cym1xw41nikgc" path="res://Characters/Scenes/cy.tscn" id="4_0pp2j"]
 [ext_resource type="PackedScene" uid="uid://oiqru1q6tm14" path="res://Characters/Scenes/donna.tscn" id="5_g7b2n"]
 [ext_resource type="PackedScene" uid="uid://pie5vurh8eoo" path="res://Characters/Scenes/drummer.tscn" id="6_ev0dc"]
-[ext_resource type="PackedScene" uid="uid://c0u1fdrgiinbp" path="res://Characters/Scenes/guy.tscn" id="7_yswwg"]
+[ext_resource type="PackedScene" uid="uid://5ylb4d0474qn" path="res://Characters/Scenes/guy.tscn" id="7_yswwg"]
 [ext_resource type="PackedScene" uid="uid://gpq84yf1hx6v" path="res://Characters/Scenes/keebs.tscn" id="8_d11ac"]
 
 [node name="Ch_11_3_Convo" instance=ExtResource("1_gb43r")]
@@ -18,7 +18,7 @@ has_following_conversation = true
 following_conversation = ExtResource("2_1m6nf")
 
 [node name="Boss" parent="ConversationCharacters/StartingCharacter" index="2" instance=ExtResource("3_kobxe")]
-position = Vector2(562, 302)
+position = Vector2(562, 276)
 scale = Vector2(0.42, 0.42)
 
 [node name="Sprite2D" parent="ConversationCharacters/StartingCharacter/Boss" index="0"]
@@ -41,7 +41,8 @@ scale = Vector2(0.239398, 0.239398)
 position = Vector2(916, 379)
 
 [node name="Sprite2D" parent="ConversationCharacters/StartingCharacter/Donna" index="0"]
-position = Vector2(-585, -97)
+position = Vector2(-575, -140)
+scale = Vector2(0.31, 0.31)
 flip_h = true
 
 [node name="Drummer" parent="ConversationCharacters/StartingCharacter" index="6" instance=ExtResource("6_ev0dc")]
@@ -49,8 +50,8 @@ position = Vector2(1057, 368)
 scale = Vector2(0.324636, 0.324636)
 
 [node name="Guy" parent="ConversationCharacters/StartingCharacter" index="7" instance=ExtResource("7_yswwg")]
-position = Vector2(121, 450)
-scale = Vector2(0.66, 0.66)
+position = Vector2(106, 453)
+scale = Vector2(1.52066, 1.52066)
 
 [editable path="ConversationCharacters/StartingCharacter/Boss"]
 [editable path="ConversationCharacters/StartingCharacter/Keebs"]

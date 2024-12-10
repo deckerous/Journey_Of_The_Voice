@@ -1,53 +1,53 @@
 {
   "dialogue": [
-      {
-          "id": "start",
-          "character": "You",
-          "text": "Thanks, Guy."
-      },
-      {
-          "text": "Oh, here comes the rest of the band!"
-      },
-      {
-          "character": "Drummer",
-          "text": "Your performance earlier was inspiring."
-      },
-      {
-          "text": "Your voice was as powerful as a waterfall!"
-      },
-      {
-          "character": "Keyboardist",
-          "text": "Falla Finita!...Always with the waterfalls..."
-      },
-      {
-          "text": "But he is right"
-      },
-      {
-          "text": "There is not a doubt in my mind that we will succeed."
-      },
-      {
-          "character": "Cy",
-          "text": "Boss already has his eye on you"
-      },
-      {
-          "text": "This should provide us a distinct advantage!"
-      },
-      {
-          "character": "You",
-          "text": "I don't know about an advantage..."
-      },
-      {
-          "character": "Donna",
-          "text": "Don't you lose your fire now!"
-      },
-      {
-          "text": "We are in this together!"
-      },
-      {
-          "text": "But speak of the devil..."
-      },
-      {
-          "function": "end_dialogue"
-      }
+	  {
+		  "id": "start",
+		  "character": "You",
+		  "text": "Thanks, Guy."
+	  },
+	  {
+		  "text": "Oh, here comes the rest of the band!"
+	  },
+	  {
+		  "character": "Drummer",
+		  "text": "Your performance earlier was inspiring."
+	  },
+	  {
+		  "text": "Your voice was as powerful as a waterfall!"
+	  },
+	  {
+		  "character": "Keebs",
+		  "text": "Falla Finita!...Always with the waterfalls..."
+	  },
+	  {
+		  "text": "But he is right"
+	  },
+	  {
+		  "text": "There is not a doubt in my mind that we will succeed."
+	  },
+	  {
+		  "character": "Cy",
+		  "text": "Boss already has his eye on you"
+	  },
+	  {
+		  "text": "This should provide us a distinct advantage!"
+	  },
+	  {
+		  "character": "You",
+		  "text": "I don't know about an advantage..."
+	  },
+	  {
+		  "character": "Donna",
+		  "text": "Don't you lose your fire now!"
+	  },
+	  {
+		  "text": "We are in this together!"
+	  },
+	  {
+		  "text": "But speak of the devil..."
+	  },
+	  {
+		  "function": "end_dialogue"
+	  }
   ]
 }

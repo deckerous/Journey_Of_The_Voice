@@ -15,12 +15,14 @@ following_minigame = ExtResource("2_rv5xg")
 position = Vector2(823, 324)
 
 [node name="Drummer" parent="ConversationCharacters/StartingCharacter" index="2" instance=ExtResource("3_tisjf")]
-position = Vector2(0, 68)
-scale = Vector2(0.367365, 0.367365)
+position = Vector2(39, 132)
+scale = Vector2(0.442, 0.442)
 
 [node name="OtherCharacter" parent="ConversationCharacters" index="1"]
 position = Vector2(162, 167)
 
 [node name="Guy" parent="ConversationCharacters/OtherCharacter" index="1" instance=ExtResource("4_rp0m0")]
-position = Vector2(166, 225)
-scale = Vector2(1.25995, 1.25995)
+position = Vector2(69, 325)
+scale = Vector2(1.54, 1.54)
+
+[editable path="ConversationCharacters/StartingCharacter/Drummer"]

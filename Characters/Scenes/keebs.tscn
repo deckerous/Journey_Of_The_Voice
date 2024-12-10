@@ -8,3 +8,4 @@ scale = Vector2(0.15, 0.15)
 
 [node name="Sprite2D" parent="." index="0"]
 texture = ExtResource("2_jp0c8")
+flip_h = true

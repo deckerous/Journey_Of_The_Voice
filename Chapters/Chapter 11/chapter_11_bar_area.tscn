@@ -14,7 +14,7 @@ start_with_monologue = true
 starting_monologue = ExtResource("2_yyowi")
 
 [node name="Boss" parent="Characters" index="0" instance=ExtResource("3_ljdef")]
-position = Vector2(562, 302)
+position = Vector2(562, 276)
 scale = Vector2(0.42, 0.42)
 
 [node name="Sprite2D" parent="Characters/Boss" index="0"]
@@ -37,7 +37,8 @@ scale = Vector2(0.239398, 0.239398)
 position = Vector2(916, 379)
 
 [node name="Sprite2D" parent="Characters/Donna" index="0"]
-position = Vector2(-585, -97)
+position = Vector2(-575, -140)
+scale = Vector2(0.31, 0.31)
 flip_h = true
 
 [node name="Drummer" parent="Characters" index="4" instance=ExtResource("6_mf5a7")]
@@ -45,7 +46,7 @@ position = Vector2(1057, 368)
 scale = Vector2(0.324636, 0.324636)
 
 [node name="Guy" parent="Characters" index="5" instance=ExtResource("7_qg5ps")]
-position = Vector2(121, 450)
+position = Vector2(106, 453)
 scale = Vector2(1.52066, 1.52066)
 
 [node name="UICanvas" parent="." index="8"]
