@@ -66,18 +66,22 @@
 		]
 	  },
 	  {
-		"id": "*take the empty glass*",
+		"id": "*take her glass anyway*",
 		"text": "I'll let the bartender know..."
 	  },
 	  {
-		"function": "end_dialogue"
+		"function": "fail_dialogue"
 	  },
 	  {
 		"id": "...",
 		"text": "..."
 	  },
+		{
+		"character": "Donna",
+		"text": "...?"
+		},
 	  {
-		"function": "end_dialogue"
+		"function": "fail_dialogue"
 	  },
 	  {
 		"id": "Well...",
@@ -89,7 +93,6 @@
 		"text": "Yeah, you and everyone at every venue I've torn through."
 	  },
 	  {
-		"text": "What makes you so special?",
 		"text": "What makes you so special?"
 	  },
 	  {
@@ -117,8 +120,12 @@
 		"id": "...",
 		"text": "..."
 	  },
+		{
+			"character": "Donna",
+			"text": "...?"
+		},
 	  {
-		"function": "end_dialogue"
+		"function": "fail_dialogue"
 	  },
 	  {
 		"id": "I've been on a journey",
@@ -133,8 +140,7 @@
 		"text": "A journey, huh?"
 	  },
 	  {
-		"text": "Everyone's on a journey. What makes yours worth my time?",
-	"text": "Everyone's on a journey. What makes yours worth my time?"
+		"text": "Everyone's on a journey. What makes yours worth my time?"
 	},
 	{
 		"text": "...",
@@ -162,6 +168,10 @@
 		"id": "...",
 		"text": "..."
 	  },
+		{
+		"character": "Donna",
+		"text": "...?"
+		},
 	  {
 		"function": "end_dialogue"
 	  },
