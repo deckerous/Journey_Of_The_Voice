@@ -1,10 +1,6 @@
 class_name Conversation
 extends Node2D
 
-const SAVE_PATH = "user://game_stats.cfg"
-const TEST_SAVE_PATH = "res://game_stats.cfg"
-var save_path = TEST_SAVE_PATH
-
 # .json file that the dialogue for the conversation will be read from
 @export_file("*json") var dialogue_file: String
 # Determines whether

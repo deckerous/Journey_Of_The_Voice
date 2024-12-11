@@ -4,7 +4,7 @@ extends Node
 const SAVE_PATH = "user://save.cfg"
 const TEST_SAVE_PATH = "res://Globals/save.cfg"
 
-var save_path = TEST_SAVE_PATH
+var save_path = SAVE_PATH
 
 @export var chapter_number: int
 @export var next_chapter: PackedScene
