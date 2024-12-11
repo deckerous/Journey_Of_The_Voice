@@ -1,9 +1,7 @@
 {
 	"dialogue": [
 		{
-			"id": "Start"
-		},
-		{
+			"id": "Start",
 			"character": "Guy",
 			"text": "It's great to see you two talking together,"
 		},
@@ -20,11 +18,11 @@
 			"text": "All I did was ask..."
 		},
 		{
-			"character": "Drummer",
+			"character": "Kenshiro",
 			"text": "Ha!"
 		},
 		{
-			"character": "Drummer",
+			"character": "Kenshiro",
 			"text": "Don't sell yourself short, I admire the courage it takes to put yourself out there and get to know someone."
 		},
 		{
@@ -36,7 +34,7 @@
 			"text": "..."
 		},
 		{
-			"character": "Drummer",
+			"character": "Kenshiro",
 			"text": "Ha ha, lets see if you can find some other members first!"
 		},
 		{

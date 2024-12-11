@@ -85,7 +85,8 @@ func go_to_next_monologue(monologue: PackedScene):
 		inst.finished_monologue.connect(go_to_next_convo.bind(inst.following_conversation))
 	else:
 		# No following conversation or monologue, go to base area scene
-		inst.finished_monologue.connect(fade_in_clickable_conversations)
+		if conversations_root.get_child_count() > 0:
+			inst.finished_monologue.connect(fade_in_clickable_conversations)
 		if interactables_exist:
 			inst.finished_monologue.connect(enable_interactables)
 
@@ -131,7 +132,8 @@ func go_to_next_convo(conversation: PackedScene):
 		
 	else:
 		# No following conversation or monologue, go to base area scene
-		inst.finished_conversation.connect(fade_in_clickable_conversations)
+		if conversations_root.get_child_count() > 0:
+			inst.finished_conversation.connect(fade_in_clickable_conversations)
 		if interactables_exist:
 			inst.finished_conversation.connect(enable_interactables)
 
@@ -144,7 +146,9 @@ func go_to_next_minigame(minigame: PackedScene):
 	if inst.has_following_conversation:
 		inst.mini_game_complete.connect(go_to_convo_after_minigame_outcome.bind(inst))
 	else:
-		inst.mini_game_complete.connect(fade_in_clickable_conversations)
+		# No following conversation or monologue, go to base area scene
+		if conversations_root.get_child_count() > 0:
+			inst.mini_game_complete.connect(fade_in_clickable_conversations)
 		if interactables_exist:
 			inst.mini_game_complete.connect(enable_interactables)
 
@@ -162,10 +166,6 @@ func remove_anxiety_effect():
 			effect.animation_player.play("fade_out")
 			await effect.animation_player.animation_finished
 		effect.queue_free()
-
-func remove_from_available_conversations(convo: Conversation):
-	var index = available_conversations.find(convo)
-	available_conversations.remove(index)
 
 func hide_characters():
 	area_animation_player.play("fade_out_characters")
@@ -185,10 +185,14 @@ func disable_interactables():
 
 # Unhide all clickable conversations available to the player in the area.
 func fade_in_clickable_conversations():
-	conversations_root.visible = true
-	for convo in available_conversations:
-		if convo is Conversation:
-			convo.fade_in_convo()
+	available_conversations = conversations_root.get_children()
+	if len(available_conversations) > 0:
+		conversations_root.visible = true
+		for convo in available_conversations:
+			if convo is Conversation:
+				convo.fade_in_convo()
+				if convo.has_following_conversation and convo.following_conversation != null:
+					convo.finished_conversation.connect(go_to_next_convo.bind(convo.following_conversation))
 
 # Hide all clickable conversations available to the player in the area.
 func fade_out_clickable_conversaitons(clicked_convo: Conversation = null):

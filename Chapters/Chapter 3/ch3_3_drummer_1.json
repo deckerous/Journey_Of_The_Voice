@@ -1,7 +1,7 @@
 {
 	"dialogue": [
 		{
-			"character": "Drummer",
+			"character": "Kenshiro",
 			"text": "My name is Kenshiro Takemura. Nice to meet you."
 		},
 		{
@@ -17,7 +17,7 @@
 			"text": "[pulse freq=1.0 color=#ffffff40 ease=-2.0]*What did I just say?! This guy is going to kill me...*[/pulse]"
 		},
 		{
-			"character": "Drummer",
+			"character": "Kenshiro",
 			"text": "..."
 		},
 		{
@@ -29,7 +29,7 @@
 			"text": "[pulse freq=1.0 color=#ffffff40 ease=-2.0]...[/pulse]"
 		},
 		{
-			"character": "Drummer",
+			"character": "Kenshiro",
 			"text": "..."
 		},
 		{
