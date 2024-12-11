@@ -17,7 +17,7 @@ signal mini_game_complete
 
 const num_words_on_screen = 6
 const possible_phrases = ["I don't belong here......", "What did I just say?", "They must be annoyed...", "I'm a nuisance",
-	"This is very not poggers", "I can't do this", "I'm gonna fail", "What should I do", "Oh my gyatt"]
+	"I should've stayed home", "I can't do this", "I'm gonna fail", "What should I do", "It's over..."]
 
 @onready var curr_words = 0
 
