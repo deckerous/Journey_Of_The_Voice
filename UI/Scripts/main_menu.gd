@@ -42,7 +42,7 @@ func check_for_save():
 	
 	# When the player makes it to the end of the game wipe their save file.
 	if Player.save_file.get_value("player", "chapter") == 12:
-		var dir = DirAccess.open("res://")
+		var dir = DirAccess.open("user://")
 		if dir.file_exists(save_path):
 			dir.remove(save_path)
 			Player.save_file = ConfigFile.new()
@@ -73,7 +73,7 @@ func create_save():
 func overwrite_confirmed():
 	# Error handle a save file not existing, delete save file,
 	# make fresh save file and save it, then go to chapter 1.
-	var dir = DirAccess.open("res://")
+	var dir = DirAccess.open("user://")
 	if dir.file_exists(save_path):
 		dir.remove(save_path)
 		create_save()
