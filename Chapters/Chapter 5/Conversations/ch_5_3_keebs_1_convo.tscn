@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://gpq84yf1hx6v" path="res://Characters/Scenes/keebs.tscn" id="3_w476e"]
 
 [node name="Ch_5_3_Keebs_1_Convo" instance=ExtResource("1_qc0bu")]
-dialogue_file = "res://Chapters/Chapter 5/ch_5_3_Keebs_1.json"
+dialogue_file = "res://Chapters/Chapter 5/ch_5_3_keebs_1.json"
 wants_to_talk = false
 starting_character_alone = false
 starting_convo_character_right = false

@@ -3,3 +3,4 @@
 /android/
 *.tmp
 Globals/save.cfg
+Exports/
