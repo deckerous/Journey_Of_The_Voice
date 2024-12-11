@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://liv3lsacohid"]
+
+[ext_resource type="PackedScene" uid="uid://cee0f16o8788r" path="res://Generic Components/Scenes/conversation.tscn" id="1_tcqjg"]
+[ext_resource type="PackedScene" uid="uid://pie5vurh8eoo" path="res://Characters/Scenes/drummer.tscn" id="2_k8f7c"]
+[ext_resource type="PackedScene" uid="uid://5ylb4d0474qn" path="res://Characters/Scenes/guy.tscn" id="3_3p47l"]
+
+[node name="Ch_3_6_Convo" instance=ExtResource("1_tcqjg")]
+dialogue_file = "res://Chapters/Chapter 3/ch3_6.json"
+wants_to_talk = false
+starting_character_alone = false
+starting_convo_character_right = false
+end_of_chapter = true
+
+[node name="Drummer" parent="ConversationCharacters/StartingCharacter" index="2" instance=ExtResource("2_k8f7c")]
+position = Vector2(879, 456)
+scale = Vector2(0.442, 0.442)
+
+[node name="Guy" parent="ConversationCharacters/OtherCharacter" index="1" instance=ExtResource("3_3p47l")]
+position = Vector2(223, 481)
+scale = Vector2(1.54, 1.54)
+
+[editable path="ConversationCharacters/StartingCharacter/Drummer"]

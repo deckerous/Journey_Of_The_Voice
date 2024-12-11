@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://derj218oej13b"
-path="res://.godot/imported/Drummer.wav-fe257d101b5d0ab3e210df9c73a6f85f.sample"
+path="res://.godot/imported/Kenshiro.wav-01d79a8767f535a0f92b9c0ed24e64f1.sample"
 
 [deps]
 
-source_file="res://Audio/voices/Drummer.wav"
-dest_files=["res://.godot/imported/Drummer.wav-fe257d101b5d0ab3e210df9c73a6f85f.sample"]
+source_file="res://Audio/voices/Kenshiro.wav"
+dest_files=["res://.godot/imported/Kenshiro.wav-01d79a8767f535a0f92b9c0ed24e64f1.sample"]
 
 [params]
 

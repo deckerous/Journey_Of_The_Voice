@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cexou3rp8qi88"]
+[gd_scene load_steps=5 format=3 uid="uid://cexou3rp8qi88"]
 
 [ext_resource type="PackedScene" uid="uid://cee0f16o8788r" path="res://Generic Components/Scenes/conversation.tscn" id="1_blb08"]
 [ext_resource type="PackedScene" uid="uid://pie5vurh8eoo" path="res://Characters/Scenes/drummer.tscn" id="2_wmra5"]
+[ext_resource type="PackedScene" uid="uid://liv3lsacohid" path="res://Chapters/Chapter 3/Conversations/ch_3_6_convo.tscn" id="2_xtfx4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sdgvy"]
 size = Vector2(92.5306, 238.198)
@@ -10,7 +11,8 @@ size = Vector2(92.5306, 238.198)
 dialogue_file = "res://Chapters/Chapter 3/ch3_5_drummer_2.json"
 starting_convo_character_right = false
 start_conversation_on_load = false
-end_of_chapter = true
+has_following_conversation = true
+following_conversation = ExtResource("2_xtfx4")
 
 [node name="ConversationCharacters" parent="." index="0"]
 position = Vector2(-25, 43)
@@ -23,7 +25,6 @@ scale = Vector2(2.96978, 2.96978)
 position = Vector2(0, 27.2748)
 
 [node name="CharacterCollisionShape2D" parent="ConversationCharacters/StartingCharacter/CharacterClickArea" index="0"]
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_sdgvy")
 
 [node name="Drummer" parent="ConversationCharacters/StartingCharacter" index="2" instance=ExtResource("2_wmra5")]
