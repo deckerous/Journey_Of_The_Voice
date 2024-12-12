@@ -30,6 +30,8 @@ var curr_effect = null
 	"eye_contact": load("res://Anxiety Effects/Eye Contact/eye_contact_effect.tscn")
 }
 
+var convo_instanced = false
+
 @onready var interactables_exist = false
 signal interactable_now_visible
 signal interactable_now_invisible
@@ -67,6 +69,10 @@ func _ready():
 			i.now_visible.connect(func(): interactable_now_visible.emit())
 			i.now_invisible.connect(func(): interactable_now_invisible.emit())
 
+func _process(delta):
+	if conversation_instances.get_child_count() > 1:
+		conversation_instances.get_child(0).queue_free()
+
 func go_to_next_monologue(monologue: PackedScene):
 	var inst = monologue.instantiate()
 	self.add_child(inst)
@@ -92,7 +98,6 @@ func go_to_next_monologue(monologue: PackedScene):
 
 func go_to_next_convo(conversation: PackedScene):
 	var inst = conversation.instantiate()
-	#conversation_instances.add_child(inst)
 	conversation_instances.call_deferred("add_child", inst)
 	
 	$UICanvas/UIMenu.menu_entered.connect(inst.disable_dialogue_click_collision)
@@ -121,7 +126,7 @@ func go_to_next_convo(conversation: PackedScene):
 		if inst.has_failure_conversation and inst.failure_conversation != null:
 			# When this conversation is finished, instantiate the following failure convo if there is one
 			inst.failed_conversation.connect(go_to_next_convo.bind(inst.failure_conversation))
-		
+	
 	elif inst.has_following_conversation and inst.following_conversation_path != null:
 		var convo_inst = load(inst.following_conversation_path)
 		inst.finished_conversation.connect(go_to_next_convo.bind(convo_inst))
@@ -140,6 +145,7 @@ func go_to_next_convo(conversation: PackedScene):
 func go_to_next_minigame(minigame: PackedScene):
 	var inst = minigame.instantiate()
 	minigames.add_child(inst)
+	
 	if len(anxiety_effect_root.get_children()) > 0:
 		remove_anxiety_effect()
 	
