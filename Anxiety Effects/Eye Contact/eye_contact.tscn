@@ -45,9 +45,9 @@ script = ExtResource("1_ryo6m")
 has_following_conversation = true
 successful_convo_path = "res://Chapters/Chapter 7/Conversations/ch_7_5_bassist_2_successful_convo.tscn"
 failed_convo_path = "res://Chapters/Chapter 7/Conversations/ch_7_5_bassist_2_failed_convo.tscn"
+speed = 10
 
 [node name="TheBGs" type="ColorRect" parent="."]
-visible = false
 modulate = Color(1, 1, 1, 0.784314)
 z_as_relative = false
 offset_left = -400.0
@@ -59,6 +59,11 @@ color = Color(0, 0, 0, 0.784314)
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 324)
+position_smoothing_enabled = true
+drag_left_margin = 0.0
+drag_top_margin = 0.0
+drag_right_margin = 0.0
+drag_bottom_margin = 0.0
 
 [node name="Character" type="Sprite2D" parent="."]
 position = Vector2(576, 443)

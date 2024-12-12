@@ -21,7 +21,7 @@ signal succeeded_game
 
 @export var duration = 10
 @export var speed = 75
-@export var leniency = 200
+@export var leniency = 300
 @export var show_tutorial = false
 @export var game_background = false
 var base_speed
@@ -31,6 +31,7 @@ var base_speed
 
 var distract_dir: Vector2
 var initial_pos: Vector2
+var old_mouse_pos: Vector2
 
 var curr_music
 
@@ -50,20 +51,23 @@ func _ready() -> void:
 	music.volume_db = -80
 	GlobalAudio.tween_from_id("eye_contact", -15, 1.0)
 	
-	set_physics_process(false)
+	set_process(false)
 	
 	var has_done_eye_contact = Player.save_file.get_value("player", "has_done_eye_contact") == null
 	if !has_done_eye_contact and !show_tutorial:
 		$GameTutorial2.visible = false
 		_on_tutorial_end()
 
-func _physics_process(delta: float) -> void:
+func _process(delta: float) -> void:
 	if Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
 		speed = base_speed
 		var mouse_pos = get_viewport().get_mouse_position()
-		var reversed_pos = Vector2(get_viewport().size) - mouse_pos
-		
-		cam.position = cam.position.lerp(reversed_pos, delta)
+		var reversed_pos = (Vector2(get_viewport().size) - mouse_pos)
+		var mouse_move_dir = old_mouse_pos.direction_to(mouse_pos)
+		var rev_mouse_dir = mouse_move_dir * -1.0
+		var cam_velo = rev_mouse_dir * 2.5
+		cam.position += cam_velo
+		old_mouse_pos = mouse_pos
 		generate_new_distract_dir()
 	else:
 		cam.position += distract_dir.normalized() * speed * delta
@@ -105,4 +109,4 @@ func _on_tutorial_end() -> void:
 	base_speed = speed
 	generate_new_distract_dir()
 	
-	set_physics_process(true)
+	set_process(true)

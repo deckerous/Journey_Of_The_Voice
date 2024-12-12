@@ -41,4 +41,4 @@ func reset_camera_position():
 
 func generate_new_distract_dir():
 	var rand = RandomNumberGenerator.new()
-	distract_dir = Vector2(rand.randf_range(-1, 1), rand.randf_range(-1, 1))
+	distract_dir = Vector2(rand.randf_range(-1, 1), rand.randf_range(0.5, 1))
