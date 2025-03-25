@@ -1,7 +1,7 @@
 # Journey Of The Voice
 
 **Where to Play**
-Available to play in a broweser @ [itch.io](https://wearethem.itch.io/journey-of-the-voice)
+- Available to play in a broweser @ [itch.io](https://wearethem.itch.io/journey-of-the-voice)
 
 **User Manual:**
 - Located in the itch.io page and in-game tutorials.
